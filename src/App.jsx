@@ -39,7 +39,7 @@ function App() {
   );
 }
 const StyledApp = styled.div`
-
+  
 `;
 
 export default App;

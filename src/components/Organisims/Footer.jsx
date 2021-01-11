@@ -11,9 +11,7 @@ function Footer(props) {
 }
 
 const StyledFooter = styled.div`
-  border: 1px solid blue;
-  height: 50px;
-  /*background-color: ${({theme}) => theme.colorSecondaryOpaque};*/
+  flex: 50px 0 0;
 `;
 
 export default Footer;

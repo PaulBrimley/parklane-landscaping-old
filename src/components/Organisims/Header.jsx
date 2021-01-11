@@ -15,9 +15,7 @@ function Header(props) {
 }
 
 const StyledHeader = styled.div`
-  border: 1px solid blue;
-  height: 50px;
-  /*background-color: ${({theme}) => theme.colorWhiteOpaque};*/
+  flex: 50px 0 0;
   transition: background-color 0.2s;
 `;
 

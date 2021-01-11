@@ -7,7 +7,7 @@ const StyledRoute = styled.div`
   overflow-x: hidden;
   overflow-y: auto;
   ::-webkit-scrollbar {
-    width: 2px;
+    width: 3px;
   }
   ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
@@ -16,6 +16,9 @@ const StyledRoute = styled.div`
   ::-webkit-scrollbar-thumb {
     background: ${({theme}) => theme.colorPrimary};
     border-radius: 10px;
+  }
+  .body {
+    flex: 1 1 auto;
   }
 `;
 export default StyledRoute;

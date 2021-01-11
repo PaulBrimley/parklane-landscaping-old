@@ -1,5 +1,9 @@
 import React, { createContext, useContext, useMemo, useState } from 'react';
 
+/** themes **/
+import darkTheme from '../themes/darkTheme';
+import lightTheme from '../themes/lightTheme';
+
 const mobileWidth = 599;
 
 const AppContext = createContext();
@@ -65,7 +69,7 @@ function AppProvider(props) {
       shown: false
     },
     menuCollapsed: true,
-    theme: {}
+    theme: lightTheme
   });
   const value = useMemo(() => [state, setState], [state]);
   return <AppContext.Provider value={value} {...props} />;

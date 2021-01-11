@@ -1,4 +1,5 @@
 @import 'animations';
+@import 'fonts';
 
 html, body {
   margin: 0;
@@ -7,5 +8,7 @@ html, body {
 }
 #root {
   height: 100%;
-  font-family: 'Advent Pro', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 100;
+  font-size: 12px;
 }
