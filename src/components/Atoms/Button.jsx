@@ -10,7 +10,7 @@ function Button(props) {
       <button
         className={classNameArr.join(' ')}
         disabled={props.disabled}
-        onClick={props.clickFunc}
+        onClick={props.onClick}
       >{props.children}</button>
     </StyledButton>
   );

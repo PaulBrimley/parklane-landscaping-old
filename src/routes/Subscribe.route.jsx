@@ -1,22 +1,24 @@
-import { useRef } from 'react';
-
-/** custom hooks **/
-import useParallaxEffect from '../hooks/useParallaxEffect';
+import { useEffect, useRef } from 'react';
 
 /** components **/
+import AnimatedRoute from '../components/Atoms/AnimatedRoute';
+import Button from '../components/Atoms/Button';
 import Footer from '../components/Organisims/Footer';
 import Header from '../components/Organisims/Header';
 import InfoBanner from '../components/Molecules/InfoBanner';
-import InfoBannerAction from '../components/Atoms/InfoBannerAction';
-import InfoBannerMessage from '../components/Atoms/InfoBannerMessage';
 import InfoBannerLeft from '../components/Molecules/InfoBannerLeft';
-import StyledRoute from '../components/Styled/StyledRoute';
+import StyledInfoBannerAction from '../components/Styled/StyledInfoBannerAction';
+import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
 
 function SubscribeRoute(props) {
   const scrollRef = useRef();
 
+  function handleSubmit() {
+    console.log('clicked');
+  }
+
   return (
-    <StyledRoute ref={scrollRef}>
+    <AnimatedRoute ref={scrollRef}>
       <Header />
       <div className="body">
         <InfoBanner
@@ -26,9 +28,13 @@ function SubscribeRoute(props) {
           scrollRef={scrollRef}
           slotLeft={
             <InfoBannerLeft
-              action={<div>action here</div>}
+              action={
+                <StyledInfoBannerAction>
+                  <Button onClick={handleSubmit}>Click Me</Button>
+                </StyledInfoBannerAction>
+              }
               message={
-                <InfoBannerMessage
+                <StyledInfoBannerMessage
                   message="The beauty of maintaining HOA community is in the details."
                   title="THE HOA LANDSCAPE TIPS AND INFO"
                   titleBolded={['HOA', 'LANDSCAPE']}>
@@ -42,7 +48,7 @@ function SubscribeRoute(props) {
                     <div>The beauty of maintaining HOA</div>
                     <div>community is in the details.</div>
                   </div>
-                </InfoBannerMessage>
+                </StyledInfoBannerMessage>
               }
             />
           }
@@ -108,7 +114,7 @@ function SubscribeRoute(props) {
         <p>a bunch of stuff</p>
       </div>
       <Footer />
-    </StyledRoute>
+    </AnimatedRoute>
   );
 }
 export default SubscribeRoute;

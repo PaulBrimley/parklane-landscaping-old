@@ -1,29 +1,32 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-function InfoBanner(props) {
+/** context **/
+import { useAppState } from '../../context/app.context';
+
+function InfoBanner({backgroundUrl, backgroundUrlAlt, parallaxStrength, scrollRef, slotLeft, slotRight }) {
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
     function handleScroll() {
-      setOffset(props.scrollRef.current.scrollTop);
+      setOffset(scrollRef.current.scrollTop);
     }
-    if (props.scrollRef && props.scrollRef.current) props.scrollRef.current.addEventListener('scroll', handleScroll);
+    if (scrollRef && scrollRef.current) scrollRef.current.addEventListener('scroll', handleScroll);
     return () => {
-      if (props.scrollRef && props.scrollRef.current) props.scrollRef.current.removeEventListener('scroll', handleScroll);
+      if (scrollRef && scrollRef.current) scrollRef.current.removeEventListener('scroll', handleScroll);
     };
-  }, [props.scrollRef]);
+  }, [scrollRef]);
 
   return (
     <StyledInfoBanner>
       <img
-        src={props.backgroundUrl}
-        alt={props.backgroundUrlAlt || 'img'}
+        src={backgroundUrl}
+        alt={backgroundUrlAlt || 'img'}
         className="parallax"
-        style={{transform: `translateY(${offset * props.parallaxStrength || 0.2}px)`}}
+        style={{transform: `translateY(${offset * parallaxStrength || 0.2}px)`}}
       />
-      <div className="slotLeft">{props.slotLeft}</div>
-      <div className="slotRight">{props.slotRight}</div>
+      <div className="slotLeft">{slotLeft}</div>
+      <div className="slotRight">{slotRight}</div>
     </StyledInfoBanner>
   );
 }
@@ -31,6 +34,7 @@ const StyledInfoBanner = styled.div`
   height: 600px;
   position: relative;
   display: flex;
+  flex-direction: ${({theme}) => theme.isMobile ? 'column' : 'row'};
   overflow: hidden;
   .parallax {
     position: absolute;
