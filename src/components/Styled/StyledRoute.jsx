@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 const StyledRoute = styled.div`
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
   overflow-x: hidden;
   overflow-y: auto;
-  ::-webkit-scrollbar {
+  /*::-webkit-scrollbar {
     width: 3px;
   }
   ::-webkit-scrollbar-track {
@@ -16,7 +16,7 @@ const StyledRoute = styled.div`
   ::-webkit-scrollbar-thumb {
     background: ${({theme}) => theme.colorPrimary};
     border-radius: 10px;
-  }
+  }*/
   .body {
     flex: 1 1 auto;
   }

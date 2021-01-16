@@ -4,7 +4,7 @@ import React, { createContext, useContext, useMemo, useState } from 'react';
 import darkTheme from '../themes/darkTheme';
 import lightTheme from '../themes/lightTheme';
 
-const mobileWidth = 599;
+const mobileWidth = 700;
 
 const AppContext = createContext();
 
@@ -17,8 +17,7 @@ function useAppState() {
     const isMobile = width <= mobileWidth;
     setState({
       ...state,
-      isMobile,
-      menuCollapsed: (isMobile && !state.menuCollapsed) ? true : state.menuCollapsed
+      isMobile
     });
   }
   function setModal(modalInfo) {
@@ -46,6 +45,7 @@ function useAppState() {
   }
 
   return {
+    companyInfo: state.companyInfo,
     darkMode: state.darkMode,
     isMobile: state.isMobile,
     modal: state.modal,
@@ -60,6 +60,14 @@ function useAppState() {
 
 function AppProvider(props) {
   const [state, setState] = useState({
+    companyInfo: {
+      city: 'San Antonio',
+      email: 'info@parklanelandscaping.com',
+      phone: '210-239-6717',
+      state: 'TX',
+      street: '2910 N Elmendorf St',
+      zip: '78201'
+    },
     darkMode: false,
     isMobile: false,
     modal: {

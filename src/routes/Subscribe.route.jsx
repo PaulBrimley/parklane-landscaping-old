@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 /** components **/
 import AnimatedRoute from '../components/Atoms/AnimatedRoute';
@@ -14,7 +14,7 @@ function SubscribeRoute(props) {
   const scrollRef = useRef();
 
   function handleSubmit() {
-    console.log('clicked');
+
   }
 
   return (
@@ -28,11 +28,11 @@ function SubscribeRoute(props) {
           scrollRef={scrollRef}
           slotLeft={
             <InfoBannerLeft
-              action={
+              /*action={
                 <StyledInfoBannerAction>
-                  <Button onClick={handleSubmit}>Click Me</Button>
+                  <Button onClick={handleSubmit} fontSize="0.8em">LEARN MORE</Button>
                 </StyledInfoBannerAction>
-              }
+              }*/
               message={
                 <StyledInfoBannerMessage
                   message="The beauty of maintaining HOA community is in the details."

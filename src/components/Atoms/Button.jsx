@@ -7,29 +7,27 @@ function Button(props) {
   if (props.type) classNameArr.push(props.type);
   return (
     <StyledButton {...props}>
-      <button
-        className={classNameArr.join(' ')}
-        disabled={props.disabled}
-        onClick={props.onClick}
-      >{props.children}</button>
+      <button className={classNameArr.join(' ')} disabled={props.disabled} onClick={props.onClick}>
+        {props.children}
+      </button>
     </StyledButton>
   );
 }
 
 const StyledButton = styled.span`
   .btn {
-    background: #fff;
-    border-radius: 4px;
-    border: 1px solid ${({ theme }) => theme.colorGreyMediumLight};
-    box-shadow: 2px 2px 2px ${({ theme }) => theme.colorGrey};
-    color: inherit;
+    background: inherit;
+    //border-radius: 4px;
+    border: 1px solid ${({ theme }) => theme.colorWhiteOpaque};
+    //box-shadow: 2px 2px 2px ${({ theme }) => theme.colorGrey};
+    color: ${({ theme }) => theme.colorWhiteOpaque};
     cursor: pointer;
-    font-family: 'Advent Pro', sans-serif;
+    //font-family: 'Advent Pro', sans-serif;
     font-size: ${({ fontSize }) => fontSize || 'inherit'};
     height: ${({ height }) => height || 'auto'};
     margin: ${({ margin }) => margin || '0 4px'};
     outline: none;
-    padding: ${({ padding }) => padding || '4px 10px'};
+    padding: ${({ padding }) => padding || '6px 14px'};
     transition: color 0.25s, background 0.25s, border 0.25s, box-shadow 0.25s;
     width: ${({ width }) => width || 'auto'};
     &:disabled {
@@ -39,12 +37,11 @@ const StyledButton = styled.span`
       box-shadow: 2px 2px 2px ${({ theme }) => theme.colorGreyMediumLight} !important;
     }
     &:hover {
-      background: ${({ theme }) => theme.colorGreyMediumLight};
-      border-color: ${({ theme }) => theme.colorGreyMediumLight};
+      background: ${({ theme }) => theme.colorSecondary};
       color: #fff;
     }
     &:active {
-      box-shadow: 1px 1px 2px ${({ theme }) => theme.colorGrey};
+      transform: scale(0.99, 0.99);
     }
     &.btn-xs {
       padding: 0 2px;
