@@ -4,7 +4,7 @@ import React, { createContext, useContext, useMemo, useState } from 'react';
 import darkTheme from '../themes/darkTheme';
 import lightTheme from '../themes/lightTheme';
 
-const mobileWidth = 700;
+const mobileWidth = 500;
 
 const AppContext = createContext();
 

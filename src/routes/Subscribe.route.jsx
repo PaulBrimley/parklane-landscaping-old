@@ -7,6 +7,7 @@ import Footer from '../components/Organisims/Footer';
 import Header from '../components/Organisims/Header';
 import InfoBanner from '../components/Molecules/InfoBanner';
 import InfoBannerLeft from '../components/Molecules/InfoBannerLeft';
+import PageDivider1 from '../components/Atoms/PageDivider1';
 import StyledInfoBannerAction from '../components/Styled/StyledInfoBannerAction';
 import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
 
@@ -23,7 +24,7 @@ function SubscribeRoute(props) {
       <div className="body">
         <InfoBanner
           backgroundUrl="http://parklanelandscaping.onshark.com/wp-content/uploads/2020/09/slide-newsletter-bkg2.jpg"
-          backgroundUrlAlt="Parklane subscribe image"
+          parallaxStart={140}
           parallaxStrength={0.2}
           scrollRef={scrollRef}
           slotLeft={
@@ -53,6 +54,7 @@ function SubscribeRoute(props) {
             />
           }
         />
+        <PageDivider1 />
         <p>a bunch of stuff</p>
         <p>a bunch of stuff</p>
         <p>a bunch of stuff</p>

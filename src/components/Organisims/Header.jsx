@@ -47,7 +47,7 @@ function Header(props) {
 
 const StyledHeader = styled.div`
   flex: 1 1 auto;
-  max-height: 130px;
+  max-height: 400px;
   display: flex;
   padding: 5px 10px 0 10px;
   background-color: ${({ theme }) => theme.colorPrimary};

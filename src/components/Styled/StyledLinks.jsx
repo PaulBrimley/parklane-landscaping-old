@@ -17,7 +17,7 @@ const StyledLinks = styled.div`
     background-color: inherit;
     border-bottom: 2px solid ${({ theme }) => theme.colorTransparent};
     transition: color 0.2s, background-color 0.2s, border-bottom-color 0.2s;
-    &:hover {
+    &:hover, &.active {
       color: ${({ theme }) => theme.colorSecondary};
       border-bottom: 2px solid ${({ theme }) => theme.colorSecondary};
     }
