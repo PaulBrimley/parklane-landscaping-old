@@ -18,7 +18,7 @@ const StyledButton = styled.span`
   justify-content: center;
   align-items: center;
   background: inherit;
-  box-shadow: 2px 2px 2px ${({ theme }) => theme.colorGrey};
+  box-shadow: 2px 2px 2px ${({ shadowColor, theme }) => (shadowColor && theme.hasOwnProperty(shadowColor)) ? theme[shadowColor] : theme.colorGreyMedium};
   cursor: pointer;
   font-size: ${({ fontSize }) => fontSize || 'inherit'};
   height: ${({ height }) => height || 'auto'};
@@ -28,14 +28,14 @@ const StyledButton = styled.span`
   width: ${({ width }) => width || 'auto'};
   white-space: nowrap;
   &:active {
-    box-shadow: 1px 1px 1px ${({ theme }) => theme.colorGrey};
+    box-shadow: 1px 1px 1px ${({ shadowColor, theme }) => (shadowColor && theme.hasOwnProperty(shadowColor)) ? theme[shadowColor] : theme.colorGreyMedium};
   }
   &.disabled {
     color: ${({ theme }) => theme.colorGrey};
     pointer-events: none;
     background: ${({ theme }) => theme.colorGreyLight};
     border: 1px solid ${({ theme }) => theme.colorGreyLight};
-    box-shadow: 2px 2px 2px ${({ theme }) => theme.colorGreyMediumLight};
+    box-shadow: 2px 2px 2px ${({ theme }) => theme.colorGreyLight};
   }
   &.btn-xs {
     padding: 0 2px;

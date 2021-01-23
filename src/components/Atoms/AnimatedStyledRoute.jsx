@@ -9,7 +9,7 @@ import StyledRoute from '../Styled/StyledRoute';
 
 import { defaultConfig, translateHorizontal } from '../../transitions';
 
-const AnimatedRoute = forwardRef(({children}, ref) => {
+const AnimatedStyledRoute = forwardRef(({children}, ref) => {
   const { menuCollapsed } = useAppState();
   const [reverse, setReverse] = useState(false);
 
@@ -26,4 +26,4 @@ const AnimatedRoute = forwardRef(({children}, ref) => {
     </StyledRoute>
   );
 });
-export default AnimatedRoute;
+export default AnimatedStyledRoute;
