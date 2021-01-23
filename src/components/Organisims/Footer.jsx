@@ -5,9 +5,6 @@ import styled from 'styled-components';
 /** context **/
 import { useAppState } from '../../context/app.context';
 
-/** components **/
-import StyledLinks from '../Styled/StyledLinks';
-
 /** images **/
 import facebookLogo from '../../assets/img/facebook-logo.png';
 import grass from '../../assets/img/grass-dark.png';
@@ -53,13 +50,6 @@ function Footer(props) {
         </div>
       </div>
       <div className="footer-bottom">
-        {/*<StyledLinks>
-          {routeArr.map((route, index) => (
-            <Link key={index} className={`link ${location.pathname === route.path ? 'active' : ''}`} to={route.path}>
-              {route.name}
-            </Link>
-          ))}
-        </StyledLinks>*/}
         {routeArr.map((route, index) => (
           <Link key={index} className="link" to={route.path}>
             {route.name}
