@@ -1,12 +1,9 @@
-import { useRef } from 'react';
 import { Textfit } from 'react-textfit';
 import styled from 'styled-components';
 
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
 import Button from '../components/Atoms/Button';
-import Footer from '../components/Organisims/Footer';
-import Header from '../components/Organisims/Header';
 import InfoBanner from '../components/Molecules/InfoBanner';
 import InfoBannerLeft from '../components/Molecules/InfoBannerLeft';
 import PageDivider1 from '../components/Atoms/PageDivider1';
@@ -19,18 +16,17 @@ import imgHome from '../assets/img/img-home.jpg';
 
 function SubscribeRoute(props) {
   function handleSubmit() {
-    console.log('clicked');
+    // console.log('clicked');
   }
 
   return (
     <AnimatedStyledRoute>
-      {/*<Header />*/}
       <StyledSubscribe className="body">
         <InfoBanner
-          backgroundUrl={imgHome}
-          height="300px"
-          // parallaxStart={140}
-          parallaxStrength={0.2}
+          config={{
+            backgroundUrl: imgHome,
+            height: '350px'
+          }}
           slotLeft={
             <InfoBannerLeft
               className="info-banner-left"
@@ -75,7 +71,6 @@ function SubscribeRoute(props) {
           </Button>
         </div>
       </StyledSubscribe>
-      {/*<Footer />*/}
     </AnimatedStyledRoute>
   );
 }

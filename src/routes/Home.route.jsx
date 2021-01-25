@@ -4,8 +4,6 @@ import styled from 'styled-components';
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
 import Button from '../components/Atoms/Button';
-import Footer from '../components/Organisims/Footer';
-import Header from '../components/Organisims/Header';
 import InfoBanner from '../components/Molecules/InfoBanner';
 import InfoBannerLeft from '../components/Molecules/InfoBannerLeft';
 import InfoBannerRight from '../components/Molecules/InfoBannerRight';
@@ -32,17 +30,17 @@ import logoMain from '../assets/img/logo-main.png';
 
 function HomeRoute(props) {
   function handleSubmit() {
-    console.log('clicked');
+    // console.log('clicked');
   }
 
   return (
     <AnimatedStyledRoute>
       <StyledHome className="body">
         <InfoBanner
-          backgroundUrl={imgHome}
-          height="350px"
-          // parallaxStart={140}
-          parallaxStrength={0.2}
+          config={{
+            backgroundUrl: imgHome,
+            height: '350px'
+          }}
           slotLeft={
             <InfoBannerLeft
               action={
@@ -105,7 +103,7 @@ function HomeRoute(props) {
           </Button>
         </div>
 
-        <ParallaxStripe backgroundRepeat="repeat" backgroundUrl={imgGrass}>
+        <ParallaxStripe backgroundUrl={imgGrass}>
           <div className="grass-stripe">
             <img
               className="logo"
@@ -160,7 +158,6 @@ function HomeRoute(props) {
             </div>
           </StyledInfoCard>
         </div>
-
       </StyledHome>
     </AnimatedStyledRoute>
   );

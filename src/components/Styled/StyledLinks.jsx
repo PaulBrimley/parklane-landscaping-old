@@ -10,6 +10,7 @@ const StyledLinks = styled.div`
     display: flex;
     align-items: center;
     .link-inner {
+      padding: 0 4px;
       position: relative;
       border-bottom: 1px solid ${({theme}) => theme.colorWhiteOpaque};
       flex: 1;

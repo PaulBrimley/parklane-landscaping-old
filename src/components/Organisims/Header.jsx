@@ -15,7 +15,7 @@ import logoMain from '../../assets/img/logo-main.png';
 import { routeArr } from '../../routes/Routes';
 
 function Header(props) {
-  const { companyInfo, isMobile, menuCollapsed, setMenuCollapsed } = useAppState();
+  const { companyInfo, isMobile, setMenuCollapsed } = useAppState();
   const location = useLocation();
 
   return (
@@ -37,9 +37,6 @@ function Header(props) {
                     {route.name}
                   </Link>
                 </div>
-                {/*<Link className={`link ${location.pathname === route.path ? 'active' : ''}`} to={route.path}>
-                  {route.name}
-                </Link>*/}
               </div>
             ))}
           </StyledLinks>
@@ -56,30 +53,6 @@ function Header(props) {
           </Fragment>
         )}
       </div>
-      {/*<div className="header-left">
-        <img
-          className="logo"
-          src={logoMain}
-          alt="logo"
-        />
-        {!isMobile && (
-          <StyledLinks>
-            {routeArr.map((route, index) => (
-              <Link key={index} className={`link ${location.pathname === route.path ? 'active' : ''}`} to={route.path}>
-                {route.name}
-              </Link>
-            ))}
-          </StyledLinks>
-        )}
-      </div>
-      <div className="header-right">
-        {isMobile && <Menu className="menu-button" onClick={() => setMenuCollapsed(false)} />}
-        {!isMobile && (
-          <a className="phone" href={`tel:${companyInfo.phone}`}>
-            {companyInfo.phone}
-          </a>
-        )}
-      </div>*/}
     </StyledHeader>
   );
 }
@@ -88,12 +61,12 @@ const StyledHeader = styled.div`
   flex: 1 1 auto;
   height: 75px;
   display: flex;
-  //padding: 5px 10px 0 10px;
   background-color: ${({ theme }) => theme.colorPrimary};
   color: ${({ theme }) => theme.colorWhite};
   .header-center {
     flex: 1 1 auto;
     display: flex;
+    padding-bottom: 10px;
   }
   .header-left {
     .logo {

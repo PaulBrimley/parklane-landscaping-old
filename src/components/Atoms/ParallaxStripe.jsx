@@ -15,7 +15,7 @@ function ParallaxStripe({ backgroundRepeat, backgroundUrl, children, className, 
   }, []);
 
   return (
-    <StyledParallaxStripe backgroundUrl={backgroundUrl} className={className} style={{ backgroundPosition: `60% ${-100 + (offset * parallaxStrength)}px`, backgroundRepeat: backgroundRepeat || 'no-repeat', height: height || 'auto' }}>
+    <StyledParallaxStripe backgroundUrl={backgroundUrl} className={className} style={{ backgroundPosition: `60% ${-200 + (offset * parallaxStrength)}px`, backgroundRepeat: backgroundRepeat || 'no-repeat', height: height || 'auto' }}>
       {children}
     </StyledParallaxStripe>
   );
