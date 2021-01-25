@@ -6,18 +6,18 @@ import styled from 'styled-components';
 import { useAppState } from '../../context/app.context';
 
 /** images **/
-import facebookLogo from '../../assets/img/facebook-logo.png';
-import grass from '../../assets/img/grass-dark.png';
-import instagramLogo from '../../assets/img/instagram-logo.png';
+import facebookLogo from '../../assets/img/icon-facebook.png';
+import grassDark from '../../assets/img/grass-dark.png';
+import instagramLogo from '../../assets/img/icon-instagram.png';
 import logoCard from '../../assets/img/logo-card.png';
-import twitterLogo from '../../assets/img/twitter-logo.png';
+import twitterLogo from '../../assets/img/icon-twitter.png';
 
 import { routeArr } from '../../routes/Routes';
 
 function Footer(props) {
-  const { companyInfo, isMobile } = useAppState();
+  const { companyInfo } = useAppState();
   return (
-    <StyledFooter isMobile={isMobile}>
+    <StyledFooter>
       <div className="footer-top">
         <div className="grass" />
       </div>
@@ -87,23 +87,17 @@ const StyledFooter = styled.div`
     justify-content: center;
     align-items: center;
     background-color: ${({ theme }) => theme.colorPrimary};
-    .logo {
-      position: absolute;
-      left: 20px;
-      width: ${({isMobile}) => isMobile ? 30 : 50}px;
-    }
     .info {
-      margin: ${({isMobile}) => isMobile ? '10px 0' : '20px 0 40px'};
+      margin: 20px 0 40px;
       display: grid;
-      grid-template-columns: repeat(${({isMobile}) => isMobile ? 1 : 2}, 1fr);
+      grid-template-columns: 1fr 1fr;
       grid-gap: 1px;
-      background: ${({isMobile, theme}) => isMobile ? '' : `radial-gradient(ellipse at 50% 10px, ${theme.colorTertiaryOpaque}, rgb(0, 0, 0, 0))`};
+      background: radial-gradient(ellipse at 50% 10px, ${({theme}) => theme.colorTertiaryOpaque}, rgb(0, 0, 0, 0));
       color: ${({ theme }) => theme.colorWhite};
       div {
         background: ${({ theme }) => theme.colorPrimary};
       }
       .info-place-holder {
-        display: ${({isMobile}) => isMobile ? 'none' : 'block'};
         padding: 5px;
       }
       .contact-info {
@@ -130,6 +124,11 @@ const StyledFooter = styled.div`
         }
       }
     }
+    .logo {
+      position: absolute;
+      left: 20px;
+      width: 50px;
+    }
   }
   .footer-top {
     position: relative;
@@ -141,7 +140,32 @@ const StyledFooter = styled.div`
       right: 0;
       height: 400px;
       width: 150px;
-      background: url(${grass}) no-repeat 50% 100% / contain;
+      background: url(${grassDark}) no-repeat 50% 100% / contain;
+    }
+  }
+  @media (max-width: ${({theme}) => theme.mobileWidth}px) {
+    .footer-bottom {
+      justify-content: center;
+      padding: 20px;
+    }
+    .footer-main {
+      .info {
+        margin: 10px 0;
+        grid-template-columns: 1fr;
+        background: transparent;
+        .info-place-holder {
+          display: none;
+        }
+      }
+      .logo {
+        width: 30px;
+      }
+    }
+    .footer-top {
+      .grass {
+        height: 200px;
+        width: 75px;
+      }
     }
   }
 `;

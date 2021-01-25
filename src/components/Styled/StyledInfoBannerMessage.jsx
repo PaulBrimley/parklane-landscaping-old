@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
 const StyledInfoBannerMessage = styled.div`
-  padding-top: 30px;
   color: ${({theme}) => theme.colorWhite};
-  text-align: ${({theme}) => theme.isMobile ? 'left' : 'right'};
-  margin-bottom: 20px;
+  text-align: right;
   .hr {
     border-bottom: 1px solid rgb(187, 169, 117);
   }
@@ -15,11 +13,15 @@ const StyledInfoBannerMessage = styled.div`
     font-size: 2em;
     margin-top: 22px;
     padding-left: 20px;
+    white-space: nowrap;
   }
   .title {
     font-size: 3em;
     margin-bottom: 15px;
     padding-left: 20px;
+  }
+  @media (max-width: ${({theme}) => theme.mobileWidth}px) {
+    text-align: left;
   }
 `;
 export default StyledInfoBannerMessage;

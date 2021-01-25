@@ -20,8 +20,3 @@ const lightTheme = {
   // shadowColor: 'rgba(177, 166, 164, 0.5)'
 };
 export default lightTheme;
-
-//250 90 109
-//250 108 134
-//251 140 161
-//251 133 151

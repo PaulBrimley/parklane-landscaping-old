@@ -9,7 +9,7 @@ import StyledRoute from '../Styled/StyledRoute';
 
 import { defaultConfig, translateHorizontal } from '../../transitions';
 
-const AnimatedStyledRoute = forwardRef(({children}, ref) => {
+function AnimatedStyledRoute({children}) {
   const { menuCollapsed } = useAppState();
   const [reverse, setReverse] = useState(false);
 
@@ -19,11 +19,11 @@ const AnimatedStyledRoute = forwardRef(({children}, ref) => {
     reverse
   });
   return (
-    <StyledRoute ref={ref}>
+    <StyledRoute>
       <animated.div style={menuAppSpring}>
         {children}
       </animated.div>
     </StyledRoute>
   );
-});
+}
 export default AnimatedStyledRoute;

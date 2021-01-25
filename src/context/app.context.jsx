@@ -4,8 +4,6 @@ import React, { createContext, useContext, useMemo, useState } from 'react';
 import darkTheme from '../themes/darkTheme';
 import lightTheme from '../themes/lightTheme';
 
-const mobileWidth = 500;
-
 const AppContext = createContext();
 
 function useAppState() {
@@ -14,7 +12,7 @@ function useAppState() {
   const [state, setState] = context;
 
   function handleWidthChange(width) {
-    const isMobile = width <= mobileWidth;
+    const isMobile = width <= state.mobileWidth;
     setState({
       ...state,
       isMobile
@@ -48,6 +46,7 @@ function useAppState() {
     companyInfo: state.companyInfo,
     darkMode: state.darkMode,
     isMobile: state.isMobile,
+    mobileWidth: state.mobileWidth,
     modal: state.modal,
     menuCollapsed: state.menuCollapsed,
     theme: state.theme,
@@ -70,6 +69,7 @@ function AppProvider(props) {
     },
     darkMode: false,
     isMobile: false,
+    mobileWidth: 500,
     modal: {
       body: '',
       component: '',

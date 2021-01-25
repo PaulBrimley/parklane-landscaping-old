@@ -9,10 +9,8 @@ import StyledRoute from '../components/Styled/StyledRoute';
 function ServicesRoute(props) {
   return (
     <StyledRoute>
-      <Header />
       services
 
-      <Footer />
     </StyledRoute>
   );
 }

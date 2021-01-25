@@ -1,8 +1,14 @@
-import styled from 'styled-components';
+import {useSpring, animated} from 'react-spring';
 
-function InfoBannerRight(props) {
+import { defaultConfig, translateHorizontalFade } from '../../transitions';
+
+function InfoBannerRight({children, className}) {
+  const spring = useSpring({
+    ...translateHorizontalFade({positionStart: 10}),
+    config: defaultConfig
+  });
   return (
-    <div>this is the right</div>
+    <animated.div className={className} style={spring}>{children}</animated.div>
   );
 }
 export default InfoBannerRight;

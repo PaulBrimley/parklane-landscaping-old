@@ -2,7 +2,10 @@ import styled from 'styled-components';
 
 const StyledInfoBannerAction = styled.div`
   display: flex;
-  justify-content: ${({theme}) => theme.isMobile ? 'flex-start' : 'flex-end'};
-  padding: 0 120px;
+  justify-content: flex-end;
+  padding: 20px 120px;
+  @media (max-width: ${({theme}) => theme.mobileWidth}px) {
+    justify-content: flex-start;
+  }
 `;
 export default StyledInfoBannerAction;

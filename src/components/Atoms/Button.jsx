@@ -18,9 +18,10 @@ const StyledButton = styled.span`
   justify-content: center;
   align-items: center;
   background: inherit;
-  box-shadow: 2px 2px 2px ${({ shadowColor, theme }) => (shadowColor && theme.hasOwnProperty(shadowColor)) ? theme[shadowColor] : theme.colorGreyMedium};
+  box-shadow: 2px 2px 2px ${({ shadowColor, theme }) => (shadowColor && theme.hasOwnProperty(shadowColor) ? theme[shadowColor] : theme.colorGreyMedium)};
   cursor: pointer;
   font-size: ${({ fontSize }) => fontSize || 'inherit'};
+  font-weight: ${({ fontWeight }) => fontWeight || 'inherit'};
   height: ${({ height }) => height || 'auto'};
   margin: ${({ margin }) => margin || '0 4px'};
   padding: ${({ padding }) => padding || '6px 14px'};
@@ -28,7 +29,7 @@ const StyledButton = styled.span`
   width: ${({ width }) => width || 'auto'};
   white-space: nowrap;
   &:active {
-    box-shadow: 1px 1px 1px ${({ shadowColor, theme }) => (shadowColor && theme.hasOwnProperty(shadowColor)) ? theme[shadowColor] : theme.colorGreyMedium};
+    box-shadow: 1px 1px 1px ${({ shadowColor, theme }) => (shadowColor && theme.hasOwnProperty(shadowColor) ? theme[shadowColor] : theme.colorGreyMedium)};
   }
   &.disabled {
     color: ${({ theme }) => theme.colorGrey};

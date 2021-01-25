@@ -2,7 +2,7 @@ import {useSpring, animated} from 'react-spring';
 
 import { defaultConfig, translateHorizontalFade, translateVerticalFade } from '../../transitions';
 
-function InfoBannerLeft(props) {
+function InfoBannerLeft({action, className, message}) {
   const messageSpring = useSpring({
     ...translateVerticalFade({positionStart: 10}),
     config: defaultConfig
@@ -13,9 +13,9 @@ function InfoBannerLeft(props) {
   });
 
   return (
-    <div>
-      <animated.div className="message" style={messageSpring}>{props.message}</animated.div>
-      <animated.div className="action" style={actionSpring}>{props.action}</animated.div>
+    <div className={className}>
+      <animated.div style={messageSpring}>{message}</animated.div>
+      <animated.div style={actionSpring}>{action}</animated.div>
     </div>
   );
 }

@@ -4,45 +4,76 @@ import styled from 'styled-components';
 /** context **/
 import { useAppState } from '../../context/app.context';
 
-function InfoBanner({ backgroundUrl, parallaxStart, parallaxStrength = 0.2, scrollRef, slotLeft, slotRight }) {
+/** images **/
+import grassWhite from '../../assets/img/grass-white.png';
+
+function InfoBanner({ backgroundUrl, className, height, parallaxStart, parallaxStrength = 0.2, slotLeft, slotRight }) {
+  const { isMobile } = useAppState();
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
     function handleScroll() {
-      if (parallaxStart) setOffset(Math.max(0, scrollRef.current.scrollTop - parallaxStart));
-      else setOffset(scrollRef.current.scrollTop);
+      if (parallaxStart) setOffset(Math.max(0, window.scrollY - parallaxStart));
+      else setOffset(window.scrollY);
     }
-    if (scrollRef && scrollRef.current) scrollRef.current.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      if (scrollRef && scrollRef.current) scrollRef.current.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, [scrollRef]);
+  }, []);
+
+  function getBackgroundPosition() {
+    let adjustment = -50;
+    if (isMobile) adjustment = -30;
+    return `center, 60% ${adjustment + (offset * parallaxStrength)}px`;
+  }
 
   return (
-    <StyledInfoBanner backgroundUrl={backgroundUrl} style={{ backgroundPosition: `60% ${offset * parallaxStrength}px` }}>
-      <div className="slotLeft">{slotLeft}</div>
-      <div className="slotRight">{slotRight}</div>
+    <StyledInfoBanner backgroundUrl={backgroundUrl} className={className} style={{ backgroundPosition: getBackgroundPosition(), height: (!isMobile && height) ? height : 'auto' }}>
+      <div className="grass" />
+      <div className="slot-left">{slotLeft}</div>
+      <div className="slot-right">{slotRight}</div>
     </StyledInfoBanner>
   );
 }
 const StyledInfoBanner = styled.div`
-  height: 600px;
   position: relative;
   display: flex;
-  flex-direction: ${({ theme }) => (theme.isMobile ? 'column' : 'row')};
-  background-image: url(${({ backgroundUrl }) => backgroundUrl});
+  background-image: linear-gradient(120deg, rgb(255, 0, 40) 0%, rgb(255, 0, 40) 40%, transparent 40%, transparent 100%), url(${({backgroundUrl}) => backgroundUrl});
+  background-blend-mode: multiply;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 110%;
   border-top: 8px solid ${({theme}) => theme.colorWhite};
   border-bottom: 8px solid ${({theme}) => theme.colorWhite};
   overflow: hidden;
-  .slotLeft {
-    flex: 40%;
-    margin: 80px 0;
+  .grass {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 40%;
+    width: 5%;
+    background: url(${grassWhite}) no-repeat 50% 100% / contain;
   }
-  .slotRight {
-    flex: 60%;
-    margin: 80px 0;
+  .slot-left {
+    flex: 45%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .slot-right {
+    flex: 55%;
+    display: flex;
+  }
+
+  @media (max-width: ${({theme}) => theme.mobileWidth}px) {
+    flex-direction: column;
+    background-size: 160%;
+    .slot-left {
+      margin: 0;
+    }
+    .slot-right {
+      margin: 0;
+    }
   }
 `;
 

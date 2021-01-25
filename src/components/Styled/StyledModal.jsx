@@ -6,10 +6,14 @@ const StyledModal = styled.div`
   flex-direction: column;
   position: absolute;
   width: 500px;
-  max-width: ${({theme}) => theme.isMobile ? '100vw' : '50%'};
-  max-height: ${({theme}) => theme.isMobile ? '100vh' : 'calc(100vh - 20px)'};
+  max-width: 50%;
+  max-height: calc(100vh - 20px);
   margin: 4px;
   background-color: #FFFFFF;
   overflow: hidden;
+  @media (max-width: ${({theme}) => theme.mobileWidth}px) {
+    max-width: 100vw;
+    max-height: 100vw;
+  }
 `;
 export default StyledModal;

@@ -9,10 +9,8 @@ import StyledRoute from '../components/Styled/StyledRoute';
 function ContactRoute(props) {
   return (
     <StyledRoute>
-      <Header />
       contact
 
-      <Footer />
     </StyledRoute>
   );
 }

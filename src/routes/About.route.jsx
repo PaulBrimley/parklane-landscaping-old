@@ -9,10 +9,8 @@ import StyledRoute from '../components/Styled/StyledRoute';
 function AboutRoute(props) {
   return (
     <StyledRoute>
-      <Header />
       about
 
-      <Footer />
     </StyledRoute>
   );
 }

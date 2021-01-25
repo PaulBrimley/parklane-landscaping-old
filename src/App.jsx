@@ -10,12 +10,14 @@ import { useAppState } from './context/app.context';
 import useWindowDimensions from './hooks/useWindowDimensions';
 
 /** components **/
+import Footer from './components/Organisims/Footer';
+import Header from './components/Organisims/Header';
 import Menu from './components/Atoms/Menu';
 import Modal from './components/Molecules/Modal';
 import Routes from './routes/Routes';
 
 function App() {
-  const { handleWidthChange, isMobile, theme } = useAppState();
+  const { handleWidthChange, isMobile, mobileWidth, theme } = useAppState();
 
   const { width } = useWindowDimensions();
   const transitionTimeout = 200;
@@ -23,6 +25,7 @@ function App() {
   const themeInfo = {
     ...theme,
     isMobile,
+    mobileWidth,
     transitionTimeout
   };
 
@@ -37,7 +40,11 @@ function App() {
         <Modal />
         <Router>
           <Menu />
-          <Routes transitionTimeout={transitionTimeout} />
+          <Header />
+          <div className="routes">
+            <Routes transitionTimeout={transitionTimeout} />
+          </div>
+          <Footer />
         </Router>
       </StyledApp>
     </ThemeProvider>
@@ -47,7 +54,10 @@ const StyledApp = styled.div`
   position: relative;
   height: 100%;
   display: flex;
-  overflow: hidden;
+  flex-direction: column;
+  .routes {
+    flex: 1 1 auto;
+  }
 `;
 
 export default App;
