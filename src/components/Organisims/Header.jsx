@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { useAppState } from '../../context/app.context';
 
 /** components **/
-import StyledLinks from '../Styled/StyledLinks';
+import StyledHeaderLinks from '../Styled/StyledHeaderLinks';
 
 /** images **/
 import logoMain from '../../assets/img/logo-main.png';
@@ -29,7 +29,7 @@ function Header(props) {
       </div>
       <div className="header-center">
         {!isMobile && (
-          <StyledLinks>
+          <StyledHeaderLinks>
             {routeArr.map((route, index) => (
               <div key={index} className="link-wrapper">
                 <div className={`link-inner ${location.pathname === route.path ? 'active' : ''}`}>
@@ -39,7 +39,7 @@ function Header(props) {
                 </div>
               </div>
             ))}
-          </StyledLinks>
+          </StyledHeaderLinks>
         )}
       </div>
       <div className="header-right">

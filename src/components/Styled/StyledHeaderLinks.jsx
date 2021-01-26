@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
-const StyledLinks = styled.div`
+const StyledHeaderLinks = styled.div`
   flex: 1 1 auto;
   display: flex;
-  //flex-direction: ${({flexDirection}) => flexDirection || 'row'};
   flex-wrap: wrap;
   .link-wrapper {
     flex: 1;
@@ -48,4 +47,4 @@ const StyledLinks = styled.div`
     }
   }
 `;
-export default StyledLinks;
+export default StyledHeaderLinks;

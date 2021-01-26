@@ -8,13 +8,14 @@ import styled from 'styled-components';
 import { useAppState } from '../../context/app.context';
 
 /** components **/
-import StyledLinks from '../Styled/StyledLinks';
+import StyledMenuLinks from '../Styled/StyledMenuLinks';
 
 import { routeArr } from '../../routes/Routes';
 import { defaultConfig, fade, translateHorizontal } from '../../transitions';
 
 function Menu(props) {
   const { menuCollapsed, setMenuCollapsed, theme } = useAppState();
+  const location = useLocation();
   const [hideMenu, setHideMenu] = useState(true);
   const menuContainerSpring = useSpring({
     ...fade({opacityEnd: menuCollapsed ? 0 : 1, opacityStart: menuCollapsed ? 0 : 0}),
@@ -34,14 +35,18 @@ function Menu(props) {
     <StyledMenu className={hideMenu ? 'hidden' : ''}>
       <animated.div className="overlay" style={menuContainerSpring} onClick={handleClose}/>
       <animated.div className="menu" style={menuSpring}>
-        <Close className="close-button" onClick={handleClose} />
-        <StyledLinks flexDirection="column">
+        <div className="header">
+          <Close className="close-button" onClick={handleClose} />
+        </div>
+        <StyledMenuLinks>
           {routeArr.map((route, index) => (
-            <Link key={index} className={`link ${location.pathname === route.path ? 'active' : ''}`} to={route.path} onClick={handleClose}>
-              {route.name}
-            </Link>
+            <div key={index} className="link-inner">
+              <Link className={`link ${location.pathname === route.path ? 'active' : ''}`} to={route.path} onClick={handleClose}>
+                {route.name}
+              </Link>
+            </div>
           ))}
-        </StyledLinks>
+        </StyledMenuLinks>
       </animated.div>
     </StyledMenu>
   );
@@ -67,14 +72,18 @@ const StyledMenu = styled.div`
     width: 200px;
     z-index: 1002;
     background-color: ${({ theme }) => theme.colorPrimary};
-    .close-button {
-      height: 30px;
-      width: 30px;
-      padding: 2px;
-      cursor: pointer;
-      &:hover,
-      &:active {
-        color: ${({ theme }) => theme.colorSecondary};
+    .header {
+      text-align: right;
+      padding: 5px;
+      .close-button {
+        height: 30px;
+        width: 30px;
+        padding: 2px;
+        cursor: pointer;
+        &:hover,
+        &:active {
+          color: ${({ theme }) => theme.colorSecondary};
+        }
       }
     }
   }

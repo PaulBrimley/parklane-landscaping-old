@@ -27,11 +27,7 @@ function ContactRoute(props) {
       <StyledContact className="body">
         <InfoBanner
           config={{
-            /*backgroundPosition: {
-              xPercent: 10,
-              yPixels: isMobile ? 10 : -50
-            },*/
-            backgroundSize: 150,
+            backgroundSize: isMobile ? 200 : 140,
             backgroundUrl: imgLeaves,
             height: '350px'
           }}
@@ -212,6 +208,10 @@ const StyledContact = styled.div`
     div {
       margin-bottom: 10px;
     }
+  }
+  .info-banner-left {
+    flex: 1 1 auto;
+    padding-top: 50px;
   }
   .separator {
     width: 40%;
