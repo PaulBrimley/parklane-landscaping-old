@@ -38,6 +38,7 @@ function HomeRoute(props) {
       <StyledHome className="body">
         <InfoBanner
           config={{
+            backgroundSize: 150,
             backgroundUrl: imgHome,
             height: '350px'
           }}
@@ -118,8 +119,8 @@ function HomeRoute(props) {
             <div className="header">Maintenance</div>
             <div className="body">
               <div className="icons">
-                <img className="icon1" src={iconLawnMowerGold} />
-                <img className="icon2" src={iconLawnMowerRed} />
+                <img className="icon1" src={iconLawnMowerGold} alt="lawn mower" />
+                <img className="icon2" src={iconLawnMowerRed} alt="lawn mower" />
               </div>
               <div className="message">Parklane Landscaping specializes in HOA landscape maintenance...Learn More</div>
             </div>
@@ -129,8 +130,8 @@ function HomeRoute(props) {
             <div className="header">Irrigation</div>
             <div className="body">
               <div className="icons">
-                <img className="icon1" src={iconWaterHoseGold} />
-                <img className="icon2" src={iconWaterHoseRed} />
+                <img className="icon1" src={iconWaterHoseGold} alt="water hose" />
+                <img className="icon2" src={iconWaterHoseRed} alt="water hose" />
               </div>
               <div className="message">After many requests for irrigation audits, licensing became essential...Learn More</div>
             </div>
@@ -140,8 +141,8 @@ function HomeRoute(props) {
             <div className="header">HOA Landscaping</div>
             <div className="body">
               <div className="icons">
-                <img className="icon1" src={iconTreeWalkGold} />
-                <img className="icon2" src={iconTreeWalkRed} />
+                <img className="icon1" src={iconTreeWalkGold} alt="tree walk" />
+                <img className="icon2" src={iconTreeWalkRed} alt="tree walk" />
               </div>
               <div className="message">Parklane takes every opportunity to expand its landscaping abilities...Learn More</div>
             </div>
@@ -151,8 +152,8 @@ function HomeRoute(props) {
             <div className="header">Masonry</div>
             <div className="body">
               <div className="icons">
-                <img className="icon1" src={iconMasonGold} />
-                <img className="icon2" src={iconMasonRed} />
+                <img className="icon1" src={iconMasonGold} alt="mason" />
+                <img className="icon2" src={iconMasonRed} alt="mason" />
               </div>
               <div className="message">Masonry is a very important service to every HOA community...Learn More</div>
             </div>
@@ -211,6 +212,7 @@ const StyledHome = styled.div`
     align-items: center;
     .anniversary-logo {
       width: 80%;
+      max-width: 400px;
     }
   }
   .learn-more-button-1 {

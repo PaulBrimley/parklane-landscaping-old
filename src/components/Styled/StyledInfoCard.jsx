@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const StyledInfoCard = styled.div`
-  //margin: 21px;
   border: 1px solid ${({theme}) => theme.colorSecondary};
   box-shadow: 0 0 10px ${({theme}) => theme.colorTransparent};
   display: flex;
@@ -17,16 +16,15 @@ const StyledInfoCard = styled.div`
       height: 70px;
       padding: 5px 0;
       img {
+        height: 100%;
         transition: opacity 0.2s;
       }
       .icon1 {
         position: absolute;
-        height: 100%;
         opacity: 1;
       }
       .icon2 {
         position: absolute;
-        height: 100%;
         opacity: 0;
       }
     }

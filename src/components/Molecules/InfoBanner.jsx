@@ -9,15 +9,18 @@ import grassWhite from '../../assets/img/grass-white.png';
 
 function InfoBanner({ config, className, slotLeft, slotRight }) {
   const { isMobile } = useAppState();
+  const [backgroundGradient, setBackgroundGradient] = useState('linear-gradient(120deg, rgb(255, 0, 40) 0%, rgb(255, 0, 40) 50%, transparent 50%, transparent 100%)');
   const [backgroundPosition, setBackgroundPosition] = useState({
-    xPixels: -50,
-    yPercent: 60
+    xPercent: 60,
+    yPixels: -50
   });
+  const [backgroundSize, setBackgroundSize] = useState(110);
   const [backgroundUrl, setBackgroundUrl] = useState('');
   const [height, setHeight] = useState('300px');
   const [parallaxStart, setParallaxStart] = useState(0);
   const [parallaxStrength, setParallaxStrength] = useState(0.2);
   const [offset, setOffset] = useState(0);
+  const [rightGradientCover, setRightGradientCover] = useState(null);
 
   useEffect(() => {
     function handleScroll() {
@@ -30,24 +33,38 @@ function InfoBanner({ config, className, slotLeft, slotRight }) {
     };
   }, []);
   useEffect(() => {
+    setBackgroundGradient(config?.backgroundGradient || backgroundGradient);
     setBackgroundPosition({
-      xPixels: config?.backgroundPosition?.xPixels || backgroundPosition.xPixels,
-      yPercent: config?.backgroundPosition?.yPercent || backgroundPosition.yPercent
+      xPercent: (config?.backgroundPosition?.xPercent || config?.backgroundPosition?.xPercent === 0) ? config?.backgroundPosition?.xPercent : backgroundPosition.xPercent,
+      yPixels: (config?.backgroundPosition?.yPixels || config?.backgroundPosition?.yPixels === 0) ? config?.backgroundPosition?.yPixels : backgroundPosition.yPixels
     });
+    setBackgroundSize((config?.backgroundSize || config?.backgroundSize === 0) ? config?.backgroundSize : backgroundSize);
     setBackgroundUrl(config?.backgroundUrl || backgroundUrl);
     setHeight(config?.height || height);
-    setParallaxStart(config?.parallaxStart || parallaxStart);
-    setParallaxStrength(config?.parallaxStrength || parallaxStrength);
+    setParallaxStart((config?.parallaxStart || config?.parallaxStart === 0) ? config?.parallaxStart : parallaxStart);
+    setParallaxStrength((config?.parallaxStrength || config?.parallaxStrength === 0) ? config?.parallaxStrength : parallaxStrength);
+    setRightGradientCover(config?.rightGradientCover !== undefined ? config.rightGradientCover : rightGradientCover);
   }, [config]);
 
   function getBackgroundPosition() {
     let adjustment = 0;
     if (isMobile) adjustment = 20;
-    return `center, ${backgroundPosition.yPercent}% ${backgroundPosition.xPixels + adjustment + offset * parallaxStrength}px`;
+    return `center, ${backgroundPosition.xPercent}% ${backgroundPosition.yPixels + adjustment + offset * parallaxStrength}px`;
   }
 
   return (
-    <StyledInfoBanner backgroundUrl={backgroundUrl} className={className} style={{ backgroundPosition: getBackgroundPosition(), height: !isMobile && height ? height : 'auto' }}>
+    <StyledInfoBanner
+      backgroundGradient={backgroundGradient}
+      backgroundUrl={backgroundUrl}
+      className={className}
+      rightGradientCover={rightGradientCover}
+      style={{
+        backgroundSize: `100%, ${backgroundSize}%`,
+        backgroundPosition: getBackgroundPosition(),
+        height: !isMobile && height ? height : 'auto'
+      }}
+    >
+      {rightGradientCover && <div className="right-cover" />}
       <div className="grass" />
       <div className="slot-left">{slotLeft}</div>
       <div className="slot-right">{slotRight}</div>
@@ -57,12 +74,12 @@ function InfoBanner({ config, className, slotLeft, slotRight }) {
 const StyledInfoBanner = styled.div`
   position: relative;
   display: flex;
-  background-image: linear-gradient(120deg, rgb(255, 0, 40) 0%, rgb(255, 0, 40) 40%, transparent 40%, transparent 100%), url(${({ backgroundUrl }) => backgroundUrl});
+  background-image: ${({backgroundGradient}) => backgroundGradient}, url(${({ backgroundUrl }) => backgroundUrl});
   background-blend-mode: multiply;
   background-repeat: no-repeat;
-  background-size: 110%;
-  border-top: 8px solid ${({ theme }) => theme.colorWhite};
-  border-bottom: 8px solid ${({ theme }) => theme.colorWhite};
+  //border-top: 8px solid ${({ theme }) => theme.colorWhite};
+  // border-bottom: 8px solid ${({ theme }) => theme.colorWhite};
+  margin: 8px 0;
   overflow: hidden;
   .grass {
     position: absolute;
@@ -72,12 +89,23 @@ const StyledInfoBanner = styled.div`
     width: 5%;
     background: url(${grassWhite}) no-repeat 50% 100% / contain;
   }
+  .right-cover {
+    background-image: ${({rightGradientCover}) => rightGradientCover || ''};
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
   .slot-left {
     flex: 45%;
+    max-width: 600px;
     display: flex;
     justify-content: flex-end;
   }
-
   .slot-right {
     flex: 55%;
     display: flex;

@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+
+/** context **/
+import { useAppState } from '../context/app.context';
 
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
@@ -21,13 +24,20 @@ import imgTrees from '../assets/img/img-trees.jpg';
 import logoMain from '../assets/img/logo-main.png';
 
 function AboutRoute(props) {
+  const { isMobile } = useAppState();
   return (
     <AnimatedStyledRoute>
       <StyledAbout className="body">
         <InfoBanner
           config={{
+            backgroundPosition: {
+              xPercent: 0,
+              yPixels: isMobile ? -50 : -70
+            },
+            backgroundSize: isMobile ? 110 : 70,
             backgroundUrl: imgEstatesAtBridgewood,
-            height: '350px'
+            height: '350px',
+            rightGradientCover: isMobile ? null : 'linear-gradient(120deg, transparent 0%, transparent 50%, white 50%, white 100%)'
           }}
           slotLeft={
             <InfoBannerLeft
@@ -149,6 +159,10 @@ const StyledAbout = styled.div`
     }
     .about-info-images {
       grid-template-columns: 1fr;
+      margin: 5px 20px 10px;
+      img {
+        max-width: none;
+      }
     }
     .info-banner-right {
       display: none;
