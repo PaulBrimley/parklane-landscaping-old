@@ -29,9 +29,9 @@ import iconTreeWalkRed from '../assets/img/icon-tree-walk-red.png';
 import iconWaterHoseGold from '../assets/img/icon-water-hose-gold.png';
 import iconWaterHoseRed from '../assets/img/icon-water-hose-red.png';
 import imgServices from '../assets/img/img-services.jpg';
-import imgGuyKneeling from '../assets/img/img-guy-kneeling.png';
-import imgGuyTeaching from '../assets/img/img-guy-teaching.png';
-import imgHillsAtAlamoRanch from '../assets/img/img-hills-at-alamo-ranch.png';
+import imgGuyKneeling from '../assets/img/img-guy-kneeling.jpg';
+import imgGuyTeaching from '../assets/img/img-guy-teaching.jpg';
+import imgHillsAtAlamoRanch from '../assets/img/img-hills-at-alamo-ranch.jpg';
 
 function ServicesRoute(props) {
   const { isMobile } = useAppState();

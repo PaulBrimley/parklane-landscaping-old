@@ -16,9 +16,9 @@ import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessag
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
 /** images **/
-import imgCarnival from '../assets/img/img-carnival.png';
-import imgEstatesAtBridgewood from '../assets/img/img-estates-at-bridgewood.png';
-import imgParklaneFamily from '../assets/img/img-parklane-family.png';
+import imgCarnival from '../assets/img/img-carnival.jpg';
+import imgEstatesAtBridgewood from '../assets/img/img-estates-at-bridgewood.jpg';
+import imgParklaneFamily from '../assets/img/img-parklane-family.jpg';
 import imgPictureFrame from '../assets/img/img-picture-frame.png';
 import imgTrees from '../assets/img/img-trees.jpg';
 import logoMain from '../assets/img/logo-main.png';
