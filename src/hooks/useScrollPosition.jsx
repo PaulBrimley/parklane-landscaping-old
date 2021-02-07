@@ -12,7 +12,7 @@ function getScrollPosition({ element, useWindow }) {
 }
 
 export function useScrollPosition(effect, deps, element, useWindow, wait) {
-  console.log('element', element);
+  // console.log('element', element);
   const position = useRef(getScrollPosition({ useWindow }));
 
   let throttleTimeout = null;
@@ -26,7 +26,7 @@ export function useScrollPosition(effect, deps, element, useWindow, wait) {
 
   useLayoutEffect(() => {
     const handleScroll = () => {
-      console.log('running');
+      // console.log('running');
       if (wait) {
         if (throttleTimeout === null) {
           throttleTimeout = setTimeout(callBack, wait);

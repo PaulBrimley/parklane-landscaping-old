@@ -31,7 +31,7 @@ function Header(props) {
       return route;
     }
     const foundRoute = findRoute(routeArr);
-    console.log('foundRoute', foundRoute);
+    // console.log('foundRoute', foundRoute);
   }, [location]);
 
 
