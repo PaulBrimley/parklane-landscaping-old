@@ -17,6 +17,14 @@ import ServicesMonumentRoute from './Services_Monument.route';
 import ServicesTrimmingRoute from './Services_Trimming.route';
 import SubscribeRoute from './Subscribe.route';
 
+/** images **/
+import iconFenceRepair from '../assets/img/icon-fence-repair.png';
+import iconHoaIrrigation from '../assets/img/icon-hoa-irrigation.png';
+import iconHoaLandscape from '../assets/img/icon-hoa-landscape.png';
+import iconHoaLighting from '../assets/img/icon-hoa-lighting.png';
+import iconHoaMaintenance from '../assets/img/icon-hoa-maintenance.png';
+import iconHoaMonumentRepair from '../assets/img/icon-hoa-monument-repair.png';
+
 export const routes = {
   ABOUT: '/about',
   CONTACT: '/contact',
@@ -54,44 +62,65 @@ export const routeArr = [
     children: [
       {
         active: true,
-        Component: ServicesFenceRoute,
-        name: 'Services Fencing',
-        path: routes.SERVICES_FENCE
+        Component: ServicesMaintenanceRoute,
+        displayInHeader: true,
+        icon: iconHoaMaintenance,
+        headerLinkLines: ['HOA', 'Maintenance'],
+        name: 'HOA Maintenance',
+        path: routes.SERVICES_MAINTENANCE
       },
       {
         active: true,
         Component: ServicesIrrigationRoute,
-        name: 'Services Irrigation',
+        displayInHeader: true,
+        icon: iconHoaIrrigation,
+        headerLinkLines: ['HOA', 'Irrigation'],
+        name: 'HOA Irrigation',
         path: routes.SERVICES_IRRIGATION
       },
       {
         active: true,
         Component: ServicesLandscapeRoute,
-        name: 'Services Landscape',
+        displayInHeader: true,
+        icon: iconHoaLandscape,
+        headerLinkLines: ['HOA', 'Landscape'],
+        name: 'HOA Landscape',
         path: routes.SERVICES_LANDSCAPE
       },
       {
         active: true,
-        Component: ServicesLightingRoute,
-        name: 'Services Lighting',
-        path: routes.SERVICES_LIGHTING
-      },
-      {
-        active: true,
-        Component: ServicesMaintenanceRoute,
-        name: 'Services Maintenance',
-        path: routes.SERVICES_MAINTENANCE
-      },
-      {
-        active: true,
         Component: ServicesMonumentRoute,
-        name: 'Services Monument',
+        displayInHeader: true,
+        icon: iconHoaMonumentRepair,
+        headerLinkLines: ['HOA Monument', 'Repair & Design'],
+        name: 'HOA Monument Repair & Design',
         path: routes.SERVICES_MONUMENT
       },
       {
         active: true,
+        Component: ServicesFenceRoute,
+        displayInHeader: true,
+        icon: iconFenceRepair,
+        headerLinkLines: ['Fence', 'Repair'],
+        name: 'Fence Repair',
+        path: routes.SERVICES_FENCE
+      },
+      {
+        active: true,
+        Component: ServicesLightingRoute,
+        displayInHeader: true,
+        icon: iconHoaLighting,
+        headerLinkLines: ['HOA', 'Lighting'],
+        name: 'HOA Lighting',
+        path: routes.SERVICES_LIGHTING
+      },
+      {
+        active: true,
         Component: ServicesTrimmingRoute,
-        name: 'Services Trimming',
+        displayInHeader: false,
+        icon: '',
+        headerLinkLines: ['Tree', 'Trimming'],
+        name: 'Tree Trimming',
         path: routes.SERVICES_TRIMMING
       }
     ]
