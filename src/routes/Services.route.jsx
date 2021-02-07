@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import styled from 'styled-components';
 
 /** context **/
@@ -40,7 +39,7 @@ function ServicesRoute(props) {
       <StyledServices className="body">
         <InfoBanner
           config={{
-            backgroundGradient: 'linear-gradient(120deg, rgb(255, 0, 40) 0%, rgb(255, 0, 40) 40%, transparent 40%, transparent 100%)',
+            backgroundGradient: 'linear-gradient(120deg, rgb(255, 0, 40) 0%, rgb(255, 0, 40) 50%, transparent 50%, transparent 100%)',
             backgroundPosition: {
               xPercent: 10,
               yPixels: isMobile ? -150 : -350

@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 /** context **/
@@ -11,7 +10,6 @@ import InfoBannerLeft from '../components/Molecules/InfoBannerLeft';
 import InfoBannerRight from '../components/Molecules/InfoBannerRight';
 import PageDivider1 from '../components/Atoms/PageDivider1';
 import ParallaxStripe from '../components/Atoms/ParallaxStripe';
-import StyledInfoBannerAction from '../components/Styled/StyledInfoBannerAction';
 import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 

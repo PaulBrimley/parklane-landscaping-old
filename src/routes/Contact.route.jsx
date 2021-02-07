@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import styled from 'styled-components';
 
 /** context **/
@@ -64,7 +63,7 @@ function ContactRoute(props) {
             <input className="contact-form-input" placeholder="PHONE" />
             <textarea className="contact-form-input" rows="8" placeholder="MESSAGE" />
             <div className="contact-form-controls">
-              <Button classes="submit-form-button" fontSize="0.8em" fontWeight="400" onClick={handleSubmit} shadowColor="colorTransparent" width="40px" padding="5px 5px 4px" margin="5px 0 0">
+              <Button classes="submit-form-button" fontSize="0.8em" fontWeight="400" onClick={handleSubmit} shadowColor="colorTransparent" width="40px" padding="6px 5px 4px" margin="5px 0 0">
                 SEND
               </Button>
             </div>
@@ -140,7 +139,6 @@ const StyledContact = styled.div`
         margin: 2px 0;
         border: none;
         background-color: #fff;
-        //border-bottom: 1px solid ${props => props.theme.colorGreyMediumLight};
         box-sizing: border-box;
         box-shadow: 0 0 2px ${props => props.theme.colorTransparent};
         color: ${({ theme }) => theme.colorPrimary};
@@ -151,7 +149,6 @@ const StyledContact = styled.div`
         transition: box-shadow 0.25s, border-bottom 0.25s;
         &:focus {
           box-shadow: 0 0 2px ${props => props.theme.colorGreyMediumLight};
-          //border-bottom: 1px solid ${props => props.theme.colorTransparent};
           &.hasError {
             box-shadow: 0 0 2px ${props => props.theme.colorDanger};
           }
@@ -164,7 +161,6 @@ const StyledContact = styled.div`
           color: ${({ theme }) => theme.colorWhite};
           background-color: ${({ theme }) => theme.colorSecondary};
           &:hover {
-            //color: ${({ theme }) => theme.colorSecondary};
             background-color: ${({ theme }) => theme.colorSecondaryOpaque};
           }
         }

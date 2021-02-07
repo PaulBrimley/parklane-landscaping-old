@@ -23,7 +23,6 @@ const StyledHeaderLinks = styled.div`
         bottom: auto;
         left: 0;
         width: 1px;
-        transition: top 0.2s, bottom 0.2s;
       }
       .link {
         display: block;
@@ -32,7 +31,6 @@ const StyledHeaderLinks = styled.div`
         text-decoration: none;
         text-transform: uppercase;
         transform: translateY(145%);
-        transition: transform 0.2s;
       }
       &.active {
         &:after {
