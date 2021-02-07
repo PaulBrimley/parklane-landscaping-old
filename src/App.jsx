@@ -55,6 +55,8 @@ const StyledApp = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  max-width: 950px;
+  margin: 0 auto;
   .routes {
     flex: 1 1 auto;
   }

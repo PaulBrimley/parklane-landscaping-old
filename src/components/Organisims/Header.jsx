@@ -35,9 +35,11 @@ function Header(props) {
     if (foundRoute) setCurrentRoute(foundRoute);
   }, [location]);*/
 
+  function clearChildRoutes() {
+    setChildRoutes([]);
+  }
   function handleLinkHover({e, route}) {
-    console.log('hovered link', e, route);
-    if (route?.children) setChildRoutes(route.children);
+    // if (route?.children) setChildRoutes(route.children);
   }
 
   return (
@@ -55,10 +57,7 @@ function Header(props) {
                     active: location.pathname === route.path || (route.children && route.children.find(child => location.pathname === child.path))
                   })}
                 >
-                  {/*<Link className="link" to={route.path} onMouseEnter={(e) => handleLinkHover({e, route})} onMouseLeave={() => setChildRoutes([])}>
-                    {route.name}
-                  </Link>*/}
-                  <Link className="link" to={route.path}>
+                  <Link className="link" to={route.path} onMouseEnter={(e) => handleLinkHover({e, route})} onClick={clearChildRoutes}>
                     {route.name}
                   </Link>
                 </div>
@@ -78,8 +77,8 @@ function Header(props) {
           </>
         )}
       </div>
-      {/*<div className={classNames('child-routes', {active: childRoutes.length > 0})}>
-        we have child routes
+      {/*<div className={classNames('child-routes', {active: childRoutes.length > 0})} onMouseLeave={clearChildRoutes}>
+        child routes here
       </div>*/}
     </StyledHeader>
   );
@@ -92,18 +91,17 @@ const StyledHeader = styled.div`
   background-color: ${({ theme }) => theme.colorPrimary};
   color: ${({ theme }) => theme.colorWhite};
   .child-routes {
-    opacity: 0;
+    display: none;
     position: absolute;
-    top: 100%;
+    top: 75px;
     left: 0;
     right: 0;
     height: 100px;
-    color: yellow;
-    border: 1px solid blue;
+    box-sizing: border-box;
     z-index: 1000;
-    transition: opacity 0.2s;
+    background-color: ${({theme}) => theme.colorSecondary};
     &.active {
-      opacity: 1;
+      display: flex;
     }
   }
   .header-center {

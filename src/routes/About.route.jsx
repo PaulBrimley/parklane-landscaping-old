@@ -79,7 +79,7 @@ function AboutRoute(props) {
         </StyledInfoBodyMessage>
 
 
-        <ParallaxStripe backgroundUrl={imgTrees} height="100px">
+        <ParallaxStripe backgroundUrl={imgTrees} height="75px">
           <div className="tree-stripe">
             <img
               className="logo"
