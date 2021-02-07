@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu } from 'styled-icons/boxicons-regular';
+import classNames from 'classnames';
 import styled from 'styled-components';
 
 /** context **/
@@ -17,9 +18,9 @@ import { routeArr } from '../../routes/Routes';
 function Header(props) {
   const { companyInfo, isMobile, setMenuCollapsed } = useAppState();
   const [childRoutes, setChildRoutes] = useState([]);
-  const [currentRoute, setCurrentRoute] = useState({});
+  // const [currentRoute, setCurrentRoute] = useState({});
   const location = useLocation();
-  useEffect(() => {
+  /*useEffect(() => {
     function findRoute(routes) {
       let route = routes.find(route => location.pathname === route.path);
       if (route) return route;
@@ -31,10 +32,13 @@ function Header(props) {
       return route;
     }
     const foundRoute = findRoute(routeArr);
-    // console.log('foundRoute', foundRoute);
-  }, [location]);
+    if (foundRoute) setCurrentRoute(foundRoute);
+  }, [location]);*/
 
-
+  function handleLinkHover({e, route}) {
+    console.log('hovered link', e, route);
+    if (route?.children) setChildRoutes(route.children);
+  }
 
   return (
     <StyledHeader>
@@ -44,11 +48,18 @@ function Header(props) {
       <div className="header-center">
         {!isMobile && (
           <StyledHeaderLinks>
-            {routeArr.map(({ children, name, path }) => (
-              <div key={path} className="link-wrapper">
-                <div className={`link-inner ${location.pathname === path || (children && children.find(child => location.pathname === child.path)) ? 'active' : ''}`}>
-                  <Link className="link" to={path}>
-                    {name}
+            {routeArr.map((route) => (
+              <div key={route.path} className="link-wrapper">
+                <div
+                  className={classNames('link-inner', {
+                    active: location.pathname === route.path || (route.children && route.children.find(child => location.pathname === child.path))
+                  })}
+                >
+                  {/*<Link className="link" to={route.path} onMouseEnter={(e) => handleLinkHover({e, route})} onMouseLeave={() => setChildRoutes([])}>
+                    {route.name}
+                  </Link>*/}
+                  <Link className="link" to={route.path}>
+                    {route.name}
                   </Link>
                 </div>
               </div>
@@ -67,16 +78,34 @@ function Header(props) {
           </>
         )}
       </div>
+      {/*<div className={classNames('child-routes', {active: childRoutes.length > 0})}>
+        we have child routes
+      </div>*/}
     </StyledHeader>
   );
 }
 
 const StyledHeader = styled.div`
-  flex: 1 1 auto;
-  height: 75px;
+  flex: 75px 0 0;
+  position: relative;
   display: flex;
   background-color: ${({ theme }) => theme.colorPrimary};
   color: ${({ theme }) => theme.colorWhite};
+  .child-routes {
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 100px;
+    color: yellow;
+    border: 1px solid blue;
+    z-index: 1000;
+    transition: opacity 0.2s;
+    &.active {
+      opacity: 1;
+    }
+  }
   .header-center {
     flex: 1 1 auto;
     display: flex;

@@ -103,7 +103,7 @@ function HomeRoute(props) {
           </Button>
         </div>
 
-        <ParallaxStripe backgroundUrl={imgGrass}>
+        <ParallaxStripe backgroundUrl={imgGrass} height="100px">
           <div className="grass-stripe">
             <img
               className="logo"
@@ -165,6 +165,7 @@ function HomeRoute(props) {
 const StyledHome = styled.div`
   .grass-stripe {
     flex: 1 1 auto;
+    height: 100%;
     display: flex;
     justify-content: center;
     background-image: linear-gradient(120deg, transparent 0, transparent 30%, rgba(255, 0, 40, 0.85) 30%, rgba(255, 0, 40, 0.85) 70%, transparent 70%, transparent 100%);

@@ -35,7 +35,7 @@ const StyledHeaderLinks = styled.div`
       &.active {
         &:after {
           top: auto;
-          bottom: 0;
+          bottom: -1px;
         }
         .link {
           font-weight: 500;

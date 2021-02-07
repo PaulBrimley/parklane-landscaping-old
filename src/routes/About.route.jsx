@@ -79,7 +79,7 @@ function AboutRoute(props) {
         </StyledInfoBodyMessage>
 
 
-        <ParallaxStripe backgroundUrl={imgTrees}>
+        <ParallaxStripe backgroundUrl={imgTrees} height="100px">
           <div className="tree-stripe">
             <img
               className="logo"
@@ -128,6 +128,7 @@ const StyledAbout = styled.div`
   }
   .tree-stripe {
     flex: 1 1 auto;
+    height: 100%;
     display: flex;
     justify-content: center;
     background-image: linear-gradient(120deg, transparent 0, transparent 30%, rgba(255, 0, 40, 0.85) 30%, rgba(255, 0, 40, 0.85) 70%, transparent 70%, transparent 100%);
