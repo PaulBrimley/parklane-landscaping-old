@@ -12,7 +12,7 @@ import useWindowDimensions from './hooks/useWindowDimensions';
 /** components **/
 import Footer from './components/Organisims/Footer';
 import Header from './components/Organisims/Header';
-import Menu from './components/Atoms/Menu';
+import Menu from './components/Organisims/Menu';
 import Modal from './components/Molecules/Modal';
 import Routes from './routes/Routes';
 

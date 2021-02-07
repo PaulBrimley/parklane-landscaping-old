@@ -38,8 +38,8 @@ function Header(props) {
   function clearChildRoutes() {
     setChildRoutes([]);
   }
-  function handleLinkHover({ e, route }) {
-    if (route?.children) setChildRoutes(route.children);
+  function handleLinkHover({ e, children }) {
+    setChildRoutes(children);
   }
 
   return (
@@ -51,15 +51,15 @@ function Header(props) {
       <div className="header-center">
         {!isMobile && (
           <StyledHeaderLinks>
-            {routeArr.map(route => (
-              <div key={route.path} className="link-wrapper">
+            {routeArr.map(({children, name, path}) => (
+              <div key={path} className="link-wrapper">
                 <div
                   className={classNames('link-inner', {
-                    active: location.pathname === route.path || (route.children && route.children.find(child => location.pathname === child.path))
+                    active: location.pathname === path || (children && children.find(child => location.pathname === child.path))
                   })}
                 >
-                  <Link className="link" to={route.path} onMouseEnter={e => handleLinkHover({ e, route })}>
-                    {route.name}
+                  <Link className="link" to={path} onMouseEnter={e => handleLinkHover({ e, children: children && children.length ? children : [] })}>
+                    {name}
                   </Link>
                 </div>
               </div>
