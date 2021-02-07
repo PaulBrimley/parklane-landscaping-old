@@ -103,7 +103,7 @@ function HomeRoute(props) {
           </Button>
         </div>
 
-        <ParallaxStripe backgroundUrl={imgGrass} height="100px">
+        <ParallaxStripe backgroundUrl={imgGrass} height="75px">
           <div className="grass-stripe">
             <img
               className="logo"

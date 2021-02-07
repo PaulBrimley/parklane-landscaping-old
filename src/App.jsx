@@ -12,7 +12,7 @@ import useWindowDimensions from './hooks/useWindowDimensions';
 /** components **/
 import Footer from './components/Organisims/Footer';
 import Header from './components/Organisims/Header';
-import Menu from './components/Atoms/Menu';
+import Menu from './components/Organisims/Menu';
 import Modal from './components/Molecules/Modal';
 import Routes from './routes/Routes';
 
@@ -55,6 +55,8 @@ const StyledApp = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  max-width: 950px;
+  margin: 0 auto;
   .routes {
     flex: 1 1 auto;
   }

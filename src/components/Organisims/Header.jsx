@@ -35,31 +35,31 @@ function Header(props) {
     if (foundRoute) setCurrentRoute(foundRoute);
   }, [location]);*/
 
-  function handleLinkHover({e, route}) {
-    console.log('hovered link', e, route);
-    if (route?.children) setChildRoutes(route.children);
+  function clearChildRoutes() {
+    setChildRoutes([]);
+  }
+  function handleLinkHover({ e, children }) {
+    setChildRoutes(children);
   }
 
   return (
-    <StyledHeader>
+    // <StyledHeader>
+      <StyledHeader onMouseLeave={clearChildRoutes}>
       <div className="header-left">
         <img className="logo" src={logoMain} alt="logo" />
       </div>
       <div className="header-center">
         {!isMobile && (
           <StyledHeaderLinks>
-            {routeArr.map((route) => (
-              <div key={route.path} className="link-wrapper">
+            {routeArr.map(({children, name, path}) => (
+              <div key={path} className="link-wrapper">
                 <div
                   className={classNames('link-inner', {
-                    active: location.pathname === route.path || (route.children && route.children.find(child => location.pathname === child.path))
+                    active: location.pathname === path || (children && children.find(child => location.pathname === child.path))
                   })}
                 >
-                  {/*<Link className="link" to={route.path} onMouseEnter={(e) => handleLinkHover({e, route})} onMouseLeave={() => setChildRoutes([])}>
-                    {route.name}
-                  </Link>*/}
-                  <Link className="link" to={route.path}>
-                    {route.name}
+                  <Link className="link" to={path} onMouseEnter={e => handleLinkHover({ e, children: children && children.length ? children : [] })}>
+                    {name}
                   </Link>
                 </div>
               </div>
@@ -78,9 +78,16 @@ function Header(props) {
           </>
         )}
       </div>
-      {/*<div className={classNames('child-routes', {active: childRoutes.length > 0})}>
-        we have child routes
-      </div>*/}
+      <div className={classNames('child-routes', { active: childRoutes.length > 0 })}>
+        {childRoutes
+          .filter(({ displayInHeader }) => displayInHeader)
+          .map(({ headerLinkLines, icon, name, path }) => (
+            <Link key={path} className="child-route" to={path} onClick={clearChildRoutes}>
+              {headerLinkLines ? headerLinkLines.map((headerLinkLine, index) => <div key={index}>{headerLinkLine}</div>) : <div>{name}</div>}
+              {icon && <img className="child-route-icon" src={icon} alt={name} />}
+            </Link>
+          ))}
+      </div>
     </StyledHeader>
   );
 }
@@ -92,18 +99,39 @@ const StyledHeader = styled.div`
   background-color: ${({ theme }) => theme.colorPrimary};
   color: ${({ theme }) => theme.colorWhite};
   .child-routes {
-    opacity: 0;
+    display: flex;
+    justify-content: center;
     position: absolute;
-    top: 100%;
+    top: 75px;
     left: 0;
     right: 0;
-    height: 100px;
-    color: yellow;
-    border: 1px solid blue;
+    box-sizing: border-box;
     z-index: 1000;
-    transition: opacity 0.2s;
+    background-color: ${({ theme }) => theme.colorSecondary};
+    height: 0;
+    transition: height 0.2s;
+    overflow: hidden;
     &.active {
-      opacity: 1;
+      height: 70px;
+    }
+    .child-route {
+      margin-top: 5px;
+      opacity: 0.8;
+      flex: 8% 0 0;
+      display: block;
+      font-size: 0.6em;
+      text-align: center;
+      color: inherit;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: opacity 0.2s;
+      &:hover {
+        opacity: 1;
+      }
+      .child-route-icon {
+        width: 45px;
+        height: 45px;
+      }
     }
   }
   .header-center {

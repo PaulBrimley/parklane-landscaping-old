@@ -39,10 +39,11 @@ function Menu(props) {
           <Close className="close-button" onClick={handleClose} />
         </div>
         <StyledMenuLinks>
-          {routeArr.map((route, index) => (
-            <div key={index} className="link-inner">
-              <Link className={`link ${location.pathname === route.path ? 'active' : ''}`} to={route.path} onClick={handleClose}>
-                {route.name}
+          {routeArr.map(({children, name, path}) => (
+            <div key={path} className="link-inner">
+              <Link className={`link ${location.pathname === path ? 'active' : ''}`} to={path} onClick={handleClose}>
+                {name}
+
               </Link>
             </div>
           ))}
