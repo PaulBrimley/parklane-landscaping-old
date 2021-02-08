@@ -66,10 +66,12 @@ function Header(props) {
         {childRoutes
           .filter(({ displayInHeader }) => displayInHeader)
           .map(({ headerLinkLines, icon, name, path }) => (
-            <Link key={path} className="child-route" to={path} onClick={clearChildRoutes}>
-              {headerLinkLines ? headerLinkLines.map((headerLinkLine, index) => <div key={index} className="child-route-name">{headerLinkLine}</div>) : <div className="child-route-name">{name}</div>}
-              {icon && <img className="child-route-icon" src={icon} alt={name} />}
-            </Link>
+            <div className="child-route-wrapper">
+              <Link key={path} className="child-route" to={path} onClick={clearChildRoutes}>
+                {headerLinkLines ? headerLinkLines.map((headerLinkLine, index) => <div key={index} className="child-route-name">{headerLinkLine}</div>) : <div className="child-route-name">{name}</div>}
+                {icon && <img className="child-route-icon" src={icon} alt={name} />}
+              </Link>
+            </div>
           ))}
       </div>
     </StyledHeader>
@@ -98,25 +100,17 @@ const StyledHeader = styled.div`
     &.active {
       height: 75px;
     }
-    .child-route {
+    .child-route-wrapper {
       position: relative;
-      margin-top: 5px;
-      opacity: 0.8;
+      margin-top: 8px;
       flex: 8% 0 0;
-      display: block;
-      font-size: 0.6em;
-      text-align: center;
-      color: inherit;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: opacity 0.2s;
       &:before {
         position: absolute;
         border-right: 25px solid ${({theme}) => theme.colorWhite};
         border-left: 25px solid ${({theme}) => theme.colorWhite};
         content: '';
         display: block;
-        top: 50%;
+        top: 54%;
         left: 0;
         right: 0;
         height: 1px;
@@ -132,18 +126,30 @@ const StyledHeader = styled.div`
           border-right: none;
         }
       }
-      &:hover {
-        opacity: 1;
-      }
-      .child-route-icon {
-        margin: 0 5px;
-        width: 45px;
-        height: 45px;
-      }
-      .child-route-name {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+      .child-route {
+        display: block;
+        font-size: 0.6em;
+        text-align: center;
+        color: inherit;
+        text-decoration: none;
+        text-transform: uppercase;
+        //opacity: 0.8;
+        transform: scale(1);
+        transition: opacity 0.2s, transform 0.2s;
+        &:hover {
+          //opacity: 1;
+          transform: scale(1.05);
+        }
+        .child-route-icon {
+          margin: 0 5px;
+          width: 45px;
+          height: 45px;
+        }
+        .child-route-name {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
       }
     }
   }
