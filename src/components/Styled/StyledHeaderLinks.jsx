@@ -30,10 +30,8 @@ const StyledHeaderLinks = styled.div`
         color: inherit;
         text-decoration: none;
         text-transform: uppercase;
-        transform: translateY(145%);
-      }
-      &:hover {
-        .link {
+        transform: translateY(150%);
+        &:hover {
           font-weight: 500;
         }
       }
