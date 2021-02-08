@@ -28,8 +28,7 @@ function Header(props) {
   }
 
   return (
-    // <StyledHeader>
-      <StyledHeader onMouseLeave={clearChildRoutes}>
+    <StyledHeader onMouseLeave={clearChildRoutes}>
       <div className="header-left">
         <img className="logo" src={logoMain} alt="logo" />
       </div>
@@ -63,12 +62,12 @@ function Header(props) {
           </>
         )}
       </div>
-      <div className={classNames('child-routes', { active: childRoutes.length > 0 })}>
+      <div className={classNames('child-routes', { active: childRoutes.length > 0 && !isMobile })}>
         {childRoutes
           .filter(({ displayInHeader }) => displayInHeader)
           .map(({ headerLinkLines, icon, name, path }) => (
             <Link key={path} className="child-route" to={path} onClick={clearChildRoutes}>
-              {headerLinkLines ? headerLinkLines.map((headerLinkLine, index) => <div key={index}>{headerLinkLine}</div>) : <div>{name}</div>}
+              {headerLinkLines ? headerLinkLines.map((headerLinkLine, index) => <div key={index} className="child-route-name">{headerLinkLine}</div>) : <div className="child-route-name">{name}</div>}
               {icon && <img className="child-route-icon" src={icon} alt={name} />}
             </Link>
           ))}
@@ -97,9 +96,10 @@ const StyledHeader = styled.div`
     transition: height 0.2s;
     overflow: hidden;
     &.active {
-      height: 70px;
+      height: 75px;
     }
     .child-route {
+      position: relative;
       margin-top: 5px;
       opacity: 0.8;
       flex: 8% 0 0;
@@ -110,12 +110,40 @@ const StyledHeader = styled.div`
       text-decoration: none;
       text-transform: uppercase;
       transition: opacity 0.2s;
+      &:before {
+        position: absolute;
+        border-right: 25px solid ${({theme}) => theme.colorWhite};
+        border-left: 25px solid ${({theme}) => theme.colorWhite};
+        content: '';
+        display: block;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        z-index: -1;
+      }
+      &:first-child {
+        &:before {
+          border-left: none;
+        }
+      }
+      &:last-child {
+        &:before {
+          border-right: none;
+        }
+      }
       &:hover {
         opacity: 1;
       }
       .child-route-icon {
+        margin: 0 5px;
         width: 45px;
         height: 45px;
+      }
+      .child-route-name {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }
