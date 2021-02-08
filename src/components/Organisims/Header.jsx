@@ -18,22 +18,7 @@ import { routeArr } from '../../routes/Routes';
 function Header(props) {
   const { companyInfo, isMobile, setMenuCollapsed } = useAppState();
   const [childRoutes, setChildRoutes] = useState([]);
-  // const [currentRoute, setCurrentRoute] = useState({});
   const location = useLocation();
-  /*useEffect(() => {
-    function findRoute(routes) {
-      let route = routes.find(route => location.pathname === route.path);
-      if (route) return route;
-      for (let i = 0; i < routes.length; i++) {
-        const innerRoute = routes[i];
-        if (innerRoute.children) route = findRoute(innerRoute.children);
-        if (route) break;
-      }
-      return route;
-    }
-    const foundRoute = findRoute(routeArr);
-    if (foundRoute) setCurrentRoute(foundRoute);
-  }, [location]);*/
 
   function clearChildRoutes() {
     setChildRoutes([]);

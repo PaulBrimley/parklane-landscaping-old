@@ -43,8 +43,16 @@ function Menu(props) {
             <div key={path} className="link-inner">
               <Link className={`link ${location.pathname === path ? 'active' : ''}`} to={path} onClick={handleClose}>
                 {name}
-
               </Link>
+              {children &&
+                children.map(({name: childName, path: childPath}) => (
+                  <div key={childPath} className="link-inner">
+                    <Link className={`link ${location.pathname === childPath ? 'active' : ''}`} to={childPath} onClick={handleClose}>
+                      {childName}
+                    </Link>
+                  </div>
+                ))
+              }
             </div>
           ))}
         </StyledMenuLinks>
