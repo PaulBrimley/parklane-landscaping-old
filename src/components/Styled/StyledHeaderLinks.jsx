@@ -32,6 +32,11 @@ const StyledHeaderLinks = styled.div`
         text-transform: uppercase;
         transform: translateY(145%);
       }
+      &:hover {
+        .link {
+          font-weight: 500;
+        }
+      }
       &.active {
         &:after {
           top: auto;
