@@ -66,8 +66,8 @@ function Header(props) {
         {childRoutes
           .filter(({ displayInHeader }) => displayInHeader)
           .map(({ headerLinkLines, icon, name, path }) => (
-            <div className="child-route-wrapper">
-              <Link key={path} className="child-route" to={path} onClick={clearChildRoutes}>
+            <div key={path} className="child-route-wrapper">
+              <Link className="child-route" to={path} onClick={clearChildRoutes}>
                 {headerLinkLines ? headerLinkLines.map((headerLinkLine, index) => <div key={index} className="child-route-name">{headerLinkLine}</div>) : <div className="child-route-name">{name}</div>}
                 {icon && <img className="child-route-icon" src={icon} alt={name} />}
               </Link>
