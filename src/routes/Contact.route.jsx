@@ -3,6 +3,9 @@ import styled from 'styled-components';
 /** context **/
 import { useAppState } from '../context/app.context';
 
+/** hooks **/
+import useParallaxEffect from '../hooks/useParallaxEffect';
+
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
 import Button from '../components/Atoms/Button';
@@ -16,18 +19,37 @@ import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessag
 import imgLeaves from '../assets/img/img-leaves.jpg';
 
 function ContactRoute(props) {
-  const { companyInfo, isMobile } = useAppState();
+  const { companyInfo, width } = useAppState();
+  const { offset } = useParallaxEffect({ strength: 0.2 });
 
   function handleSubmit() {
     // console.log('clicked');
   }
+
+  function calcBackgroundPosition() {
+    let offset = 10;
+    if (width < 700) offset = 30;
+    if (width < 400) offset = 40;
+    return offset;
+  }
+  function calcBackgroundSize() {
+    let size = '150%';
+    if (width < 700) size = '170%';
+    if (width < 400) size = '250%';
+    return size;
+  }
+
   return (
     <AnimatedStyledRoute>
       <StyledContact className="body">
         <InfoBanner
+          style={{
+            backgroundImage: `url(${imgLeaves})`,
+            backgroundPosition: `20% calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: calcBackgroundSize()
+          }}
           config={{
-            backgroundSize: isMobile ? 200 : 140,
-            backgroundUrl: imgLeaves,
             height: '350px'
           }}
           slotLeft={

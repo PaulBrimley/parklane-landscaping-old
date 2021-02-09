@@ -18,8 +18,8 @@ import Routes from './routes/Routes';
 
 function App() {
   const { handleWidthChange, isMobile, mobileWidth, theme } = useAppState();
-
-  const { width } = useWindowDimensions();
+  const appRef = useRef();
+  const { width } = useWindowDimensions(appRef);
   const transitionTimeout = 200;
 
   const themeInfo = {
@@ -35,7 +35,7 @@ function App() {
 
   return (
     <ThemeProvider theme={themeInfo}>
-      <StyledApp>
+      <StyledApp ref={appRef}>
         <ToastContainer transition={Flip} hideProgressBar={true}/>
         <Modal />
         <Router>
@@ -56,6 +56,7 @@ const StyledApp = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 950px;
+  min-width: 300px;
   margin: 0 auto;
   .routes {
     flex: 1 1 auto;

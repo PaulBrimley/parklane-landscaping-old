@@ -3,6 +3,9 @@ import styled from 'styled-components';
 /** context **/
 import { useAppState } from '../context/app.context';
 
+/** hooks **/
+import useParallaxEffect from '../hooks/useParallaxEffect';
+
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
 import InfoBanner from '../components/Molecules/InfoBanner';
@@ -33,19 +36,36 @@ import imgGuyTeaching from '../assets/img/img-guy-teaching.jpg';
 import imgHillsAtAlamoRanch from '../assets/img/img-hills-at-alamo-ranch.jpg';
 
 function ServicesRoute(props) {
-  const { isMobile } = useAppState();
+  const { isMobile, width } = useAppState();
+  const { offset } = useParallaxEffect({ strength: 0.2 });
+
+  function calcBackgroundPosition() {
+    let strength = 0;
+    if (width < 750) strength = 0.2;
+    if (width < 600) strength = 0.4;
+    if (width < 400) strength = 0.6;
+    if (width < 350) strength = 0.7;
+    return (width * strength) - 350;
+  }
+  function calcBackgroundSize() {
+    let size = '150%';
+    if (width < 500) size = '800px';
+    if (width < 400) size = '600px';
+    return size;
+  }
+
   return (
     <AnimatedStyledRoute>
       <StyledServices className="body">
         <InfoBanner
+          style={{
+            backgroundImage: `url(${imgServices})`,
+            backgroundPosition: `20% calc(${calcBackgroundPosition()}px + ${offset.y}px)`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: calcBackgroundSize()
+          }}
           config={{
             backgroundGradient: 'linear-gradient(120deg, rgb(255, 0, 40) 0%, rgb(255, 0, 40) 50%, transparent 50%, transparent 100%)',
-            backgroundPosition: {
-              xPercent: 10,
-              yPixels: isMobile ? -150 : -350
-            },
-            backgroundSize: 150,
-            backgroundUrl: imgServices,
             height: '350px'
           }}
           slotLeft={

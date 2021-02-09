@@ -15,7 +15,8 @@ function useAppState() {
     const isMobile = width <= state.mobileWidth;
     setState({
       ...state,
-      isMobile
+      isMobile,
+      width
     });
   }
   function setModal(modalInfo) {
@@ -50,6 +51,7 @@ function useAppState() {
     modal: state.modal,
     menuCollapsed: state.menuCollapsed,
     theme: state.theme,
+    width: state.width,
 
     handleWidthChange,
     setModal,
@@ -77,7 +79,8 @@ function AppProvider(props) {
       shown: false
     },
     menuCollapsed: true,
-    theme: lightTheme
+    theme: lightTheme,
+    width: 0
   });
   const value = useMemo(() => [state, setState], [state]);
   return <AppContext.Provider value={value} {...props} />;

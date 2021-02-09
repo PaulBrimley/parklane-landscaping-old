@@ -3,6 +3,9 @@ import styled from 'styled-components';
 /** context **/
 import { useAppState } from '../context/app.context';
 
+/** hooks **/
+import useParallaxEffect from '../hooks/useParallaxEffect';
+
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
 import InfoBanner from '../components/Molecules/InfoBanner';
@@ -22,18 +25,26 @@ import imgTrees from '../assets/img/img-trees.jpg';
 import logoMain from '../assets/img/logo-main.png';
 
 function AboutRoute(props) {
-  const { isMobile } = useAppState();
+  const { isMobile, width } = useAppState();
+  const { offset } = useParallaxEffect({ strength: 0.2 });
+
+  function calcBackgroundPosition() {
+    let offset = 10;
+    if (width < 800) offset = 100 - (width / 800 * 100) + 10;
+    return offset;
+  }
+
   return (
     <AnimatedStyledRoute>
       <StyledAbout className="body">
         <InfoBanner
+          style={{
+            backgroundImage: `url(${imgEstatesAtBridgewood})`,
+            backgroundPosition: `left calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: width < 750 ? '750px' : '70%'
+          }}
           config={{
-            backgroundPosition: {
-              xPercent: 0,
-              yPixels: isMobile ? -50 : -70
-            },
-            backgroundSize: isMobile ? 110 : 70,
-            backgroundUrl: imgEstatesAtBridgewood,
             height: '350px',
             rightGradientCover: isMobile ? null : 'linear-gradient(120deg, transparent 0%, transparent 50%, white 50%, white 100%)'
           }}

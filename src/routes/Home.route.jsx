@@ -1,4 +1,11 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
+
+/** context **/
+import { useAppState } from '../context/app.context';
+
+/** hooks **/
+import useParallaxEffect from '../hooks/useParallaxEffect';
 
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
@@ -28,31 +35,37 @@ import logoAnniversary from '../assets/img/logo-anniversary.png';
 import logoMain from '../assets/img/logo-main.png';
 
 function HomeRoute(props) {
+  const { width } = useAppState();
+  const { offset } = useParallaxEffect({ strength: 0.2 });
+
   function handleSubmit() {
     // console.log('clicked');
+  }
+
+  function calcBackgroundPosition() {
+    let offset = 10;
+    if (width < 800) offset = 100 - (width / 800 * 100) + 10;
+    return offset;
   }
 
   return (
     <AnimatedStyledRoute>
       <StyledHome className="body">
         <InfoBanner
+          style={{
+            backgroundImage: `url(${imgHome})`,
+            backgroundPosition: `center calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: width < 500 ? '500px' : 'cover'
+          }}
           config={{
-            backgroundSize: 150,
-            backgroundUrl: imgHome,
             height: '350px'
           }}
           slotLeft={
             <InfoBannerLeft
               action={
                 <StyledInfoBannerAction>
-                  <Button
-                    classes="learn-more-button-1"
-                    fontSize="0.8em"
-                    fontWeight="400"
-                    onClick={handleSubmit}
-                    padding="12px 20px 11px"
-                    shadowColor="colorTransparent"
-                  >
+                  <Button classes="learn-more-button-1" fontSize="0.8em" fontWeight="400" onClick={handleSubmit} padding="12px 20px 11px" shadowColor="colorTransparent">
                     LEARN MORE
                   </Button>
                 </StyledInfoBannerAction>
@@ -92,24 +105,14 @@ function HomeRoute(props) {
         </StyledInfoBodyMessage>
 
         <div className="home-action">
-          <Button
-            classes="learn-more-button-2"
-            fontSize="1.3em"
-            margin="25px 0 0"
-            onClick={handleSubmit}
-            padding="8px 20px 5px"
-          >
+          <Button classes="learn-more-button-2" fontSize="1.3em" margin="25px 0 0" onClick={handleSubmit} padding="8px 20px 5px">
             LEARN MORE
           </Button>
         </div>
 
         <ParallaxStripe backgroundUrl={imgGrass} height="75px">
           <div className="grass-stripe">
-            <img
-              className="logo"
-              src={logoMain}
-              alt="logo"
-            />
+            <img className="logo" src={logoMain} alt="logo" />
           </div>
         </ParallaxStripe>
 
@@ -223,7 +226,7 @@ const StyledHome = styled.div`
       border: 1px solid ${({ theme }) => theme.colorSecondary};
     }
   }
-  @media (max-width: ${({theme}) => theme.mobileWidth}px) {
+  @media (max-width: ${({ theme }) => theme.mobileWidth}px) {
     .home-header {
       font-size: 2em;
       margin: 20px;

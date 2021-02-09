@@ -4,6 +4,9 @@ import styled from 'styled-components';
 /** context **/
 import { useAppState } from '../context/app.context';
 
+/** hooks **/
+import useParallaxEffect from '../hooks/useParallaxEffect';
+
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
 import Button from '../components/Atoms/Button';
@@ -18,19 +21,32 @@ import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 import imgHome from '../assets/img/img-home.jpg';
 
 function SubscribeRoute(props) {
-  const { isMobile } = useAppState();
+  const { width } = useAppState();
+  const { offset } = useParallaxEffect({ strength: 0.2 });
 
   function handleSubmit() {
     // console.log('clicked');
+  }
+
+  function calcBackgroundPosition() {
+    let offset = 10;
+    if (width < 800) offset = 100 - (width / 800 * 100) + 10;
+    return offset;
   }
 
   return (
     <AnimatedStyledRoute>
       <StyledSubscribe className="body">
         <InfoBanner
+          style={{
+            backgroundImage: `url(${imgHome})`,
+            backgroundPosition: `center calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: width < 500 ? '500px' : 'cover'
+          }}
           config={{
-            backgroundSize: 150,
-            backgroundUrl: imgHome,
+            // backgroundSize: 150,
+            // backgroundUrl: imgHome,
             height: '350px'
           }}
           slotLeft={

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function useParallaxEffect({ parallaxRef, scrollRef, strength = 0 }) {
+export default function useParallaxEffect({ scrollRef, strength = 0 }) {
   strength = Math.min(Math.max(strength, -1), 1);
   const [offset, setOffset] = useState({
     x: 0,
@@ -10,26 +10,19 @@ export default function useParallaxEffect({ parallaxRef, scrollRef, strength = 0
   const [top, setTop] = useState(0);
 
   useEffect(() => {
-    /*const interval = setInterval(() => {
-      if (ref.current) {
-        const {left, top} = getOffset(ref.current);
-        setLeft(left);
-        setTop(top);
-      }
-    }, 16);
-    return () => {
-      clearInterval(interval);
-    };*/
+    let listenTo = window;
+    if (scrollRef?.current) listenTo = scrollRef?.current;
     function handleScroll() {
-      const {left, top} = getOffset(parallaxRef.current);
-      setLeft(left);
-      setTop(top);
+      const scrollX = scrollRef?.current ? listenTo.scrollLeft : listenTo.scrollX;
+      const scrollY = scrollRef?.current ? listenTo.scrollTop : listenTo.scrollY;
+      setLeft(scrollX);
+      setTop(scrollY);
     }
-    scrollRef.current.addEventListener('scroll', handleScroll);
+    listenTo.addEventListener('scroll', handleScroll);
     return () => {
-      scrollRef.current.removeEventListener('scroll', handleScroll);
+      listenTo.removeEventListener('scroll', handleScroll);
     };
-  }, [parallaxRef.current, scrollRef.current]);
+  }, [scrollRef]);
   useEffect(() => {
     setOffset({
       x: left * strength,
@@ -42,14 +35,6 @@ export default function useParallaxEffect({ parallaxRef, scrollRef, strength = 0
       y: top * strength
     });
   }, [top]);
-
-  function getOffset(el) {
-    const rect = el.getBoundingClientRect();
-    return {
-      left: rect.left,
-      top: rect.top
-    };
-  }
 
   return { offset };
 }
