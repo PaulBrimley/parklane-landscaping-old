@@ -16,7 +16,7 @@ import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessag
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
 /** images **/
-import imgEstatesAtBridgewood from '../assets/img/img-estates-at-bridgewood.jpg';
+import imgHome from '../assets/img/img-home.jpg';
 import imgPictureFrame from '../assets/img/img-picture-frame.png';
 
 function ServicesLandscapeRoute(props) {
@@ -34,14 +34,13 @@ function ServicesLandscapeRoute(props) {
       <StyledServicesLandscape className="body">
         <InfoBanner
           style={{
-            backgroundImage: `url(${imgEstatesAtBridgewood})`,
-            backgroundPosition: `left calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
+            backgroundImage: `url(${imgHome})`,
+            backgroundPosition: `center calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
             backgroundRepeat: 'no-repeat',
-            backgroundSize: width < 750 ? '750px' : '70%'
+            backgroundSize: width < 500 ? '500px' : 'cover'
           }}
           config={{
-            height: '350px',
-            rightGradientCover: isMobile ? null : 'linear-gradient(120deg, transparent 0%, transparent 50%, white 50%, white 100%)'
+            height: '350px'
           }}
           slotLeft={
             <InfoBannerLeft
@@ -74,22 +73,42 @@ function ServicesLandscapeRoute(props) {
 
         <div className="services-landscape-header">HOA Landscape</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 100px">
-
+        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 130px">
+          Parklane Landscaping provides pro-active and long-range planning ideas to enhance the landscape appeal of an HOA community. Our team of design and horticulture professionals work on the visual aesthetic and on the health of the environment in order to provide a verdant landscape. Our professionals provide expert guidance to propose beautiful landscape designs and to provide long-range planning to keep the landscape sustainable and vibrant.
         </StyledInfoBodyMessage>
 
+        <div className="services-landscape-info-images">
+          <img src={imgHome} alt="Home" />
+        </div>
+
+        <div className="services-landscape-header">Landscape Design</div>
+
+        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 130px 20px">
+          Parklane Landscaping takes pride in ensuring that every one of our properties looks its best. As such, we take our design approach very seriously when it comes to making landscape suggestions to our clients. We understand that well-designed communal landscapes should exude balance, beauty and order; all the while providing a welcoming environment for residents, guests and prospective community members.
+        </StyledInfoBodyMessage>
+
+        <div className="services-landscape-info-subsection">
+          <div className="subsection-images">
+            <img src={imgHome} alt="Home" />
+            <img src={imgHome} alt="Home" />
+          </div>
+          <div className="subsection-info">
+            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 0 0 20px">
+              As we start a new landscape project we take into consideration three things, the aesthetic of the client, ability of a plant's survival in the given area, and the impact our choices make on the community. Flowers and trees are an investment. It is our goal to make sure that the investment brings a good return to the community. Choice landscape adds value to a property and gives it a sense of welcome and warmth.
+            </StyledInfoBodyMessage>
+            <br/>
+            <br/>
+            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 0 0 20px">
+              Once Parklane understands the goals of the community, we create the vision. Photos are very important in the development of every landscape design project. Using drone photography, we are able to get an overall view of the entire area being modified. This allows us to make renderings for our clients using suggested plant materials. We then take those images and use design programs to create the virtual spaces within the project. Once approval is made on the final design plan, everything is scheduled for Parklane to turn the vision into reality.
+            </StyledInfoBodyMessage>
+          </div>
+        </div>
 
       </StyledServicesLandscape>
     </AnimatedStyledRoute>
   );
 }
 const StyledServicesLandscape = styled.div`
-  .services-landscape-header {
-    font-size: 3em;
-    font-weight: 400;
-    color: ${({ theme }) => theme.colorPrimary};
-    margin: 20px 100px 10px;
-  }
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
@@ -102,6 +121,40 @@ const StyledServicesLandscape = styled.div`
     align-items: center;
     .picture-frame {
       width: 80%;
+    }
+  }
+  .services-landscape-header {
+    font-size: 3em;
+    font-weight: 400;
+    color: ${({ theme }) => theme.colorPrimary};
+    margin: 20px 130px 10px;
+  }
+  .services-landscape-info-images {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    margin: 40px 130px;
+    img {
+      flex: 0 1 auto;
+      width: 100%;
+    }
+  }
+  .services-landscape-info-subsection {
+    display: flex;
+    margin: 10px 130px;
+    .subsection-images {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 50% 0 0;
+      img {
+        margin-bottom: 10px;
+        width: 100%;
+      }
+    }
+    .subsection-info {
+      flex: 50% 0 0;
     }
   }
   @media (max-width: ${({theme}) => theme.mobileWidth}px) {

@@ -15,7 +15,7 @@ import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessag
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
 /** images **/
-import imgEstatesAtBridgewood from '../assets/img/img-estates-at-bridgewood.jpg';
+import imgHome from '../assets/img/img-home.jpg';
 
 function ServicesTrimmingRoute(props) {
   const { isMobile, width } = useAppState();
@@ -32,14 +32,13 @@ function ServicesTrimmingRoute(props) {
       <StyledServicesTrimming className="body">
         <InfoBanner
           style={{
-            backgroundImage: `url(${imgEstatesAtBridgewood})`,
-            backgroundPosition: `left calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
+            backgroundImage: `url(${imgHome})`,
+            backgroundPosition: `center calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
             backgroundRepeat: 'no-repeat',
-            backgroundSize: width < 750 ? '750px' : '70%'
+            backgroundSize: width < 500 ? '500px' : 'cover'
           }}
           config={{
-            height: '350px',
-            rightGradientCover: isMobile ? null : 'linear-gradient(120deg, transparent 0%, transparent 50%, white 50%, white 100%)'
+            height: '350px'
           }}
           slotLeft={
             <InfoBannerLeft
@@ -67,25 +66,61 @@ function ServicesTrimmingRoute(props) {
 
         <div className="services-trimming-header">HOA TREE TRIMMING</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 100px">
-
+        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 130px">
+          Nothing transforms an outdoor space like a beautifully trimmed tree that provides shade, is healthy and safe for your community. Proper pruning techniques are the best way to ensure this. Our tree trimming professionals at Parklane offer seasonal tree care services that help maintain the appearance of your HOA. Regular pruning can not only preserve the way a tree looks, but it can also stimulate its health and growth. Making sure to add to curb appeal and the overall value of your community.
         </StyledInfoBodyMessage>
 
+        <div className="services-trimming-info-subsection">
+          <div className="subsection-images">
+            <img src={imgHome} alt="Home" />
+            <img src={imgHome} alt="Home" />
+          </div>
+          <div className="subsection-info">
+            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 0 0 20px">
+              While the concept of tree pruning seems like a simple DIY project or something you can hand to your everyday landscaper, improper pruning can destroy your landscape. When a tree's health is at risk, they can face decay, instability, disease and a shorter life.
+            </StyledInfoBodyMessage>
+            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 0 0 20px">
+              Most mature trees require trimming at least every 3 years. They will need to be trimmed more often if they grow quickly or are located near power lines, homes, or other obstructions. The best time to trim a tree is in the late fall or early spring, just before the tree begins to leaf out again.
+            </StyledInfoBodyMessage>
+            <br/>
+            <br/>
+            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 0 0 20px">
+              For more information on trimming trees or if your community needs to replace old and rotted trees please contact us today! We would be happy to provide you with a free estimate on your next project.
+            </StyledInfoBodyMessage>
+          </div>
+        </div>
 
       </StyledServicesTrimming>
     </AnimatedStyledRoute>
   );
 }
 const StyledServicesTrimming = styled.div`
+  .info-banner-left {
+    flex: 1 1 auto;
+    padding-top: 50px;
+  }
   .services-trimming-header {
     font-size: 3em;
     font-weight: 400;
     color: ${({ theme }) => theme.colorPrimary};
-    margin: 20px 100px 10px;
+    margin: 20px 130px 10px;
   }
-  .info-banner-left {
-    flex: 1 1 auto;
-    padding-top: 50px;
+  .services-trimming-info-subsection {
+    display: flex;
+    margin: 10px 130px;
+    .subsection-images {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 50% 0 0;
+      img {
+        margin-bottom: 10px;
+        width: 100%;
+      }
+    }
+    .subsection-info {
+      flex: 50% 0 0;
+    }
   }
   @media (max-width: ${({theme}) => theme.mobileWidth}px) {
 

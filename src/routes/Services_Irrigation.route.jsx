@@ -15,7 +15,7 @@ import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessag
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
 /** images **/
-import imgEstatesAtBridgewood from '../assets/img/img-estates-at-bridgewood.jpg';
+import imgHome from '../assets/img/img-home.jpg';
 
 function ServicesIrrigationRoute(props) {
   const { isMobile, width } = useAppState();
@@ -32,14 +32,13 @@ function ServicesIrrigationRoute(props) {
       <StyledServicesIrrigation className="body">
         <InfoBanner
           style={{
-            backgroundImage: `url(${imgEstatesAtBridgewood})`,
-            backgroundPosition: `left calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
+            backgroundImage: `url(${imgHome})`,
+            backgroundPosition: `center calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
             backgroundRepeat: 'no-repeat',
-            backgroundSize: width < 750 ? '750px' : '70%'
+            backgroundSize: width < 500 ? '500px' : 'cover'
           }}
           config={{
-            height: '350px',
-            rightGradientCover: isMobile ? null : 'linear-gradient(120deg, transparent 0%, transparent 50%, white 50%, white 100%)'
+            height: '350px'
           }}
           slotLeft={
             <InfoBannerLeft
@@ -67,25 +66,53 @@ function ServicesIrrigationRoute(props) {
 
         <div className="services-irrigation-header">HOA Irrigation</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 100px">
-
+        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 130px">
+          During our ten years in business, Parklane has recognized the need for licensed irrigators in the HOA industry. After being asked if we could do SAWS audits or repair an irrigation system we decided to invest in educating our own team members in irrigation. As a result, Parkland now has three licensed irrigators who regularly perform monthly audits on all of our HOA properties. When the need arises, our licensed irrigators can repair or even install an entire irrigation system.
         </StyledInfoBodyMessage>
 
+        <div className="services-irrigation-info-images">
+          <img src={imgHome} alt="Home" />
+        </div>
+
+        <div className="services-irrigation-info-seal">
+          <img src={imgHome} alt="Home" />
+          <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 0 0 15px">
+            Does your irrigator have this seal? Parklane Landscaping does. In fact we have a team of licensed irrigators that all carry their irrigation license with this official seal. it is a requirement in the state of Texas that all licensed irrigators doing audits or working on irrigation carry it with them at all times. If you need a licensed irrigator call Parklane Landscaping. Our team has Texas' seal of approval!
+          </StyledInfoBodyMessage>
+        </div>
 
       </StyledServicesIrrigation>
     </AnimatedStyledRoute>
   );
 }
 const StyledServicesIrrigation = styled.div`
+  .info-banner-left {
+    flex: 1 1 auto;
+    padding-top: 50px;
+  }
   .services-irrigation-header {
     font-size: 3em;
     font-weight: 400;
     color: ${({ theme }) => theme.colorPrimary};
-    margin: 20px 100px 10px;
+    margin: 20px 130px 10px;
   }
-  .info-banner-left {
-    flex: 1 1 auto;
-    padding-top: 50px;
+  .services-irrigation-info-images {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    margin: 20px 130px;
+    img {
+      flex: 0 1 auto;
+      width: 100%;
+    }
+  }
+  .services-irrigation-info-seal {
+    display: flex;
+    margin: 30px 130px;
+    img {
+      width: 200px;
+    }
   }
   @media (max-width: ${({theme}) => theme.mobileWidth}px) {
     

@@ -6,6 +6,8 @@ const StyledInfoBodyMessage = styled.div`
   font-weight: 300;
   line-height: ${({lineHeight}) => lineHeight || '1.7em'};
   margin: ${({margin}) => margin || '10px 30px'};
+  text-align: justify;
+  text-justify: inter-character;
   @media (max-width: ${({theme}) => theme.mobileWidth}px) {
     margin: 20px;
   }

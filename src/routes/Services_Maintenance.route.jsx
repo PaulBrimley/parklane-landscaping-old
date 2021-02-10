@@ -15,10 +15,10 @@ import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessag
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
 /** images **/
-import imgEstatesAtBridgewood from '../assets/img/img-estates-at-bridgewood.jpg';
+import imgHome from '../assets/img/img-home.jpg';
 
 function ServicesMaintenanceRoute(props) {
-  const { isMobile, width } = useAppState();
+  const { companyInfo, isMobile, width } = useAppState();
   const { offset } = useParallaxEffect({ strength: 0.2 });
 
   function calcBackgroundPosition() {
@@ -32,14 +32,13 @@ function ServicesMaintenanceRoute(props) {
       <StyledServicesMaintenance className="body">
         <InfoBanner
           style={{
-            backgroundImage: `url(${imgEstatesAtBridgewood})`,
-            backgroundPosition: `left calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
+            backgroundImage: `url(${imgHome})`,
+            backgroundPosition: `center calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
             backgroundRepeat: 'no-repeat',
-            backgroundSize: width < 750 ? '750px' : '70%'
+            backgroundSize: width < 500 ? '500px' : 'cover'
           }}
           config={{
-            height: '350px',
-            rightGradientCover: isMobile ? null : 'linear-gradient(120deg, transparent 0%, transparent 50%, white 50%, white 100%)'
+            height: '350px'
           }}
           slotLeft={
             <InfoBannerLeft
@@ -67,25 +66,58 @@ function ServicesMaintenanceRoute(props) {
 
         <div className="services-maintenance-header">HOA Maintenance</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 100px">
-
+        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 130px">
+          When Parklane forges a maintenance contract with an HOA community, our goal is to deliver the highest quality service we can offer. The Parklane team comes together to make sure we nurture not only the landscapes, but our relationships with every HOA client. Our account representatives maintain constant contact with the property's HOA community manager. In case of emergencies or urgent care notices, our teams are always available 24/7 to address any needs that may arise. Our licensed irrigators are also on call to address broken pipes, misfiring sprinkler heads and any other irrigation related issues that arise outside of normal business hours. To find out more about how you can get a customized maintenance plan for your HOA community, contact Parklane Landscaping today.
         </StyledInfoBodyMessage>
 
+        <div className="contact-info-phone-email">
+          <span>{companyInfo.phone}</span><span>{companyInfo.email}</span>
+        </div>
+
+        <div className="services-maintenance-info-images">
+          <img src={imgHome} alt="Home" />
+        </div>
 
       </StyledServicesMaintenance>
     </AnimatedStyledRoute>
   );
 }
 const StyledServicesMaintenance = styled.div`
-  .services-maintenance-header {
-    font-size: 3em;
-    font-weight: 400;
-    color: ${({ theme }) => theme.colorPrimary};
-    margin: 20px 100px 10px;
+  .contact-info-phone-email {
+    color: ${({theme}) => theme.colorPrimary};
+    margin: 30px 130px;
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 300;
+    text-transform: uppercase;
+    span:first-child {
+      padding-right: 5px;
+      border-right: 1px solid ${({theme}) => theme.colorPrimary};
+    }
+    span:last-child {
+      padding-left: 5px;
+    }
   }
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
+  }
+  .services-maintenance-header {
+    font-size: 3em;
+    font-weight: 400;
+    color: ${({ theme }) => theme.colorPrimary};
+    margin: 20px 130px 10px;
+  }
+  .services-maintenance-info-images {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    margin: 0 130px 60px;
+    img {
+      flex: 0 1 auto;
+      width: 100%;
+    }
   }
   @media (max-width: ${({theme}) => theme.mobileWidth}px) {
 
