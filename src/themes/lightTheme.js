@@ -16,9 +16,6 @@ const lightTheme = {
   colorSecondaryOpaque: 'rgba(187, 170, 117, 0.8)',
   colorTertiary: 'rgba(249, 247, 243, 1)',
   // colorTertiaryHover: 'rgba(45, 50, 96, 1)',
-  colorTertiaryOpaque: 'rgba(249, 247, 243, 0.8)',
-  // shadowColor: 'rgba(177, 166, 164, 0.5)'
+  colorTertiaryOpaque: 'rgba(249, 247, 243, 0.8)'
 };
 export default lightTheme;
-
-//189 172 121

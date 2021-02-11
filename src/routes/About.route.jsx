@@ -18,20 +18,20 @@ import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
 /** images **/
 import imgCarnival from '../assets/img/img-carnival.jpg';
-import imgEstatesAtBridgewood from '../assets/img/img-estates-at-bridgewood.jpg';
+import imgEstatesAtBridgewood from '../assets/img/img-monument-6.jpg';
 import imgParklaneFamily from '../assets/img/img-parklane-family.jpg';
 import imgPictureFrame from '../assets/img/img-picture-frame.png';
-import imgTrees from '../assets/img/img-trees.jpg';
+import imgTrees from '../assets/img/img-trees-2.jpg';
 import logoMain from '../assets/img/logo-main.png';
 
 function AboutRoute(props) {
   const { isMobile, width } = useAppState();
   const { offset } = useParallaxEffect({ strength: 0.2 });
 
-  function calcBackgroundPosition() {
-    let offset = 10;
-    if (width < 800) offset = 100 - (width / 800 * 100) + 10;
-    return offset;
+  function calcBackgroundSize() {
+    let size = '700px';
+    if (width < 700) size = '750px';
+    return size;
   }
 
   return (
@@ -40,9 +40,9 @@ function AboutRoute(props) {
         <InfoBanner
           style={{
             backgroundImage: `url(${imgEstatesAtBridgewood})`,
-            backgroundPosition: `left calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
+            backgroundPosition: `left calc(-20px + ${offset.y}px)`,
             backgroundRepeat: 'no-repeat',
-            backgroundSize: width < 750 ? '750px' : '70%'
+            backgroundSize: calcBackgroundSize()
           }}
           config={{
             height: '350px',

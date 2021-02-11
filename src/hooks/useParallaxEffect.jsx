@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function useParallaxEffect({ scrollRef, strength = 0 }) {
   strength = Math.min(Math.max(strength, -1), 1);

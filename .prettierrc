@@ -6,6 +6,7 @@
   "indent": 0,
   "jsxBracketSameLine": false,
   "keyword-spacing": 0,
+  "multiline-ternary": 0,
   "no-extend-native": 0,
   "no-multiple-empty-lines": 0,
   "no-tabs": 0,

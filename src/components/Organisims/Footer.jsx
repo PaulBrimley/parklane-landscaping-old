@@ -141,6 +141,7 @@ const StyledFooter = styled.div`
       height: 400px;
       width: 150px;
       background: url(${grassDark}) no-repeat 50% 100% / contain;
+      z-index: -1;
     }
   }
   @media (max-width: ${({theme}) => theme.mobileWidth}px) {

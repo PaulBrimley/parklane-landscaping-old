@@ -15,8 +15,8 @@ import PageDivider1 from '../components/Atoms/PageDivider1';
 import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
 
 /** images **/
-//need actual info banner background image
-import imgLeaves from '../assets/img/img-leaves.jpg';
+import imgLeaves1 from '../assets/img/img-leaves-1.jpg';
+import imgOverhead1 from '../assets/img/img-overhead-1.jpg';
 
 function ContactRoute(props) {
   const { companyInfo, width } = useAppState();
@@ -28,14 +28,16 @@ function ContactRoute(props) {
 
   function calcBackgroundPosition() {
     let offset = 10;
+    if (width < 800) offset = 20;
     if (width < 700) offset = 30;
     if (width < 400) offset = 40;
     return offset;
   }
   function calcBackgroundSize() {
-    let size = '150%';
-    if (width < 700) size = '170%';
-    if (width < 400) size = '250%';
+    let size = '105%';
+    if (width < 800) size = '115%';
+    if (width < 700) size = '125%';
+    if (width < 400) size = '170%';
     return size;
   }
 
@@ -44,7 +46,7 @@ function ContactRoute(props) {
       <StyledContact className="body">
         <InfoBanner
           style={{
-            backgroundImage: `url(${imgLeaves})`,
+            backgroundImage: `url(${imgLeaves1})`,
             backgroundPosition: `20% calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: calcBackgroundSize()
@@ -99,7 +101,9 @@ function ContactRoute(props) {
           </div>
         </div>
 
-        <div className="contact-plan-image">some picture here</div>
+        <div className="contact-info-images">
+          <img src={imgOverhead1} alt="Home" />
+        </div>
 
         <div className="separator" />
 
@@ -129,7 +133,6 @@ function ContactRoute(props) {
           <div>Fence Line Shredding</div>
           <div>HOA Annual and Board Meeting Participation</div>
         </div>
-
       </StyledContact>
     </AnimatedStyledRoute>
   );
@@ -198,8 +201,8 @@ const StyledContact = styled.div`
     margin: 10px 30px;
   }
   .contact-info {
-    color: ${({theme}) => theme.colorPrimary};
-    margin: 0 100px;
+    color: ${({ theme }) => theme.colorPrimary};
+    margin: 0 130px;
     text-align: center;
     .contact-info-message {
       font-size: 1.4em;
@@ -212,14 +215,10 @@ const StyledContact = styled.div`
       margin-bottom: 20px;
     }
   }
-  .contact-plan-image {
-    display: flex;
-    justify-content: center;
-  }
   .contact-hoa-services-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 0 100px 50px;
+    margin: 0 130px 50px;
     color: ${({ theme }) => theme.colorPrimary};
     text-align: center;
     white-space: nowrap;
@@ -227,16 +226,27 @@ const StyledContact = styled.div`
       margin-bottom: 10px;
     }
   }
+  .contact-info-images {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    margin: 0 130px;
+    img {
+      flex: 0 1 auto;
+      width: 100%;
+    }
+  }
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
   }
   .separator {
-    width: 40%;
+    width: 50%;
     border-bottom: 2px solid red;
     margin: 40px auto;
   }
-  @media (max-width: ${({theme}) => theme.mobileWidth}px) {
+  @media (max-width: ${({ theme }) => theme.mobileWidth}px) {
     .contact-hoa-services-list {
       margin: 0 20px 50px;
       grid-template-columns: 1fr;

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useMemo, useState } from 'react';
+import { createContext, useContext, useMemo, useRef, useState } from 'react';
 
 /** themes **/
 import darkTheme from '../themes/darkTheme';
@@ -11,6 +11,27 @@ function useAppState() {
   if (!context) throw new Error('useAppState must be used within AppProvider');
   const [state, setState] = context;
 
+  function addPrefetchedImages(images) {
+    const newImagesObj = images.reduce((acc, imgSrc) => {
+      if (!acc[imgSrc] && !state.preFetchedImages[imgSrc]) {
+        const img = new Image();
+        img.src = imgSrc;
+        acc[imgSrc] = {
+          img,
+          src: imgSrc
+        };
+      }
+      return acc;
+    }, {});
+
+    setState({
+      ...state,
+      preFetchedImages: {
+        ...state.preFetchedImages,
+        ...newImagesObj
+      }
+    });
+  }
   function handleWidthChange(width) {
     const isMobile = width <= state.mobileWidth;
     setState({
@@ -50,9 +71,11 @@ function useAppState() {
     mobileWidth: state.mobileWidth,
     modal: state.modal,
     menuCollapsed: state.menuCollapsed,
+    preFetchedImages: state.preFetchedImages,
     theme: state.theme,
     width: state.width,
 
+    addPrefetchedImages,
     handleWidthChange,
     setModal,
     setMenuCollapsed
@@ -80,6 +103,7 @@ function AppProvider(props) {
       shown: false
     },
     menuCollapsed: true,
+    preFetchedImages: {},
     theme: lightTheme,
     width: 0
   });

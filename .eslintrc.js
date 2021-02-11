@@ -5,9 +5,7 @@ module.exports = {
     es6: true,
     node: true
   },
-  extends: [
-    'standard'
-  ],
+  extends: ['standard'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
@@ -26,6 +24,7 @@ module.exports = {
     'one-var': 0,
     indent: 0,
     'handle-callback-err': 0,
+    'multiline-ternary': 0,
     'no-extend-native': 0,
     'comma-dangle': 1,
     'object-curly-spacing': 0,
@@ -42,7 +41,5 @@ module.exports = {
     sourceType: 'module',
     parser: 'babel-eslint'
   },
-  plugins: [
-    'react'
-  ]
+  plugins: ['react']
 };

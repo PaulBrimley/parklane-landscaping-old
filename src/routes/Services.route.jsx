@@ -30,7 +30,7 @@ import iconTreeWalkGold from '../assets/img/icon-tree-walk-gold.png';
 import iconTreeWalkRed from '../assets/img/icon-tree-walk-red.png';
 import iconWaterHoseGold from '../assets/img/icon-water-hose-gold.png';
 import iconWaterHoseRed from '../assets/img/icon-water-hose-red.png';
-import imgServices from '../assets/img/img-services.jpg';
+import imgServices from '../assets/img/img-guy-planting-2.jpg';
 import imgGuyKneeling from '../assets/img/img-guy-kneeling.jpg';
 import imgGuyTeaching from '../assets/img/img-guy-teaching.jpg';
 import imgHillsAtAlamoRanch from '../assets/img/img-hills-at-alamo-ranch.jpg';
@@ -234,11 +234,14 @@ const StyledServices = styled.div`
     margin: 10px 30px;
   }
   .services-hoa-services-list {
-    font-size: 1.7em;
+    font-size: 1.5em;
     font-weight: 400;
     color: ${({ theme }) => theme.colorPrimary};
     text-align: center;
     margin: 20px 30px;
+    div {
+      margin: 6px 0;
+    }
   }
   .services-info-images {
     display: grid;
