@@ -103,7 +103,7 @@ function HomeRoute(props) {
 
         <div className="home-header">The HOA Landscape Specialists</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" margin="0 100px">
+        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
           Parklane Landscaping is a professional landscape management firm specializing in HOA managed properties in San Antonio, Boerne, and Braunfels, Having been in business now for ten years, we have developed a reputation for excellent client service an detailed attention to our work, We encourage our team to foster close relationships with HOA board members and property managers. This close collaboration yields high performance in our crews that ensures a community's visual aesthetic appeal and the strategic enhancement of its property value.
         </StyledInfoBodyMessage>
 
@@ -183,7 +183,7 @@ const StyledHome = styled.div`
   .home-action {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    margin: 0 var(--side-margin) 30px;
     .learn-more-button-2 {
       color: ${({ theme }) => theme.colorWhite};
       border: 1px solid ${({ theme }) => theme.colorPrimary};
@@ -198,7 +198,7 @@ const StyledHome = styled.div`
     font-size: 3em;
     font-weight: 400;
     color: ${({ theme }) => theme.colorPrimary};
-    margin: 20px 100px 10px;
+    margin: 20px var(--side-margin) 10px;
   }
   .home-info-section {
     display: grid;
@@ -229,6 +229,12 @@ const StyledHome = styled.div`
       border: 1px solid ${({ theme }) => theme.colorSecondary};
     }
   }
+  @media (max-width: 600px) {
+    .home-info-section {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 100px var(--side-margin);
+    }
+  }
   @media (max-width: ${({ theme }) => theme.mobileWidth}px) {
     .home-header {
       font-size: 2em;
@@ -242,5 +248,6 @@ const StyledHome = styled.div`
       display: none;
     }
   }
+  
 `;
 export default HomeRoute;

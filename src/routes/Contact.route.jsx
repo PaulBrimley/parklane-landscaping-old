@@ -142,7 +142,7 @@ const StyledContact = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px 0;
+    margin: 20px var(--side-margin);
     .form-header {
       font-size: 1.7em;
       font-weight: 700;
@@ -153,7 +153,7 @@ const StyledContact = styled.div`
     .contact-form {
       display: flex;
       flex-direction: column;
-      width: 30%;
+      width: 40%;
       min-width: 200px;
       background-color: ${({ theme }) => theme.colorPrimary};
       padding: 5px 8px 7px;
@@ -198,11 +198,11 @@ const StyledContact = styled.div`
     text-transform: uppercase;
     color: ${({ theme }) => theme.colorPrimary};
     text-align: center;
-    margin: 10px 30px;
+    margin: 10px var(--side-margin);
   }
   .contact-info {
     color: ${({ theme }) => theme.colorPrimary};
-    margin: 0 130px;
+    margin: 0 var(--side-margin);
     text-align: center;
     .contact-info-message {
       font-size: 1.4em;
@@ -218,7 +218,7 @@ const StyledContact = styled.div`
   .contact-hoa-services-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 0 130px 50px;
+    margin: 0 var(--side-margin) 50px;
     color: ${({ theme }) => theme.colorPrimary};
     text-align: center;
     white-space: nowrap;
@@ -231,7 +231,7 @@ const StyledContact = styled.div`
     justify-items: center;
     grid-template-columns: 1fr;
     grid-gap: 10px;
-    margin: 0 130px;
+    margin: 0 var(--side-margin);
     img {
       flex: 0 1 auto;
       width: 100%;
@@ -246,10 +246,14 @@ const StyledContact = styled.div`
     border-bottom: 2px solid red;
     margin: 40px auto;
   }
+  @media (max-width: 900px) {
+    .contact-hoa-services-list {
+      grid-template-columns: 1fr;
+    }
+  }
   @media (max-width: ${({ theme }) => theme.mobileWidth}px) {
     .contact-hoa-services-list {
       margin: 0 20px 50px;
-      grid-template-columns: 1fr;
       white-space: normal;
     }
     .contact-info {

@@ -77,7 +77,7 @@ function ServicesIrrigationRoute(props) {
 
         <div className="services-irrigation-header">HOA Irrigation</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 130px">
+        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 var(--side-margin)">
           During our ten years in business, Parklane has recognized the need for licensed irrigators in the HOA industry. After being asked if we could do SAWS audits or repair an irrigation system we decided to invest in educating our own team members in irrigation. As a result, Parkland now has three licensed irrigators who regularly perform monthly audits on all of our HOA properties. When the need arises, our licensed irrigators can repair or even install an entire irrigation system.
         </StyledInfoBodyMessage>
 
@@ -105,14 +105,14 @@ const StyledServicesIrrigation = styled.div`
     font-size: 3em;
     font-weight: 400;
     color: ${({ theme }) => theme.colorPrimary};
-    margin: 20px 130px 10px;
+    margin: 20px var(--side-margin) 10px;
   }
   .services-irrigation-info-images {
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr;
     grid-gap: 10px;
-    margin: 20px 130px;
+    margin: 20px var(--side-margin);
     img {
       flex: 1 1 auto;
       width: 100%;
@@ -120,7 +120,9 @@ const StyledServicesIrrigation = styled.div`
   }
   .services-irrigation-info-seal {
     display: flex;
-    margin: 30px 130px;
+    justify-content: center;
+    align-items: center;
+    margin: 30px var(--side-margin);
     img {
       width: 110px;
       object-fit: contain;
@@ -128,7 +130,9 @@ const StyledServicesIrrigation = styled.div`
     }
   }
   @media (max-width: ${({theme}) => theme.mobileWidth}px) {
-    
+    .services-irrigation-info-seal {
+      flex-direction: column;
+    }
   }
 `;
 export default ServicesIrrigationRoute;

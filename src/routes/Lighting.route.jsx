@@ -77,7 +77,7 @@ function ServicesLightingRoute(props) {
 
         <div className="services-lighting-header">HOA LIGHTING</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 130px">
+        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 var(--side-margin)">
           Your community is your pride and joy. Once Parklane has planted flower beds, trees and added beautiful landscape features, you'll want to showcase them. Adding landscape lighting and garden lights is a great way to highlight your community's best features and make your HOA a safer place. Plus it raises the value of any community. Consider adding outdoor lighting for your next landscape project to make your HOA warm and inviting.
         </StyledInfoBodyMessage>
 
@@ -87,12 +87,10 @@ function ServicesLightingRoute(props) {
             <img src={imgLighting3} alt="lighting 3" />
           </div>
           <div className="subsection-info">
-            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 0 0 20px">
+            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 0 10px 0">
               If you are looking to start a new HOA community landscape project, consider the value of adding outdoor lighting. A well-lit neighborhood increases curb appeal by offering a warm and inviting place for your family and friends. Not only does outdoor lighting extend your living space, it can offer huge safety and security benefits. Highlight your HOA's beautiful lawns, gardens, and other landscaping features with outdoor lighting!
             </StyledInfoBodyMessage>
-            <br/>
-            <br/>
-            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 0 0 20px">
+            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0">
               For more information on HOA landscape lighting or tips on how you can enhance your landscape community at night, contact us today! We would be happy to provide you with a free estimate on your next landscaping project.
             </StyledInfoBodyMessage>
           </div>
@@ -111,16 +109,17 @@ const StyledServicesLighting = styled.div`
     font-size: 3em;
     font-weight: 400;
     color: ${({ theme }) => theme.colorPrimary};
-    margin: 20px 130px 10px;
+    margin: 20px var(--side-margin) 10px;
   }
   .services-lighting-info-subsection {
     display: flex;
-    margin: 10px 130px;
+    margin: 10px var(--side-margin);
     .subsection-images {
+      margin-right: 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      flex: 50% 0 0;
+      flex: 49% 0 0;
       img {
         margin-bottom: 10px;
         width: 100%;
@@ -130,11 +129,17 @@ const StyledServicesLighting = styled.div`
       }
     }
     .subsection-info {
-      flex: 50% 0 0;
+      flex: 49% 0 0;
     }
   }
   @media (max-width: ${({theme}) => theme.mobileWidth}px) {
-
+    .services-lighting-info-subsection {
+      flex-direction: column;
+      .subsection-images {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
   }
 `;
 export default ServicesLightingRoute;

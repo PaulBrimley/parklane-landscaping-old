@@ -98,7 +98,7 @@ function ServicesRoute(props) {
 
         <div className="services-header">Parklane HOA Services</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" margin="0 30px">
+        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
           A partnership with Parklane Landscaping begins the moment we begin caring for your HOA community landscape. As part of our growing relationship, Parklane works diligently with property managers to ensure pro-activity in areas that would benefit from enhancement and those that can be money savers for the HOA. We also work with HOA landscape committees in developing ideas, concepts and plans to actively engage the future development of the community’s landscape. We make ourselves available to attend annual HOA board meetings and prepare short and informative presentations detailing our ongoing progress. Below you will find a list of general services we offer to ensure our HOA communities need only make one call to fulfill all their landscaping needs.
         </StyledInfoBodyMessage>
 
@@ -226,7 +226,7 @@ const StyledServices = styled.div`
     font-size: 3em;
     font-weight: 400;
     color: ${({ theme }) => theme.colorPrimary};
-    margin: 20px 30px 10px;
+    margin: 20px var(--side-margin) 10px;
   }
   .services-header-2 {
     font-size: 1.7em;
@@ -234,14 +234,14 @@ const StyledServices = styled.div`
     text-transform: uppercase;
     color: ${({ theme }) => theme.colorPrimary};
     text-align: center;
-    margin: 10px 30px;
+    margin: 10px var(--side-margin);
   }
   .services-hoa-services-list {
     font-size: 1.5em;
     font-weight: 400;
     color: ${({ theme }) => theme.colorPrimary};
     text-align: center;
-    margin: 20px 30px;
+    margin: 20px var(--side-margin);
     div {
       margin: 6px 0;
     }
@@ -250,7 +250,7 @@ const StyledServices = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 15px;
-    margin: 5px 30px 10px;
+    margin: 5px var(--side-margin) 10px;
     img {
       flex: 0 1 auto;
       width: 100%;
@@ -258,7 +258,7 @@ const StyledServices = styled.div`
     }
   }
   .services-quick-list-wrapper {
-    margin: 5px 30px 10px;
+    margin: 5px var(--side-margin) 10px;
     padding: 3px;
     border: 2px solid ${({theme}) => theme.colorPrimary}; 
     .services-quick-list {

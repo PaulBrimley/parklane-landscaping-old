@@ -80,7 +80,7 @@ function AboutRoute(props) {
 
         <div className="about-header">About</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 100px">
+        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 var(--side-margin)">
           <p>
             In 2011 Eliseo Rios opened Parklane Landscaping. He recognized the rapid growth in the number of housing developments in and around San Antonio. He also noticed that there were no specialized landscapers that served these communities. It was then that he made the goal to make Parklane specialists in the HOA landscaping industry.
           </p>
@@ -106,7 +106,7 @@ function AboutRoute(props) {
           <img src={imgParklaneFamily} alt="Parklane family" />
           <img src={imgCarnival} alt="Carnival" />
         </div>
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 100px">
+        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 var(--side-margin)">
           Ten yeas ago Parklane saw an opportunity to delve into a relatively new industry, maintenance in HOA communities. By building its business around it they have become one of the industry's early pioneers. After a few years, owner Eliseo Rios brought in his brothers making it a family run business. It is hard to find a family business where every family member has a degree. More than that, they live in the community they serve. Through years of hard work, building relationships of trust and learning specific skills to effectively serve HOA communities, Parklane has gained the reputation of being one of the specialists in the HOA industry. We feel great pride in the work we do and look forward to future growth. Developing our skills and trusted relationships in the industry we hope to serve our communities as the leader in our industry. There is nothing better than hearing from a client the pride residents feel when they enter their beautifully maintained communities.
         </StyledInfoBodyMessage>
 
@@ -124,13 +124,13 @@ const StyledAbout = styled.div`
     font-size: 3em;
     font-weight: 400;
     color: ${({ theme }) => theme.colorPrimary};
-    margin: 20px 100px 10px;
+    margin: 20px var(--side-margin) 10px;
   }
   .about-info-images {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
-    margin: 5px 100px 10px;
+    margin: 5px var(--side-margin) 10px;
     img {
       flex: 0 1 auto;
       width: 100%;
@@ -169,7 +169,7 @@ const StyledAbout = styled.div`
     }
     .about-info-images {
       grid-template-columns: 1fr;
-      margin: 5px 20px 10px;
+      margin: 5px var(--side-margin) 10px;
       img {
         max-width: none;
       }

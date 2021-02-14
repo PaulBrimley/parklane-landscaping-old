@@ -86,7 +86,7 @@ function ServicesLandscapeRoute(props) {
 
         <div className="services-landscape-header">HOA Landscape</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 130px">
+        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 var(--side-margin)">
           Parklane Landscaping provides pro-active and long-range planning ideas to enhance the landscape appeal of an HOA community. Our team of design and horticulture professionals work on the visual aesthetic and on the health of the environment in order to provide a verdant landscape. Our professionals provide expert guidance to propose beautiful landscape designs and to provide long-range planning to keep the landscape sustainable and vibrant.
         </StyledInfoBodyMessage>
 
@@ -96,7 +96,7 @@ function ServicesLandscapeRoute(props) {
 
         <div className="services-landscape-header">Landscape Design</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 130px 20px">
+        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 var(--side-margin) 20px">
           Parklane Landscaping takes pride in ensuring that every one of our properties looks its best. As such, we take our design approach very seriously when it comes to making landscape suggestions to our clients. We understand that well-designed communal landscapes should exude balance, beauty and order; all the while providing a welcoming environment for residents, guests and prospective community members.
         </StyledInfoBodyMessage>
 
@@ -107,16 +107,16 @@ function ServicesLandscapeRoute(props) {
             <img className="colored-pencils" src={imgColoredPencils} alt="colored pencils" />
           </div>
           <div className="subsection-info">
-            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 0 0 20px">
+            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 0 10px 0">
               As we start a new landscape project we take into consideration three things, the aesthetic of the client, ability of a plant's survival in the given area, and the impact our choices make on the community. Flowers and trees are an investment. It is our goal to make sure that the investment brings a good return to the community. Choice landscape adds value to a property and gives it a sense of welcome and warmth.
             </StyledInfoBodyMessage>
-            <br/>
-            <br/>
-            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 0 0 20px">
+            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0">
               Once Parklane understands the goals of the community, we create the vision. Photos are very important in the development of every landscape design project. Using drone photography, we are able to get an overall view of the entire area being modified. This allows us to make renderings for our clients using suggested plant materials. We then take those images and use design programs to create the virtual spaces within the project. Once approval is made on the final design plan, everything is scheduled for Parklane to turn the vision into reality.
             </StyledInfoBodyMessage>
           </div>
         </div>
+
+        <br />
 
       </StyledServicesLandscape>
     </AnimatedStyledRoute>
@@ -141,14 +141,14 @@ const StyledServicesLandscape = styled.div`
     font-size: 3em;
     font-weight: 400;
     color: ${({ theme }) => theme.colorPrimary};
-    margin: 20px 130px 10px;
+    margin: 20px var(--side-margin) 10px;
   }
   .services-landscape-info-images {
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr;
     grid-gap: 10px;
-    margin: 40px 130px;
+    margin: 40px var(--side-margin);
     img {
       flex: 0 1 auto;
       width: 100%;
@@ -156,13 +156,14 @@ const StyledServicesLandscape = styled.div`
   }
   .services-landscape-info-subsection {
     display: flex;
-    margin: 10px 130px;
+    margin: 10px var(--side-margin);
     .subsection-images {
       position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
-      flex: 50% 0 0;
+      flex: 49% 0 0;
+      margin-right: 10px;
       img {
         width: 100%;
       }
@@ -174,12 +175,27 @@ const StyledServicesLandscape = styled.div`
       }
     }
     .subsection-info {
-      flex: 50% 0 0;
+      padding-top: 10px;
+      flex: 49% 0 0;
     }
   }
   @media (max-width: ${({theme}) => theme.mobileWidth}px) {
     .info-banner-right {
       display: none;
+    }
+    .services-landscape-info-subsection {
+      flex-direction: column;
+      .subsection-images {
+        margin-right: 0;
+        margin-bottom: 10px;
+        .colored-pencils {
+          left: 0;
+          width: 50%;
+        }
+      }
+      .subsection-info {
+        padding-top: 0;
+      }
     }
   }
 `;
