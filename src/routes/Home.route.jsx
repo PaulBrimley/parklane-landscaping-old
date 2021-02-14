@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 /** context **/
@@ -7,9 +7,12 @@ import { useAppState } from '../context/app.context';
 /** hooks **/
 import useParallaxEffect from '../hooks/useParallaxEffect';
 
+/** routes **/
+import { routes } from './Routes';
+
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
-import Button from '../components/Atoms/Button';
+import { LinkButton } from '../components/Atoms/Button';
 import InfoBanner from '../components/Molecules/InfoBanner';
 import InfoBannerLeft from '../components/Molecules/InfoBannerLeft';
 import InfoBannerRight from '../components/Molecules/InfoBannerRight';
@@ -18,7 +21,7 @@ import ParallaxStripe from '../components/Atoms/ParallaxStripe';
 import StyledInfoBannerAction from '../components/Styled/StyledInfoBannerAction';
 import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
-import StyledInfoCard from '../components/Styled/StyledInfoCard';
+import { StyledInfoCard, StyledInfoCardLink } from '../components/Styled/StyledInfoCard';
 
 /** images **/
 import iconLawnMowerGold from '../assets/img/icon-lawn-mower-gold.png';
@@ -44,7 +47,7 @@ function HomeRoute(props) {
 
   function calcBackgroundPosition() {
     let offset = 10;
-    if (width < 800) offset = 100 - (width / 800 * 100) + 10;
+    if (width < 800) offset = 100 - (width / 800) * 100 + 10;
     return offset;
   }
 
@@ -65,9 +68,9 @@ function HomeRoute(props) {
             <InfoBannerLeft
               action={
                 <StyledInfoBannerAction>
-                  <Button classes="learn-more-button-1" fontSize="0.8em" fontWeight="400" onClick={handleSubmit} padding="12px 20px 11px" shadowColor="colorTransparent">
+                  <LinkButton classes="learn-more-button-1" fontSize="0.8em" fontWeight="400" padding="12px 20px 11px" shadowColor="colorTransparent" to={routes.SERVICES}>
                     LEARN MORE
-                  </Button>
+                  </LinkButton>
                 </StyledInfoBannerAction>
               }
               className="info-banner-left"
@@ -105,9 +108,9 @@ function HomeRoute(props) {
         </StyledInfoBodyMessage>
 
         <div className="home-action">
-          <Button classes="learn-more-button-2" fontSize="1.3em" margin="25px 0 0" onClick={handleSubmit} padding="8px 20px 5px">
+          <LinkButton classes="learn-more-button-2" fontSize="1.3em" margin="25px 0 0" padding="8px 20px 5px" to={routes.SERVICES}>
             LEARN MORE
-          </Button>
+          </LinkButton>
         </div>
 
         <ParallaxStripe backgroundUrl={imgGrass} height="75px">
@@ -117,7 +120,7 @@ function HomeRoute(props) {
         </ParallaxStripe>
 
         <div className="home-info-section">
-          <StyledInfoCard>
+          <StyledInfoCardLink as={Link} to={routes.MAINTENANCE}>
             <div className="header">Maintenance</div>
             <div className="body">
               <div className="icons">
@@ -126,9 +129,9 @@ function HomeRoute(props) {
               </div>
               <div className="message">Parklane Landscaping specializes in HOA landscape maintenance...Learn More</div>
             </div>
-          </StyledInfoCard>
+          </StyledInfoCardLink>
 
-          <StyledInfoCard>
+          <StyledInfoCardLink as={Link} to={routes.IRRIGATION}>
             <div className="header">Irrigation</div>
             <div className="body">
               <div className="icons">
@@ -137,9 +140,9 @@ function HomeRoute(props) {
               </div>
               <div className="message">After many requests for irrigation audits, licensing became essential...Learn More</div>
             </div>
-          </StyledInfoCard>
+          </StyledInfoCardLink>
 
-          <StyledInfoCard>
+          <StyledInfoCardLink as={Link} to={routes.LANDSCAPE}>
             <div className="header">HOA Landscaping</div>
             <div className="body">
               <div className="icons">
@@ -148,9 +151,9 @@ function HomeRoute(props) {
               </div>
               <div className="message">Parklane takes every opportunity to expand its landscaping abilities...Learn More</div>
             </div>
-          </StyledInfoCard>
+          </StyledInfoCardLink>
 
-          <StyledInfoCard>
+          <StyledInfoCardLink as={Link} to={routes.MONUMENT}>
             <div className="header">Masonry</div>
             <div className="body">
               <div className="icons">
@@ -159,7 +162,7 @@ function HomeRoute(props) {
               </div>
               <div className="message">Masonry is a very important service to every HOA community...Learn More</div>
             </div>
-          </StyledInfoCard>
+          </StyledInfoCardLink>
         </div>
       </StyledHome>
     </AnimatedStyledRoute>

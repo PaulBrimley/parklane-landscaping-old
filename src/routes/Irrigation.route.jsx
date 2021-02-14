@@ -86,7 +86,7 @@ function ServicesIrrigationRoute(props) {
         </div>
 
         <div className="services-irrigation-info-seal">
-          <img src={imgIrrigationSeal} alt="Home" />
+          <img src={imgIrrigationSeal} alt="irrigation seal" />
           <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 0 0 15px">
             Does your irrigator have this seal? Parklane Landscaping does. In fact we have a team of licensed irrigators that all carry their irrigation license with this official seal. it is a requirement in the state of Texas that all licensed irrigators doing audits or working on irrigation carry it with them at all times. If you need a licensed irrigator call Parklane Landscaping. Our team has Texas' seal of approval!
           </StyledInfoBodyMessage>
@@ -114,7 +114,7 @@ const StyledServicesIrrigation = styled.div`
     grid-gap: 10px;
     margin: 20px 130px;
     img {
-      flex: 0 1 auto;
+      flex: 1 1 auto;
       width: 100%;
     }
   }
@@ -123,6 +123,8 @@ const StyledServicesIrrigation = styled.div`
     margin: 30px 130px;
     img {
       width: 110px;
+      object-fit: contain;
+      object-position: center;
     }
   }
   @media (max-width: ${({theme}) => theme.mobileWidth}px) {

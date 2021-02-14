@@ -6,6 +6,9 @@ import { useAppState } from '../context/app.context';
 /** hooks **/
 import useParallaxEffect from '../hooks/useParallaxEffect';
 
+/** routes **/
+import {routes} from './Routes';
+
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
 import InfoBanner from '../components/Molecules/InfoBanner';
@@ -118,7 +121,7 @@ function ServicesRoute(props) {
 
         <div className="services-quick-list-wrapper">
           <div className="services-quick-list">
-            <StyledQuickListItem>
+            <StyledQuickListItem to={routes.MAINTENANCE}>
               <div className="icons">
                 <img className="icon1" src={iconLawnMowerGold} alt="lawn mower" />
                 <img className="icon2" src={iconLawnMowerRed} alt="lawn mower" />
@@ -126,7 +129,7 @@ function ServicesRoute(props) {
               <div className="title">HOA Maintenance</div>
             </StyledQuickListItem>
 
-            <StyledQuickListItem>
+            <StyledQuickListItem to={routes.IRRIGATION}>
               <div className="icons">
                 <img className="icon1" src={iconWaterHoseGold} alt="water hose" />
                 <img className="icon2" src={iconWaterHoseRed} alt="water hose" />
@@ -134,7 +137,7 @@ function ServicesRoute(props) {
               <div className="title">HOA Irrigation</div>
             </StyledQuickListItem>
 
-            <StyledQuickListItem>
+            <StyledQuickListItem to={routes.LANDSCAPE}>
               <div className="icons">
                 <img className="icon1" src={iconTreeWalkGold} alt="tree walk" />
                 <img className="icon2" src={iconTreeWalkRed} alt="tree walk" />
@@ -142,7 +145,7 @@ function ServicesRoute(props) {
               <div className="title">HOA Landscape</div>
             </StyledQuickListItem>
 
-            <StyledQuickListItem>
+            <StyledQuickListItem to={routes.MONUMENT}>
               <div className="icons">
                 <img className="icon1" src={iconMasonGold} alt="mason" />
                 <img className="icon2" src={iconMasonRed} alt="mason" />
@@ -150,7 +153,7 @@ function ServicesRoute(props) {
               <div className="title">HOA Monuments</div>
             </StyledQuickListItem>
 
-            <StyledQuickListItem>
+            <StyledQuickListItem to={routes.MONUMENT}>
               <div className="icons">
                 <img className="icon1" src={iconMasonryGold} alt="masonry" />
                 <img className="icon2" src={iconMasonryRed} alt="masonry" />
@@ -158,7 +161,7 @@ function ServicesRoute(props) {
               <div className="title">Masonry Repair</div>
             </StyledQuickListItem>
 
-            <StyledQuickListItem>
+            <StyledQuickListItem to={routes.FENCE}>
               <div className="icons">
                 <img className="icon1" src={iconFenceGold} alt="fence" />
                 <img className="icon2" src={iconFenceRed} alt="fence" />
@@ -166,7 +169,7 @@ function ServicesRoute(props) {
               <div className="title">Fence Repair</div>
             </StyledQuickListItem>
 
-            <StyledQuickListItem>
+            <StyledQuickListItem to={routes.LIGHTING}>
               <div className="icons">
                 <img className="icon1" src={iconLightBulbGold} alt="light bulb" />
                 <img className="icon2" src={iconLightBulbRed} alt="light bulb" />

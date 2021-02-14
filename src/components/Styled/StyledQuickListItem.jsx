@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const StyledQuickListItem = styled.div`
+const StyledQuickListItem = styled(Link)`
   display: flex;
   flex-direction: column;
   cursor: pointer;
   transition: color 0.2s;
+  text-decoration: none;
   .icons {
     display: flex;
     justify-content: center;
@@ -27,7 +29,7 @@ const StyledQuickListItem = styled.div`
   .title {
     font-size: 1.2em;
     font-weight: 700;
-    color: ${({theme}) => theme.colorSecondary};
+    color: ${({ theme }) => theme.colorSecondary};
     text-transform: uppercase;
     padding: 2px 10px;
     text-align: center;
@@ -35,15 +37,15 @@ const StyledQuickListItem = styled.div`
   }
   &:hover {
     .icons {
-      .icon1{
+      .icon1 {
         opacity: 0;
       }
-      .icon2{
+      .icon2 {
         opacity: 1;
       }
     }
     .title {
-      color: ${({theme}) => theme.colorPrimary};
+      color: ${({ theme }) => theme.colorPrimary};
     }
   }
 `;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
+import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
 
 /** context **/
 import { useAppState } from '../context/app.context';
@@ -165,6 +165,7 @@ function Routes(props) {
   const { addPrefetchedImages } = useAppState();
   const [flattenedRoutes, setFlattenedRoutes] = useState([]);
   const location = useLocation();
+  const history = useHistory();
 
   useEffect(() => {
     function flattenRoutes(routes) {
@@ -179,7 +180,10 @@ function Routes(props) {
   useEffect(() => {
     const imagesToPreFetch = flattenedRoutes.filter(route => route.path !== location.pathname && route.preFetchImages?.length).reduce((acc, route) => [...acc, ...route.preFetchImages], []);
     addPrefetchedImages(imagesToPreFetch);
-  }, [location, flattenedRoutes]);
+    setTimeout(() => {
+      window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    });
+  }, [location?.pathname, flattenedRoutes]);
 
   return (
     <>

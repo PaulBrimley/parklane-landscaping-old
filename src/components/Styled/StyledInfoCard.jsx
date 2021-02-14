@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
-const StyledInfoCard = styled.div`
+export const StyledInfoCard = styled.div`
   border: 1px solid ${({theme}) => theme.colorSecondary};
   box-shadow: 0 0 10px ${({theme}) => theme.colorTransparent};
+  background-color: ${({theme}) => theme.colorTransparent};
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  transition: border 0.2s, box-shadow 0.2s;
+  transition: all 0.2s;
   .body {
     flex: 1;
     .icons {
@@ -49,6 +50,7 @@ const StyledInfoCard = styled.div`
   &:hover {
     border: 1px solid ${({theme}) => theme.colorPrimary};
     box-shadow: 0 0 10px ${({theme}) => theme.colorSecondary};
+    background-color: ${({theme}) => theme.colorWhite};
     .body {
       .icons {
         .icon1{
@@ -67,4 +69,6 @@ const StyledInfoCard = styled.div`
     }
   }
 `;
-export default StyledInfoCard;
+export const StyledInfoCardLink = styled(StyledInfoCard)`
+  text-decoration: none;
+`;
