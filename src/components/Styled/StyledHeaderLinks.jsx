@@ -3,7 +3,6 @@ import styled from 'styled-components';
 const StyledHeaderLinks = styled.div`
   flex: 1 1 auto;
   display: flex;
-  flex-wrap: wrap;
   .link-wrapper {
     flex: 1;
     display: flex;

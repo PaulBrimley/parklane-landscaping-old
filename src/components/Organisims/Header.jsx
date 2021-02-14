@@ -159,9 +159,13 @@ const StyledHeader = styled.div`
     padding-bottom: 10px;
   }
   .header-left {
+    display: flex;
+    align-items: center;
     .logo {
       max-width: 150px;
       margin: 0 0 5px 20px;
+      object-fit: contain;
+      object-position: center;
     }
   }
   .header-right {
@@ -207,6 +211,14 @@ const StyledHeader = styled.div`
           visibility: visible;
           transform: scaleX(0.99);
         }
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .header-left {
+      .logo {
+        max-width: 100px;
+        margin: 0 0 5px 10px;
       }
     }
   }
