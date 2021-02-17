@@ -3,9 +3,10 @@ import styled from 'styled-components';
 
 /** context **/
 import { useAppState } from '../context/app.context';
+import { images } from '../context/img.context';
 
 /** hooks **/
-import useParallaxEffect from '../hooks/useParallaxEffect';
+import useParallaxEffect from '../hooks/useParallaxEffect.hook';
 
 /** routes **/
 import { routes } from './Routes';
@@ -24,18 +25,20 @@ import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 import { StyledInfoCard, StyledInfoCardLink } from '../components/Styled/StyledInfoCard';
 
 /** images **/
-import iconLawnMowerGold from '../assets/img/icon-lawn-mower-gold.png';
-import iconLawnMowerRed from '../assets/img/icon-lawn-mower-red.png';
-import iconMasonGold from '../assets/img/icon-mason-gold.png';
-import iconMasonRed from '../assets/img/icon-mason-red.png';
-import iconTreeWalkGold from '../assets/img/icon-tree-walk-gold.png';
-import iconTreeWalkRed from '../assets/img/icon-tree-walk-red.png';
-import iconWaterHoseGold from '../assets/img/icon-water-hose-gold.png';
-import iconWaterHoseRed from '../assets/img/icon-water-hose-red.png';
-import imgGrass from '../assets/img/img-grass.jpg';
-import imgHome from '../assets/img/img-home.jpg';
-import logoAnniversary from '../assets/img/logo-anniversary.png';
-import logoMain from '../assets/img/logo-main.png';
+const {
+  iconLawnMowerGold,
+  iconLawnMowerRed,
+  iconMasonGold,
+  iconMasonRed,
+  iconTreeWalkGold,
+  iconTreeWalkRed,
+  iconWaterHoseGold,
+  iconWaterHoseRed,
+  imgGrass,
+  imgHome,
+  logoAnniversary,
+  logoMain
+} = images;
 
 function HomeRoute(props) {
   const { width } = useAppState();

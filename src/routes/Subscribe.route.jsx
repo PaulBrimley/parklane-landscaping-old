@@ -3,9 +3,10 @@ import styled from 'styled-components';
 
 /** context **/
 import { useAppState } from '../context/app.context';
+import { images } from '../context/img.context';
 
 /** hooks **/
-import useParallaxEffect from '../hooks/useParallaxEffect';
+import useParallaxEffect from '../hooks/useParallaxEffect.hook';
 
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
@@ -17,9 +18,11 @@ import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessag
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
 /** images **/
-import imgGuyPlanting1 from '../assets/img/img-guy-planting-1.png';
-import imgNewsLetter1 from '../assets/img/img-news-letter-1.jpg';
-import imgNewsLetter2 from '../assets/img/img-news-letter-2.jpg';
+const {
+  imgGuyPlanting1,
+  imgNewsLetter1,
+  imgNewsLetter2
+} = images;
 
 function SubscribeRoute(props) {
   const { width } = useAppState();
@@ -81,7 +84,6 @@ function SubscribeRoute(props) {
         <PageDivider1 />
 
         <Textfit className="subscribe-now-header" mode="single">Subscribe now!</Textfit>
-        {/*<div className="subscribe-now-header">Subscribe now!</div>*/}
         <div className="receive-emails">To receive e-mails with tips and information for your HOA</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 var(--side-margin)">

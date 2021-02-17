@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 /** context **/
 import { useAppState } from '../context/app.context';
+import { images } from '../context/img.context';
 
 /** hooks **/
-import useParallaxEffect from '../hooks/useParallaxEffect';
+import useParallaxEffect from '../hooks/useParallaxEffect.hook';
 
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
@@ -15,11 +16,13 @@ import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessag
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
 /** images **/
-import imgMonument1 from '../assets/img/img-monument-1.jpg';
-import imgMonument2 from '../assets/img/img-monument-2.jpg';
-import imgMonument3 from '../assets/img/img-monument-3.jpg';
-import imgMonument4 from '../assets/img/img-monument-4.jpg';
-import imgMonument5 from '../assets/img/img-monument-5.jpg';
+const {
+  imgMonument1,
+  imgMonument2,
+  imgMonument3,
+  imgMonument4,
+  imgMonument5
+} = images;
 
 function ServicesMonumentRoute(props) {
   const { companyInfo, width } = useAppState();

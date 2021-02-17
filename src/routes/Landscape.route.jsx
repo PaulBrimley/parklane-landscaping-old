@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 /** context **/
 import { useAppState } from '../context/app.context';
+import { images } from '../context/img.context';
 
 /** hooks **/
-import useParallaxEffect from '../hooks/useParallaxEffect';
+import useParallaxEffect from '../hooks/useParallaxEffect.hook';
 
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
@@ -16,12 +17,14 @@ import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessag
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
 /** images **/
-import imgColoredPencils from '../assets/img/img-colored-pencils.png';
-import imgFlowers from '../assets/img/img-flowers.jpg';
-import imgLandscapeRendering from '../assets/img/img-landscape-rendering.jpg';
-import imgMonument1 from '../assets/img/img-monument-1.jpg';
-import imgOverhead2 from '../assets/img/img-overhead-2.jpg';
-import imgOverhead3 from '../assets/img/img-overhead-3.png';
+const {
+  imgColoredPencils,
+  imgFlowers,
+  imgLandscapeRendering,
+  imgMonument1,
+  imgOverhead2,
+  imgOverhead3
+} = images;
 
 function ServicesLandscapeRoute(props) {
   const { width } = useAppState();

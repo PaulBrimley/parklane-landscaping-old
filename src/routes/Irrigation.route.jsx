@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 /** context **/
 import { useAppState } from '../context/app.context';
+import { images } from '../context/img.context';
 
 /** hooks **/
-import useParallaxEffect from '../hooks/useParallaxEffect';
+import useParallaxEffect from '../hooks/useParallaxEffect.hook';
 
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
@@ -15,9 +16,11 @@ import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessag
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
 /** images **/
-import imgIrrigationSeal from '../assets/img/img-irrigation-seal.png';
-import imgSprinklers1 from '../assets/img/img-sprinklers-1.jpg';
-import imgSprinklers2 from '../assets/img/img-sprinklers-2.jpg';
+const {
+  imgIrrigationSeal,
+  imgSprinklers1,
+  imgSprinklers2
+} = images;
 
 function ServicesIrrigationRoute(props) {
   const { width } = useAppState();

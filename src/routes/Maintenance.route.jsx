@@ -3,9 +3,10 @@ import {Textfit} from 'react-textfit';
 
 /** context **/
 import { useAppState } from '../context/app.context';
+import { images } from '../context/img.context';
 
 /** hooks **/
-import useParallaxEffect from '../hooks/useParallaxEffect';
+import useParallaxEffect from '../hooks/useParallaxEffect.hook';
 
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
@@ -16,8 +17,10 @@ import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessag
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
 /** images **/
-import imgLawnMower1 from '../assets/img/img-lawn-mower-1.jpg';
-import imgLawnMower2 from '../assets/img/img-lawn-mower-2.jpg';
+const {
+  imgLawnMower1,
+  imgLawnMower2
+} = images;
 
 function ServicesMaintenanceRoute(props) {
   const { companyInfo, isMobile, width } = useAppState();

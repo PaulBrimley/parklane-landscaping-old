@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
+import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 
 /** context **/
-import { useAppState } from '../context/app.context';
+import { images, useImageState } from '../context/img.context';
 
 /** components **/
 import AboutRoute from './About.route';
@@ -19,26 +19,7 @@ import SubscribeRoute from './Subscribe.route';
 import TrimmingRoute from './Trimming.route';
 
 /** images **/
-import iconFenceRepair from '../assets/img/icon-fence-repair.png';
-import iconHoaIrrigation from '../assets/img/icon-hoa-irrigation.png';
-import iconHoaLandscape from '../assets/img/icon-hoa-landscape.png';
-import iconHoaLighting from '../assets/img/icon-hoa-lighting.png';
-import iconHoaMaintenance from '../assets/img/icon-hoa-maintenance.png';
-import iconHoaMonumentRepair from '../assets/img/icon-hoa-monument-repair.png';
-import imgCarnival from '../assets/img/img-carnival.jpg';
-import imgEstatesAtBridgewood from '../assets/img/img-monument-6.jpg';
-import imgGrass from '../assets/img/img-grass.jpg';
-import imgGuyKneeling from '../assets/img/img-guy-kneeling.jpg';
-import imgGuyTeaching from '../assets/img/img-guy-teaching.jpg';
-import imgHillsAtAlamoRanch from '../assets/img/img-hills-at-alamo-ranch.jpg';
-import imgHome from '../assets/img/img-home.jpg';
-import imgLeaves from '../assets/img/img-leaves-2.jpg';
-import imgParklaneFamily from '../assets/img/img-parklane-family.jpg';
-import imgPictureFrame from '../assets/img/img-picture-frame.png';
-import imgServices from '../assets/img/img-guy-planting-2.jpg';
-import imgTrees from '../assets/img/img-trees-2.jpg';
-import logoAnniversary from '../assets/img/logo-anniversary.png';
-import logoMain from '../assets/img/logo-main.png';
+const { iconFenceRepair, iconHoaIrrigation, iconHoaLandscape, iconHoaLighting, iconHoaMaintenance, iconHoaMonumentRepair, imgCarnival, imgColoredPencils, imgFence, imgFenceBroken, imgFenceRepair, imgFlowers, imgGrass, imgGuyKneeling, imgGuyPlanting1, imgGuyPlanting2, imgGuyTeaching, imgHillsAtAlamoRanch, imgHome, imgLandscapeRendering, imgLawnMower1, imgLawnMower2, imgLeaves, imgLighting1, imgLighting2, imgLighting3, imgMonument1, imgMonument2, imgMonument3, imgMonument4, imgMonument5, imgMonument6, imgNewsLetter1, imgNewsLetter2, imgOverhead1, imgOverhead2, imgOverhead3, imgParklaneFamily, imgPictureFrame, imgSprinklers1, imgSprinklers2, imgTrees1, imgTrees2, imgTreeTrimming, logoAnniversary, logoMain } = images;
 
 export const routes = {
   ABOUT: '/about',
@@ -61,7 +42,7 @@ export const routeArr = [
     Component: HomeRoute,
     name: 'Home',
     path: routes.HOME,
-    preFetchImages: [imgGrass, imgHome, logoAnniversary]
+    prefetchImages: [imgGrass, imgHome, logoAnniversary]
   },
   {
     active: true,
@@ -69,7 +50,7 @@ export const routeArr = [
     Component: AboutRoute,
     name: 'About',
     path: routes.ABOUT,
-    preFetchImages: [imgCarnival, imgEstatesAtBridgewood, imgParklaneFamily, imgPictureFrame, imgTrees, logoMain]
+    prefetchImages: [imgCarnival, imgMonument6, imgParklaneFamily, imgPictureFrame, imgTrees2, logoMain]
   },
   {
     active: true,
@@ -81,7 +62,8 @@ export const routeArr = [
         headerLinkLines: ['HOA', 'Maintenance'],
         icon: iconHoaMaintenance,
         name: 'HOA Maintenance',
-        path: routes.MAINTENANCE
+        path: routes.MAINTENANCE,
+        prefetchImages: [imgLawnMower1, imgLawnMower2]
       },
       {
         active: true,
@@ -90,7 +72,8 @@ export const routeArr = [
         headerLinkLines: ['HOA', 'Irrigation'],
         icon: iconHoaIrrigation,
         name: 'HOA Irrigation',
-        path: routes.IRRIGATION
+        path: routes.IRRIGATION,
+        prefetchImages: [imgSprinklers1, imgSprinklers2]
       },
       {
         active: true,
@@ -99,7 +82,8 @@ export const routeArr = [
         headerLinkLines: ['HOA', 'Landscape'],
         icon: iconHoaLandscape,
         name: 'HOA Landscape',
-        path: routes.LANDSCAPE
+        path: routes.LANDSCAPE,
+        prefetchImages: [imgColoredPencils, imgFlowers, imgMonument1, imgLandscapeRendering, imgOverhead2, imgOverhead3]
       },
       {
         active: true,
@@ -108,7 +92,8 @@ export const routeArr = [
         headerLinkLines: ['HOA Monument', 'Repair & Design'],
         icon: iconHoaMonumentRepair,
         name: 'HOA Monument Repair & Design',
-        path: routes.MONUMENT
+        path: routes.MONUMENT,
+        prefetchImages: [imgMonument1, imgMonument2, imgMonument3, imgMonument4, imgMonument5]
       },
       {
         active: true,
@@ -117,7 +102,8 @@ export const routeArr = [
         headerLinkLines: ['Fence', 'Repair'],
         icon: iconFenceRepair,
         name: 'Fence Repair',
-        path: routes.FENCE
+        path: routes.FENCE,
+        prefetchImages: [imgFence, imgFenceBroken, imgFenceRepair]
       },
       {
         active: true,
@@ -126,7 +112,8 @@ export const routeArr = [
         headerLinkLines: ['HOA', 'Lighting'],
         icon: iconHoaLighting,
         name: 'HOA Lighting',
-        path: routes.LIGHTING
+        path: routes.LIGHTING,
+        prefetchImages: [imgLighting1, imgLighting2, imgLighting3]
       },
       {
         active: true,
@@ -135,13 +122,14 @@ export const routeArr = [
         headerLinkLines: ['Tree', 'Trimming'],
         icon: '',
         name: 'Tree Trimming',
-        path: routes.TRIMMING
+        path: routes.TRIMMING,
+        prefetchImages: [imgLeaves, imgTrees1, imgTreeTrimming]
       }
     ],
     Component: ServicesRoute,
     name: 'Services',
     path: routes.SERVICES,
-    preFetchImages: [imgServices, imgGuyKneeling, imgGuyTeaching, imgHillsAtAlamoRanch]
+    prefetchImages: [imgGuyKneeling, imgGuyPlanting2, imgGuyTeaching, imgHillsAtAlamoRanch]
   },
   {
     active: true,
@@ -149,7 +137,7 @@ export const routeArr = [
     Component: SubscribeRoute,
     name: 'Subscribe',
     path: routes.SUBSCRIBE,
-    preFetchImages: []
+    prefetchImages: [imgGuyPlanting1, imgNewsLetter1, imgNewsLetter2]
   },
   {
     active: true,
@@ -157,15 +145,14 @@ export const routeArr = [
     Component: ContactRoute,
     name: 'Contact',
     path: routes.CONTACT,
-    preFetchImages: [imgLeaves]
+    prefetchImages: [imgLeaves, imgOverhead1]
   }
 ];
 
 function Routes(props) {
-  const { addPrefetchedImages } = useAppState();
+  const { addPrefetchedImages } = useImageState();
   const [flattenedRoutes, setFlattenedRoutes] = useState([]);
   const location = useLocation();
-  const history = useHistory();
 
   useEffect(() => {
     function flattenRoutes(routes) {
@@ -174,14 +161,15 @@ function Routes(props) {
         return [...acc, route, ...childRoutes];
       }, []);
     }
+
     setFlattenedRoutes(flattenRoutes(routeArr));
   }, []);
   /** prefetch images **/
   useEffect(() => {
-    const imagesToPreFetch = flattenedRoutes.filter(route => route.path !== location.pathname && route.preFetchImages?.length).reduce((acc, route) => [...acc, ...route.preFetchImages], []);
+    const imagesToPreFetch = flattenedRoutes.filter(route => route.path !== location.pathname && route.prefetchImages?.length).reduce((acc, route) => [...acc, ...route.prefetchImages], []);
     addPrefetchedImages(imagesToPreFetch);
     setTimeout(() => {
-      window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     });
   }, [location?.pathname, flattenedRoutes]);
 

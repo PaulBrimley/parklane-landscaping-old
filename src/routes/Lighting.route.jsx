@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 /** context **/
 import { useAppState } from '../context/app.context';
+import { images } from '../context/img.context';
 
 /** hooks **/
-import useParallaxEffect from '../hooks/useParallaxEffect';
+import useParallaxEffect from '../hooks/useParallaxEffect.hook';
 
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
@@ -15,9 +16,11 @@ import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessag
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
 /** images **/
-import imgLighting1 from '../assets/img/img-lighting-1.jpg';
-import imgLighting2 from '../assets/img/img-lighting-2.jpg';
-import imgLighting3 from '../assets/img/img-lighting-3.jpg';
+const {
+  imgLighting1,
+  imgLighting2,
+  imgLighting3
+} = images;
 
 function ServicesLightingRoute(props) {
   const { width } = useAppState();

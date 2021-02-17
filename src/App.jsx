@@ -7,7 +7,7 @@ import { ToastContainer, Flip } from 'react-toastify';
 import { useAppState } from './context/app.context';
 
 /** custom hooks **/
-import useWindowDimensions from './hooks/useWindowDimensions';
+import useWindowDimensions from './hooks/useWindowDimensions.hook';
 
 /** components **/
 import Footer from './components/Organisims/Footer';

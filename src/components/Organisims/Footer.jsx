@@ -4,15 +4,18 @@ import styled from 'styled-components';
 
 /** context **/
 import { useAppState } from '../../context/app.context';
-
-/** images **/
-import facebookLogo from '../../assets/img/icon-facebook.png';
-import grassDark from '../../assets/img/grass-dark.png';
-import instagramLogo from '../../assets/img/icon-instagram.png';
-import logoCard from '../../assets/img/logo-card.png';
-import twitterLogo from '../../assets/img/icon-twitter.png';
+import { images } from '../../context/img.context';
 
 import { routeArr } from '../../routes/Routes';
+
+/** images **/
+const {
+  facebookLogo,
+  grassDark,
+  instagramLogo,
+  logoCard,
+  twitterLogo
+} = images;
 
 function Footer(props) {
   const { companyInfo } = useAppState();

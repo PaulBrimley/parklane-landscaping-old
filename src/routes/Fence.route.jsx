@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 /** context **/
 import { useAppState } from '../context/app.context';
+import { images } from '../context/img.context';
 
 /** hooks **/
-import useParallaxEffect from '../hooks/useParallaxEffect';
+import useParallaxEffect from '../hooks/useParallaxEffect.hook';
 
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
@@ -15,9 +16,11 @@ import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessag
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
 /** images **/
-import imgFence from '../assets/img/img-fence.jpg';
-import imgFenceBroken from '../assets/img/img-fence-broken.jpg';
-import imgFenceRepair from '../assets/img/img-fence-repair.jpg';
+const {
+  imgFence,
+  imgFenceBroken,
+  imgFenceRepair
+} = images;
 
 function ServicesFenceRoute(props) {
   const { companyInfo, width } = useAppState();

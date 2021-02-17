@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 /** context **/
 import { useAppState } from '../context/app.context';
+import { images } from '../context/img.context';
 
 /** hooks **/
-import useParallaxEffect from '../hooks/useParallaxEffect';
+import useParallaxEffect from '../hooks/useParallaxEffect.hook';
 
 /** routes **/
-import {routes} from './Routes';
+import { routes } from './Routes';
 
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
@@ -19,27 +20,10 @@ import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 import StyledQuickListItem from '../components/Styled/StyledQuickListItem';
 
 /** images **/
-import iconFenceGold from '../assets/img/icon-fence-gold.png';
-import iconFenceRed from '../assets/img/icon-fence-red.png';
-import iconLawnMowerGold from '../assets/img/icon-lawn-mower-gold.png';
-import iconLawnMowerRed from '../assets/img/icon-lawn-mower-red.png';
-import iconLightBulbGold from '../assets/img/icon-light-bulb-gold.png';
-import iconLightBulbRed from '../assets/img/icon-light-bulb-red.png';
-import iconMasonGold from '../assets/img/icon-mason-gold.png';
-import iconMasonRed from '../assets/img/icon-mason-red.png';
-import iconMasonryGold from '../assets/img/icon-masonry-gold.png';
-import iconMasonryRed from '../assets/img/icon-masonry-red.png';
-import iconTreeWalkGold from '../assets/img/icon-tree-walk-gold.png';
-import iconTreeWalkRed from '../assets/img/icon-tree-walk-red.png';
-import iconWaterHoseGold from '../assets/img/icon-water-hose-gold.png';
-import iconWaterHoseRed from '../assets/img/icon-water-hose-red.png';
-import imgServices from '../assets/img/img-guy-planting-2.jpg';
-import imgGuyKneeling from '../assets/img/img-guy-kneeling.jpg';
-import imgGuyTeaching from '../assets/img/img-guy-teaching.jpg';
-import imgHillsAtAlamoRanch from '../assets/img/img-hills-at-alamo-ranch.jpg';
+const { iconFenceGold, iconFenceRed, iconLawnMowerGold, iconLawnMowerRed, iconLightBulbGold, iconLightBulbRed, iconMasonGold, iconMasonRed, iconMasonryGold, iconMasonryRed, iconTreeWalkGold, iconTreeWalkRed, iconWaterHoseGold, iconWaterHoseRed, imgGuyKneeling, imgGuyPlanting2, imgGuyTeaching, imgHillsAtAlamoRanch } = images;
 
 function ServicesRoute(props) {
-  const { isMobile, width } = useAppState();
+  const { width } = useAppState();
   const { offset } = useParallaxEffect({ strength: 0.2 });
 
   function calcBackgroundPosition() {
@@ -48,7 +32,7 @@ function ServicesRoute(props) {
     if (width < 600) strength = 0.4;
     if (width < 400) strength = 0.6;
     if (width < 350) strength = 0.7;
-    return (width * strength) - 350;
+    return width * strength - 350;
   }
   function calcBackgroundSize() {
     let size = '150%';
@@ -62,7 +46,7 @@ function ServicesRoute(props) {
       <StyledServices className="body">
         <InfoBanner
           style={{
-            backgroundImage: `url(${imgServices})`,
+            backgroundImage: `url(${imgGuyPlanting2})`,
             backgroundPosition: `20% calc(${calcBackgroundPosition()}px + ${offset.y}px)`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: calcBackgroundSize()
@@ -212,7 +196,6 @@ function ServicesRoute(props) {
         <br />
         <br />
         <br />
-
       </StyledServices>
     </AnimatedStyledRoute>
   );
@@ -260,10 +243,10 @@ const StyledServices = styled.div`
   .services-quick-list-wrapper {
     margin: 5px var(--side-margin) 10px;
     padding: 3px;
-    border: 2px solid ${({theme}) => theme.colorPrimary}; 
+    border: 2px solid ${({ theme }) => theme.colorPrimary};
     .services-quick-list {
       padding: 10px;
-      border: 2px solid ${({theme}) => theme.colorPrimary};
+      border: 2px solid ${({ theme }) => theme.colorPrimary};
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;

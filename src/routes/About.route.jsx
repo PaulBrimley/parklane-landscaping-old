@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 /** context **/
 import { useAppState } from '../context/app.context';
+import { images } from '../context/img.context';
 
 /** hooks **/
-import useParallaxEffect from '../hooks/useParallaxEffect';
+import useParallaxEffect from '../hooks/useParallaxEffect.hook';
 
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
@@ -17,12 +18,14 @@ import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessag
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
 /** images **/
-import imgCarnival from '../assets/img/img-carnival.jpg';
-import imgEstatesAtBridgewood from '../assets/img/img-monument-6.jpg';
-import imgParklaneFamily from '../assets/img/img-parklane-family.jpg';
-import imgPictureFrame from '../assets/img/img-picture-frame.png';
-import imgTrees from '../assets/img/img-trees-2.jpg';
-import logoMain from '../assets/img/logo-main.png';
+const {
+  imgCarnival,
+  imgMonument6,
+  imgParklaneFamily,
+  imgPictureFrame,
+  imgTrees,
+  logoMain
+} = images;
 
 function AboutRoute(props) {
   const { isMobile, width } = useAppState();
@@ -39,7 +42,7 @@ function AboutRoute(props) {
       <StyledAbout className="body">
         <InfoBanner
           style={{
-            backgroundImage: `url(${imgEstatesAtBridgewood})`,
+            backgroundImage: `url(${imgMonument6})`,
             backgroundPosition: `left calc(-20px + ${offset.y}px)`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: calcBackgroundSize()
@@ -89,7 +92,6 @@ function AboutRoute(props) {
           </p>
         </StyledInfoBodyMessage>
 
-
         <ParallaxStripe backgroundUrl={imgTrees} height="75px">
           <div className="tree-stripe">
             <img
@@ -102,7 +104,7 @@ function AboutRoute(props) {
 
         <div className="about-header">Keeping It In The Community</div>
         <div className="about-info-images">
-          <img src={imgEstatesAtBridgewood} alt="Estates at Bridgewood" />
+          <img src={imgMonument6} alt="Estates at Bridgewood" />
           <img src={imgParklaneFamily} alt="Parklane family" />
           <img src={imgCarnival} alt="Carnival" />
         </div>

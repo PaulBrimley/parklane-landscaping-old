@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 /** context **/
 import { useAppState } from '../context/app.context';
+import { images } from '../context/img.context';
 
 /** hooks **/
-import useParallaxEffect from '../hooks/useParallaxEffect';
+import useParallaxEffect from '../hooks/useParallaxEffect.hook';
 
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
@@ -15,8 +16,10 @@ import PageDivider1 from '../components/Atoms/PageDivider1';
 import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
 
 /** images **/
-import imgLeaves1 from '../assets/img/img-leaves-1.jpg';
-import imgOverhead1 from '../assets/img/img-overhead-1.jpg';
+const {
+  imgLeaves,
+  imgOverhead1
+} = images;
 
 function ContactRoute(props) {
   const { companyInfo, width } = useAppState();
@@ -46,7 +49,7 @@ function ContactRoute(props) {
       <StyledContact className="body">
         <InfoBanner
           style={{
-            backgroundImage: `url(${imgLeaves1})`,
+            backgroundImage: `url(${imgLeaves})`,
             backgroundPosition: `20% calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: calcBackgroundSize()

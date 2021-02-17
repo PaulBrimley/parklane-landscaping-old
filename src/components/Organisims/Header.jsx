@@ -6,14 +6,15 @@ import styled from 'styled-components';
 
 /** context **/
 import { useAppState } from '../../context/app.context';
+import { images } from '../../context/img.context';
 
 /** components **/
 import StyledHeaderLinks from '../Styled/StyledHeaderLinks';
 
-/** images **/
-import logoMain from '../../assets/img/logo-main.png';
-
 import { routeArr } from '../../routes/Routes';
+
+/** images **/
+const { logoMain } = images;
 
 function Header(props) {
   const { companyInfo, isMobile, setMenuCollapsed } = useAppState();
@@ -35,7 +36,7 @@ function Header(props) {
       <div className="header-center">
         {!isMobile && (
           <StyledHeaderLinks>
-            {routeArr.map(({children, name, path}) => (
+            {routeArr.map(({ children, name, path }) => (
               <div key={path} className="link-wrapper">
                 <div
                   className={classNames('link-inner', {
@@ -68,7 +69,15 @@ function Header(props) {
           .map(({ headerLinkLines, icon, name, path }) => (
             <div key={path} className="child-route-wrapper">
               <Link className="child-route" to={path} onClick={clearChildRoutes}>
-                {headerLinkLines ? headerLinkLines.map((headerLinkLine, index) => <div key={index} className="child-route-name">{headerLinkLine}</div>) : <div className="child-route-name">{name}</div>}
+                {headerLinkLines ? (
+                  headerLinkLines.map((headerLinkLine, index) => (
+                    <div key={index} className="child-route-name">
+                      {headerLinkLine}
+                    </div>
+                  ))
+                ) : (
+                  <div className="child-route-name">{name}</div>
+                )}
                 {icon && <img className="child-route-icon" src={icon} alt={name} />}
               </Link>
             </div>
@@ -106,8 +115,8 @@ const StyledHeader = styled.div`
       flex: 8% 0 0;
       &:before {
         position: absolute;
-        border-right: 25px solid ${({theme}) => theme.colorWhite};
-        border-left: 25px solid ${({theme}) => theme.colorWhite};
+        border-right: 25px solid ${({ theme }) => theme.colorWhite};
+        border-left: 25px solid ${({ theme }) => theme.colorWhite};
         content: '';
         display: block;
         top: 54%;

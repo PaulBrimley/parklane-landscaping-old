@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 /** context **/
 import { useAppState } from '../context/app.context';
+import { images } from '../context/img.context';
 
 /** hooks **/
-import useParallaxEffect from '../hooks/useParallaxEffect';
+import useParallaxEffect from '../hooks/useParallaxEffect.hook';
 
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
@@ -15,9 +16,11 @@ import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessag
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
 /** images **/
-import imgLeaves1 from '../assets/img/img-leaves-1.jpg';
-import imgTrees1 from '../assets/img/img-trees-1.jpg';
-import imgTreeTrimming from '../assets/img/img-tree-trimming.jpg';
+const {
+  imgLeaves,
+  imgTrees1,
+  imgTreeTrimming
+} = images;
 
 function ServicesTrimmingRoute(props) {
   const { isMobile, width } = useAppState();
@@ -43,7 +46,7 @@ function ServicesTrimmingRoute(props) {
       <StyledServicesTrimming className="body">
         <InfoBanner
           style={{
-            backgroundImage: `url(${imgLeaves1})`,
+            backgroundImage: `url(${imgLeaves})`,
             backgroundPosition: `center calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: calcBackgroundSize()

@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import './assets/scss/index.scss';
 import App from './App';
 import { AppProvider } from './context/app.context';
+import { ImageProvider } from './context/img.context';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <AppProvider>
-      <App />
+      <ImageProvider>
+        <App />
+      </ImageProvider>
     </AppProvider>
   </React.StrictMode>,
   document.getElementById('root')
