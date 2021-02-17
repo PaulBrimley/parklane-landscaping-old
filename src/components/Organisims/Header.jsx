@@ -11,7 +11,7 @@ import { images } from '../../context/img.context';
 /** components **/
 import StyledHeaderLinks from '../Styled/StyledHeaderLinks';
 
-import { routeArr } from '../../routes/Routes';
+import { routeArr, routes } from '../../routes/Routes';
 
 /** images **/
 const { logoMain } = images;
@@ -31,7 +31,10 @@ function Header(props) {
   return (
     <StyledHeader onMouseLeave={clearChildRoutes}>
       <div className="header-left">
-        <img className="logo" src={logoMain} alt="logo" />
+        <Link to={routes.HOME}>
+          <img className="logo" src={logoMain} alt="logo" />
+        </Link>
+
       </div>
       <div className="header-center">
         {!isMobile && (

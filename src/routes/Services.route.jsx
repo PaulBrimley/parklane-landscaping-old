@@ -27,7 +27,7 @@ function ServicesRoute(props) {
   const { offset } = useParallaxEffect({ strength: 0.2 });
 
   function calcBackgroundPosition() {
-    let strength = 0;
+    let strength = -0.02;
     if (width < 750) strength = 0.2;
     if (width < 600) strength = 0.4;
     if (width < 400) strength = 0.6;
@@ -35,7 +35,7 @@ function ServicesRoute(props) {
     return width * strength - 350;
   }
   function calcBackgroundSize() {
-    let size = '150%';
+    let size = '160%';
     if (width < 500) size = '800px';
     if (width < 400) size = '600px';
     return size;
@@ -47,7 +47,7 @@ function ServicesRoute(props) {
         <InfoBanner
           style={{
             backgroundImage: `url(${imgGuyPlanting2})`,
-            backgroundPosition: `20% calc(${calcBackgroundPosition()}px + ${offset.y}px)`,
+            backgroundPosition: `0 calc(${calcBackgroundPosition()}px + ${offset.y}px)`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: calcBackgroundSize()
           }}

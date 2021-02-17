@@ -23,6 +23,9 @@ import StyledInfoBannerAction from '../components/Styled/StyledInfoBannerAction'
 import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 import { StyledInfoCard, StyledInfoCardLink } from '../components/Styled/StyledInfoCard';
+import SVGIcon from '../components/Atoms/SVGIcon';
+import testSvg from '../assets/svgs/test-svg';
+
 
 /** images **/
 const {
@@ -40,6 +43,7 @@ const {
   logoMain
 } = images;
 
+
 function HomeRoute(props) {
   const { width } = useAppState();
   const { offset } = useParallaxEffect({ strength: 0.2 });
@@ -53,6 +57,9 @@ function HomeRoute(props) {
     if (width < 800) offset = 100 - (width / 800) * 100 + 10;
     return offset;
   }
+
+  const color1 = 'rgba(187, 170, 117, 1)';
+  const color2 = 'rgba(235, 31, 39, 1)';
 
   return (
     <AnimatedStyledRoute>
