@@ -23,7 +23,7 @@ const {
   imgMonument6,
   imgParklaneFamily,
   imgPictureFrame,
-  imgTrees,
+  imgTrees2,
   logoMain
 } = images;
 
@@ -92,7 +92,7 @@ function AboutRoute(props) {
           </p>
         </StyledInfoBodyMessage>
 
-        <ParallaxStripe backgroundUrl={imgTrees} height="75px">
+        <ParallaxStripe backgroundUrl={imgTrees2} height="75px">
           <div className="tree-stripe">
             <img
               className="logo"
