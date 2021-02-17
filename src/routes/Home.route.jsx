@@ -96,7 +96,7 @@ function HomeRoute(props) {
             />
           }
           slotRight={
-            <InfoBannerRight className="info-banner-right">
+            <InfoBannerRight className="info-banner-right" config={{friction: 70}}>
               <img className="anniversary-logo" src={logoAnniversary} alt="anniversary logo" />
             </InfoBannerRight>
           }

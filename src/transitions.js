@@ -1,6 +1,6 @@
 export const defaultConfig = {
   tension: 80,
-  friction: 14,
+  friction: 25,
   clamp: true
 };
 export {
