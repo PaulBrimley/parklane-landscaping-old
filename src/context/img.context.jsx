@@ -151,7 +151,6 @@ function useImageState() {
     let promises = [];
     for (const image of images) {
       if (state.prefetchedImages[image] || newImagesObj[image] || !image) continue;
-      if (image.indexOf('tree-trimming') > -1) console.log('image', image);
       promises.push(prefetchImage(image));
       count++;
       if (count === batchSize) {
