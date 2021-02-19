@@ -3,7 +3,7 @@ import commonVariables from './commonVariables';
 const lightTheme = {
   ...commonVariables,
   colorPrimary: 'rgba(235, 31, 39, 1)',
-  // colorPrimaryHover: 'rgba(47, 99, 150, 1)',
+  colorPrimaryHover: 'rgb(188, 25, 34, 1)',
   colorPrimaryOpaque: 'rgba(235, 31, 39, 0.8)',
   colorQuaternary: 'rgba(204, 191, 152, 1)',
   // colorQuaternaryHover: 'rgba(193, 205, 213, 1)',

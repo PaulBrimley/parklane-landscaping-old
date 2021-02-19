@@ -7,23 +7,13 @@ const StyledQuickListItem = styled(Link)`
   cursor: pointer;
   transition: color 0.2s;
   text-decoration: none;
-  .icons {
+  .icon {
     display: flex;
     justify-content: center;
-    position: relative;
-    height: 60px;
-    padding: 5px 0;
-    img {
-      height: 100%;
-      transition: opacity 0.2s;
-    }
-    .icon1 {
-      position: absolute;
-      opacity: 1;
-    }
-    .icon2 {
-      position: absolute;
-      opacity: 0;
+    height: 70px;
+    svg {
+      fill: ${({theme}) => theme.colorSecondary};
+      transition: all 0.2s;
     }
   }
   .title {
@@ -36,12 +26,9 @@ const StyledQuickListItem = styled(Link)`
     transition: color 0.2s;
   }
   &:hover {
-    .icons {
-      .icon1 {
-        opacity: 0;
-      }
-      .icon2 {
-        opacity: 1;
+    .icon {
+      svg {
+        fill: ${({theme}) => theme.colorPrimary};
       }
     }
     .title {

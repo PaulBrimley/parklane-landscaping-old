@@ -18,9 +18,29 @@ import PageDivider1 from '../components/Atoms/PageDivider1';
 import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 import StyledQuickListItem from '../components/Styled/StyledQuickListItem';
+import SVGIcon from '../components/Atoms/SVGIcon';
 
 /** images **/
-const { iconFenceGold, iconFenceRed, iconLawnMowerGold, iconLawnMowerRed, iconLightBulbGold, iconLightBulbRed, iconMasonGold, iconMasonRed, iconMasonryGold, iconMasonryRed, iconTreeWalkGold, iconTreeWalkRed, iconWaterHoseGold, iconWaterHoseRed, imgGuyKneeling, imgGuyPlanting2, imgGuyTeaching, imgHillsAtAlamoRanch } = images;
+const {
+  iconFenceGold,
+  iconFenceRed,
+  iconLawnMowerGold,
+  iconLawnMowerRed,
+  iconLightBulbGold,
+  iconLightBulbRed,
+  iconMasonGold,
+  iconMasonRed,
+  iconMasonryGold,
+  iconMasonryRed,
+  iconTreeWalkGold,
+  iconTreeWalkRed,
+  iconWaterHoseGold,
+  iconWaterHoseRed,
+  imgGuyKneeling,
+  imgGuyPlanting2,
+  imgGuyTeaching,
+  imgHillsAtAlamoRanch
+} = images;
 
 function ServicesRoute(props) {
   const { width } = useAppState();
@@ -106,57 +126,54 @@ function ServicesRoute(props) {
         <div className="services-quick-list-wrapper">
           <div className="services-quick-list">
             <StyledQuickListItem to={routes.MAINTENANCE}>
-              <div className="icons">
-                <img className="icon1" src={iconLawnMowerGold} alt="lawn mower" />
-                <img className="icon2" src={iconLawnMowerRed} alt="lawn mower" />
+              <div className="icon">
+                <SVGIcon height="70px" width="70px" type="lawnMower"/>
               </div>
               <div className="title">HOA Maintenance</div>
             </StyledQuickListItem>
 
             <StyledQuickListItem to={routes.IRRIGATION}>
-              <div className="icons">
-                <img className="icon1" src={iconWaterHoseGold} alt="water hose" />
-                <img className="icon2" src={iconWaterHoseRed} alt="water hose" />
+              <div className="icon">
+                <SVGIcon height="65px" width="65px" type="hose" style={{marginTop: '3px'}}/>
               </div>
               <div className="title">HOA Irrigation</div>
             </StyledQuickListItem>
 
             <StyledQuickListItem to={routes.LANDSCAPE}>
-              <div className="icons">
-                <img className="icon1" src={iconTreeWalkGold} alt="tree walk" />
-                <img className="icon2" src={iconTreeWalkRed} alt="tree walk" />
+              <div className="icon">
+                <SVGIcon height="73px" width="73px" type="landscape"/>
               </div>
               <div className="title">HOA Landscape</div>
             </StyledQuickListItem>
 
             <StyledQuickListItem to={routes.MONUMENT}>
-              <div className="icons">
+              {/*<div className="icons">
                 <img className="icon1" src={iconMasonGold} alt="mason" />
                 <img className="icon2" src={iconMasonRed} alt="mason" />
+              </div>*/}
+              <div className="icon">
+                <SVGIcon height="75px" width="75px" type="masonry"/>
               </div>
               <div className="title">HOA Monuments</div>
             </StyledQuickListItem>
 
             <StyledQuickListItem to={routes.MONUMENT}>
-              <div className="icons">
-                <img className="icon1" src={iconMasonryGold} alt="masonry" />
-                <img className="icon2" src={iconMasonryRed} alt="masonry" />
+              <div className="icon">
+                <SVGIcon height="75px" width="75px" type="masonry" style={{marginTop: '2px'}}/>
               </div>
               <div className="title">Masonry Repair</div>
             </StyledQuickListItem>
 
             <StyledQuickListItem to={routes.FENCE}>
-              <div className="icons">
-                <img className="icon1" src={iconFenceGold} alt="fence" />
-                <img className="icon2" src={iconFenceRed} alt="fence" />
+              <div className="icon">
+                <SVGIcon height="68px" width="68px" type="fence" style={{marginTop: '4px'}}/>
               </div>
               <div className="title">Fence Repair</div>
             </StyledQuickListItem>
 
             <StyledQuickListItem to={routes.LIGHTING}>
-              <div className="icons">
-                <img className="icon1" src={iconLightBulbGold} alt="light bulb" />
-                <img className="icon2" src={iconLightBulbRed} alt="light bulb" />
+              <div className="icon">
+                <SVGIcon height="53px" width="53px" type="lightBulb" style={{marginTop: '8px'}}/>
               </div>
               <div className="title">HOA Lighting</div>
             </StyledQuickListItem>

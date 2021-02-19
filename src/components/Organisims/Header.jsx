@@ -10,6 +10,7 @@ import { images } from '../../context/img.context';
 
 /** components **/
 import StyledHeaderLinks from '../Styled/StyledHeaderLinks';
+import SVGIcon from '../Atoms/SVGIcon';
 
 import { routeArr, routes } from '../../routes/Routes';
 
@@ -69,7 +70,7 @@ function Header(props) {
       <div className={classNames('child-routes', { active: childRoutes.length > 0 && !isMobile })}>
         {childRoutes
           .filter(({ displayInHeader }) => displayInHeader)
-          .map(({ headerLinkLines, icon, name, path }) => (
+          .map(({ headerLinkLines, icon, iconSize, name, path }) => (
             <div key={path} className="child-route-wrapper">
               <Link className="child-route" to={path} onClick={clearChildRoutes}>
                 {headerLinkLines ? (
@@ -81,7 +82,11 @@ function Header(props) {
                 ) : (
                   <div className="child-route-name">{name}</div>
                 )}
-                {icon && <img className="child-route-icon" src={icon} alt={name} />}
+                {icon &&
+                  <div className="child-route-icon">
+                    <SVGIcon height={iconSize || '20px'} type={icon} />
+                  </div>
+                }
               </Link>
             </div>
           ))}
@@ -139,23 +144,32 @@ const StyledHeader = styled.div`
         }
       }
       .child-route {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         font-size: 0.6em;
         text-align: center;
         color: inherit;
         text-decoration: none;
         text-transform: uppercase;
-        //opacity: 0.8;
         transform: scale(1);
         transition: opacity 0.2s, transform 0.2s;
         &:hover {
-          //opacity: 1;
           transform: scale(1.05);
         }
         .child-route-icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          background-image: linear-gradient(120deg, ${({theme}) => theme.colorPrimary} 0%, ${({theme}) => theme.colorPrimary} 50%, ${({theme}) => theme.colorPrimaryHover} 50%, ${({theme}) => theme.colorPrimaryHover} 100%);
           margin: 0 5px;
           width: 45px;
           height: 45px;
+          svg {
+            fill: ${({theme}) => theme.colorWhite}
+          }
         }
         .child-route-name {
           white-space: nowrap;

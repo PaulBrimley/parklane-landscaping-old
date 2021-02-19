@@ -22,27 +22,16 @@ import ParallaxStripe from '../components/Atoms/ParallaxStripe';
 import StyledInfoBannerAction from '../components/Styled/StyledInfoBannerAction';
 import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
-import { StyledInfoCard, StyledInfoCardLink } from '../components/Styled/StyledInfoCard';
+import { StyledInfoCardLink } from '../components/Styled/StyledInfoCard';
 import SVGIcon from '../components/Atoms/SVGIcon';
-import testSvg from '../assets/svgs/test-svg';
-
 
 /** images **/
 const {
-  iconLawnMowerGold,
-  iconLawnMowerRed,
-  iconMasonGold,
-  iconMasonRed,
-  iconTreeWalkGold,
-  iconTreeWalkRed,
-  iconWaterHoseGold,
-  iconWaterHoseRed,
   imgGrass,
   imgHome,
   logoAnniversary,
   logoMain
 } = images;
-
 
 function HomeRoute(props) {
   const { width } = useAppState();
@@ -57,9 +46,6 @@ function HomeRoute(props) {
     if (width < 800) offset = 100 - (width / 800) * 100 + 10;
     return offset;
   }
-
-  const color1 = 'rgba(187, 170, 117, 1)';
-  const color2 = 'rgba(235, 31, 39, 1)';
 
   return (
     <AnimatedStyledRoute>
@@ -133,9 +119,8 @@ function HomeRoute(props) {
           <StyledInfoCardLink as={Link} to={routes.MAINTENANCE}>
             <div className="header">Maintenance</div>
             <div className="body">
-              <div className="icons">
-                <img className="icon1" src={iconLawnMowerGold} alt="lawn mower" />
-                <img className="icon2" src={iconLawnMowerRed} alt="lawn mower" />
+              <div className="icon">
+                <SVGIcon height="70px" width="70px" type="lawnMower"/>
               </div>
               <div className="message">Parklane Landscaping specializes in HOA landscape maintenance...Learn More</div>
             </div>
@@ -144,9 +129,8 @@ function HomeRoute(props) {
           <StyledInfoCardLink as={Link} to={routes.IRRIGATION}>
             <div className="header">Irrigation</div>
             <div className="body">
-              <div className="icons">
-                <img className="icon1" src={iconWaterHoseGold} alt="water hose" />
-                <img className="icon2" src={iconWaterHoseRed} alt="water hose" />
+              <div className="icon">
+                <SVGIcon height="70px" width="70px" type="hose"/>
               </div>
               <div className="message">After many requests for irrigation audits, licensing became essential...Learn More</div>
             </div>
@@ -155,9 +139,8 @@ function HomeRoute(props) {
           <StyledInfoCardLink as={Link} to={routes.LANDSCAPE}>
             <div className="header">HOA Landscaping</div>
             <div className="body">
-              <div className="icons">
-                <img className="icon1" src={iconTreeWalkGold} alt="tree walk" />
-                <img className="icon2" src={iconTreeWalkRed} alt="tree walk" />
+              <div className="icon">
+                <SVGIcon height="75px" width="75px" type="landscape"/>
               </div>
               <div className="message">Parklane takes every opportunity to expand its landscaping abilities...Learn More</div>
             </div>
@@ -166,9 +149,8 @@ function HomeRoute(props) {
           <StyledInfoCardLink as={Link} to={routes.MONUMENT}>
             <div className="header">Masonry</div>
             <div className="body">
-              <div className="icons">
-                <img className="icon1" src={iconMasonGold} alt="mason" />
-                <img className="icon2" src={iconMasonRed} alt="mason" />
+              <div className="icon">
+                <SVGIcon height="80px" width="80px" type="masonry"/>
               </div>
               <div className="message">Masonry is a very important service to every HOA community...Learn More</div>
             </div>

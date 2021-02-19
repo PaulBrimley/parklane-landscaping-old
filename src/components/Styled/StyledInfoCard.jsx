@@ -10,23 +10,13 @@ export const StyledInfoCard = styled.div`
   transition: all 0.2s;
   .body {
     flex: 1;
-    .icons {
+    .icon {
       display: flex;
       justify-content: center;
-      position: relative;
       height: 70px;
-      padding: 5px 0;
-      img {
-        height: 100%;
-        transition: opacity 0.2s;
-      }
-      .icon1 {
-        position: absolute;
-        opacity: 1;
-      }
-      .icon2 {
-        position: absolute;
-        opacity: 0;
+      svg {
+        fill: ${({theme}) => theme.colorSecondary};
+        transition: all 0.2s;
       }
     }
     .message {
@@ -52,12 +42,9 @@ export const StyledInfoCard = styled.div`
     box-shadow: 0 0 10px ${({theme}) => theme.colorSecondary};
     background-color: ${({theme}) => theme.colorWhite};
     .body {
-      .icons {
-        .icon1{
-          opacity: 0;
-        }
-        .icon2{
-          opacity: 1;
+      .icon {
+        svg {
+          fill: ${({theme}) => theme.colorPrimary};
         }
       }
       .message {

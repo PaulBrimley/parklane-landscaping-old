@@ -19,7 +19,7 @@ import SubscribeRoute from './Subscribe.route';
 import TrimmingRoute from './Trimming.route';
 
 /** images **/
-const { iconFenceRepair, iconHoaIrrigation, iconHoaLandscape, iconHoaLighting, iconHoaMaintenance, iconHoaMonumentRepair, imgCarnival, imgColoredPencils, imgFence, imgFenceBroken, imgFenceRepair, imgFlowers, imgGrass, imgGuyKneeling, imgGuyPlanting1, imgGuyPlanting2, imgGuyTeaching, imgHillsAtAlamoRanch, imgHome, imgLandscapeRendering, imgLawnMower1, imgLawnMower2, imgLeaves, imgLighting1, imgLighting2, imgLighting3, imgMonument1, imgMonument2, imgMonument3, imgMonument4, imgMonument5, imgMonument6, imgNewsLetter1, imgNewsLetter2, imgOverhead1, imgOverhead2, imgOverhead3, imgParklaneFamily, imgPictureFrame, imgSprinklers1, imgSprinklers2, imgTrees1, imgTrees2, imgTreeTrimming, logoAnniversary, logoMain } = images;
+const { imgCarnival, imgColoredPencils, imgFence, imgFenceBroken, imgFenceRepair, imgFlowers, imgGrass, imgGuyKneeling, imgGuyPlanting1, imgGuyPlanting2, imgGuyTeaching, imgHillsAtAlamoRanch, imgHome, imgLandscapeRendering, imgLawnMower1, imgLawnMower2, imgLeaves, imgLighting1, imgLighting2, imgLighting3, imgMonument1, imgMonument2, imgMonument3, imgMonument4, imgMonument5, imgMonument6, imgNewsLetter1, imgNewsLetter2, imgOverhead1, imgOverhead2, imgOverhead3, imgParklaneFamily, imgPictureFrame, imgSprinklers1, imgSprinklers2, imgTrees1, imgTrees2, imgTreeTrimming, logoAnniversary, logoMain } = images;
 
 export const routes = {
   ABOUT: '/about',
@@ -60,7 +60,8 @@ export const routeArr = [
         Component: MaintenanceRoute,
         displayInHeader: true,
         headerLinkLines: ['HOA', 'Maintenance'],
-        icon: iconHoaMaintenance,
+        icon: 'lawnMower',
+        iconSize: '22px',
         name: 'HOA Maintenance',
         path: routes.MAINTENANCE,
         prefetchImages: [imgLawnMower1, imgLawnMower2]
@@ -70,7 +71,8 @@ export const routeArr = [
         Component: IrrigationRoute,
         displayInHeader: true,
         headerLinkLines: ['HOA', 'Irrigation'],
-        icon: iconHoaIrrigation,
+        icon: 'hose',
+        iconSize: '22px',
         name: 'HOA Irrigation',
         path: routes.IRRIGATION,
         prefetchImages: [imgSprinklers1, imgSprinklers2]
@@ -80,7 +82,8 @@ export const routeArr = [
         Component: LandscapeRoute,
         displayInHeader: true,
         headerLinkLines: ['HOA', 'Landscape'],
-        icon: iconHoaLandscape,
+        icon: 'landscape',
+        iconSize: '24px',
         name: 'HOA Landscape',
         path: routes.LANDSCAPE,
         prefetchImages: [imgColoredPencils, imgFlowers, imgMonument1, imgLandscapeRendering, imgOverhead2, imgOverhead3]
@@ -90,7 +93,8 @@ export const routeArr = [
         Component: MonumentRoute,
         displayInHeader: true,
         headerLinkLines: ['HOA Monument', 'Repair & Design'],
-        icon: iconHoaMonumentRepair,
+        icon: 'masonry',
+        iconSize: '20px',
         name: 'HOA Monument Repair & Design',
         path: routes.MONUMENT,
         prefetchImages: [imgMonument1, imgMonument2, imgMonument3, imgMonument4, imgMonument5]
@@ -100,7 +104,8 @@ export const routeArr = [
         Component: FenceRoute,
         displayInHeader: true,
         headerLinkLines: ['Fence', 'Repair'],
-        icon: iconFenceRepair,
+        icon: 'fence',
+        iconSize: '22px',
         name: 'Fence Repair',
         path: routes.FENCE,
         prefetchImages: [imgFence, imgFenceBroken, imgFenceRepair]
@@ -110,7 +115,8 @@ export const routeArr = [
         Component: LightingRoute,
         displayInHeader: true,
         headerLinkLines: ['HOA', 'Lighting'],
-        icon: iconHoaLighting,
+        icon: 'lightBulb',
+        iconSize: '29px',
         name: 'HOA Lighting',
         path: routes.LIGHTING,
         prefetchImages: [imgLighting1, imgLighting2, imgLighting3]
@@ -118,9 +124,10 @@ export const routeArr = [
       {
         active: true,
         Component: TrimmingRoute,
-        displayInHeader: false,
+        displayInHeader: true,
         headerLinkLines: ['Tree', 'Trimming'],
-        icon: '',
+        icon: 'trees',
+        iconSize: '20px',
         name: 'Tree Trimming',
         path: routes.TRIMMING,
         prefetchImages: [imgLeaves, imgTrees1, imgTreeTrimming]
