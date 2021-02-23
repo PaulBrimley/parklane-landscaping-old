@@ -152,7 +152,7 @@ function ServicesRoute(props) {
                 <img className="icon2" src={iconMasonRed} alt="mason" />
               </div>*/}
               <div className="icon">
-                <SVGIcon height="75px" width="75px" type="masonry"/>
+                <SVGIcon height="80px" width="80px" type="monument"/>
               </div>
               <div className="title">HOA Monuments</div>
             </StyledQuickListItem>

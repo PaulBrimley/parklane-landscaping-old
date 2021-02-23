@@ -150,7 +150,7 @@ function HomeRoute(props) {
             <div className="header">Masonry</div>
             <div className="body">
               <div className="icon">
-                <SVGIcon height="80px" width="80px" type="masonry"/>
+                <SVGIcon height="80px" width="80px" type="monument"/>
               </div>
               <div className="message">Masonry is a very important service to every HOA community...Learn More</div>
             </div>
