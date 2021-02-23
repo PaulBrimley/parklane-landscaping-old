@@ -83,11 +83,11 @@ function SubscribeRoute(props) {
 
         <PageDivider1 />
 
-        <Textfit className="subscribe-now-header" mode="single">Subscribe now!</Textfit>
+        <Textfit className="subscribe-now-header" mode="single">Learn more!</Textfit>
         <div className="receive-emails">To receive e-mails with tips and information for your HOA</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 var(--side-margin)">
-          At Parklane Landscaping, our HOA clients are very important to us. Because of this we do our best to stay abreast of the latest information that effects our industry and most importantly the HOA communities we serve. When we come across these little gems or products that we feel are better, more cost-effective, we share the knowledge. Every month these tidbits of information are sent out by Parklane via our subscription email. As a result of this we have been able to help some of our clients save money and add a little more value to their communities. Which at the end of the day is what we are here for. To subscribe, please click the button below.
+          At Parklane Landscaping, our HOA clients are very important to us. Because of this we do our best to stay abreast of the latest information that effects our industry and most importantly the HOA communities we serve. When we come across these little gems or products that we feel are better and more cost-effective, we like to share the knowledge. Every month these tidbits of information are sent out by Parklane via our subscription email. As a result, we have been able to help some of our clients save money and add a little more value to their communities. Which at the end of the day is what we are here for. To subscribe, please click the button below.
         </StyledInfoBodyMessage>
 
         <div className="separator" />

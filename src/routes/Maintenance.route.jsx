@@ -79,17 +79,22 @@ function ServicesMaintenanceRoute(props) {
 
         <PageDivider1 />
 
-        <div className="services-maintenance-header">HOA Maintenance</div>
+        <div className="maintenance-header uppercase">HOA Maintenance</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 var(--side-margin)">
-          When Parklane forges a maintenance contract with an HOA community, our goal is to deliver the highest quality service we can offer. The Parklane team comes together to make sure we nurture not only the landscapes, but our relationships with every HOA client. Our account representatives maintain constant contact with the property's HOA community manager. In case of emergencies or urgent care notices, our teams are always available 24/7 to address any needs that may arise. Our licensed irrigators are also on call to address broken pipes, misfiring sprinkler heads and any other irrigation related issues that arise outside of normal business hours. To find out more about how you can get a customized maintenance plan for your HOA community, contact Parklane Landscaping today.
+        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
+          <p>
+            When Parklane forges a maintenance contract with an HOA community, our goal is to deliver the highest quality service. Our team comes together to make sure we nurture not only a community’s landscape, but our relationship with the HOA board and the property management company. Communication between all three entities is vital to ensure efficient response times and quality control. In case of emergencies or urgent care notices, our teams are always available 24/7. Our licensed irrigators are on call to address broken pipes, misfiring sprinkler heads and any other irrigation related issues that occur outside of normal business hours.
+          </p>
+          <p>
+            Find out how you can get a customized maintenance plan for your HOA community by contacting Parklane Landscaping today.
+          </p>
         </StyledInfoBodyMessage>
 
         <div className="contact-info">
           <span className="phone">{companyInfo.phone}</span><span className="email">{companyInfo.email}</span>
         </div>
 
-        <div className="services-maintenance-info-images">
+        <div className="maintenance-info-images">
           <img src={imgLawnMower2} alt="Home" />
         </div>
 
@@ -120,13 +125,13 @@ const StyledServicesMaintenance = styled.div`
     flex: 1 1 auto;
     padding-top: 50px;
   }
-  .services-maintenance-header {
+  .maintenance-header {
     font-size: 3em;
-    font-weight: 400;
+    font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
     margin: 20px var(--side-margin) 10px;
   }
-  .services-maintenance-info-images {
+  .maintenance-info-images {
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr;

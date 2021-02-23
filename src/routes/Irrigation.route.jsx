@@ -78,20 +78,20 @@ function ServicesIrrigationRoute(props) {
 
         <PageDivider1 />
 
-        <div className="services-irrigation-header">HOA Irrigation</div>
+        <div className="irrigation-header uppercase">HOA Irrigation</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 var(--side-margin)">
-          During our ten years in business, Parklane has recognized the need for licensed irrigators in the HOA industry. After being asked if we could do SAWS audits or repair an irrigation system we decided to invest in educating our own team members in irrigation. As a result, Parkland now has three licensed irrigators who regularly perform monthly audits on all of our HOA properties. When the need arises, our licensed irrigators can repair or even install an entire irrigation system.
+        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
+          During our ten years in business, Parklane has perceived a need for licensed irrigators in the HOA industry. After many requests to perform SAWS audits and repair irrigation systems we made the decision to invest time and money into our own team to fulfill the need. As a result, Parklane now has three licensed irrigators who regularly perform monthly audits on all of our HOA properties. When the need arises, our licensed irrigators can repair or even install an entire irrigation system.
         </StyledInfoBodyMessage>
 
-        <div className="services-irrigation-info-images">
+        <div className="irrigation-info-images">
           <img src={imgSprinklers2} alt="sprinklers" />
         </div>
 
-        <div className="services-irrigation-info-seal">
+        <div className="irrigation-info-seal">
           <img src={imgIrrigationSeal} alt="irrigation seal" />
-          <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 0 0 15px">
-            Does your irrigator have this seal? Parklane Landscaping does. In fact we have a team of licensed irrigators that all carry their irrigation license with this official seal. it is a requirement in the state of Texas that all licensed irrigators doing audits or working on irrigation carry it with them at all times. If you need a licensed irrigator call Parklane Landscaping. Our team has Texas' seal of approval!
+          <StyledInfoBodyMessage fontSize="1.2em" margin="0 0 0 15px">
+            Does your irrigator have this seal? Parklane Landscaping does. In fact, we have a team of licensed irrigators that all carry their irrigation license with this official seal. It is a requirement in the state of Texas that all licensed irrigators doing audits or working on irrigation systems have their license with them. If you need a licensed irrigator call Parklane Landscaping. Our team has the Texas seal of approval!
           </StyledInfoBodyMessage>
         </div>
 
@@ -104,13 +104,13 @@ const StyledServicesIrrigation = styled.div`
     flex: 1 1 auto;
     padding-top: 50px;
   }
-  .services-irrigation-header {
+  .irrigation-header {
     font-size: 3em;
-    font-weight: 400;
+    font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
     margin: 20px var(--side-margin) 10px;
   }
-  .services-irrigation-info-images {
+  .irrigation-info-images {
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr;
@@ -121,7 +121,7 @@ const StyledServicesIrrigation = styled.div`
       width: 100%;
     }
   }
-  .services-irrigation-info-seal {
+  .irrigation-info-seal {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,7 +133,7 @@ const StyledServicesIrrigation = styled.div`
     }
   }
   @media (max-width: ${({theme}) => theme.mobileWidth}px) {
-    .services-irrigation-info-seal {
+    .irrigation-info-seal {
       flex-direction: column;
     }
   }

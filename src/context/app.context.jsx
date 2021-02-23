@@ -64,7 +64,7 @@ function AppProvider(props) {
     companyInfo: {
       city: 'San Antonio',
       email: 'info@parklanelandscaping.com',
-      phone: '210-239-6717',
+      phone: '210-239-6715',
       state: 'TX',
       street: '2910 N Elmendorf St',
       website: 'www.parklanelandscaping.com',

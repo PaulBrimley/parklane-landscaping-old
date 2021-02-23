@@ -100,7 +100,7 @@ function HomeRoute(props) {
         <div className="home-header">The HOA Landscape Specialists</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
-          Parklane Landscaping is a professional landscape management firm specializing in HOA managed properties in San Antonio, Boerne, and Braunfels, Having been in business now for ten years, we have developed a reputation for excellent client service an detailed attention to our work, We encourage our team to foster close relationships with HOA board members and property managers. This close collaboration yields high performance in our crews that ensures a community's visual aesthetic appeal and the strategic enhancement of its property value.
+          Parklane Landscaping is a professional landscape company that specializes in HOA (Home Owner Association) managed properties in San Antonio, Boerne, and New Braunfels. Having been in business for ten years, we have developed a reputation for excellent client service and detailed attention to our work. We encourage our team managers to foster close relationships with HOA board members and property managers. This close collaboration yields high performance in our crews that ensures a community’s visual appeal and strategic enhancement ultimately raising property values.
         </StyledInfoBodyMessage>
 
         <div className="home-action">
@@ -188,7 +188,7 @@ const StyledHome = styled.div`
   }
   .home-header {
     font-size: 3em;
-    font-weight: 400;
+    font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
     margin: 20px var(--side-margin) 10px;
   }

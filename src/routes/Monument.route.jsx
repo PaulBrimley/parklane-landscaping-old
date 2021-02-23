@@ -81,23 +81,22 @@ function ServicesMonumentRoute(props) {
 
         <PageDivider1 />
 
-        <div className="services-monument-header">HOA Monument Repair</div>
+        <div className="monument-header uppercase">HOA Monuments</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 var(--side-margin)">
-          Monuments are the first thing people see when they pass or enter an HOA community. It is important that they have long lasting appeal. However, sometimes things happen. Once in a while Parklane receives a request to rebuild an entryway monument due to erosion or a minor car accident. This can be a difficult task when only a part of a monument needs replacing. New stones or materials need to be used and match the old ones. When an entire monument needs rebuilding materials need to match the former style and still match the surrounding architectural details.
+        <div className="monument-header-2 italic">HOA Monument Repair</div>
+
+        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
+          A community’s entryway monument is the first thing one sees when passing or entering an HOA development. Hence, it is vital they have long lasting appeal. However, sometimes mishaps occur. Once in a while, Parklane receives requests to rebuild monument due to erosion or car accident. This can be a difficult task when only a portion needs replacing. New stones or materials need to be used that match exactly. When an entire monument needs rebuilding, materials need to match former styles and architectural details. For this reason, Parklane has a very skilled in-house masonry team.
         </StyledInfoBodyMessage>
 
-        <div className="services-monument-info-subsection">
+        <div className="monument-info-subsection">
           <div className="subsection-images">
             <img src={imgMonument2} alt="monument 2" />
             <img src={imgMonument3} alt="monument 3" />
           </div>
           <div className="subsection-info">
-            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0">
-              Parklane has a very skilled in-house masonry team. Little details cannot be overlooked when it comes to matching old materials with new ones. Whether you are replacing a column in a stone fence or a piece of a monument Parklane goes the extra mile to make sure no detail is lost.
-            </StyledInfoBodyMessage>
-            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0">
-              Our masonry team has over ten years of experience. Because they are part of our in-house team, you can be sure that every step of the project is directly overseen by Parklane. Starting from the original design til the last brick is laid, Parklane is there to make sure everything runs smoothly.
+            <StyledInfoBodyMessage fontSize="1.2em" margin="0">
+              Our masonry team has over ten years of experience. They know small details cannot be overlooked when it comes to matching old materials with new ones. Whether you are replacing a column in a stone fence or a remnant of a monument, Parklane goes the extra mile to make sure no detail is missed. Having an in-house team, allows us to oversee every step of each project. Starting with the original design, until the last brick is layed, Parklane is there to make sure no stone is unturned.
             </StyledInfoBodyMessage>
           </div>
         </div>
@@ -106,24 +105,24 @@ function ServicesMonumentRoute(props) {
           For estimates call {companyInfo.phone}
         </div>
 
-        <div className="services-monument-header">Monument Design</div>
+        <div className="monument-header-2 italic">Monument Design</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 var(--side-margin) 20px">
-          From logo design, to architectural rendering, to brick and mortar, Parklane has the capability to create the monument of your HOA's dreams. We know how important entryways are to every HOA community. A monument sets the stage for the rest of the property. They can be various architectural styles and design. Landscape of course plays a huge part in the final monument project. Parklane has had the privilege of working many in the San Antonio area. Whether it is designing them from scratch or refurbishing parts of them, our end goal is to add to their overall appeal and value.
+        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin) 20px">
+          From logo design, to architectural rendering, to brick and mortar, Parklane has the capability to create the monument of your HOA’s dreams. We know how important entryways are to every HOA community. A monument sets the stage for the rest of the property. They can be various architectural styles and designs. Landscape of course plays a huge part in the final monument project. Parklane has had the privilege of creating and revitalizing many in and around the San Antonio area. Whether it is designing from scratch or refurbishing portions of them, our end goal is to add to their overall appeal and value.
         </StyledInfoBodyMessage>
 
-        <div className="services-monument-info-subsection lower">
+        <div className="monument-info-subsection lower">
           <div className="subsection-images">
             <img src={imgMonument4} alt="monument 4" />
           </div>
           <div className="subsection-info">
-            <StyledInfoBodyMessage fontSize="1.2em" fontStyle="italic" lineHeight="1.2em" margin="0">
-              Here is a simple example of a request Parklane received from one of its HOA clients. They asked for a renewed HOA logo and sign as well as an overall monument re-design and landscaping plan to accent the overall look and feel utilizing materials to match their current structures.
+            <StyledInfoBodyMessage fontSize="1.2em" fontStyle="italic" margin="0">
+              Here is an example of a request Parklane received from one of its HOA clients. They asked for a renewed HOA logo and sign as well as an overall monument redesign and landscaping plan to accent the entire look and feel utilizing materials to match their current structures.
             </StyledInfoBodyMessage>
           </div>
         </div>
 
-        <div className="services-monument-info-images">
+        <div className="monument-info-images">
           <img src={imgMonument5} alt="monument 5" style={{height: '230px'}}/>
         </div>
 
@@ -144,13 +143,16 @@ const StyledServicesMonument = styled.div`
     flex: 1 1 auto;
     padding-top: 50px;
   }
-  .services-monument-header {
+  .monument-header, .monument-header-2 {
     font-size: 3em;
-    font-weight: 400;
+    font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
     margin: 20px var(--side-margin) 10px;
   }
-  .services-monument-info-images {
+  .monument-header-2 {
+    font-size: 2em;
+  }
+  .monument-info-images {
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr;
@@ -163,7 +165,7 @@ const StyledServicesMonument = styled.div`
       object-position: center 45%;
     }
   }
-  .services-monument-info-subsection {
+  .monument-info-subsection {
     display: flex;
     margin: 10px var(--side-margin);
     .subsection-images {
@@ -181,7 +183,7 @@ const StyledServicesMonument = styled.div`
     }
   }
   @media (max-width: ${({theme}) => theme.mobileWidth}px) {
-    .services-monument-info-subsection {
+    .monument-info-subsection {
       flex-direction: column;
       .subsection-images {
         margin-right: 0;

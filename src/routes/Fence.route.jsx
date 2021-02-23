@@ -79,28 +79,30 @@ function ServicesFenceRoute(props) {
 
         <PageDivider1 />
 
-        <div className="services-fence-header">HOA FENCE REPAIR</div>
+        <div className="fence-header uppercase">HOA Fence Repair</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 var(--side-margin)">
-          If you live in an HOA community you realize how important having fences is. Especially since HOA communities are usually surrounded by them. When one is torn down due to storm or fallen tree or even a car mishap, getting the fence up again is a priority. Matching the exact materials, the colors, etc., and repairing it quickly is one of our specialties. This all plays a role in making sure the community stays looking its best. That is why Parklane has in-house masons and fence repairmen. We know how important it is to you. So it is important to us.
+        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
+          If you live in an HOA community, you understand the value of fences. Especially since HOA communities are usually surrounded by them. When one is torn down due to storm or a fallen tree or even an accidental car mishap, rebuilding the fence becomes priority one. Matching the exact materials, colors and quick reparation is our specialty. These small details all play a part in making sure the community stays looking its best. That is why Parklane has in-house masons and fence repair teams. We know how important it is to you. So it is important to us.
+
+
         </StyledInfoBodyMessage>
 
-        <div className="services-fence-info-subsection">
+        <div className="fence-info-subsection">
           <div className="subsection-images">
             <img src={imgFenceBroken} alt="broken fence" />
             <img src={imgFenceRepair} alt="fence repair" />
           </div>
           <div className="subsection-info">
-            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0">
-              If you ever have an emergency need to rebuild a fence do not hesitate to call Parklane. We have our staff on call 24/7 for our HOA communities. Whether a tree has fallen, a fence look like it might be a danger to the community. Parklane is there to repair and help maintain our HOA communities looking their best.
+            <StyledInfoBodyMessage fontSize="1.2em" margin="0">
+              If you ever have an emergency need to rebuild a fence do not hesitate to call Parklane. We have our staff on call 24/7 for our HOA communities. Whether a tree has fallen or irrigation pipes have burst, Parklane is there to help maintain our HOA communities looking their best.
             </StyledInfoBodyMessage>
-            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 0 10px 0">
-              Do you have an emergency that requires a fence be repaired? Don't worry call Parklane Landscaping. Even if you are not a current client of ours, we would be happy to help your community.
+            <StyledInfoBodyMessage fontSize="1.2em" margin="0 0 10px 0">
+              Do you have an emergency that requires immediate attention? Don’t worry call Parklane Landscaping. Even if you are not a current client of ours, we will be happy to help your community.
             </StyledInfoBodyMessage>
-            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0">
-              For emergency fence repairs contact Parklane Landscaping and we can be there within 24 hours to assess the damage.
+            <StyledInfoBodyMessage fontSize="1.2em" margin="0">
+              For emergency fence repairs & irrigation repairs contact Parklane Landscaping and we can be there within 24 hours to assess the damage.
             </StyledInfoBodyMessage>
-            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0">
+            <StyledInfoBodyMessage fontSize="1.2em" margin="0">
               <div>{companyInfo.website}</div>
               <div>{companyInfo.email}</div>
               <div>{companyInfo.phone.split('-').join('.')}</div>
@@ -117,13 +119,13 @@ const StyledServicesFence = styled.div`
     flex: 1 1 auto;
     padding-top: 50px;
   }
-  .services-fence-header {
+  .fence-header {
     font-size: 3em;
-    font-weight: 400;
+    font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
     margin: 20px var(--side-margin) 10px;
   }
-  .services-fence-info-subsection {
+  .fence-info-subsection {
     display: flex;
     margin: 10px var(--side-margin);
     .subsection-images {
@@ -145,7 +147,7 @@ const StyledServicesFence = styled.div`
     }
   }
   @media (max-width: ${({theme}) => theme.mobileWidth}px) {
-    .services-fence-info-subsection {
+    .fence-info-subsection {
       flex-direction: column;
       .subsection-images {
         margin-right: 0;

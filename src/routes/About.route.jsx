@@ -83,12 +83,12 @@ function AboutRoute(props) {
 
         <div className="about-header">About</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 var(--side-margin)">
+        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
           <p>
-            In 2011 Eliseo Rios opened Parklane Landscaping. He recognized the rapid growth in the number of housing developments in and around San Antonio. He also noticed that there were no specialized landscapers that served these communities. It was then that he made the goal to make Parklane specialists in the HOA landscaping industry.
+            Parklane Landscaping was formed in 2011, after owner, Eliseo Rios recognized a rapid growth in the number of gated housing developments in and around the San Antonio area. Realizing that there were no specialized landscapers that served these communities, his mission became clear. Parklane had to become the specialists in the HOA industry.
           </p>
           <p>
-            Now as they celebrate their tenth year in business, Parklane has learned all of the ins and outs of servicing HOA communities. There were many key elements needed in order to properly maintain these large housing developments. Aside from the normal services one would expect from a commercial landscaper, Parklane's service menu also includes landscape design and installation, lighting design and installation, licensed irrigation, masonry repair, entryway monument design, and much more. Parklane goes out of their way to offer as many services as they can. This allows clients the ability to solve any landscaping or irrigation problem that may arise in their community. Parklane values their clients which is why finding the most efficient and cost effective solutions is a priority.
+            Now as we celebrate our tenth year in business, Parklane has learned all the particulars that come with servicing HOA communities. Many moving parts are needed to properly maintain large housing developments. Aside from the normal services one would expect from a commercial landscaper Parklane’s service menu also includes: masonry repair, entryway monument design, landscape design and installation, lighting design and installation, licensed irrigation and much more. We strive to go out of our way to offer as many services possible under the name Parklane. This builds trust and confidence with our communities knowing that all their landscaping needs can be met with one call. At Parklane we value our clients and offering the most efficient and quality solutions is our goal.
           </p>
         </StyledInfoBodyMessage>
 
@@ -108,8 +108,8 @@ function AboutRoute(props) {
           <img src={imgParklaneFamily} alt="Parklane family" />
           <img src={imgCarnival} alt="Carnival" />
         </div>
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 var(--side-margin)">
-          Ten yeas ago Parklane saw an opportunity to delve into a relatively new industry, maintenance in HOA communities. By building its business around it they have become one of the industry's early pioneers. After a few years, owner Eliseo Rios brought in his brothers making it a family run business. It is hard to find a family business where every family member has a degree. More than that, they live in the community they serve. Through years of hard work, building relationships of trust and learning specific skills to effectively serve HOA communities, Parklane has gained the reputation of being one of the specialists in the HOA industry. We feel great pride in the work we do and look forward to future growth. Developing our skills and trusted relationships in the industry we hope to serve our communities as the leader in our industry. There is nothing better than hearing from a client the pride residents feel when they enter their beautifully maintained communities.
+        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
+          After delving into a relatively untouched niche and building a thriving business around it, Parklane became one if the industry’s early pioneers. As a result demand for Parklane grew, and with it the need for more help. Knowing his family’s great work ethic, owner Eliseo Rios approached his brothers to join the company, transitioning Parklane into a family run business. It is hard to find a family business where every member has a college degree including Momma Rios. More than that they all live in the community they serve. After years of building relationships of trust and learning specific skills to effectively serve clients, Parklane has gained the reputation of being the experts in the HOA industry. We feel great pride in the work we do.  and look forward to future growth. There is nothing better than hearing from a client the pride a resident feels when they enter their beautiful community maintained by Parklane Landscaping.
         </StyledInfoBodyMessage>
 
         <br/>
@@ -124,7 +124,7 @@ function AboutRoute(props) {
 const StyledAbout = styled.div`
   .about-header {
     font-size: 3em;
-    font-weight: 400;
+    font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
     margin: 20px var(--side-margin) 10px;
   }

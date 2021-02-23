@@ -78,28 +78,20 @@ function ServicesTrimmingRoute(props) {
 
         <PageDivider1 />
 
-        <div className="services-trimming-header">HOA TREE TRIMMING</div>
+        <div className="trimming-header uppercase">HOA Tree Trimming</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 130px">
-          Nothing transforms an outdoor space like a beautifully trimmed tree that provides shade, is healthy and safe for your community. Proper pruning techniques are the best way to ensure this. Our tree trimming professionals at Parklane offer seasonal tree care services that help maintain the appearance of your HOA. Regular pruning can not only preserve the way a tree looks, but it can also stimulate its health and growth. Making sure to add to curb appeal and the overall value of your community.
+        <StyledInfoBodyMessage fontSize="1.2em" margin="0 130px">
+          Nothing transforms an outdoor space like beautifully trimmed trees. Through proper pruning techniques your trees add value to your homes. Not only do they provide shade, but they make your community healthier, add to its safety and aesthetic. Parklane tree trimming professionals have the skills to help your community enjoy the benefits of beautifully maintained trees.
         </StyledInfoBodyMessage>
 
-        <div className="services-trimming-info-subsection">
+        <div className="trimming-info-subsection">
           <div className="subsection-images">
             <img src={imgTrees1} alt="trees 1" />
             <img src={imgTreeTrimming} alt="tree trimming" />
           </div>
           <div className="subsection-info">
-            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 0 0 20px">
-              While the concept of tree pruning seems like a simple DIY project or something you can hand to your everyday landscaper, improper pruning can destroy your landscape. When a tree's health is at risk, they can face decay, instability, disease and a shorter life.
-            </StyledInfoBodyMessage>
-            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 0 0 20px">
-              Most mature trees require trimming at least every 3 years. They will need to be trimmed more often if they grow quickly or are located near power lines, homes, or other obstructions. The best time to trim a tree is in the late fall or early spring, just before the tree begins to leaf out again.
-            </StyledInfoBodyMessage>
-            <br/>
-            <br/>
-            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 0 0 20px">
-              For more information on trimming trees or if your community needs to replace old and rotted trees please contact us today! We would be happy to provide you with a free estimate on your next project.
+            <StyledInfoBodyMessage fontSize="1.2em" margin="0 0 0 20px">
+              While the concept of tree pruning seems like a simple DIY project or something you can hand to any landscaper, improper pruning can destroy your landscape. When a tree’s health is at risk, they can face decay, instability, disease and a shorter life span. Most mature trees require trimming at least every 3 years. Some may need to be trimmed more often if they grow quicker or are located near power lines, homes and other obstructions. The best time to trim trees is in the late fall or early spring, just before the tree begins to leaf out again. For more information on tree trimming or if your community has trees that require attention, please contact us today! Parklane will provide you with a free estimate on your next project.
             </StyledInfoBodyMessage>
           </div>
         </div>
@@ -113,13 +105,13 @@ const StyledServicesTrimming = styled.div`
     flex: 1 1 auto;
     padding-top: 50px;
   }
-  .services-trimming-header {
+  .trimming-header {
     font-size: 3em;
-    font-weight: 400;
+    font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
     margin: 20px 130px 10px;
   }
-  .services-trimming-info-subsection {
+  .trimming-info-subsection {
     display: flex;
     margin: 10px 130px;
     .subsection-images {

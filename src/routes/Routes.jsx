@@ -19,7 +19,7 @@ import SubscribeRoute from './Subscribe.route';
 import TrimmingRoute from './Trimming.route';
 
 /** images **/
-const { imgCarnival, imgColoredPencils, imgFence, imgFenceBroken, imgFenceRepair, imgFlowers, imgGrass, imgGuyKneeling, imgGuyPlanting1, imgGuyPlanting2, imgGuyTeaching, imgHillsAtAlamoRanch, imgHome, imgLandscapeRendering, imgLawnMower1, imgLawnMower2, imgLeaves, imgLighting1, imgLighting2, imgLighting3, imgMonument1, imgMonument2, imgMonument3, imgMonument4, imgMonument5, imgMonument6, imgNewsLetter1, imgNewsLetter2, imgOverhead1, imgOverhead2, imgOverhead3, imgParklaneFamily, imgPictureFrame, imgSprinklers1, imgSprinklers2, imgTrees1, imgTrees2, imgTreeTrimming, logoAnniversary, logoMain } = images;
+const { imgCarnival, imgColoredPencils, imgFence, imgFenceBroken, imgFenceRepair, imgFlowers1, imgGrass, imgGuyKneeling, imgGuyPlanting1, imgGuyPlanting2, imgGuyTeaching, imgHillsAtAlamoRanch, imgHome, imgLandscapeRendering, imgLawnMower1, imgLawnMower2, imgLeaves, imgLighting1, imgLighting2, imgLighting3, imgMonument1, imgMonument2, imgMonument3, imgMonument4, imgMonument5, imgMonument6, imgNewsLetter1, imgNewsLetter2, imgOverhead1, imgOverhead2, imgOverhead3, imgParklaneFamily, imgPictureFrame, imgSprinklers1, imgSprinklers2, imgTrees1, imgTrees2, imgTreeTrimming, logoAnniversary, logoMain } = images;
 
 export const routes = {
   ABOUT: '/about',
@@ -86,7 +86,7 @@ export const routeArr = [
         iconSize: '24px',
         name: 'HOA Landscape',
         path: routes.LANDSCAPE,
-        prefetchImages: [imgColoredPencils, imgFlowers, imgMonument1, imgLandscapeRendering, imgOverhead2, imgOverhead3]
+        prefetchImages: [imgColoredPencils, imgFlowers1, imgMonument1, imgLandscapeRendering, imgOverhead2, imgOverhead3]
       },
       {
         active: true,

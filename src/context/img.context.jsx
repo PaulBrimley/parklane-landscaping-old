@@ -1,32 +1,13 @@
 import { createContext, useContext, useMemo, useState } from 'react';
 
 /** images **/
-import iconFenceGold from '../assets/img/icon-fence-gold.png';
-import iconFenceRed from '../assets/img/icon-fence-red.png';
-import iconFenceRepair from '../assets/img/icon-fence-repair.png';
-import iconHoaIrrigation from '../assets/img/icon-hoa-irrigation.png';
-import iconHoaLandscape from '../assets/img/icon-hoa-landscape.png';
-import iconHoaLighting from '../assets/img/icon-hoa-lighting.png';
-import iconHoaMaintenance from '../assets/img/icon-hoa-maintenance.png';
-import iconHoaMonumentRepair from '../assets/img/icon-hoa-monument-repair.png';
-import iconLawnMowerGold from '../assets/img/icon-lawn-mower-gold.png';
-import iconLawnMowerRed from '../assets/img/icon-lawn-mower-red.png';
-import iconLightBulbGold from '../assets/img/icon-light-bulb-gold.png';
-import iconLightBulbRed from '../assets/img/icon-light-bulb-red.png';
-import iconMasonGold from '../assets/img/icon-mason-gold.png';
-import iconMasonRed from '../assets/img/icon-mason-red.png';
-import iconMasonryGold from '../assets/img/icon-masonry-gold.png';
-import iconMasonryRed from '../assets/img/icon-masonry-red.png';
-import iconTreeWalkGold from '../assets/img/icon-tree-walk-gold.png';
-import iconTreeWalkRed from '../assets/img/icon-tree-walk-red.png';
-import iconWaterHoseGold from '../assets/img/icon-water-hose-gold.png';
-import iconWaterHoseRed from '../assets/img/icon-water-hose-red.png';
 import imgCarnival from '../assets/img/img-carnival.jpg';
 import imgColoredPencils from '../assets/img/img-colored-pencils.png';
 import imgFence from '../assets/img/img-fence.jpg';
 import imgFenceBroken from '../assets/img/img-fence-broken.jpg';
 import imgFenceRepair from '../assets/img/img-fence-repair.jpg';
-import imgFlowers from '../assets/img/img-flowers.jpg';
+import imgFlowers1 from '../assets/img/img-flowers-1.jpg';
+import imgFlowers2 from '../assets/img/img-flowers-2.jpg';
 import imgGrass from '../assets/img/img-grass.jpg';
 import imgGuyKneeling from '../assets/img/img-guy-kneeling.jpg';
 import imgGuyPlanting1 from '../assets/img/img-guy-planting-1.png';
@@ -69,32 +50,13 @@ import logoCard from '../assets/img/logo-card.png';
 import twitterLogo from '../assets/img/icon-twitter.png';
 
 const images = {
-  iconFenceGold,
-  iconFenceRed,
-  iconFenceRepair,
-  iconHoaIrrigation,
-  iconHoaLandscape,
-  iconHoaLighting,
-  iconHoaMaintenance,
-  iconHoaMonumentRepair,
-  iconLawnMowerGold,
-  iconLawnMowerRed,
-  iconLightBulbGold,
-  iconLightBulbRed,
-  iconMasonGold,
-  iconMasonRed,
-  iconMasonryGold,
-  iconMasonryRed,
-  iconTreeWalkGold,
-  iconTreeWalkRed,
-  iconWaterHoseGold,
-  iconWaterHoseRed,
   imgCarnival,
   imgColoredPencils,
   imgFence,
   imgFenceBroken,
   imgFenceRepair,
-  imgFlowers,
+  imgFlowers1,
+  imgFlowers2,
   imgGrass,
   imgGuyKneeling,
   imgGuyPlanting1,

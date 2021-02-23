@@ -78,23 +78,23 @@ function ServicesLightingRoute(props) {
 
         <PageDivider1 />
 
-        <div className="services-lighting-header">HOA LIGHTING</div>
+        <div className="lighting-header uppercase">HOA Lighting</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 var(--side-margin)">
-          Your community is your pride and joy. Once Parklane has planted flower beds, trees and added beautiful landscape features, you'll want to showcase them. Adding landscape lighting and garden lights is a great way to highlight your community's best features and make your HOA a safer place. Plus it raises the value of any community. Consider adding outdoor lighting for your next landscape project to make your HOA warm and inviting.
+        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
+          Your community is your pride and joy. Once Parklane has built your new monument, planted flower beds, trees and added beautiful landscape features, you’ll want to highlight them. Adding landscape and garden lighting is a great way to accentuate your community’s best features and make your HOA a safer place. A great lighting scheme helps raise the value of a community. Consider adding outdoor lighting for your next landscaping project to make your HOA warm and inviting.
         </StyledInfoBodyMessage>
 
-        <div className="services-lighting-info-subsection">
+        <div className="lighting-info-subsection">
           <div className="subsection-images">
             <img src={imgLighting2} alt="lighting 2" />
             <img src={imgLighting3} alt="lighting 3" />
           </div>
           <div className="subsection-info">
-            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 0 10px 0">
-              If you are looking to start a new HOA community landscape project, consider the value of adding outdoor lighting. A well-lit neighborhood increases curb appeal by offering a warm and inviting place for your family and friends. Not only does outdoor lighting extend your living space, it can offer huge safety and security benefits. Highlight your HOA's beautiful lawns, gardens, and other landscaping features with outdoor lighting!
+            <StyledInfoBodyMessage fontSize="1.2em" margin="0 0 10px 0">
+              If you are looking to start a new HOA community landscape project, consider the value of adding outdoor lighting. A well-lit neighborhood increases curb appeal by offering a warm and inviting place for your family and friends. Not only does outdoor lighting extend your living space, it can offer huge safety and security benefits. Highlight your HOA’s beautiful lawns, gardens, and other landscaping features with outdoor lighting!
             </StyledInfoBodyMessage>
-            <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0">
-              For more information on HOA landscape lighting or tips on how you can enhance your landscape community at night, contact us today! We would be happy to provide you with a free estimate on your next landscaping project.
+            <StyledInfoBodyMessage fontSize="1.2em" margin="0">
+              For more information on HOA landscape lighting or tips on how you can enhance your landscape community at night, contact us today! Parklane Landscaping will provide you with a free estimate on your next project.
             </StyledInfoBodyMessage>
           </div>
         </div>
@@ -108,13 +108,13 @@ const StyledServicesLighting = styled.div`
     flex: 1 1 auto;
     padding-top: 50px;
   }
-  .services-lighting-header {
+  .lighting-header {
     font-size: 3em;
-    font-weight: 400;
+    font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
     margin: 20px var(--side-margin) 10px;
   }
-  .services-lighting-info-subsection {
+  .lighting-info-subsection {
     display: flex;
     margin: 10px var(--side-margin);
     .subsection-images {
@@ -136,7 +136,7 @@ const StyledServicesLighting = styled.div`
     }
   }
   @media (max-width: ${({theme}) => theme.mobileWidth}px) {
-    .services-lighting-info-subsection {
+    .lighting-info-subsection {
       flex-direction: column;
       .subsection-images {
         margin-right: 0;

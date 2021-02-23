@@ -17,7 +17,7 @@ import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessag
 
 /** images **/
 const {
-  imgLeaves,
+  imgFlowers2,
   imgOverhead1
 } = images;
 
@@ -30,17 +30,17 @@ function ContactRoute(props) {
   }
 
   function calcBackgroundPosition() {
-    let offset = 10;
-    if (width < 800) offset = 20;
-    if (width < 700) offset = 30;
+    let offset = 40;
+    if (width < 800) offset = 30;
+    if (width < 700) offset = 35;
     if (width < 400) offset = 40;
     return offset;
   }
   function calcBackgroundSize() {
-    let size = '105%';
+    let size = '110%';
     if (width < 800) size = '115%';
     if (width < 700) size = '125%';
-    if (width < 400) size = '170%';
+    if (width < 400) size = '150%';
     return size;
   }
 
@@ -49,8 +49,8 @@ function ContactRoute(props) {
       <StyledContact className="body">
         <InfoBanner
           style={{
-            backgroundImage: `url(${imgLeaves})`,
-            backgroundPosition: `20% calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
+            backgroundImage: `url(${imgFlowers2})`,
+            backgroundPosition: `0 calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: calcBackgroundSize()
           }}
@@ -98,9 +98,11 @@ function ContactRoute(props) {
         </div>
 
         <div className="contact-info">
-          <div className="contact-info-message">Parklane Landscaping is a full service HOA landscape company. We service San Antonio and the surrounding areas. If you have any questions or would like a bid for your next HOA project, please contact Parklane Landscaping.</div>
+          <div className="contact-info-message">
+            Parklane landscaping is a full service HOA landscape company. We service San Antonio and the surrounding areas. If you have any questions or would like a bid for your next HOA project, please Contact Parklane Landscaping.
+          </div>
           <div className="contact-info-phone-email">
-            <span>{companyInfo.phone}</span> <span>{companyInfo.email}</span>
+            <span>{companyInfo.phone} | {companyInfo.email}</span>
           </div>
         </div>
 

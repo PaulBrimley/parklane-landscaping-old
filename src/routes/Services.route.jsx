@@ -103,7 +103,7 @@ function ServicesRoute(props) {
         <div className="services-header">Parklane HOA Services</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
-          A partnership with Parklane Landscaping begins the moment we begin caring for your HOA community landscape. As part of our growing relationship, Parklane works diligently with property managers to ensure pro-activity in areas that would benefit from enhancement and those that can be money savers for the HOA. We also work with HOA landscape committees in developing ideas, concepts and plans to actively engage the future development of the community’s landscape. We make ourselves available to attend annual HOA board meetings and prepare short and informative presentations detailing our ongoing progress. Below you will find a list of general services we offer to ensure our HOA communities need only make one call to fulfill all their landscaping needs.
+          A partnership with Parklane Landscaping begins the moment we step foot onto an HOA community. As part of our growing relationship, Parklane works diligently with property managers to ensure proactivity in landscape areas that would benefit from enhancement while also trying to save money for the community. We strive to work closely with HOA landscape committees in developing ideas, concepts and plans to actively engage the future development of the entire neighborhood. As a courtesy, we make ourselves available to attend annual HOA board meetings and prepare short yet informative presentations detailing ongoing progress. Below you will find a list of services we offer to ensure our HOA communities need only make one call to fulfill all their landscaping needs.
         </StyledInfoBodyMessage>
 
         <br />
@@ -147,10 +147,6 @@ function ServicesRoute(props) {
             </StyledQuickListItem>
 
             <StyledQuickListItem to={routes.MONUMENT}>
-              {/*<div className="icons">
-                <img className="icon1" src={iconMasonGold} alt="mason" />
-                <img className="icon2" src={iconMasonRed} alt="mason" />
-              </div>*/}
               <div className="icon">
                 <SVGIcon height="80px" width="80px" type="monument"/>
               </div>
@@ -224,7 +220,7 @@ const StyledServices = styled.div`
   }
   .services-header {
     font-size: 3em;
-    font-weight: 400;
+    font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
     margin: 20px var(--side-margin) 10px;
   }
