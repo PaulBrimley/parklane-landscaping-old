@@ -78,11 +78,17 @@ function ServicesIrrigationRoute(props) {
 
         <PageDivider1 />
 
+        <br />
+        <br />
+
         <div className="irrigation-header uppercase">HOA Irrigation</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
           During our ten years in business, Parklane has perceived a need for licensed irrigators in the HOA industry. After many requests to perform SAWS audits and repair irrigation systems we made the decision to invest time and money into our own team to fulfill the need. As a result, Parklane now has three licensed irrigators who regularly perform monthly audits on all of our HOA properties. When the need arises, our licensed irrigators can repair or even install an entire irrigation system.
         </StyledInfoBodyMessage>
+
+        <br />
+        <br />
 
         <div className="irrigation-info-images">
           <img src={imgSprinklers2} alt="sprinklers" />
@@ -94,12 +100,12 @@ function ServicesIrrigationRoute(props) {
             Does your irrigator have this seal? Parklane Landscaping does. In fact, we have a team of licensed irrigators that all carry their irrigation license with this official seal. It is a requirement in the state of Texas that all licensed irrigators doing audits or working on irrigation systems have their license with them. If you need a licensed irrigator call Parklane Landscaping. Our team has the Texas seal of approval!
           </StyledInfoBodyMessage>
         </div>
-
       </StyledServicesIrrigation>
     </AnimatedStyledRoute>
   );
 }
 const StyledServicesIrrigation = styled.div`
+  padding-bottom: 80px;
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
@@ -125,9 +131,10 @@ const StyledServicesIrrigation = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 30px var(--side-margin);
+    margin: 30px var(--side-margin) 0;
     img {
-      width: 110px;
+      margin-left: -10px;
+      width: 210px;
       object-fit: contain;
       object-position: center;
     }
@@ -135,6 +142,9 @@ const StyledServicesIrrigation = styled.div`
   @media (max-width: ${({theme}) => theme.mobileWidth}px) {
     .irrigation-info-seal {
       flex-direction: column;
+      img {
+        margin-left: 0;
+      }
     }
   }
 `;

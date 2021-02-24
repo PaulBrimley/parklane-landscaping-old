@@ -23,21 +23,22 @@ const {
 } = images;
 
 function ServicesTrimmingRoute(props) {
-  const { isMobile, width } = useAppState();
+  const { width } = useAppState();
   const { offset } = useParallaxEffect({ strength: 0.2 });
 
   function calcBackgroundPosition() {
-    let offset = 10;
-    if (width < 800) offset = 20;
-    if (width < 700) offset = 30;
+    let offset = 60;
+    if (width < 800) offset = 100;
+    if (width < 700) offset = 100;
     if (width < 400) offset = 40;
     return offset;
   }
   function calcBackgroundSize() {
-    let size = '105%';
-    if (width < 800) size = '115%';
-    if (width < 700) size = '125%';
-    if (width < 400) size = '170%';
+    let size = '115%';
+    if (width < 800) size = '125%';
+    if (width < 700) size = '155%';
+    if (width < 600) size = '175%';
+    // if (width < 400) size = '170%';
     return size;
   }
 
@@ -78,6 +79,9 @@ function ServicesTrimmingRoute(props) {
 
         <PageDivider1 />
 
+        <br />
+        <br />
+
         <div className="trimming-header uppercase">HOA Tree Trimming</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 130px">
@@ -95,12 +99,12 @@ function ServicesTrimmingRoute(props) {
             </StyledInfoBodyMessage>
           </div>
         </div>
-
       </StyledServicesTrimming>
     </AnimatedStyledRoute>
   );
 }
 const StyledServicesTrimming = styled.div`
+  padding-bottom: 90px;
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
@@ -113,7 +117,7 @@ const StyledServicesTrimming = styled.div`
   }
   .trimming-info-subsection {
     display: flex;
-    margin: 10px 130px;
+    margin: 10px 130px 0;
     .subsection-images {
       display: flex;
       flex-direction: column;

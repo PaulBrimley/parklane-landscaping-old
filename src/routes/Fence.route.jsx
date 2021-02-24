@@ -79,6 +79,9 @@ function ServicesFenceRoute(props) {
 
         <PageDivider1 />
 
+        <br />
+        <br />
+
         <div className="fence-header uppercase">HOA Fence Repair</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
@@ -109,12 +112,12 @@ function ServicesFenceRoute(props) {
             </StyledInfoBodyMessage>
           </div>
         </div>
-
       </StyledServicesFence>
     </AnimatedStyledRoute>
   );
 }
 const StyledServicesFence = styled.div`
+  padding-bottom: 90px;
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
@@ -127,7 +130,7 @@ const StyledServicesFence = styled.div`
   }
   .fence-info-subsection {
     display: flex;
-    margin: 10px var(--side-margin);
+    margin: 10px var(--side-margin) 0;
     .subsection-images {
       display: flex;
       flex-direction: column;

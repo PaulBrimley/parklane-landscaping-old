@@ -22,20 +22,6 @@ import SVGIcon from '../components/Atoms/SVGIcon';
 
 /** images **/
 const {
-  iconFenceGold,
-  iconFenceRed,
-  iconLawnMowerGold,
-  iconLawnMowerRed,
-  iconLightBulbGold,
-  iconLightBulbRed,
-  iconMasonGold,
-  iconMasonRed,
-  iconMasonryGold,
-  iconMasonryRed,
-  iconTreeWalkGold,
-  iconTreeWalkRed,
-  iconWaterHoseGold,
-  iconWaterHoseRed,
   imgGuyKneeling,
   imgGuyPlanting2,
   imgGuyTeaching,
@@ -100,7 +86,10 @@ function ServicesRoute(props) {
 
         <PageDivider1 />
 
-        <div className="services-header">Parklane HOA Services</div>
+        <br />
+        <br />
+
+        <div className="services-header uppercase">Parklane HOA Services</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
           A partnership with Parklane Landscaping begins the moment we step foot onto an HOA community. As part of our growing relationship, Parklane works diligently with property managers to ensure proactivity in landscape areas that would benefit from enhancement while also trying to save money for the community. We strive to work closely with HOA landscape committees in developing ideas, concepts and plans to actively engage the future development of the entire neighborhood. As a courtesy, we make ourselves available to attend annual HOA board meetings and prepare short yet informative presentations detailing ongoing progress. Below you will find a list of services we offer to ensure our HOA communities need only make one call to fulfill all their landscaping needs.
@@ -118,9 +107,14 @@ function ServicesRoute(props) {
 
         <br />
         <br />
+        <br />
+        <br />
+        <br />
 
         <div className="services-header-2">Click on any icon in the quick-list of services in the box below to find out more</div>
 
+        <br />
+        <br />
         <br />
 
         <div className="services-quick-list-wrapper">
@@ -178,6 +172,8 @@ function ServicesRoute(props) {
 
         <br />
         <br />
+        <br />
+        <br />
 
         <div className="services-header-2">All HOA Services</div>
         <div className="services-hoa-services-list">
@@ -204,16 +200,12 @@ function ServicesRoute(props) {
           <div>Fence Line Shredding</div>
           <div>HOA Annual and Board Meeting Participation</div>
         </div>
-
-        <br />
-        <br />
-        <br />
-        <br />
       </StyledServices>
     </AnimatedStyledRoute>
   );
 }
 const StyledServices = styled.div`
+  padding-bottom: 90px;
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
@@ -237,7 +229,7 @@ const StyledServices = styled.div`
     font-weight: 400;
     color: ${({ theme }) => theme.colorPrimary};
     text-align: center;
-    margin: 20px var(--side-margin);
+    margin: 20px var(--side-margin) 0;
     div {
       margin: 6px 0;
     }

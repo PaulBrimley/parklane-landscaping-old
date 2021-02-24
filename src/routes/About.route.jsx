@@ -81,7 +81,10 @@ function AboutRoute(props) {
 
         <PageDivider1 />
 
-        <div className="about-header">About</div>
+        <br />
+        <br />
+
+        <div className="about-header uppercase">About</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
           <p>
@@ -91,6 +94,12 @@ function AboutRoute(props) {
             Now as we celebrate our tenth year in business, Parklane has learned all the particulars that come with servicing HOA communities. Many moving parts are needed to properly maintain large housing developments. Aside from the normal services one would expect from a commercial landscaper Parklane’s service menu also includes: masonry repair, entryway monument design, landscape design and installation, lighting design and installation, licensed irrigation and much more. We strive to go out of our way to offer as many services possible under the name Parklane. This builds trust and confidence with our communities knowing that all their landscaping needs can be met with one call. At Parklane we value our clients and offering the most efficient and quality solutions is our goal.
           </p>
         </StyledInfoBodyMessage>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
 
         <ParallaxStripe backgroundUrl={imgTrees2} height="75px">
           <div className="tree-stripe">
@@ -102,6 +111,12 @@ function AboutRoute(props) {
           </div>
         </ParallaxStripe>
 
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
         <div className="about-header">Keeping It In The Community</div>
         <div className="about-info-images">
           <img src={imgMonument6} alt="Estates at Bridgewood" />
@@ -111,17 +126,12 @@ function AboutRoute(props) {
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
           After delving into a relatively untouched niche and building a thriving business around it, Parklane became one if the industry’s early pioneers. As a result demand for Parklane grew, and with it the need for more help. Knowing his family’s great work ethic, owner Eliseo Rios approached his brothers to join the company, transitioning Parklane into a family run business. It is hard to find a family business where every member has a college degree including Momma Rios. More than that they all live in the community they serve. After years of building relationships of trust and learning specific skills to effectively serve clients, Parklane has gained the reputation of being the experts in the HOA industry. We feel great pride in the work we do.  and look forward to future growth. There is nothing better than hearing from a client the pride a resident feels when they enter their beautiful community maintained by Parklane Landscaping.
         </StyledInfoBodyMessage>
-
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-
       </StyledAbout>
     </AnimatedStyledRoute>
   );
 }
 const StyledAbout = styled.div`
+  padding-bottom: 90px;
   .about-header {
     font-size: 3em;
     font-weight: 700;

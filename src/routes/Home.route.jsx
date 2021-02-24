@@ -37,10 +37,6 @@ function HomeRoute(props) {
   const { width } = useAppState();
   const { offset } = useParallaxEffect({ strength: 0.2 });
 
-  function handleSubmit() {
-    // console.log('clicked');
-  }
-
   function calcBackgroundPosition() {
     let offset = 10;
     if (width < 800) offset = 100 - (width / 800) * 100 + 10;
@@ -97,7 +93,10 @@ function HomeRoute(props) {
 
         <PageDivider1 />
 
-        <div className="home-header">The HOA Landscape Specialists</div>
+        <br />
+        <br />
+
+        <div className="home-header uppercase">The HOA Landscape Specialists</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
           Parklane Landscaping is a professional landscape company that specializes in HOA (Home Owner Association) managed properties in San Antonio, Boerne, and New Braunfels. Having been in business for ten years, we have developed a reputation for excellent client service and detailed attention to our work. We encourage our team managers to foster close relationships with HOA board members and property managers. This close collaboration yields high performance in our crews that ensures a community’s visual appeal and strategic enhancement ultimately raising property values.
@@ -108,6 +107,11 @@ function HomeRoute(props) {
             LEARN MORE
           </LinkButton>
         </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
 
         <ParallaxStripe backgroundUrl={imgGrass} height="75px">
           <div className="grass-stripe">
@@ -161,6 +165,7 @@ function HomeRoute(props) {
   );
 }
 const StyledHome = styled.div`
+  padding-bottom: 100px;
   .grass-stripe {
     flex: 1 1 auto;
     height: 100%;
@@ -196,7 +201,7 @@ const StyledHome = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
-    padding: 100px 20px;
+    padding: 100px 20px 0;
   }
   .info-banner-left {
     flex: 1 1 auto;

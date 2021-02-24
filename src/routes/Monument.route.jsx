@@ -81,9 +81,12 @@ function ServicesMonumentRoute(props) {
 
         <PageDivider1 />
 
+        <br />
+        <br />
+
         <div className="monument-header uppercase">HOA Monuments</div>
 
-        <div className="monument-header-2 italic">HOA Monument Repair</div>
+        <div className="monument-header-2">HOA Monument Repair</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
           A community’s entryway monument is the first thing one sees when passing or entering an HOA development. Hence, it is vital they have long lasting appeal. However, sometimes mishaps occur. Once in a while, Parklane receives requests to rebuild monument due to erosion or car accident. This can be a difficult task when only a portion needs replacing. New stones or materials need to be used that match exactly. When an entire monument needs rebuilding, materials need to match former styles and architectural details. For this reason, Parklane has a very skilled in-house masonry team.
@@ -105,7 +108,7 @@ function ServicesMonumentRoute(props) {
           For estimates call {companyInfo.phone}
         </div>
 
-        <div className="monument-header-2 italic">Monument Design</div>
+        <div className="monument-header-2">Monument Design</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin) 20px">
           From logo design, to architectural rendering, to brick and mortar, Parklane has the capability to create the monument of your HOA’s dreams. We know how important entryways are to every HOA community. A monument sets the stage for the rest of the property. They can be various architectural styles and designs. Landscape of course plays a huge part in the final monument project. Parklane has had the privilege of creating and revitalizing many in and around the San Antonio area. Whether it is designing from scratch or refurbishing portions of them, our end goal is to add to their overall appeal and value.
@@ -125,12 +128,12 @@ function ServicesMonumentRoute(props) {
         <div className="monument-info-images">
           <img src={imgMonument5} alt="monument 5" style={{height: '230px'}}/>
         </div>
-
       </StyledServicesMonument>
     </AnimatedStyledRoute>
   );
 }
 const StyledServicesMonument = styled.div`
+  padding-bottom: 100px;
   .contact-info {
     color: ${({theme}) => theme.colorPrimary};
     margin: 30px var(--side-margin);
@@ -157,7 +160,7 @@ const StyledServicesMonument = styled.div`
     justify-items: center;
     grid-template-columns: 1fr;
     grid-gap: 10px;
-    margin: 0 var(--side-margin) 60px;
+    margin: 0 var(--side-margin);
     img {
       flex: 0 1 auto;
       width: 100%;

@@ -79,6 +79,9 @@ function ServicesMaintenanceRoute(props) {
 
         <PageDivider1 />
 
+        <br />
+        <br />
+
         <div className="maintenance-header uppercase">HOA Maintenance</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
@@ -94,15 +97,18 @@ function ServicesMaintenanceRoute(props) {
           <span className="phone">{companyInfo.phone}</span><span className="email">{companyInfo.email}</span>
         </div>
 
+        <br />
+        <br />
+
         <div className="maintenance-info-images">
           <img src={imgLawnMower2} alt="Home" />
         </div>
-
       </StyledServicesMaintenance>
     </AnimatedStyledRoute>
   );
 }
 const StyledServicesMaintenance = styled.div`
+  padding-bottom: 100px;
   .contact-info {
     display: flex;
     justify-content: center;
@@ -136,7 +142,7 @@ const StyledServicesMaintenance = styled.div`
     justify-items: center;
     grid-template-columns: 1fr;
     grid-gap: 10px;
-    margin: 0 var(--side-margin) 60px;
+    margin: 0 var(--side-margin) 0;
     img {
       flex: 0 1 auto;
       width: 100%;

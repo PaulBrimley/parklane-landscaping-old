@@ -124,7 +124,7 @@ export const routeArr = [
       {
         active: true,
         Component: TrimmingRoute,
-        displayInHeader: false,
+        displayInHeader: true,
         headerLinkLines: ['Tree', 'Trimming'],
         icon: 'trees',
         iconSize: '20px',

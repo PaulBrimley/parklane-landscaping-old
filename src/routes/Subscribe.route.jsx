@@ -83,10 +83,12 @@ function SubscribeRoute(props) {
 
         <PageDivider1 />
 
+        <br />
+
         <Textfit className="subscribe-now-header" mode="single">Learn more!</Textfit>
         <div className="receive-emails">To receive e-mails with tips and information for your HOA</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" lineHeight="1.2em" margin="0 var(--side-margin)">
+        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
           At Parklane Landscaping, our HOA clients are very important to us. Because of this we do our best to stay abreast of the latest information that effects our industry and most importantly the HOA communities we serve. When we come across these little gems or products that we feel are better and more cost-effective, we like to share the knowledge. Every month these tidbits of information are sent out by Parklane via our subscription email. As a result, we have been able to help some of our clients save money and add a little more value to their communities. Which at the end of the day is what we are here for. To subscribe, please click the button below.
         </StyledInfoBodyMessage>
 
@@ -106,11 +108,13 @@ function SubscribeRoute(props) {
             Subscribe Now
           </Button>
         </div>
+
       </StyledSubscribe>
     </AnimatedStyledRoute>
   );
 }
 const StyledSubscribe = styled.div`
+  padding-bottom: 100px;
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
@@ -128,7 +132,7 @@ const StyledSubscribe = styled.div`
     }
   }
   .receive-emails {
-    margin: -10px var(--side-margin) 5px;
+    margin: -10px var(--side-margin) 15px;
     font-size: 1.3em;
     font-weight: 600;
     color: ${({ theme }) => theme.colorBlack};
@@ -138,12 +142,10 @@ const StyledSubscribe = styled.div`
   .separator {
     width: 80%;
     border-bottom: 4px solid red;
-    margin: 20px auto;
+    margin: 40px auto 50px;
   }
   .subscribe-now-header {
     margin: 50px var(--side-margin) 0;
-    //font-size: 6em;
-    //letter-spacing: -3px;
     font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
     text-transform: uppercase;
@@ -151,7 +153,7 @@ const StyledSubscribe = styled.div`
   .subscribe-now-action {
     display: flex;
     justify-content: center;
-    margin: 0 var(--side-margin) 50px;
+    margin: 0 var(--side-margin) 0;
     .subscribe-now-button {
       color: ${({ theme }) => theme.colorWhite};
       border: 1px solid ${({ theme }) => theme.colorPrimary};

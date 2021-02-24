@@ -87,6 +87,9 @@ function ServicesLandscapeRoute(props) {
 
         <PageDivider1 />
 
+        <br />
+        <br />
+
         <div className="landscape-header uppercase">HOA Landscape</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
@@ -118,14 +121,12 @@ function ServicesLandscapeRoute(props) {
             </StyledInfoBodyMessage>
           </div>
         </div>
-
-        <br />
-
       </StyledServicesLandscape>
     </AnimatedStyledRoute>
   );
 }
 const StyledServicesLandscape = styled.div`
+  padding-bottom: 80px;
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
@@ -159,7 +160,7 @@ const StyledServicesLandscape = styled.div`
   }
   .landscape-info-subsection {
     display: flex;
-    margin: 10px var(--side-margin);
+    margin: 10px var(--side-margin) 0;
     .subsection-images {
       position: relative;
       display: flex;

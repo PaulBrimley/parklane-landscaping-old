@@ -82,6 +82,9 @@ function ContactRoute(props) {
 
         <PageDivider1 />
 
+        <br />
+        <br />
+
         <div className="contact-form-wrapper">
           <div className="form-header">Contact Us</div>
           <form className="contact-form">
@@ -106,11 +109,16 @@ function ContactRoute(props) {
           </div>
         </div>
 
+        <br />
+        <br />
+
         <div className="contact-info-images">
           <img src={imgOverhead1} alt="Home" />
         </div>
 
         <div className="separator" />
+
+        <br />
 
         <div className="contact-header">Parklane HOA Services</div>
         <br />
@@ -143,6 +151,7 @@ function ContactRoute(props) {
   );
 }
 const StyledContact = styled.div`
+  padding-bottom: 90px;
   .contact-form-wrapper {
     display: flex;
     flex-direction: column;
@@ -223,7 +232,7 @@ const StyledContact = styled.div`
   .contact-hoa-services-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 0 var(--side-margin) 50px;
+    margin: 0 var(--side-margin);
     color: ${({ theme }) => theme.colorPrimary};
     text-align: center;
     white-space: nowrap;
