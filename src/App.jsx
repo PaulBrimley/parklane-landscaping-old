@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
-import { ToastContainer, Flip } from 'react-toastify';
+import { Slide } from 'react-toastify';
 
 /** context **/
 import { useAppState } from './context/app.context';
@@ -15,6 +15,7 @@ import Header from './components/Organisims/Header';
 import Menu from './components/Organisims/Menu';
 import Modal from './components/Molecules/Modal';
 import Routes from './routes/Routes';
+import StyledToastContainer from './components/Styled/StyledToastContainer';
 
 function App() {
   const { handleWidthChange, isMobile, mobileWidth, theme } = useAppState();
@@ -36,7 +37,7 @@ function App() {
   return (
     <ThemeProvider theme={themeInfo}>
       <StyledApp ref={appRef}>
-        <ToastContainer transition={Flip} hideProgressBar={true}/>
+        <StyledToastContainer transition={Slide} hideProgressBar={true} autoClose={5000}/>
         <Modal />
         <Router>
           <Menu />

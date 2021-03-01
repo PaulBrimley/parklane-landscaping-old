@@ -14,6 +14,7 @@ import InfoBannerLeft from '../components/Molecules/InfoBannerLeft';
 import PageDivider1 from '../components/Atoms/PageDivider1';
 import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
+import SVGIcon from '../components/Atoms/SVGIcon';
 
 /** images **/
 const {
@@ -62,6 +63,7 @@ function ServicesTrimmingRoute(props) {
                 <StyledInfoBannerMessage>
                   <div className="title">
                     <div>
+                      <SVGIcon height="100%" width="47px" type="trees" style={{fill: 'white', marginRight: '7px'}}/>
                       <span className="isBold">HOA</span>
                     </div>
                     <div>TREE TRIMMING</div>

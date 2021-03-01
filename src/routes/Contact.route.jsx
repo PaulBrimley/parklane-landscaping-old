@@ -1,7 +1,12 @@
+import { useState } from 'react';
 import styled from 'styled-components';
+import { toast } from 'react-toastify';
+import { Loader } from 'styled-icons/boxicons-regular';
+import { Loader4 } from 'styled-icons/remix-line';
 
 /** context **/
 import { useAppState } from '../context/app.context';
+import { useEmailState } from '../context/email.context';
 import { images } from '../context/img.context';
 
 /** hooks **/
@@ -14,20 +19,23 @@ import InfoBanner from '../components/Molecules/InfoBanner';
 import InfoBannerLeft from '../components/Molecules/InfoBannerLeft';
 import PageDivider1 from '../components/Atoms/PageDivider1';
 import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
+import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
 /** images **/
-const {
-  imgFlowers2,
-  imgOverhead1
-} = images;
+const { imgFlowers2, imgOverhead1 } = images;
 
 function ContactRoute(props) {
   const { companyInfo, width } = useAppState();
+  const { sendEmail, templateIds } = useEmailState();
   const { offset } = useParallaxEffect({ strength: 0.2 });
 
-  function handleSubmit() {
-    // console.log('clicked');
-  }
+  const [form, setForm] = useState({
+    email: '',
+    message: '',
+    name: '',
+    phone: ''
+  });
+  const [submitting, setSubmitting] = useState(false);
 
   function calcBackgroundPosition() {
     let offset = 40;
@@ -42,6 +50,43 @@ function ContactRoute(props) {
     if (width < 700) size = '125%';
     if (width < 400) size = '150%';
     return size;
+  }
+  function handleChange(e) {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value
+    });
+  }
+  async function handleSubmit() {
+    setSubmitting(true);
+    try {
+      validateForm();
+      await sendEmail({
+        form,
+        templateId: templateIds.CONTACT_TEMPLATE_ID
+      });
+      resetForm();
+      toast.success('Contact request submitted successfully');
+    } catch (err) {
+      toast.error(err.message);
+    }
+    setSubmitting(false);
+  }
+  function resetForm() {
+    setForm({
+      email: '',
+      message: '',
+      name: '',
+      phone: ''
+    });
+  }
+  function validateForm() {
+    const missingFields = [];
+    if (!form.name) missingFields.push('name');
+    if (!form.email) missingFields.push('email');
+    if (!form.phone) missingFields.push('phone');
+    if (!form.message) missingFields.push('message');
+    if (missingFields.length) throw new Error(`Please fill in the required form fields: ${missingFields.join(', ')}`);
   }
 
   return (
@@ -88,26 +133,28 @@ function ContactRoute(props) {
         <div className="contact-form-wrapper">
           <div className="form-header">Contact Us</div>
           <form className="contact-form">
-            <input className="contact-form-input" placeholder="NAME" />
-            <input className="contact-form-input" placeholder="EMAIL" />
-            <input className="contact-form-input" placeholder="PHONE" />
-            <textarea className="contact-form-input" rows="8" placeholder="MESSAGE" />
+            <input className="contact-form-input" placeholder="NAME" name="name" value={form.name} onChange={handleChange} />
+            <input className="contact-form-input" placeholder="EMAIL" name="email" value={form.email} onChange={handleChange} />
+            <input className="contact-form-input" placeholder="PHONE" name="phone" value={form.phone} onChange={handleChange} />
+            <textarea className="contact-form-input" rows="8" placeholder="MESSAGE" name="message" value={form.message} onChange={handleChange} />
             <div className="contact-form-controls">
-              <Button classes="submit-form-button" fontSize="0.8em" fontWeight="400" onClick={handleSubmit} shadowColor="colorTransparent" width="40px" padding="6px 5px 4px" margin="5px 0 0">
-                SEND
-              </Button>
+              {submitting ? (
+                <Loader4 className="loading" />
+              ) : (
+                <Button classes="submit-form-button" disabled={submitting} fontSize="0.8em" fontWeight="400" onClick={handleSubmit} shadowColor="colorTransparent" width="40px">
+                  Send
+                </Button>
+              )}
             </div>
           </form>
         </div>
 
-        <div className="contact-info">
-          <div className="contact-info-message">
-            Parklane landscaping is a full service HOA landscape company. We service San Antonio and the surrounding areas. If you have any questions or would like a bid for your next HOA project, please Contact Parklane Landscaping.
-          </div>
-          <div className="contact-info-phone-email">
-            <span>{companyInfo.phone} | {companyInfo.email}</span>
-          </div>
-        </div>
+        <StyledInfoBodyMessage align="center" color="colorPrimary" fontSize="1.4em" lineHeight="1.3em" margin="0 var(--side-margin)">
+          Parklane landscaping is a full service HOA landscape company. We service San Antonio and the surrounding areas. If you have any questions or would like a bid for your next HOA project, please Contact Parklane Landscaping.
+        </StyledInfoBodyMessage>
+        <StyledInfoBodyMessage align="center" color="colorPrimary" fontSize="1.2em" fontWeight="400" lineHeight="1.2em" margin="10px var(--side-margin)">
+          {companyInfo.phone} | {companyInfo.email}
+        </StyledInfoBodyMessage>
 
         <br />
         <br />
@@ -196,6 +243,21 @@ const StyledContact = styled.div`
       .contact-form-controls {
         display: flex;
         justify-content: center;
+        margin-top: 5px;
+        @keyframes rotation {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        .loading {
+          height: 30px;
+          width: 30px;
+          color: ${({ theme }) => theme.colorWhite};
+          animation: rotation 2s infinite linear;
+        }
         .submit-form-button {
           color: ${({ theme }) => theme.colorWhite};
           background-color: ${({ theme }) => theme.colorSecondary};
@@ -213,21 +275,6 @@ const StyledContact = styled.div`
     color: ${({ theme }) => theme.colorPrimary};
     text-align: center;
     margin: 10px var(--side-margin);
-  }
-  .contact-info {
-    color: ${({ theme }) => theme.colorPrimary};
-    margin: 0 var(--side-margin);
-    text-align: center;
-    .contact-info-message {
-      font-size: 1.4em;
-      font-weight: 300;
-      margin-bottom: 20px;
-    }
-    .contact-info-phone-email {
-      font-size: 1.2em;
-      font-weight: 400;
-      margin-bottom: 20px;
-    }
   }
   .contact-hoa-services-list {
     display: grid;

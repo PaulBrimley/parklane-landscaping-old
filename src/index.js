@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './assets/scss/index.scss';
 import App from './App';
 import { AppProvider } from './context/app.context';
+import { EmailProvider } from './context/email.context';
 import { ImageProvider } from './context/img.context';
 import reportWebVitals from './reportWebVitals';
 
@@ -10,7 +11,9 @@ ReactDOM.render(
   <React.StrictMode>
     <AppProvider>
       <ImageProvider>
-        <App />
+        <EmailProvider>
+          <App />
+        </EmailProvider>
       </ImageProvider>
     </AppProvider>
   </React.StrictMode>,

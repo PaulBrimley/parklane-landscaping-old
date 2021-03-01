@@ -159,8 +159,4 @@ function ImageProvider(props) {
   const value = useMemo(() => [state, setState], [state]);
   return <ImageContext.Provider value={value} {...props} />;
 }
-export {
-  ImageProvider,
-  images,
-  useImageState
-};
+export { ImageProvider, images, useImageState };
