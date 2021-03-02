@@ -1,13 +1,69 @@
+import { useEffect, useState } from 'react';
 import { Textfit } from 'react-textfit';
 import styled from 'styled-components';
+import { toast } from 'react-toastify';
+import { Loader4 } from 'styled-icons/remix-line';
 
 /** context **/
+import { useEmailState } from '../../context/email.context';
 import { images } from '../../context/img.context';
+
+/** components **/
+import Button from '../Atoms/Button';
 
 /** images **/
 const { imgNewsLetter1, imgNewsLetter2 } = images;
 
 function SubscribeForm(props) {
+  const { sendEmail, templateIds } = useEmailState();
+  const [checkbox, setCheckbox] = useState(false);
+  const [form, setForm] = useState({
+    email: '',
+    name: ''
+  });
+  const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    return () => {
+      resetForm();
+    };
+  }, []);
+
+  function handleChange(e) {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value
+    });
+  }
+  async function handleSubmit() {
+    if (!checkbox) return;
+    setSubmitting(true);
+    try {
+      validateForm();
+      await sendEmail({
+        form,
+        templateId: templateIds.SUBSCRIPTION_TEMPLATE_ID
+      });
+      resetForm();
+      toast.success('Contact request submitted successfully');
+    } catch (err) {
+      toast.error(err.message);
+    }
+    setSubmitting(false);
+  }
+  function resetForm() {
+    setCheckbox(false);
+    setForm({
+      email: '',
+      name: ''
+    });
+  }
+  function validateForm() {
+    const missingFields = [];
+    if (!form.name) missingFields.push('name');
+    if (!form.email) missingFields.push('email');
+    if (missingFields.length) throw new Error(`Please fill in the required form fields: ${missingFields.join(', ')}`);
+  }
   return (
     <StyledSubscribeForm>
       <Textfit className="header" mode="single">
@@ -31,11 +87,118 @@ function SubscribeForm(props) {
 
       <div className="separator" />
 
+      <form className="contact-form">
+        <input className="contact-form-input" placeholder="NAME" name="name" value={form.name} onChange={handleChange} />
+        <input className="contact-form-input" placeholder="EMAIL" name="email" value={form.email} onChange={handleChange} />
+        <label className="contact-form-checkbox-label">
+          <input className="contact-form-checkbox" type="checkbox" name="checkbox" checked={checkbox} value={checkbox} onChange={e => setCheckbox(e.target.checked)} />
+          <span>Yes, I would like to receive the Parklane Landscaping information E-mail blasts for my HOA community!</span>
+        </label>
+        <div className="contact-form-controls">
+          {submitting ? (
+            <Loader4 className="loading" />
+          ) : (
+            <Button classes="submit-form-button" disabled={submitting || !checkbox} fontSize="0.8em" fontWeight="400" onClick={handleSubmit} shadowColor="colorTransparent" width="40px" padding="7px 14px 6px">
+              Send
+            </Button>
+          )}
+        </div>
+      </form>
     </StyledSubscribeForm>
   );
 }
 const StyledSubscribeForm = styled.div`
   padding: 40px 70px;
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    background-color: ${({ theme }) => theme.colorPrimary};
+    padding: 5px 8px 7px;
+    margin: 0 auto;
+    .contact-form-checkbox {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      margin: 0;
+      &:before {
+        content: '';
+        display: flex;
+        width: 10px;
+        height: 10px;
+        cursor: pointer;
+        background-color: #fff;
+        border: 1px solid ${props => props.theme.colorWhite};
+        transition: border 0.25s, box-shadow 0.25s;
+      }
+      &:checked:before {
+        background: ${props => props.theme.colorPrimary};
+        box-shadow: inset 0 0 0 1px #fff;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    .contact-form-checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      margin: 7px 0 2px;
+      color: ${({ theme }) => theme.colorWhite};
+      font-size: 1.1em;
+      font-weight: 400;
+      cursor: pointer;
+      span {
+        padding-left: 5px;
+      }
+    }
+    .contact-form-input {
+      width: 100%;
+      padding: 8px;
+      margin: 2px 0;
+      border: none;
+      background-color: #fff;
+      box-sizing: border-box;
+      box-shadow: 0 0 2px ${props => props.theme.colorTransparent};
+      color: ${({ theme }) => theme.colorPrimary};
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 1em;
+      font-weight: 200;
+      outline: none;
+      transition: box-shadow 0.25s, border-bottom 0.25s;
+      &:focus {
+        box-shadow: 0 0 2px ${props => props.theme.colorGreyMediumLight};
+        &.hasError {
+          box-shadow: 0 0 2px ${props => props.theme.colorDanger};
+        }
+      }
+    }
+    .contact-form-controls {
+      display: flex;
+      justify-content: center;
+      margin-top: 5px;
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .loading {
+        height: 30px;
+        width: 30px;
+        color: ${({ theme }) => theme.colorWhite};
+        animation: rotation 2s infinite linear;
+      }
+      .submit-form-button {
+        color: ${({ theme }) => theme.colorWhite};
+        background-color: ${({ theme }) => theme.colorSecondary};
+        &:hover {
+          background-color: ${({ theme }) => theme.colorSecondaryOpaque};
+        }
+      }
+    }
+  }
   .header {
     font-weight: 700;
     color: ${({ theme }) => theme.colorBlack};
@@ -89,6 +252,12 @@ const StyledSubscribeForm = styled.div`
   }
   @media (max-width: 500px) {
     padding: 20px;
+    .news-letters {
+      flex-direction: column;
+      div:nth-child(n + 2) {
+        display: none;
+      }
+    }
     .receive-emails {
       font-size: 0.8em;
     }

@@ -15,7 +15,11 @@ function AnimatedStyledRoute({children}) {
 
   const menuAppSpring = useSpring({
     ...translateHorizontal({positionStart: 0, positionEnd: menuCollapsed ? 0 : -10}),
-    config: defaultConfig,
+    config: {
+      tension: 100,
+      friction: 10,
+      clamp: true
+    },
     reverse
   });
   return (

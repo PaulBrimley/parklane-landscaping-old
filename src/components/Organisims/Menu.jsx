@@ -19,11 +19,19 @@ function Menu(props) {
   const [hideMenu, setHideMenu] = useState(true);
   const menuContainerSpring = useSpring({
     ...fade({opacityEnd: menuCollapsed ? 0 : 1, opacityStart: menuCollapsed ? 0 : 0}),
-    config: defaultConfig
+    config: {
+      tension: 100,
+      friction: 10,
+      clamp: true
+    }
   });
   const menuSpring = useSpring({
     ...translateHorizontal({positionEnd: menuCollapsed ? 100 : 0, positionStart: menuCollapsed ? 100 : 100}),
-    config: defaultConfig,
+    config: {
+      tension: 100,
+      friction: 10,
+      clamp: true
+    },
     onRest: () => setHideMenu(menuCollapsed)
   });
 

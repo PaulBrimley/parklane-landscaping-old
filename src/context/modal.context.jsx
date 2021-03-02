@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
+import { Close } from 'styled-icons/evil';
 
 import { defaultConfig, fade } from '../transitions';
 
@@ -19,7 +20,7 @@ function useModalState() {
   function toggleModal({ content, open }) {
     setState({
       ...state,
-      content: content || '',
+      content: content || state.content,
       modalOpen: open
     });
   }
@@ -48,10 +49,17 @@ function ModalProvider(props) {
   return <ModalContext.Provider value={value} {...props} />;
 }
 function Modal() {
-  const {content, modalOpen, toggleModal} = useModalState();
+  const { content, modalOpen, setModalContent, toggleModal } = useModalState();
   const modalSpring = useSpring({
-    ...fade({opacityEnd: !modalOpen ? 0 : 1, opacityStart: !modalOpen ? 0 : 0}),
-    config: defaultConfig
+    ...fade({ opacityEnd: !modalOpen ? 0 : 1, opacityStart: !modalOpen ? 0 : 0 }),
+    config: {
+      tension: 100,
+      friction: 5,
+      clamp: true
+    },
+    onRest (ds) {
+      if (!modalOpen) setModalContent();
+    }
   });
   function handleClose() {
     toggleModal({ open: false });
@@ -60,6 +68,9 @@ function Modal() {
     <StyledModal className={!modalOpen ? 'hidden' : ''}>
       <animated.div className="overlay" style={modalSpring} onClick={handleClose} />
       <animated.div className="modal" style={modalSpring}>
+        <div className="header">
+          <Close className="close-button" onClick={() => toggleModal({open: false})} />
+        </div>
         {content}
       </animated.div>
     </StyledModal>
@@ -86,6 +97,22 @@ const StyledModal = styled.div`
     z-index: 2002;
     overflow: auto;
     background-color: ${({ theme }) => theme.colorWhite};
+    .header {
+      text-align: right;
+      padding: 5px;
+      .close-button {
+        height: 20px;
+        width: 20px;
+        padding: 2px;
+        cursor: pointer;
+        color: ${({ theme }) => theme.colorPrimary};
+        transition: all 0.2s;
+        &:hover,
+        &:active {
+          color: ${({ theme }) => theme.colorSecondary};
+        }
+      }
+    }
   }
   .overlay {
     position: absolute;
@@ -95,6 +122,12 @@ const StyledModal = styled.div`
     right: 0;
     z-index: 2001;
     background-color: ${({ theme }) => theme.colorOpaque};
+  }
+  @media (max-width: ${({ theme }) => theme.mobileWidth}px) {
+    .modal {
+      width: auto;
+      margin: 20px;
+    }
   }
 `;
 export { ModalProvider, useModalState };

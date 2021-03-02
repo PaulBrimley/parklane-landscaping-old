@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { toast } from 'react-toastify';
-import { Loader } from 'styled-icons/boxicons-regular';
 import { Loader4 } from 'styled-icons/remix-line';
 
 /** context **/

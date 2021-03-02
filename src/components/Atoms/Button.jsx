@@ -21,11 +21,11 @@ const StyledButton = styled.span`
     box-shadow: 1px 1px 1px ${({ config: {shadowColor}, theme }) => (shadowColor && theme.hasOwnProperty(shadowColor) ? theme[shadowColor] : theme.colorGreyMedium)};
   }
   &.disabled {
-    color: ${({ theme }) => theme.colorGrey};
+    color: ${({ theme }) => theme.colorGreyLight};
     pointer-events: none;
-    background: ${({ theme }) => theme.colorGreyLight};
-    border: 1px solid ${({ theme }) => theme.colorGreyLight};
-    box-shadow: 2px 2px 2px ${({ theme }) => theme.colorGreyLight};
+    background-color: ${({ theme }) => theme.colorGrey} !important;
+    //border: 1px solid ${({ theme }) => theme.colorGrey};
+    //box-shadow: 2px 2px 2px ${({ theme }) => theme.colorGrey};
   }
   &.btn-xs {
     padding: 0 2px;
