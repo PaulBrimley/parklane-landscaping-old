@@ -6,6 +6,7 @@ import { Loader4 } from 'styled-icons/remix-line';
 
 /** context **/
 import { useEmailState } from '../../context/email.context';
+import { useModalState } from '../../context/modal.context';
 import { images } from '../../context/img.context';
 
 /** components **/
@@ -16,6 +17,7 @@ const { imgNewsLetter1, imgNewsLetter2 } = images;
 
 function SubscribeForm(props) {
   const { sendEmail, templateIds } = useEmailState();
+  const { toggleModal } = useModalState();
   const [checkbox, setCheckbox] = useState(false);
   const [form, setForm] = useState({
     email: '',
@@ -44,8 +46,9 @@ function SubscribeForm(props) {
         form,
         templateId: templateIds.SUBSCRIPTION_TEMPLATE_ID
       });
-      resetForm();
       toast.success('Contact request submitted successfully');
+      toggleModal({ open: false });
+      resetForm();
     } catch (err) {
       toast.error(err.message);
     }
