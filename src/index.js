@@ -5,6 +5,7 @@ import App from './App';
 import { AppProvider } from './context/app.context';
 import { EmailProvider } from './context/email.context';
 import { ImageProvider } from './context/img.context';
+import { ModalProvider } from './context/modal.context';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -12,7 +13,9 @@ ReactDOM.render(
     <AppProvider>
       <ImageProvider>
         <EmailProvider>
-          <App />
+          <ModalProvider>
+            <App />
+          </ModalProvider>
         </EmailProvider>
       </ImageProvider>
     </AppProvider>

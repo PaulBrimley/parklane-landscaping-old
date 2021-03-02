@@ -5,6 +5,7 @@ import { Slide } from 'react-toastify';
 
 /** context **/
 import { useAppState } from './context/app.context';
+import { useModalState } from './context/modal.context';
 
 /** custom hooks **/
 import useWindowDimensions from './hooks/useWindowDimensions.hook';
@@ -13,12 +14,12 @@ import useWindowDimensions from './hooks/useWindowDimensions.hook';
 import Footer from './components/Organisims/Footer';
 import Header from './components/Organisims/Header';
 import Menu from './components/Organisims/Menu';
-import Modal from './components/Molecules/Modal';
 import Routes from './routes/Routes';
 import StyledToastContainer from './components/Styled/StyledToastContainer';
 
 function App() {
   const { handleWidthChange, isMobile, mobileWidth, theme } = useAppState();
+  const { Modal, modalOpen } = useModalState();
   const appRef = useRef();
   const { width } = useWindowDimensions(appRef);
   const transitionTimeout = 200;

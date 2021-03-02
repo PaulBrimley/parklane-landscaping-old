@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 /** context **/
 import { useAppState } from '../context/app.context';
+import { useModalState } from '../context/modal.context';
 import { images } from '../context/img.context';
 
 /** hooks **/
@@ -16,20 +17,18 @@ import InfoBannerLeft from '../components/Molecules/InfoBannerLeft';
 import PageDivider1 from '../components/Atoms/PageDivider1';
 import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
+import SubscribeForm from '../components/Molecules/SubscribeForm';
 
 /** images **/
-const {
-  imgGuyPlanting1,
-  imgNewsLetter1,
-  imgNewsLetter2
-} = images;
+const { imgGuyPlanting1, imgNewsLetter1, imgNewsLetter2 } = images;
 
 function SubscribeRoute(props) {
   const { width } = useAppState();
+  const { toggleModal } = useModalState();
   const { offset } = useParallaxEffect({ strength: 0.2 });
 
-  function handleSubmit() {
-    // console.log('clicked');
+  function handleOpenModal() {
+    toggleModal({content: <SubscribeForm />, open: true});
   }
 
   function calcBackgroundPosition() {
@@ -85,7 +84,9 @@ function SubscribeRoute(props) {
 
         <br />
 
-        <Textfit className="subscribe-now-header" mode="single">Learn more!</Textfit>
+        <Textfit className="subscribe-now-header" mode="single">
+          Learn more!
+        </Textfit>
         <div className="receive-emails">To receive e-mails with tips and information for your HOA</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
@@ -104,11 +105,10 @@ function SubscribeRoute(props) {
         </div>
 
         <div className="subscribe-now-action">
-          <Button classes="subscribe-now-button" height="30px" width="150px" fontSize="1.5em" onClick={handleSubmit}>
+          <Button classes="subscribe-now-button" height="30px" width="150px" fontSize="1.5em" onClick={handleOpenModal}>
             Subscribe Now
           </Button>
         </div>
-
       </StyledSubscribe>
     </AnimatedStyledRoute>
   );
