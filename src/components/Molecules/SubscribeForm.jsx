@@ -13,7 +13,7 @@ import { images } from '../../context/img.context';
 import Button from '../Atoms/Button';
 
 /** images **/
-const { imgNewsLetter1, imgNewsLetter2 } = images;
+const { imgNewsLetter1, imgNewsLetter2, imgNewsLetter3 } = images;
 
 function SubscribeForm(props) {
   const { sendEmail, templateIds } = useEmailState();
@@ -84,7 +84,7 @@ function SubscribeForm(props) {
           <img src={imgNewsLetter2} alt="news letter 2" />
         </div>
         <div>
-          <img src={imgNewsLetter2} alt="news letter 2" />
+          <img src={imgNewsLetter3} alt="news letter 3" />
         </div>
       </div>
 

@@ -68,10 +68,12 @@ function Modal() {
     <StyledModal className={!modalOpen ? 'hidden' : ''}>
       <animated.div className="overlay" style={modalSpring} onClick={handleClose} />
       <animated.div className="modal" style={modalSpring}>
-        <div className="header">
+        <div className="modal-header">
           <Close className="close-button" onClick={() => toggleModal({open: false})} />
         </div>
-        {content}
+        <div className="modal-body">
+          {content}
+        </div>
       </animated.div>
     </StyledModal>
   );
@@ -95,11 +97,18 @@ const StyledModal = styled.div`
     min-height: 200px;
     min-width: 200px;
     z-index: 2002;
-    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     background-color: ${({ theme }) => theme.colorWhite};
-    .header {
+    .modal-body {
+      flex: 1 1 auto;
+      overflow: auto;
+    }
+    .modal-header {
       text-align: right;
       padding: 5px;
+      box-shadow: 0 0 2px ${({theme}) => theme.colorOpaque};
       .close-button {
         height: 20px;
         width: 20px;

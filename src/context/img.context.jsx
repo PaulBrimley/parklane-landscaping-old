@@ -31,6 +31,7 @@ import imgMonument5 from '../assets/img/img-monument-5.jpg';
 import imgMonument6 from '../assets/img/img-monument-6.jpg';
 import imgNewsLetter1 from '../assets/img/img-news-letter-1.jpg';
 import imgNewsLetter2 from '../assets/img/img-news-letter-2.jpg';
+import imgNewsLetter3 from '../assets/img/img-news-letter-3.jpg';
 import imgOverhead1 from '../assets/img/img-overhead-1.jpg';
 import imgOverhead2 from '../assets/img/img-overhead-2.jpg';
 import imgOverhead3 from '../assets/img/img-overhead-3.png';
@@ -80,6 +81,7 @@ const images = {
   imgMonument6,
   imgNewsLetter1,
   imgNewsLetter2,
+  imgNewsLetter3,
   imgOverhead1,
   imgOverhead2,
   imgOverhead3,
