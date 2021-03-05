@@ -65,7 +65,8 @@ function MonumentRepairRoute(props) {
                       <SVGIcon height="100%" width="63px" type="masonry" style={{fill: 'white', marginRight: '7px'}}/>
                       <span className="isBold">HOA</span>
                     </div>
-                    <div>MONUMENT REPAIR</div>
+                    <div>MONUMENT</div>
+                    <div>REPAIR</div>
                   </div>
                   <div className="hr" />
                   <div className="message">
@@ -113,7 +114,7 @@ const StyledMonumentRepair = styled.div`
   padding-bottom: 100px;
   .contact-info {
     color: ${({theme}) => theme.colorPrimary};
-    margin: 30px var(--side-margin);
+    margin: 30px var(--side-margin) 0;
     text-align: center;
     font-size: 1.4em;
     font-weight: 300;
