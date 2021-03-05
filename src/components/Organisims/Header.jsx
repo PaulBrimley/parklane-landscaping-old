@@ -121,7 +121,7 @@ const StyledHeader = styled.div`
     .child-route-wrapper {
       position: relative;
       margin-top: 8px;
-      flex: 10% 0 0;
+      flex: 8% 0 0;
       &:before {
         position: absolute;
         border-right: 25px solid ${({ theme }) => theme.colorWhite};
