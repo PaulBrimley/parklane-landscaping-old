@@ -27,7 +27,7 @@ const {
   imgOverhead3
 } = images;
 
-function ServicesLandscapeRoute(props) {
+function LandscapeRoute(props) {
   const { width } = useAppState();
   const { offset } = useParallaxEffect({ strength: 0.2 });
 
@@ -48,7 +48,7 @@ function ServicesLandscapeRoute(props) {
 
   return (
     <AnimatedStyledRoute>
-      <StyledServicesLandscape className="body">
+      <StyledLandscape className="body">
         <InfoBanner
           style={{
             backgroundImage: `url(${imgFlowers1})`,
@@ -123,11 +123,11 @@ function ServicesLandscapeRoute(props) {
             </StyledInfoBodyMessage>
           </div>
         </div>
-      </StyledServicesLandscape>
+      </StyledLandscape>
     </AnimatedStyledRoute>
   );
 }
-const StyledServicesLandscape = styled.div`
+const StyledLandscape = styled.div`
   padding-bottom: 80px;
   .info-banner-left {
     flex: 1 1 auto;
@@ -205,4 +205,4 @@ const StyledServicesLandscape = styled.div`
     }
   }
 `;
-export default ServicesLandscapeRoute;
+export default LandscapeRoute;

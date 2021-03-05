@@ -18,24 +18,24 @@ import SVGIcon from '../components/Atoms/SVGIcon';
 
 /** images **/
 const {
-  imgLighting1,
-  imgLighting2,
-  imgLighting3
+  imgMonument1,
+  imgMonument2,
+  imgMonument3
 } = images;
 
-function LightingRoute(props) {
-  const { width } = useAppState();
+function MonumentRepairRoute(props) {
+  const { companyInfo, width } = useAppState();
   const { offset } = useParallaxEffect({ strength: 0.2 });
 
   function calcBackgroundPosition() {
-    let offset = 15;
+    let offset = 40;
     if (width < 800) offset = 30;
     if (width < 700) offset = 40;
     if (width < 400) offset = 50;
     return offset;
   }
   function calcBackgroundSize() {
-    let size = '100%';
+    let size = '110%';
     if (width < 800) size = '130%';
     if (width < 700) size = '150%';
     if (width < 600) size = '175%';
@@ -44,10 +44,10 @@ function LightingRoute(props) {
 
   return (
     <AnimatedStyledRoute>
-      <StyledLighting className="body">
+      <StyledMonumentRepair className="body">
         <InfoBanner
           style={{
-            backgroundImage: `url(${imgLighting1})`,
+            backgroundImage: `url(${imgMonument1})`,
             backgroundPosition: `center calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: calcBackgroundSize()
@@ -62,10 +62,10 @@ function LightingRoute(props) {
                 <StyledInfoBannerMessage>
                   <div className="title">
                     <div>
-                      <SVGIcon height="100%" width="20px" type="lightBulb" style={{fill: 'white', marginRight: '7px'}}/>
+                      <SVGIcon height="100%" width="63px" type="masonry" style={{fill: 'white', marginRight: '7px'}}/>
                       <span className="isBold">HOA</span>
                     </div>
-                    <div>LIGHTING</div>
+                    <div>MONUMENT REPAIR</div>
                   </div>
                   <div className="hr" />
                   <div className="message">
@@ -83,57 +83,79 @@ function LightingRoute(props) {
         <br />
         <br />
 
-        <div className="lighting-header uppercase">HOA Lighting</div>
+        <div className="monument-header uppercase">HOA Monument Repair</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
-          Your community is your pride and joy. Once Parklane has built your new monument, planted flower beds, trees and added beautiful landscape features, you’ll want to highlight them. Adding landscape and garden lighting is a great way to accentuate your community’s best features and make your HOA a safer place. A great lighting scheme helps raise the value of a community. Consider adding outdoor lighting for your next landscaping project to make your HOA warm and inviting.
+          A community’s entryway monument is the first thing one sees when passing or entering an HOA development. Hence, it is vital they have long lasting appeal. However, sometimes mishaps occur. Once in a while, Parklane receives requests to rebuild monument due to erosion or car accident. This can be a difficult task when only a portion needs replacing. New stones or materials need to be used that match exactly. When an entire monument needs rebuilding, materials need to match former styles and architectural details. For this reason, Parklane has a very skilled in-house masonry team.
         </StyledInfoBodyMessage>
 
-        <div className="lighting-info-subsection">
+        <div className="monument-info-subsection">
           <div className="subsection-images">
-            <img src={imgLighting2} alt="lighting 2" />
-            <img src={imgLighting3} alt="lighting 3" />
+            <img src={imgMonument2} alt="monument 2" />
+            <img src={imgMonument3} alt="monument 3" />
           </div>
           <div className="subsection-info">
-            <StyledInfoBodyMessage fontSize="1.2em" margin="0 0 10px 0">
-              If you are looking to start a new HOA community landscape project, consider the value of adding outdoor lighting. A well-lit neighborhood increases curb appeal by offering a warm and inviting place for your family and friends. Not only does outdoor lighting extend your living space, it can offer huge safety and security benefits. Highlight your HOA’s beautiful lawns, gardens, and other landscaping features with outdoor lighting!
-            </StyledInfoBodyMessage>
             <StyledInfoBodyMessage fontSize="1.2em" margin="0">
-              For more information on HOA landscape lighting or tips on how you can enhance your landscape community at night, contact us today! Parklane Landscaping will provide you with a free estimate on your next project.
+              Our masonry team has over ten years of experience. They know small details cannot be overlooked when it comes to matching old materials with new ones. Whether you are replacing a column in a stone fence or a remnant of a monument, Parklane goes the extra mile to make sure no detail is missed. Having an in-house team, allows us to oversee every step of each project. Starting with the original design, until the last brick is layed, Parklane is there to make sure no stone is unturned.
             </StyledInfoBodyMessage>
           </div>
         </div>
-      </StyledLighting>
+
+        <div className="contact-info">
+          For estimates call {companyInfo.phone}
+        </div>
+
+      </StyledMonumentRepair>
     </AnimatedStyledRoute>
   );
 }
-const StyledLighting = styled.div`
-  padding-bottom: 90px;
+const StyledMonumentRepair = styled.div`
+  padding-bottom: 100px;
+  .contact-info {
+    color: ${({theme}) => theme.colorPrimary};
+    margin: 30px var(--side-margin);
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
   }
-  .lighting-header {
+  .monument-header, .monument-header-2 {
     font-size: 3em;
     font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
     margin: 20px var(--side-margin) 10px;
   }
-  .lighting-info-subsection {
+  .monument-header-2 {
+    font-size: 2em;
+  }
+  .monument-info-images {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    margin: 0 var(--side-margin);
+    img {
+      flex: 0 1 auto;
+      width: 100%;
+      object-fit: cover;
+      object-position: center 45%;
+    }
+  }
+  .monument-info-subsection {
     display: flex;
-    margin: 10px var(--side-margin) 0;
+    margin: 10px var(--side-margin);
     .subsection-images {
       margin-right: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       flex: 49% 0 0;
       img {
-        margin-bottom: 10px;
         width: 100%;
-        object-fit: cover;
-        object-position: center;
-        height: 170px;
+        &:first-child {
+          margin-bottom: 10px;
+        }
       }
     }
     .subsection-info {
@@ -141,13 +163,19 @@ const StyledLighting = styled.div`
     }
   }
   @media (max-width: ${({theme}) => theme.mobileWidth}px) {
-    .lighting-info-subsection {
+    .monument-info-subsection {
       flex-direction: column;
       .subsection-images {
         margin-right: 0;
         margin-bottom: 10px;
       }
+      &.lower {
+        flex-direction: column-reverse;
+        .subsection-info {
+          margin-bottom: 10px;
+        }
+      }
     }
   }
 `;
-export default LightingRoute;
+export default MonumentRepairRoute;

@@ -23,7 +23,7 @@ const {
   imgSprinklers2
 } = images;
 
-function ServicesIrrigationRoute(props) {
+function IrrigationRoute(props) {
   const { width } = useAppState();
   const { offset } = useParallaxEffect({ strength: 0.2 });
 
@@ -44,7 +44,7 @@ function ServicesIrrigationRoute(props) {
 
   return (
     <AnimatedStyledRoute>
-      <StyledServicesIrrigation className="body">
+      <StyledIrrigation className="body">
         <InfoBanner
           style={{
             backgroundImage: `url(${imgSprinklers1})`,
@@ -102,11 +102,11 @@ function ServicesIrrigationRoute(props) {
             Does your irrigator have this seal? Parklane Landscaping does. In fact, we have a team of licensed irrigators that all carry their irrigation license with this official seal. It is a requirement in the state of Texas that all licensed irrigators doing audits or working on irrigation systems have their license with them. If you need a licensed irrigator call Parklane Landscaping. Our team has the Texas seal of approval!
           </StyledInfoBodyMessage>
         </div>
-      </StyledServicesIrrigation>
+      </StyledIrrigation>
     </AnimatedStyledRoute>
   );
 }
-const StyledServicesIrrigation = styled.div`
+const StyledIrrigation = styled.div`
   padding-bottom: 80px;
   .info-banner-left {
     flex: 1 1 auto;
@@ -150,4 +150,4 @@ const StyledServicesIrrigation = styled.div`
     }
   }
 `;
-export default ServicesIrrigationRoute;
+export default IrrigationRoute;

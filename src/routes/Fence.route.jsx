@@ -23,7 +23,7 @@ const {
   imgFenceRepair
 } = images;
 
-function ServicesFenceRoute(props) {
+function FenceRoute(props) {
   const { companyInfo, width } = useAppState();
   const { offset } = useParallaxEffect({ strength: 0.2 });
 
@@ -45,7 +45,7 @@ function ServicesFenceRoute(props) {
 
   return (
     <AnimatedStyledRoute>
-      <StyledServicesFence className="body">
+      <StyledFence className="body">
         <InfoBanner
           style={{
             backgroundImage: `url(${imgFence})`,
@@ -114,11 +114,11 @@ function ServicesFenceRoute(props) {
             </StyledInfoBodyMessage>
           </div>
         </div>
-      </StyledServicesFence>
+      </StyledFence>
     </AnimatedStyledRoute>
   );
 }
-const StyledServicesFence = styled.div`
+const StyledFence = styled.div`
   padding-bottom: 90px;
   .info-banner-left {
     flex: 1 1 auto;
@@ -161,4 +161,4 @@ const StyledServicesFence = styled.div`
     }
   }
 `;
-export default ServicesFenceRoute;
+export default FenceRoute;

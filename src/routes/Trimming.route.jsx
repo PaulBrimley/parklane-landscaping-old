@@ -23,7 +23,7 @@ const {
   imgTreeTrimming
 } = images;
 
-function ServicesTrimmingRoute(props) {
+function TrimmingRoute(props) {
   const { width } = useAppState();
   const { offset } = useParallaxEffect({ strength: 0.2 });
 
@@ -45,7 +45,7 @@ function ServicesTrimmingRoute(props) {
 
   return (
     <AnimatedStyledRoute>
-      <StyledServicesTrimming className="body">
+      <StyledTrimming className="body">
         <InfoBanner
           style={{
             backgroundImage: `url(${imgLeaves})`,
@@ -101,11 +101,11 @@ function ServicesTrimmingRoute(props) {
             </StyledInfoBodyMessage>
           </div>
         </div>
-      </StyledServicesTrimming>
+      </StyledTrimming>
     </AnimatedStyledRoute>
   );
 }
-const StyledServicesTrimming = styled.div`
+const StyledTrimming = styled.div`
   padding-bottom: 90px;
   .info-banner-left {
     flex: 1 1 auto;
@@ -141,4 +141,4 @@ const StyledServicesTrimming = styled.div`
 
   }
 `;
-export default ServicesTrimmingRoute;
+export default TrimmingRoute;

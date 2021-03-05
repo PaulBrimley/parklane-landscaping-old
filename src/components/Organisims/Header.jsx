@@ -30,7 +30,8 @@ function Header(props) {
   }
 
   return (
-    <StyledHeader onMouseLeave={clearChildRoutes}>
+    <StyledHeader>
+    {/*<StyledHeader onMouseLeave={clearChildRoutes}>*/}
       <div className="header-left">
         <Link to={routes.HOME}>
           <img className="logo" src={logoMain} alt="logo" />
@@ -120,7 +121,7 @@ const StyledHeader = styled.div`
     .child-route-wrapper {
       position: relative;
       margin-top: 8px;
-      flex: 8% 0 0;
+      flex: 10% 0 0;
       &:before {
         position: absolute;
         border-right: 25px solid ${({ theme }) => theme.colorWhite};
@@ -175,6 +176,7 @@ const StyledHeader = styled.div`
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+          //max-width: 60px;
         }
       }
     }

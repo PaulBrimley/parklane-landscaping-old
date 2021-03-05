@@ -14,6 +14,7 @@ import LandscapeRoute from './Landscape.route';
 import LightingRoute from './Lighting.route';
 import MaintenanceRoute from './Maintenance.route';
 import MonumentRoute from './Monument.route';
+import MonumentRepairRoute from './MonumentRepair.route';
 import ServicesRoute from './Services.route';
 import SubscribeRoute from './Subscribe.route';
 import TrimmingRoute from './Trimming.route';
@@ -31,6 +32,7 @@ export const routes = {
   LIGHTING: '/services/lighting',
   MAINTENANCE: '/services/maintenance',
   MONUMENT: '/services/monument',
+  MONUMENT_REPAIR: '/services/monumentRepair',
   SERVICES: '/services',
   SUBSCRIBE: '/subscribe',
   TRIMMING: '/services/trimming'
@@ -92,12 +94,23 @@ export const routeArr = [
         active: true,
         Component: MonumentRoute,
         displayInHeader: true,
-        headerLinkLines: ['HOA Monument', 'Repair & Design'],
+        headerLinkLines: ['HOA Monument', 'Design & Installation'],
+        icon: 'monument',
+        iconSize: '19px',
+        name: 'HOA Monument Design & Installation',
+        path: routes.MONUMENT,
+        prefetchImages: [imgMonument1, imgMonument4, imgMonument5]
+      },
+      {
+        active: true,
+        Component: MonumentRepairRoute,
+        displayInHeader: true,
+        headerLinkLines: ['HOA Monument', 'Repair'],
         icon: 'masonry',
         iconSize: '20px',
-        name: 'HOA Monument Repair & Design',
-        path: routes.MONUMENT,
-        prefetchImages: [imgMonument1, imgMonument2, imgMonument3, imgMonument4, imgMonument5]
+        name: 'HOA Monument Repair',
+        path: routes.MONUMENT_REPAIR,
+        prefetchImages: [imgMonument1, imgMonument2, imgMonument3]
       },
       {
         active: true,

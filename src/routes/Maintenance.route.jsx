@@ -23,7 +23,7 @@ const {
   imgLawnMower2
 } = images;
 
-function ServicesMaintenanceRoute(props) {
+function MaintenanceRoute(props) {
   const { companyInfo, isMobile, width } = useAppState();
   const { offset } = useParallaxEffect({ strength: 0.2 });
 
@@ -45,7 +45,7 @@ function ServicesMaintenanceRoute(props) {
 
   return (
     <AnimatedStyledRoute>
-      <StyledServicesMaintenance className="body">
+      <StyledMaintenance className="body">
         <InfoBanner
           style={{
             backgroundImage: `url(${imgLawnMower1})`,
@@ -105,11 +105,11 @@ function ServicesMaintenanceRoute(props) {
         <div className="maintenance-info-images">
           <img src={imgLawnMower2} alt="Home" />
         </div>
-      </StyledServicesMaintenance>
+      </StyledMaintenance>
     </AnimatedStyledRoute>
   );
 }
-const StyledServicesMaintenance = styled.div`
+const StyledMaintenance = styled.div`
   padding-bottom: 100px;
   .contact-info {
     display: flex;
@@ -160,4 +160,4 @@ const StyledServicesMaintenance = styled.div`
     }
   }
 `;
-export default ServicesMaintenanceRoute;
+export default MaintenanceRoute;

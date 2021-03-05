@@ -19,7 +19,7 @@ const StyledInfoBannerMessage = styled.div`
     margin-bottom: 15px;
     padding-left: 20px;
     white-space: nowrap;
-    font-size: 3em;
+    font-size: 2.8em;
   }
   @media (max-width: ${({theme}) => theme.mobileWidth}px) {
     text-align: left;
