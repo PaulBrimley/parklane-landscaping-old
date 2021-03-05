@@ -94,10 +94,10 @@ export const routeArr = [
         active: true,
         Component: MonumentRoute,
         displayInHeader: true,
-        headerLinkLines: ['HOA Monument', 'Design & Installation'],
+        headerLinkLines: ['HOA Monument', 'Installation'],
         icon: 'monument',
         iconSize: '19px',
-        name: 'HOA Monument Design & Installation',
+        name: 'HOA Monument Installation',
         path: routes.MONUMENT,
         prefetchImages: [imgMonument1, imgMonument4, imgMonument5]
       },

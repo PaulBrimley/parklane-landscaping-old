@@ -30,8 +30,7 @@ function Header(props) {
   }
 
   return (
-    <StyledHeader>
-    {/*<StyledHeader onMouseLeave={clearChildRoutes}>*/}
+    <StyledHeader onMouseLeave={clearChildRoutes}>
       <div className="header-left">
         <Link to={routes.HOME}>
           <img className="logo" src={logoMain} alt="logo" />
