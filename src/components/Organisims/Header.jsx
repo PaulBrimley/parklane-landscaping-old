@@ -112,10 +112,12 @@ const StyledHeader = styled.div`
     z-index: 1000;
     background-color: ${({ theme }) => theme.colorSecondary};
     height: 0;
-    padding-top: 2px;
-    transition: height 0.2s;
     overflow: hidden;
+    opacity: 0;
+    transition: all 0.2s;
     &.active {
+      opacity: 1;
+      padding-top: 2px;
       height: 85px;
     }
     .child-route-wrapper {
