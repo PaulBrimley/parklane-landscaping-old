@@ -18,9 +18,10 @@ import SVGIcon from '../components/Atoms/SVGIcon';
 
 /** images **/
 const {
-  imgMonument1,
   imgMonument2,
-  imgMonument3
+  imgMonument3,
+  imgMonument7,
+  imgMonument8
 } = images;
 
 function MonumentRepairRoute(props) {
@@ -28,17 +29,17 @@ function MonumentRepairRoute(props) {
   const { offset } = useParallaxEffect({ strength: 0.2 });
 
   function calcBackgroundPosition() {
-    let offset = 40;
-    if (width < 800) offset = 30;
+    let offset = 60;
+    // if (width < 800) offset = 70;
     if (width < 700) offset = 40;
     if (width < 400) offset = 50;
     return offset;
   }
   function calcBackgroundSize() {
-    let size = '110%';
-    if (width < 800) size = '130%';
-    if (width < 700) size = '150%';
-    if (width < 600) size = '175%';
+    let size = '100%';
+    if (width < 800) size = '110%';
+    if (width < 700) size = '120%';
+    if (width < 600) size = '130%';
     return size;
   }
 
@@ -47,7 +48,7 @@ function MonumentRepairRoute(props) {
       <StyledMonumentRepair className="body">
         <InfoBanner
           style={{
-            backgroundImage: `url(${imgMonument1})`,
+            backgroundImage: `url(${imgMonument7})`,
             backgroundPosition: `center calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: calcBackgroundSize()
@@ -87,7 +88,7 @@ function MonumentRepairRoute(props) {
         <div className="monument-header uppercase">HOA Monument Repair</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
-          A community’s entryway monument is the first thing one sees when passing or entering an HOA development. Hence, it is vital they have long lasting appeal. However, sometimes mishaps occur. Once in a while, Parklane receives requests to rebuild monument due to erosion or car accident. This can be a difficult task when only a portion needs replacing. New stones or materials need to be used that match exactly. When an entire monument needs rebuilding, materials need to match former styles and architectural details. For this reason, Parklane has a very skilled in-house masonry team.
+          Monuments are the first thing people see when they pass or enter an HOA community. It is important that they have long lasting appeal. However, sometimes things happen. Once in a while Parklane receives requests to rebuild an entryway monument due to erosion or a minor car accident. For this reason, Parklane has a very skilled in-house masonry team.
         </StyledInfoBodyMessage>
 
         <div className="monument-info-subsection">
@@ -97,13 +98,24 @@ function MonumentRepairRoute(props) {
           </div>
           <div className="subsection-info">
             <StyledInfoBodyMessage fontSize="1.2em" margin="0">
-              Our masonry team has over ten years of experience. They know small details cannot be overlooked when it comes to matching old materials with new ones. Whether you are replacing a column in a stone fence or a remnant of a monument, Parklane goes the extra mile to make sure no detail is missed. Having an in-house team, allows us to oversee every step of each project. Starting with the original design, until the last brick is layed, Parklane is there to make sure no stone is unturned.
+              Our masonry team has over ten years of experience. They know that every detail matters. Whether you are replacing a column or building an entirely  new monument, Parklane goes the extra mile to make sure our work exceeds expectations. Every step of each project is closely overseen to guarantee success. Starting with the original design, until the last brick is placed, Parklane is there to make sure no detail is overlooked.
             </StyledInfoBodyMessage>
           </div>
         </div>
 
         <div className="contact-info">
           For estimates call {companyInfo.phone}
+        </div>
+
+        <div className="monument-info-subsection">
+          <div className="subsection-images">
+            <img src={imgMonument8} alt="monument 8" />
+          </div>
+          <div className="subsection-info">
+            <StyledInfoBodyMessage fontSize="1.2em" fontStyle="italic" margin="0">
+              This is an outside monument wall.. The overall structure had become old and eventually crumbled and fell apart. Parklane was asked to repair and match the structure with new more stable materials.  This can be a difficult task when only a part of a structure needs replacing. New stones or materials need to be used to match the old ones. When an  entire monument needs rebuilding materials used need to match the former style and architectural details. As you can see Parklane’s masonry team did a great job far exceeding the customer’s expectations.
+            </StyledInfoBodyMessage>
+          </div>
         </div>
 
       </StyledMonumentRepair>
@@ -114,7 +126,7 @@ const StyledMonumentRepair = styled.div`
   padding-bottom: 100px;
   .contact-info {
     color: ${({theme}) => theme.colorPrimary};
-    margin: 30px var(--side-margin) 0;
+    margin: 30px var(--side-margin);
     text-align: center;
     font-size: 1.4em;
     font-weight: 300;

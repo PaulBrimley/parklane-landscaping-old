@@ -29,6 +29,8 @@ import imgMonument3 from '../assets/img/img-monument-3.jpg';
 import imgMonument4 from '../assets/img/img-monument-4.jpg';
 import imgMonument5 from '../assets/img/img-monument-5.jpg';
 import imgMonument6 from '../assets/img/img-monument-6.jpg';
+import imgMonument7 from '../assets/img/img-monument-7.jpg';
+import imgMonument8 from '../assets/img/img-monument-8.jpg';
 import imgNewsLetter1 from '../assets/img/img-news-letter-1.jpg';
 import imgNewsLetter2 from '../assets/img/img-news-letter-2.jpg';
 import imgNewsLetter3 from '../assets/img/img-news-letter-3.jpg';
@@ -79,6 +81,8 @@ const images = {
   imgMonument4,
   imgMonument5,
   imgMonument6,
+  imgMonument7,
+  imgMonument8,
   imgNewsLetter1,
   imgNewsLetter2,
   imgNewsLetter3,
