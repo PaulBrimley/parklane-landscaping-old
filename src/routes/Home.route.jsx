@@ -98,6 +98,11 @@ function HomeRoute(props) {
 
         <div className="home-header uppercase">The HOA Landscape Specialists</div>
 
+        {/*
+        san antonio weather link
+        https://weather.com/weather/today/l/0e23ddb22586163323dc8c95e1ca5a3d43e9d736052ec6a368233a2897f36cad
+        */}
+
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
           Parklane Landscaping is a professional landscape company that specializes in HOA (Home Owner Association) managed properties in San Antonio, Boerne, and New Braunfels. Having been in business for ten years, we have developed a reputation for excellent client service and detailed attention to our work. We encourage our team managers to foster close relationships with HOA board members and property managers. This close collaboration yields high performance in our crews that ensures a community’s visual appeal and strategic enhancement ultimately raising property values.
         </StyledInfoBodyMessage>
@@ -151,12 +156,52 @@ function HomeRoute(props) {
           </StyledInfoCardLink>
 
           <StyledInfoCardLink as={Link} to={routes.MONUMENT}>
-            <div className="header">Masonry</div>
+            <div className="header">Monument Installation</div>
             <div className="body">
               <div className="icon">
                 <SVGIcon height="80px" width="80px" type="monument"/>
               </div>
-              <div className="message">Masonry is a very important service to every HOA community...Learn More</div>
+              <div className="message">From logo design, to architectural rendering, to brick and mortar...Learn More</div>
+            </div>
+          </StyledInfoCardLink>
+
+          <StyledInfoCardLink as={Link} to={routes.MONUMENT_REPAIR}>
+            <div className="header">Monument Repair</div>
+            <div className="body">
+              <div className="icon">
+                <SVGIcon height="70px" width="70px" type="masonry"/>
+              </div>
+              <div className="message">Monuments are the first thing people see when they pass or enter an HOA community...Learn More</div>
+            </div>
+          </StyledInfoCardLink>
+
+          <StyledInfoCardLink as={Link} to={routes.FENCE}>
+            <div className="header">Fence Installation</div>
+            <div className="body">
+              <div className="icon">
+                <SVGIcon height="70px" width="70px" type="fence"/>
+              </div>
+              <div className="message">If you live in an HOA community, you understand the value of fences...Learn More</div>
+            </div>
+          </StyledInfoCardLink>
+
+          <StyledInfoCardLink as={Link} to={routes.LIGHTING}>
+            <div className="header">HOA Landscape Lighting</div>
+            <div className="body">
+              <div className="icon">
+                <SVGIcon height="60px" width="60px" type="lightBulb" style={{marginTop: '7px'}}/>
+              </div>
+              <div className="message">Your community is your pride and joy. Once Parklane has built...Learn More</div>
+            </div>
+          </StyledInfoCardLink>
+
+          <StyledInfoCardLink as={Link} to={routes.TRIMMING}>
+            <div className="header">Tree Maintenance</div>
+            <div className="body">
+              <div className="icon">
+                <SVGIcon height="80px" width="80px" type="trees"/>
+              </div>
+              <div className="message">Nothing transforms an outdoor space like beautifully trimmed trees...Learn More</div>
             </div>
           </StyledInfoCardLink>
         </div>
@@ -183,11 +228,11 @@ const StyledHome = styled.div`
     margin: 0 var(--side-margin) 30px;
     .learn-more-button-2 {
       color: ${({ theme }) => theme.colorWhite};
-      border: 1px solid ${({ theme }) => theme.colorPrimary};
-      background: ${({ theme }) => theme.colorPrimary};
+      border: 1px solid ${({ theme }) => theme.colorSecondary};
+      background: ${({ theme }) => theme.colorSecondary};
       &:hover {
-        border: 1px solid ${({ theme }) => theme.colorSecondary};
-        background: ${({ theme }) => theme.colorSecondary};
+        border: 1px solid ${({ theme }) => theme.colorPrimary};
+        background: ${({ theme }) => theme.colorPrimary};
       }
     }
   }

@@ -65,7 +65,7 @@ function LightingRoute(props) {
                       <SVGIcon height="100%" width="20px" type="lightBulb" style={{fill: 'white', marginRight: '7px'}}/>
                       <span className="isBold">HOA</span>
                     </div>
-                    <div>LIGHTING</div>
+                    <div>LANDSCAPE LIGHTING</div>
                   </div>
                   <div className="hr" />
                   <div className="message">
@@ -83,7 +83,7 @@ function LightingRoute(props) {
         <br />
         <br />
 
-        <div className="lighting-header uppercase">HOA Lighting</div>
+        <div className="lighting-header uppercase">HOA Landscape Lighting</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
           Your community is your pride and joy. Once Parklane has built your new monument, planted flower beds, trees and added beautiful landscape features, you’ll want to highlight them. Adding landscape and garden lighting is a great way to accentuate your community’s best features and make your HOA a safer place. A great lighting scheme helps raise the value of a community. Consider adding outdoor lighting for your next landscaping project to make your HOA warm and inviting.

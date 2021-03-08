@@ -18,7 +18,8 @@ import SVGIcon from '../components/Atoms/SVGIcon';
 
 /** images **/
 const {
-  imgFence,
+  imgFence1,
+  imgFence2,
   imgFenceBroken,
   imgFenceRepair
 } = images;
@@ -48,7 +49,7 @@ function FenceRoute(props) {
       <StyledFence className="body">
         <InfoBanner
           style={{
-            backgroundImage: `url(${imgFence})`,
+            backgroundImage: `url(${imgFence1})`,
             backgroundPosition: `center calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: calcBackgroundSize()
@@ -66,7 +67,7 @@ function FenceRoute(props) {
                       <SVGIcon height="100%" width="45px" type="fence" style={{fill: 'white', marginRight: '7px'}}/>
                       <span className="isBold">HOA</span>
                     </div>
-                    <div>FENCE REPAIR</div>
+                    <div>FENCE INSTALLATION</div>
                   </div>
                   <div className="hr" />
                   <div className="message">
@@ -84,17 +85,15 @@ function FenceRoute(props) {
         <br />
         <br />
 
-        <div className="fence-header uppercase">HOA Fence Repair</div>
+        <div className="fence-header uppercase">HOA Fence Installation</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
           If you live in an HOA community, you understand the value of fences. Especially since HOA communities are usually surrounded by them. When one is torn down due to storm or a fallen tree or even an accidental car mishap, rebuilding the fence becomes priority one. Matching the exact materials, colors and quick reparation is our specialty. These small details all play a part in making sure the community stays looking its best. That is why Parklane has in-house masons and fence repair teams. We know how important it is to you. So it is important to us.
-
-
         </StyledInfoBodyMessage>
 
         <div className="fence-info-subsection">
           <div className="subsection-images">
-            <img src={imgFenceBroken} alt="broken fence" />
+            <img src={imgFence2} alt="fence" />
             <img src={imgFenceRepair} alt="fence repair" />
           </div>
           <div className="subsection-info">

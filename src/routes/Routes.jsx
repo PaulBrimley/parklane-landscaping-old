@@ -116,10 +116,10 @@ export const routeArr = [
         active: true,
         Component: FenceRoute,
         displayInHeader: true,
-        headerLinkLines: ['Fence', 'Repair'],
+        headerLinkLines: ['Fence', 'Installation'],
         icon: 'fence',
         iconSize: '22px',
-        name: 'Fence Repair',
+        name: 'Fence Installation',
         path: routes.FENCE,
         prefetchImages: [imgFence, imgFenceBroken, imgFenceRepair]
       },
@@ -127,10 +127,10 @@ export const routeArr = [
         active: true,
         Component: LightingRoute,
         displayInHeader: true,
-        headerLinkLines: ['HOA', 'Lighting'],
+        headerLinkLines: ['HOA Landscape', 'Lighting'],
         icon: 'lightBulb',
         iconSize: '29px',
-        name: 'HOA Lighting',
+        name: 'HOA Landscape Lighting',
         path: routes.LIGHTING,
         prefetchImages: [imgLighting1, imgLighting2, imgLighting3]
       },
@@ -138,10 +138,10 @@ export const routeArr = [
         active: true,
         Component: TrimmingRoute,
         displayInHeader: true,
-        headerLinkLines: ['Tree', 'Trimming'],
+        headerLinkLines: ['Tree', 'Maintenance'],
         icon: 'trees',
         iconSize: '20px',
-        name: 'Tree Trimming',
+        name: 'Tree Maintenance',
         path: routes.TRIMMING,
         prefetchImages: [imgLeaves, imgTrees1, imgTreeTrimming]
       }

@@ -15,6 +15,7 @@ import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
 import InfoBanner from '../components/Molecules/InfoBanner';
 import InfoBannerLeft from '../components/Molecules/InfoBannerLeft';
 import PageDivider1 from '../components/Atoms/PageDivider1';
+import ParallaxStripe from '../components/Atoms/ParallaxStripe';
 import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 import StyledQuickListItem from '../components/Styled/StyledQuickListItem';
@@ -25,7 +26,9 @@ const {
   imgGuyKneeling,
   imgGuyPlanting2,
   imgGuyTeaching,
-  imgHillsAtAlamoRanch
+  imgHillsAtAlamoRanch,
+  imgHome,
+  logoMain
 } = images;
 
 function ServicesRoute(props) {
@@ -144,28 +147,35 @@ function ServicesRoute(props) {
               <div className="icon">
                 <SVGIcon height="80px" width="80px" type="monument"/>
               </div>
-              <div className="title">HOA Monuments</div>
+              <div className="title">Monument Installation</div>
             </StyledQuickListItem>
 
-            <StyledQuickListItem to={routes.MONUMENT}>
+            <StyledQuickListItem to={routes.MONUMENT_REPAIR}>
               <div className="icon">
-                <SVGIcon height="75px" width="75px" type="masonry" style={{marginTop: '2px'}}/>
+                <SVGIcon height="80px" width="80px" type="masonry"/>
               </div>
-              <div className="title">Masonry Repair</div>
+              <div className="title">Monument Repair</div>
             </StyledQuickListItem>
 
             <StyledQuickListItem to={routes.FENCE}>
               <div className="icon">
                 <SVGIcon height="68px" width="68px" type="fence" style={{marginTop: '4px'}}/>
               </div>
-              <div className="title">Fence Repair</div>
+              <div className="title">Fence Installation</div>
             </StyledQuickListItem>
 
             <StyledQuickListItem to={routes.LIGHTING}>
               <div className="icon">
                 <SVGIcon height="53px" width="53px" type="lightBulb" style={{marginTop: '8px'}}/>
               </div>
-              <div className="title">HOA Lighting</div>
+              <div className="title">HOA Landscape Lighting</div>
+            </StyledQuickListItem>
+
+            <StyledQuickListItem to={routes.TRIMMING}>
+              <div className="icon">
+                <SVGIcon height="70px" width="70px" type="trees" style={{marginTop: '3px'}}/>
+              </div>
+              <div className="title">Tree Maintenance</div>
             </StyledQuickListItem>
           </div>
         </div>
@@ -175,7 +185,19 @@ function ServicesRoute(props) {
         <br />
         <br />
 
-        <div className="services-header-2">All HOA Services</div>
+        <ParallaxStripe backgroundUrl={imgHome} height="75px" parallaxStart="400">
+          <div className="home-stripe">
+            <img className="logo" src={logoMain} alt="logo" />
+          </div>
+        </ParallaxStripe>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <div className="services-header-2">Parklane HOA Services</div>
+        <br />
         <div className="services-hoa-services-list">
           <div>Specialists in HOA Common Areas</div>
           <div>General Ground Maintenance</div>
@@ -192,13 +214,11 @@ function ServicesRoute(props) {
           <div>Certified Kiddie Cushion Installation</div>
           <div>Monthly Reporting</div>
           <div>Organic Fertilization</div>
-          <div>Stone Masonry Installation and Repair</div>
-          <div>Wood Fence Installation and Repair</div>
-          <div>Weed Fence Installation and Repair</div>
-          <div>Weed Control and Herbicide Management Programs</div>
-          <div>Drainage, Easement, Field and</div>
-          <div>Fence Line Shredding</div>
-          <div>HOA Annual and Board Meeting Participation</div>
+          <div>Stone Masonry Installation & Repair</div>
+          <div>Wood Fence Installation & Repair</div>
+          <div>Weed Control & Herbicide Management Programs</div>
+          <div>Drainage, Easement, Field & Fence Line Shredding</div>
+          <div>HOA Annual & Board Meeting Participation</div>
         </div>
       </StyledServices>
     </AnimatedStyledRoute>
@@ -206,6 +226,17 @@ function ServicesRoute(props) {
 }
 const StyledServices = styled.div`
   padding-bottom: 90px;
+  .home-stripe {
+    flex: 1 1 auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(120deg, transparent 0, transparent 30%, rgba(255, 0, 40, 0.85) 30%, rgba(255, 0, 40, 0.85) 70%, transparent 70%, transparent 100%);
+    .logo {
+      max-width: 150px;
+      margin: 10px 0 15px;
+    }
+  }
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
@@ -217,7 +248,7 @@ const StyledServices = styled.div`
     margin: 20px var(--side-margin) 10px;
   }
   .services-header-2 {
-    font-size: 1.7em;
+    font-size: 1.3em;
     font-weight: 700;
     text-transform: uppercase;
     color: ${({ theme }) => theme.colorPrimary};
@@ -225,13 +256,14 @@ const StyledServices = styled.div`
     margin: 10px var(--side-margin);
   }
   .services-hoa-services-list {
-    font-size: 1.5em;
-    font-weight: 400;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 var(--side-margin);
     color: ${({ theme }) => theme.colorPrimary};
     text-align: center;
-    margin: 20px var(--side-margin) 0;
+    white-space: nowrap;
     div {
-      margin: 6px 0;
+      margin-bottom: 10px;
     }
   }
   .services-info-images {

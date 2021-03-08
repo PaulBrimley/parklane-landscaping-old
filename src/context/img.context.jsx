@@ -3,7 +3,8 @@ import { createContext, useContext, useMemo, useState } from 'react';
 /** images **/
 import imgCarnival from '../assets/img/img-carnival.jpg';
 import imgColoredPencils from '../assets/img/img-colored-pencils.png';
-import imgFence from '../assets/img/img-fence.jpg';
+import imgFence1 from '../assets/img/img-fence-1.jpg';
+import imgFence2 from '../assets/img/img-fence-2.jpg';
 import imgFenceBroken from '../assets/img/img-fence-broken.jpg';
 import imgFenceRepair from '../assets/img/img-fence-repair.jpg';
 import imgFlowers1 from '../assets/img/img-flowers-1.jpg';
@@ -55,7 +56,8 @@ import twitterLogo from '../assets/img/icon-twitter.png';
 const images = {
   imgCarnival,
   imgColoredPencils,
-  imgFence,
+  imgFence1,
+  imgFence2,
   imgFenceBroken,
   imgFenceRepair,
   imgFlowers1,

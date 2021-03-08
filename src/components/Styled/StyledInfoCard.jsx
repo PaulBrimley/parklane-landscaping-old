@@ -27,7 +27,7 @@ export const StyledInfoCard = styled.div`
     }
   }
   .header {
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 300;
     color: ${({theme}) => theme.colorWhite};
     text-transform: uppercase;

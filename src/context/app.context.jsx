@@ -65,6 +65,7 @@ function AppProvider(props) {
       city: 'San Antonio',
       email: 'info@parklanelandscaping.com',
       phone: '210-239-6715',
+      poBox: 'P.O. Box 100054',
       state: 'TX',
       street: '2910 N Elmendorf St',
       website: 'www.parklanelandscaping.com',

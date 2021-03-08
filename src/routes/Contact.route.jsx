@@ -17,11 +17,12 @@ import Button from '../components/Atoms/Button';
 import InfoBanner from '../components/Molecules/InfoBanner';
 import InfoBannerLeft from '../components/Molecules/InfoBannerLeft';
 import PageDivider1 from '../components/Atoms/PageDivider1';
+import ParallaxStripe from '../components/Atoms/ParallaxStripe';
 import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
 /** images **/
-const { imgFlowers2, imgOverhead1 } = images;
+const { imgFlowers2, logoMain, imgOverhead1 } = images;
 
 function ContactRoute(props) {
   const { companyInfo, width } = useAppState();
@@ -157,13 +158,18 @@ function ContactRoute(props) {
 
         <br />
         <br />
+        <br />
+        <br />
 
-        <div className="contact-info-images">
-          <img src={imgOverhead1} alt="Home" />
-        </div>
+        <ParallaxStripe backgroundUrl={imgOverhead1} height="75px" parallaxStart="100">
+          <div className="overhead-stripe">
+            <img className="logo" src={logoMain} alt="logo" />
+          </div>
+        </ParallaxStripe>
 
-        <div className="separator" />
-
+        <br />
+        <br />
+        <br />
         <br />
 
         <div className="contact-header">Parklane HOA Services</div>
@@ -184,13 +190,11 @@ function ContactRoute(props) {
           <div>Certified Kiddie Cushion Installation</div>
           <div>Monthly Reporting</div>
           <div>Organic Fertilization</div>
-          <div>Stone Masonry Installation and Repair</div>
-          <div>Wood Fence Installation and Repair</div>
-          <div>Weed Fence Installation and Repair</div>
-          <div>Weed Control and Herbicide Management Programs</div>
-          <div>Drainage, Easement, Field and</div>
-          <div>Fence Line Shredding</div>
-          <div>HOA Annual and Board Meeting Participation</div>
+          <div>Stone Masonry Installation & Repair</div>
+          <div>Wood Fence Installation & Repair</div>
+          <div>Weed Control & Herbicide Management Programs</div>
+          <div>Drainage, Easement, Field & Fence Line Shredding</div>
+          <div>HOA Annual & Board Meeting Participation</div>
         </div>
       </StyledContact>
     </AnimatedStyledRoute>
@@ -301,10 +305,16 @@ const StyledContact = styled.div`
     flex: 1 1 auto;
     padding-top: 50px;
   }
-  .separator {
-    width: 50%;
-    border-bottom: 2px solid red;
-    margin: 40px auto;
+  .overhead-stripe {
+    flex: 1 1 auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(120deg, transparent 0, transparent 30%, rgba(255, 0, 40, 0.85) 30%, rgba(255, 0, 40, 0.85) 70%, transparent 70%, transparent 100%);
+    .logo {
+      max-width: 150px;
+      margin: 10px 0 15px;
+    }
   }
   @media (max-width: 900px) {
     .contact-hoa-services-list {

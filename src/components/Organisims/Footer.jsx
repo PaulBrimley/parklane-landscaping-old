@@ -48,7 +48,7 @@ function Footer(props) {
           </div>
           <div className="contact-info">
             <div>
-              <span>{companyInfo.street}</span>
+              <span>{companyInfo.poBox}</span>
               <span>{companyInfo.city}, {companyInfo.state} {companyInfo.zip}</span>
             </div>
             <div>

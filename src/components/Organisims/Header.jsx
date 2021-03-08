@@ -30,7 +30,8 @@ function Header(props) {
   }
 
   return (
-    <StyledHeader onMouseLeave={clearChildRoutes}>
+    <StyledHeader>
+    {/*<StyledHeader onMouseLeave={clearChildRoutes}>*/}
       <div className="header-left">
         <Link to={routes.HOME}>
           <img className="logo" src={logoMain} alt="logo" />
@@ -60,7 +61,7 @@ function Header(props) {
         {isMobile && <Menu className="menu-button" onClick={() => setMenuCollapsed(false)} />}
         {!isMobile && (
           <>
-            <div className="contact">CONTACT</div>
+            <div className="contact">CALL NOW</div>
             <a className="phone" href={`tel:${companyInfo.phone}`}>
               {companyInfo.phone}
             </a>
@@ -112,10 +113,11 @@ const StyledHeader = styled.div`
     z-index: 1000;
     background-color: ${({ theme }) => theme.colorSecondary};
     height: 0;
+    padding-top: 2px;
     transition: height 0.2s;
     overflow: hidden;
     &.active {
-      height: 75px;
+      height: 85px;
     }
     .child-route-wrapper {
       position: relative;
@@ -153,29 +155,28 @@ const StyledHeader = styled.div`
         color: inherit;
         text-decoration: none;
         text-transform: uppercase;
-        transform: scale(1);
-        transition: opacity 0.2s, transform 0.2s;
-        &:hover {
-          transform: scale(1.05);
-        }
         .child-route-icon {
           display: flex;
           justify-content: center;
           align-items: center;
           border-radius: 50%;
           background-image: linear-gradient(120deg, ${({theme}) => theme.colorPrimary} 0%, ${({theme}) => theme.colorPrimary} 50%, ${({theme}) => theme.colorPrimaryHover} 50%, ${({theme}) => theme.colorPrimaryHover} 100%);
-          margin: 0 5px;
-          width: 45px;
-          height: 45px;
+          margin: 2px 5px;
+          width: 46px;
+          height: 46px;
+          transform: scale(1);
+          transition: all 0.2s;
           svg {
             fill: ${({theme}) => theme.colorWhite}
+          }
+          &:hover {
+            transform: scale(1.15);
           }
         }
         .child-route-name {
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          //max-width: 60px;
         }
       }
     }

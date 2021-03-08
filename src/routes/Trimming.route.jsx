@@ -66,7 +66,7 @@ function TrimmingRoute(props) {
                       <SVGIcon height="100%" width="47px" type="trees" style={{fill: 'white', marginRight: '7px'}}/>
                       <span className="isBold">HOA</span>
                     </div>
-                    <div>TREE TRIMMING</div>
+                    <div>TREE MAINTENANCE</div>
                   </div>
                   <div className="hr" />
                   <div className="message">
@@ -84,7 +84,7 @@ function TrimmingRoute(props) {
         <br />
         <br />
 
-        <div className="trimming-header uppercase">HOA Tree Trimming</div>
+        <div className="trimming-header uppercase">HOA Tree Maintenance</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 130px">
           Nothing transforms an outdoor space like beautifully trimmed trees. Through proper pruning techniques your trees add value to your homes. Not only do they provide shade, but they make your community healthier, add to its safety and aesthetic. Parklane tree trimming professionals have the skills to help your community enjoy the benefits of beautifully maintained trees.
