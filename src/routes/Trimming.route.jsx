@@ -39,7 +39,7 @@ function TrimmingRoute(props) {
     if (width < 800) size = '125%';
     if (width < 700) size = '155%';
     if (width < 600) size = '175%';
-    // if (width < 400) size = '170%';
+    if (width < 400) size = '185%';
     return size;
   }
 
@@ -86,7 +86,7 @@ function TrimmingRoute(props) {
 
         <div className="trimming-header uppercase">HOA Tree Maintenance</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" margin="0 130px">
+        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
           Nothing transforms an outdoor space like beautifully trimmed trees. Through proper pruning techniques your trees add value to your homes. Not only do they provide shade, but they make your community healthier, add to its safety and aesthetic. Parklane tree trimming professionals have the skills to help your community enjoy the benefits of beautifully maintained trees.
         </StyledInfoBodyMessage>
 
@@ -96,7 +96,7 @@ function TrimmingRoute(props) {
             <img src={imgTreeTrimming} alt="tree trimming" />
           </div>
           <div className="subsection-info">
-            <StyledInfoBodyMessage fontSize="1.2em" margin="0 0 0 20px">
+            <StyledInfoBodyMessage fontSize="1.2em" margin="0">
               While the concept of tree pruning seems like a simple DIY project or something you can hand to any landscaper, improper pruning can destroy your landscape. When a tree’s health is at risk, they can face decay, instability, disease and a shorter life span. Most mature trees require trimming at least every 3 years. Some may need to be trimmed more often if they grow quicker or are located near power lines, homes and other obstructions. The best time to trim trees is in the late fall or early spring, just before the tree begins to leaf out again. For more information on tree trimming or if your community has trees that require attention, please contact us today! Parklane will provide you with a free estimate on your next project.
             </StyledInfoBodyMessage>
           </div>
@@ -110,21 +110,23 @@ const StyledTrimming = styled.div`
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
+    margin-bottom: 40px;
   }
   .trimming-header {
     font-size: 3em;
     font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
-    margin: 20px 130px 10px;
+    margin: 20px var(--side-margin) 10px;
   }
   .trimming-info-subsection {
     display: flex;
-    margin: 10px 130px 0;
+    margin: 10px var(--side-margin) 0;
     .subsection-images {
       display: flex;
       flex-direction: column;
       align-items: center;
-      flex: 50% 0 0;
+      flex: 49% 0 0;
+      margin-right: 10px;
       img {
         margin-bottom: 10px;
         width: 100%;
@@ -134,11 +136,17 @@ const StyledTrimming = styled.div`
       }
     }
     .subsection-info {
-      flex: 50% 0 0;
+      flex: 49% 0 0;
     }
   }
   @media (max-width: ${({theme}) => theme.mobileWidth}px) {
-
+    .trimming-info-subsection {
+      flex-direction: column;
+      .subsection-images {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
   }
 `;
 export default TrimmingRoute;

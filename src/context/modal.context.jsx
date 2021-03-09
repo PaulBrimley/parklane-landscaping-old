@@ -58,7 +58,7 @@ function Modal() {
       clamp: true
     },
     onRest (ds) {
-      if (!modalOpen) setModalContent();
+      if (!modalOpen && content) setModalContent();
     }
   });
   function handleClose() {

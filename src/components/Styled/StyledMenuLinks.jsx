@@ -14,8 +14,10 @@ const StyledMenuLinks = styled.div`
       text-decoration: none;
       border-bottom: 1px solid ${({theme}) => theme.colorTransparent};
       line-height: 1.4em;
+      font-weight: 400;
       &.active {
         border-bottom: 1px solid ${({theme}) => theme.colorWhiteOpaque};
+        font-weight: 700;
       }
     }
   }

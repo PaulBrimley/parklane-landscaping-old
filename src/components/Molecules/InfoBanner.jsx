@@ -9,23 +9,70 @@ import grassWhite from '../../assets/img/grass-white.png';
 
 function InfoBanner({ children, config, className, slotLeft, slotRight, style }) {
   const { isMobile } = useAppState();
-  const [backgroundGradient, setBackgroundGradient] = useState('linear-gradient(120deg, rgb(255, 0, 40) 0%, rgb(255, 0, 40) 50%, transparent 50%, transparent 100%)');
+  const [leftGradientConfig, setLeftGradientConfig] = useState({
+    angle: '120deg',
+    stops: [
+      {
+        color: 'rgb(255, 0, 40)',
+        percent: 0
+      },
+      {
+        color: 'rgb(255, 0, 40)',
+        percent: 50
+      },
+      {
+        color: 'transparent',
+        percent: 50
+      },
+      {
+        color: 'transparent',
+        percent: 100
+      }
+    ]
+  });
   const [height, setHeight] = useState('300px');
   const [rightGradientCover, setRightGradientCover] = useState(null);
   const [styles, setStyles] = useState({});
 
   useEffect(() => {
-    setBackgroundGradient(config?.backgroundGradient || backgroundGradient);
+    if (config?.leftGradientConfig) {
+      setLeftGradientConfig({
+        ...leftGradientConfig,
+        ...config.leftGradientConfig
+      });
+    }
     setHeight(config?.height || height);
     setRightGradientCover(config?.rightGradientCover !== undefined ? config.rightGradientCover : rightGradientCover);
   }, [config]);
+
   useEffect(() => {
     const newStyles = style;
-    if (backgroundGradient && newStyles?.backgroundImage) newStyles.backgroundImage = `${backgroundGradient}, ${newStyles.backgroundImage}`;
-    if (backgroundGradient && newStyles?.backgroundPosition) newStyles.backgroundPosition = `center, ${newStyles.backgroundPosition}`;
-    if (backgroundGradient && newStyles?.backgroundSize) newStyles.backgroundSize = `100%, ${newStyles.backgroundSize}`;
+    const leftGradientCover = getLinearGradient(leftGradientConfig);
+    if (leftGradientCover && newStyles?.backgroundImage) newStyles.backgroundImage = `${leftGradientCover}, ${newStyles.backgroundImage}`;
+    if (leftGradientCover && newStyles?.backgroundPosition) newStyles.backgroundPosition = `center, ${newStyles.backgroundPosition}`;
+    if (leftGradientCover && newStyles?.backgroundSize) newStyles.backgroundSize = `100%, ${newStyles.backgroundSize}`;
     setStyles(newStyles);
-  }, [backgroundGradient, style]);
+  }, [isMobile, leftGradientConfig, style]);
+
+  function getLinearGradient(config) {
+    let linearGradient = '';
+    if (config?.angle && config?.stops?.length) {
+      let configAngle = config.angle;
+      let configStops = config.stops;
+      if (isMobile) {
+        configAngle = '90deg';
+        let firstStop = config.stops[0];
+        let secondStop = {
+          color: firstStop.color,
+          percent: 100
+        };
+        configStops = [firstStop, secondStop];
+      }
+      const stops = configStops.map(stop => `${stop.color || 'white'} ${stop.percent || 0}%`);
+      linearGradient = `linear-gradient(${configAngle}, ${stops.join(', ')})`;
+    }
+    return linearGradient;
+  }
 
   return (
     <StyledInfoBanner

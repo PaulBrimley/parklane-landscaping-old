@@ -112,6 +112,7 @@ const StyledLighting = styled.div`
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
+    margin-bottom: 40px;
   }
   .lighting-header {
     font-size: 3em;

@@ -40,7 +40,7 @@ function FenceRoute(props) {
     if (width < 800) size = '110%';
     if (width < 700) size = '115%';
     if (width < 600) size = '135%';
-    if (width < 500) size = '130%';
+    // if (width < 500) size = '130%';
     return size;
   }
 
@@ -122,6 +122,7 @@ const StyledFence = styled.div`
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
+    margin-bottom: 40px;
   }
   .fence-header {
     font-size: 3em;

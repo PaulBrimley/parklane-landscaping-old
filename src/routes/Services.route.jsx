@@ -61,7 +61,6 @@ function ServicesRoute(props) {
             backgroundSize: calcBackgroundSize()
           }}
           config={{
-            backgroundGradient: 'linear-gradient(120deg, rgb(255, 0, 40) 0%, rgb(255, 0, 40) 50%, transparent 50%, transparent 100%)',
             height: '350px'
           }}
           slotLeft={
@@ -240,6 +239,7 @@ const StyledServices = styled.div`
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
+    margin-bottom: 40px;
   }
   .services-header {
     font-size: 3em;
@@ -287,6 +287,17 @@ const StyledServices = styled.div`
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
+    }
+  }
+  @media (max-width: 900px) {
+    .services-hoa-services-list {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: ${({ theme }) => theme.mobileWidth}px) {
+    .services-hoa-services-list {
+      margin: 0 20px 50px;
+      white-space: normal;
     }
   }
 `;

@@ -304,6 +304,7 @@ const StyledContact = styled.div`
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
+    margin-bottom: 40px;
   }
   .overhead-stripe {
     flex: 1 1 auto;

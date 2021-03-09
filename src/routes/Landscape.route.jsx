@@ -132,6 +132,7 @@ const StyledLandscape = styled.div`
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
+    margin-bottom: 40px;
   }
   .info-banner-right {
     padding: 30px 0;

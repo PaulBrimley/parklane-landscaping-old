@@ -156,11 +156,11 @@ const StyledSubscribe = styled.div`
     margin: 0 var(--side-margin) 0;
     .subscribe-now-button {
       color: ${({ theme }) => theme.colorWhite};
-      border: 1px solid ${({ theme }) => theme.colorPrimary};
-      background: ${({ theme }) => theme.colorPrimary};
+      border: 1px solid ${({ theme }) => theme.colorSecondary};
+      background: ${({ theme }) => theme.colorSecondary};
       &:hover {
-        border: 1px solid ${({ theme }) => theme.colorSecondary};
-        background: ${({ theme }) => theme.colorSecondary};
+        border: 1px solid ${({ theme }) => theme.colorPrimary};
+        background: ${({ theme }) => theme.colorPrimary};
       }
     }
   }

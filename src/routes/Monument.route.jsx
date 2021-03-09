@@ -31,14 +31,14 @@ function MonumentRoute(props) {
     let offset = 40;
     if (width < 800) offset = 30;
     if (width < 700) offset = 40;
-    if (width < 400) offset = 50;
+    if (width < 400) offset = 100;
     return offset;
   }
   function calcBackgroundSize() {
     let size = '110%';
     if (width < 800) size = '130%';
     if (width < 700) size = '150%';
-    if (width < 600) size = '175%';
+    if (width < 600) size = '190%';
     return size;
   }
 
@@ -126,6 +126,7 @@ const StyledMonument = styled.div`
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
+    margin-bottom: 40px;
   }
   .monument-header, .monument-header-2 {
     font-size: 3em;

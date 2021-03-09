@@ -135,6 +135,7 @@ const StyledMonumentRepair = styled.div`
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
+    margin-bottom: 40px;
   }
   .monument-header, .monument-header-2 {
     font-size: 3em;
