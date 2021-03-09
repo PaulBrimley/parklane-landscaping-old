@@ -100,6 +100,9 @@ function HomeRoute(props) {
 
         <img className="home-anniversary-logo" src={logoAnniversary} />
 
+        <br />
+        <br />
+
         <div className="home-header uppercase">The HOA Landscape Specialists</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
@@ -117,7 +120,7 @@ function HomeRoute(props) {
         <br />
         <br />
 
-        <ParallaxStripe backgroundUrl={imgGrass} height="75px">
+        <ParallaxStripe backgroundSize="120%" backgroundUrl={imgGrass} height="75px" offsetAdjust="-220" parallaxStart="100">
           <div className="grass-stripe">
             <img className="logo" src={logoMain} alt="logo" />
           </div>
@@ -238,7 +241,7 @@ const StyledHome = styled.div`
   .home-anniversary-logo {
     display: none;
     width: 50%;
-    margin: 10px auto 40px;
+    margin: 10px var(--side-margin) 0;
   }
   .home-header {
     font-size: 3em;

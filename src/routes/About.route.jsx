@@ -101,7 +101,7 @@ function AboutRoute(props) {
         <br />
         <br />
 
-        <ParallaxStripe backgroundUrl={imgTrees2} height="75px">
+        <ParallaxStripe backgroundUrl={imgTrees2} height="75px" offsetAdjust="-220" parallaxStart="100" >
           <div className="tree-stripe">
             <img
               className="logo"

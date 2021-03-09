@@ -184,7 +184,7 @@ function ServicesRoute(props) {
         <br />
         <br />
 
-        <ParallaxStripe backgroundUrl={imgHome} height="75px" parallaxStart="400">
+        <ParallaxStripe backgroundUrl={imgHome} height="75px" offsetAdjust="-320" parallaxStart="400">
           <div className="home-stripe">
             <img className="logo" src={logoMain} alt="logo" />
           </div>

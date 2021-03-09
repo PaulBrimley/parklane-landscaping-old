@@ -161,7 +161,7 @@ function ContactRoute(props) {
         <br />
         <br />
 
-        <ParallaxStripe backgroundUrl={imgOverhead1} height="75px" parallaxStart="100">
+        <ParallaxStripe backgroundSize="150%" backgroundUrl={imgOverhead1} height="75px" parallaxStart="100" >
           <div className="overhead-stripe">
             <img className="logo" src={logoMain} alt="logo" />
           </div>

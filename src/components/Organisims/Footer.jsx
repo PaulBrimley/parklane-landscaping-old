@@ -25,7 +25,9 @@ function Footer(props) {
         <div className="grass" />
       </div>
       <div className="footer-main">
-        <img className="logo" src={logoCard} alt="logo card"/>
+        <Link className="logo" to={routes.HOME}>
+          <img src={logoCard} alt="logo card" />
+        </Link>
         <div className="info">
           <div className="info-place-holder" />
           <div className="info-place-holder" />
@@ -137,6 +139,9 @@ const StyledFooter = styled.div`
       position: absolute;
       left: 20px;
       width: 50px;
+      img {
+        width: 100%;
+      }
     }
   }
   .footer-top {
