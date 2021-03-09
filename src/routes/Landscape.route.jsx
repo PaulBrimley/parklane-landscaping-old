@@ -69,7 +69,7 @@ function LandscapeRoute(props) {
                       <SVGIcon height="100%" width="50px" type="landscape" style={{fill: 'white', marginRight: '7px'}}/>
                       <span className="isBold">HOA</span>
                     </div>
-                    <div>LANDSCAPE</div>
+                    <div>LANDSCAPING</div>
                   </div>
                   <div className="hr" />
                   <div className="message">
@@ -92,7 +92,7 @@ function LandscapeRoute(props) {
         <br />
         <br />
 
-        <div className="landscape-header uppercase">HOA Landscape</div>
+        <div className="landscape-header uppercase">HOA Landscaping</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
           Parklane Landscaping regularly provides pro-active and long-range planning ideas to enhance the landscape appeal of an HOA community. Our team of design and horticulture professionals work on the visual aesthetic as well as the overall health of the environment to provide verdant landscapes for all our clients.

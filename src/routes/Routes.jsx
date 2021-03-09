@@ -83,10 +83,10 @@ export const routeArr = [
         active: true,
         Component: LandscapeRoute,
         displayInHeader: true,
-        headerLinkLines: ['HOA', 'Landscape'],
+        headerLinkLines: ['HOA', 'Landscaping'],
         icon: 'landscape',
         iconSize: '24px',
-        name: 'HOA Landscape',
+        name: 'HOA Landscaping',
         path: routes.LANDSCAPE,
         prefetchImages: [imgColoredPencils, imgFlowers1, imgMonument1, imgLandscapeRendering, imgOverhead2, imgOverhead3]
       },

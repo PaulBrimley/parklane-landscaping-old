@@ -140,7 +140,7 @@ function ServicesRoute(props) {
               <div className="icon">
                 <SVGIcon height="73px" width="73px" type="landscape"/>
               </div>
-              <div className="title">HOA Landscape</div>
+              <div className="title">HOA Landscaping</div>
             </StyledQuickListItem>
 
             <StyledQuickListItem to={routes.MONUMENT}>

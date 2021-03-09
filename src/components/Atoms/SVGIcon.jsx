@@ -92,11 +92,11 @@ SVGIcon.defaultProps = {
   color: '',
   d: '',
   fill: '',
-  height: '',
+  height: '100%',
   onClick: null,
   style: null,
   type: '',
   viewBox: '',
-  width: ''
+  width: '100%'
 };
 export default SVGIcon;

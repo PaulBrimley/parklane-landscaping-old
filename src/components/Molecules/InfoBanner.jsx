@@ -7,7 +7,7 @@ import { useAppState } from '../../context/app.context';
 /** images **/
 import grassWhite from '../../assets/img/grass-white.png';
 
-function InfoBanner({ config, className, slotLeft, slotRight, style }) {
+function InfoBanner({ children, config, className, slotLeft, slotRight, style }) {
   const { isMobile } = useAppState();
   const [backgroundGradient, setBackgroundGradient] = useState('linear-gradient(120deg, rgb(255, 0, 40) 0%, rgb(255, 0, 40) 50%, transparent 50%, transparent 100%)');
   const [height, setHeight] = useState('300px');
@@ -37,6 +37,7 @@ function InfoBanner({ config, className, slotLeft, slotRight, style }) {
       }}
     >
       {rightGradientCover && <div className="right-cover" />}
+      {children}
       <div className="grass" />
       <div className="slot-left">{slotLeft}</div>
       <div className="slot-right">{slotRight}</div>

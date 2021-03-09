@@ -24,6 +24,7 @@ import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessag
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 import { StyledInfoCardLink } from '../components/Styled/StyledInfoCard';
 import SVGIcon from '../components/Atoms/SVGIcon';
+import WeatherIcon from '../components/Atoms/Icons/WeatherIcon';
 
 /** images **/
 const {
@@ -89,7 +90,11 @@ function HomeRoute(props) {
               <img className="anniversary-logo" src={logoAnniversary} alt="anniversary logo" />
             </InfoBannerRight>
           }
-        />
+        >
+          <a className="weather-link" href="https://weather.com/weather/today/l/0e23ddb22586163323dc8c95e1ca5a3d43e9d736052ec6a368233a2897f36cad" target="_blank">
+            <WeatherIcon />
+          </a>
+        </InfoBanner>
 
         <PageDivider1 />
 
@@ -269,6 +274,18 @@ const StyledHome = styled.div`
     &:hover {
       color: ${({ theme }) => theme.colorSecondary};
       border: 1px solid ${({ theme }) => theme.colorSecondary};
+    }
+  }
+  .weather-link {
+    position: absolute;
+    svg {
+      fill: ${({theme}) => theme.colorSecondary};
+      transition: all 0.2s;
+    }
+    &:hover {
+      svg {
+        fill: ${({theme}) => theme.colorQuaternary};
+      }
     }
   }
   @media (max-width: 600px) {

@@ -93,8 +93,8 @@ function FenceRoute(props) {
 
         <div className="fence-info-subsection">
           <div className="subsection-images">
-            <img src={imgFence2} alt="fence" />
             <img src={imgFenceRepair} alt="fence repair" />
+            <img src={imgFence2} alt="fence" />
           </div>
           <div className="subsection-info">
             <StyledInfoBodyMessage fontSize="1.2em" margin="0">
