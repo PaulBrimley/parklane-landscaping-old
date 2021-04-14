@@ -102,7 +102,7 @@ function LandscapeRoute(props) {
           <img src={imgMonument1} alt="monument 1" />
         </div>
 
-        <div className="landscape-header">Landscape Design</div>
+        <div className="landscape-header-2">Landscape Design</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin) 20px">
           Parklane Landscaping takes pride in ensuring that every one of our properties look their best. Consequently, our design approach is imperative when it comes to making landscape suggestions to our clients. We understand that well-designed communal landscapes should exude balance, beauty and order; all the while providing a welcoming environment for residents, guests and prospective home buyers.
@@ -150,6 +150,12 @@ const StyledLandscape = styled.div`
     color: ${({ theme }) => theme.colorPrimary};
     margin: 20px var(--side-margin) 10px;
   }
+  .landscape-header-2 {
+    font-size: 2.7em;
+    font-weight: 700;
+    color: ${({ theme }) => theme.colorPrimary};
+    margin: 20px var(--side-margin) 10px;
+  }
   .landscape-info-images {
     display: grid;
     justify-items: center;
@@ -189,6 +195,14 @@ const StyledLandscape = styled.div`
   @media (max-width: ${({theme}) => theme.mobileWidth}px) {
     .info-banner-right {
       display: none;
+    }
+    .landscape-header {
+      font-size: 2em;
+      margin: 20px;
+    }
+    .landscape-header-2 {
+      font-size: 1.6em;
+      margin: 20px 20px 10px;
     }
     .landscape-info-subsection {
       flex-direction: column;

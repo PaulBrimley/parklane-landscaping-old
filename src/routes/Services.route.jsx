@@ -97,7 +97,7 @@ function ServicesRoute(props) {
           As a full service firm, Parklane Landscaping professionals provide quality design, installation, and consultation services in addition to the expert maintenance of planting beds, turf, trees, planters, water features, fence lines, drainage areas and irrigation systems.
         </StyledInfoBodyMessage>
 
-        <div className="services-header">Quality Assurance</div>
+        <div className="services-header-2">Quality Assurance</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
           In order to protect the community’s landscape investment, Parklane Landscaping conducts monthly quality assurance visits, irrigation checks and proposes any necessary repairs. Our account executives submit monthly reports detailing our observations and concerns. These reports are vital in assisting property managers in helping us maintain the longevity and investment of the HOA landscape infrastructure. And in cases where individual homeowners have specific issues and concerns, we are delighted to meet with them in person to ensure a thorough understanding of an issue and promptly report back directly to the property manager.
@@ -201,7 +201,7 @@ function ServicesRoute(props) {
         <br />
         <br />
 
-        <div className="services-header-2">Parklane HOA Services</div>
+        <div className="services-header-3">Parklane HOA Services</div>
         <br />
         <div className="services-hoa-services-list">
           <div>Specialists in HOA Common Areas</div>
@@ -254,6 +254,12 @@ const StyledServices = styled.div`
     margin: 20px var(--side-margin) 10px;
   }
   .services-header-2 {
+    font-size: 2.7em;
+    font-weight: 700;
+    color: ${({ theme }) => theme.colorPrimary};
+    margin: 20px var(--side-margin) 10px;
+  }
+  .services-header-3 {
     font-size: 1.3em;
     font-weight: 700;
     text-transform: uppercase;
@@ -301,6 +307,14 @@ const StyledServices = styled.div`
     }
   }
   @media (max-width: ${({ theme }) => theme.mobileWidth}px) {
+    .services-header {
+      font-size: 2em;
+      margin: 20px;
+    }
+    .services-header-2 {
+      font-size: 1.6em;
+      margin: 20px 20px 10px;
+    }
     .services-hoa-services-list {
       margin: 0 20px 50px;
       white-space: normal;
