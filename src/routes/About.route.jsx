@@ -87,12 +87,7 @@ function AboutRoute(props) {
         <div className="about-header uppercase">About</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
-          <p>
-            Parklane Landscaping was formed in 2011, after owner, Eliseo Rios recognized a rapid growth in the number of gated housing developments in and around the San Antonio area. Realizing that there were no specialized landscapers that served these communities, his mission became clear. Parklane had to become the specialists in the HOA industry.
-          </p>
-          <p>
-            Now as we celebrate our tenth year in business, Parklane has learned all the particulars that come with servicing HOA communities. Many moving parts are needed to properly maintain large housing developments. Aside from the normal services one would expect from a commercial landscaper Parklane’s service menu also includes: masonry repair, entryway monument design, landscape design and installation, lighting design and installation, licensed irrigation and much more. We strive to go out of our way to offer as many services possible under the name Parklane. This builds trust and confidence with our communities knowing that all their landscaping needs can be met with one call. At Parklane we value our clients and offering the most efficient and quality solutions is our goal.
-          </p>
+          A partnership with Parklane Landscaping begins the moment we begin caring for your HOA community landscape. As part of our growing relationship, Parklane works diligently with property managers to ensure proactivity in areas that would benefit from enhancement and those that can be money savers for the HOA. We also work with HOA landscape committees in developing ideas, concepts and plans to actively engage the future development of the community’s landscape. We make ourselves available to attend annual HOA board meetings and prepare short and informative presentations detailing our ongoing progress.
         </StyledInfoBodyMessage>
 
         <br />
@@ -117,14 +112,14 @@ function AboutRoute(props) {
         <br />
         <br />
 
-        <div className="about-header">Keeping It In The Community</div>
+        <div className="about-header">Community Manager Partnership 24/7</div>
         <div className="about-info-images">
           <img src={imgMonument6} alt="Estates at Bridgewood" />
           <img src={imgParklaneFamily} alt="Parklane family" />
           <img src={imgCarnival} alt="Carnival" />
         </div>
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
-          After delving into a relatively untouched niche and building a thriving business around it, Parklane became one if the industry’s early pioneers. As a result demand for Parklane grew, and with it the need for more help. Knowing his family’s great work ethic, owner Eliseo Rios approached his brothers to join the company, transitioning Parklane into a family run business. It is hard to find a family business where every member has a college degree including Momma Rios. More than that they all live in the community they serve. After years of building relationships of trust and learning specific skills to effectively serve clients, Parklane has gained the reputation of being the experts in the HOA industry. We feel great pride in the work we do.  and look forward to future growth. There is nothing better than hearing from a client the pride a resident feels when they enter their beautiful community maintained by Parklane Landscaping.
+          Our account representatives keep in constant contact with the property’s HOA community manager. In case of emergency or urgent care notices, our teams are available 24/7 to address emergency needs that arise from time to time. Our irrigators are also on call to address broken pipes, misfiring sprinkler heads and any other irrigation related issues that arise outside of normal business hours.
         </StyledInfoBodyMessage>
       </StyledAbout>
     </AnimatedStyledRoute>

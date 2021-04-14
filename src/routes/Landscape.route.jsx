@@ -92,10 +92,10 @@ function LandscapeRoute(props) {
         <br />
         <br />
 
-        <div className="landscape-header uppercase">HOA Landscaping</div>
+        <div className="landscape-header uppercase">Design & Long Range Planning</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
-          Parklane Landscaping regularly provides pro-active and long-range planning ideas to enhance the landscape appeal of an HOA community. Our team of design and horticulture professionals work on the visual aesthetic as well as the overall health of the environment to provide verdant landscapes for all our clients.
+          Parklane Landscaping provides pro-active and long-range planning ideas to enhance the landscape appeal of an HOA community. Our team of design and horticulture professionals work on the visual aesthetic and on the health of the environment in order to provide a verdant landscape. Our professionals provide expert guidance to propose beautiful landscape designs and to provide long-range planning to keep the landscape sustainable and vibrant.
         </StyledInfoBodyMessage>
 
         <div className="landscape-info-images">

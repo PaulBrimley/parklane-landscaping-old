@@ -106,7 +106,13 @@ function HomeRoute(props) {
         <div className="home-header uppercase">The HOA Landscape Specialists</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
-          Parklane Landscaping is a professional landscape company that specializes in HOA (Home Owner Association) managed properties in San Antonio, Boerne, and New Braunfels. Having been in business for ten years, we have developed a reputation for excellent client service and detailed attention to our work. We encourage our team managers to foster close relationships with HOA board members and property managers. This close collaboration yields high performance in our crews that ensures a community’s visual appeal and strategic enhancement ultimately raising property values.
+          Parklane Landscaping is a professional landscape management firm specializing in HOA managed properties in San Antonio, Boerne, and New Braunfels. With a reputation for excellent client service and detailed attention to its properties, our associates foster a close relationship with HOA board members and property managers. This close collaboration yields a high performing team that ensures a community’s visual aesthetic appeal and the strategic enhancement of its property value.
+        </StyledInfoBodyMessage>
+
+        <div className="home-header">Our Professional Partners</div>
+
+        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
+          Affiliations with our industry partners ensure that we stay at the forefront of policy and technological developments. CAI membership also keeps Parklane associates abreast of emerging trends in HOA management. Our industry associations empower Parklane associates to provide unparalleled service to our community managers and HOA board members.
         </StyledInfoBodyMessage>
 
         <div className="home-action">

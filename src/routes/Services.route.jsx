@@ -91,10 +91,16 @@ function ServicesRoute(props) {
         <br />
         <br />
 
-        <div className="services-header uppercase">Parklane HOA Services</div>
+        <div className="services-header uppercase">A Full Service Firm</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
-          A partnership with Parklane Landscaping begins the moment we step foot onto an HOA community. As part of our growing relationship, Parklane works diligently with property managers to ensure proactivity in landscape areas that would benefit from enhancement while also trying to save money for the community. We strive to work closely with HOA landscape committees in developing ideas, concepts and plans to actively engage the future development of the entire neighborhood. As a courtesy, we make ourselves available to attend annual HOA board meetings and prepare short yet informative presentations detailing ongoing progress. Below you will find a list of services we offer to ensure our HOA communities need only make one call to fulfill all their landscaping needs.
+          As a full service firm, Parklane Landscaping professionals provide quality design, installation, and consultation services in addition to the expert maintenance of planting beds, turf, trees, planters, water features, fence lines, drainage areas and irrigation systems.
+        </StyledInfoBodyMessage>
+
+        <div className="services-header">Quality Assurance</div>
+
+        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
+          In order to protect the community’s landscape investment, Parklane Landscaping conducts monthly quality assurance visits, irrigation checks and proposes any necessary repairs. Our account executives submit monthly reports detailing our observations and concerns. These reports are vital in assisting property managers in helping us maintain the longevity and investment of the HOA landscape infrastructure. And in cases where individual homeowners have specific issues and concerns, we are delighted to meet with them in person to ensure a thorough understanding of an issue and promptly report back directly to the property manager.
         </StyledInfoBodyMessage>
 
         <br />

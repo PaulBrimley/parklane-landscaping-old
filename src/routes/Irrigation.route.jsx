@@ -83,10 +83,10 @@ function IrrigationRoute(props) {
         <br />
         <br />
 
-        <div className="irrigation-header uppercase">HOA Irrigation</div>
+        <div className="irrigation-header uppercase">Irrigation Repairs & Installations</div>
 
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
-          During our ten years in business, Parklane has perceived a need for licensed irrigators in the HOA industry. After many requests to perform SAWS audits and repair irrigation systems we made the decision to invest time and money into our own team to fulfill the need. As a result, Parklane now has three licensed irrigators who regularly perform monthly audits on all of our HOA properties. When the need arises, our licensed irrigators can repair or even install an entire irrigation system.
+          During our ten years in business, Parklane has recognized the need for licensed irrigators in the HOA industry. After being asked if we could do SAWS audits or repair an irrigation system we decided to invest in educating our own team members in irrigation. As a result, Parklane now has three licensed irrigators who regularly perform monthly audits on all of our HOA properties. When the need arises, our licensed irrigators can repair or even install an entire irrigation system.
         </StyledInfoBodyMessage>
 
         <br />
