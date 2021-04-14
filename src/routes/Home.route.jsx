@@ -135,12 +135,10 @@ function HomeRoute(props) {
         <div className="home-info-section">
           <StyledInfoCardLink as={Link} to={routes.MAINTENANCE}>
             <div className="header">Maintenance</div>
-            <div className="body">
-              <div className="icon">
-                <SVGIcon height="70px" width="70px" type="lawnMower"/>
-              </div>
-              <div className="message">Parklane Landscaping specializes in HOA landscape maintenance...Learn More</div>
+            <div className="icon">
+              <SVGIcon height="70px" width="70px" type="lawnMower"/>
             </div>
+            <div className="message">Learn More</div>
           </StyledInfoCardLink>
 
           <StyledInfoCardLink as={Link} to={routes.IRRIGATION}>
@@ -149,7 +147,7 @@ function HomeRoute(props) {
               <div className="icon">
                 <SVGIcon height="70px" width="70px" type="hose"/>
               </div>
-              <div className="message">After many requests for irrigation audits, licensing became essential...Learn More</div>
+              <div className="message">Learn More</div>
             </div>
           </StyledInfoCardLink>
 
@@ -159,7 +157,7 @@ function HomeRoute(props) {
               <div className="icon">
                 <SVGIcon height="75px" width="75px" type="landscape"/>
               </div>
-              <div className="message">Parklane takes every opportunity to expand its landscaping abilities...Learn More</div>
+              <div className="message">Learn More</div>
             </div>
           </StyledInfoCardLink>
 
@@ -169,7 +167,7 @@ function HomeRoute(props) {
               <div className="icon">
                 <SVGIcon height="80px" width="80px" type="monument"/>
               </div>
-              <div className="message">From logo design, to architectural rendering, to brick and mortar...Learn More</div>
+              <div className="message">Learn More</div>
             </div>
           </StyledInfoCardLink>
 
@@ -179,7 +177,7 @@ function HomeRoute(props) {
               <div className="icon">
                 <SVGIcon height="70px" width="70px" type="masonry"/>
               </div>
-              <div className="message">Monuments are the first thing people see when they pass or enter an HOA community...Learn More</div>
+              <div className="message">Learn More</div>
             </div>
           </StyledInfoCardLink>
 
@@ -189,7 +187,7 @@ function HomeRoute(props) {
               <div className="icon">
                 <SVGIcon height="70px" width="70px" type="fence"/>
               </div>
-              <div className="message">If you live in an HOA community, you understand the value of fences...Learn More</div>
+              <div className="message">Learn More</div>
             </div>
           </StyledInfoCardLink>
 
@@ -199,7 +197,7 @@ function HomeRoute(props) {
               <div className="icon">
                 <SVGIcon height="60px" width="60px" type="lightBulb" style={{marginTop: '7px'}}/>
               </div>
-              <div className="message">Your community is your pride and joy. Once Parklane has built...Learn More</div>
+              <div className="message">Learn More</div>
             </div>
           </StyledInfoCardLink>
 
@@ -209,7 +207,7 @@ function HomeRoute(props) {
               <div className="icon">
                 <SVGIcon height="80px" width="80px" type="trees"/>
               </div>
-              <div className="message">Nothing transforms an outdoor space like beautifully trimmed trees...Learn More</div>
+              <div className="message">Learn More</div>
             </div>
           </StyledInfoCardLink>
         </div>

@@ -34,7 +34,7 @@ export const routes = {
   MONUMENT: '/services/monument',
   MONUMENT_REPAIR: '/services/monumentRepair',
   SERVICES: '/services',
-  SUBSCRIBE: '/subscribe',
+  SUBSCRIBE: '/learn-more',
   TRIMMING: '/services/trimming'
 };
 export const routeArr = [
@@ -155,7 +155,7 @@ export const routeArr = [
     active: true,
     children: [],
     Component: SubscribeRoute,
-    name: 'Subscribe',
+    name: 'Learn More',
     path: routes.SUBSCRIBE,
     prefetchImages: [imgGuyPlanting1, imgNewsLetter1, imgNewsLetter2, imgNewsLetter3]
   },

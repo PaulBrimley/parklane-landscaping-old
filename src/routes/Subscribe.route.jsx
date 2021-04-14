@@ -72,7 +72,7 @@ function SubscribeRoute(props) {
                   <div className="hr" />
                   <div className="message">
                     <div>The beauty of maintaining HOA</div>
-                    <div>community is in the details.</div>
+                    <div>communities is in the details.</div>
                   </div>
                 </StyledInfoBannerMessage>
               }
