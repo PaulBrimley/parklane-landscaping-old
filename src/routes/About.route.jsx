@@ -112,12 +112,13 @@ function AboutRoute(props) {
         <br />
         <br />
 
-        <div className="about-header">Community Manager Partnership 24/7</div>
         <div className="about-info-images">
           <img src={imgMonument6} alt="Estates at Bridgewood" />
           <img src={imgParklaneFamily} alt="Parklane family" />
           <img src={imgCarnival} alt="Carnival" />
         </div>
+
+        <div className="about-header-2">Community Manager Partnership 24/7</div>
         <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
           Our account representatives keep in constant contact with the property’s HOA community manager. In case of emergency or urgent care notices, our teams are available 24/7 to address emergency needs that arise from time to time. Our irrigators are also on call to address broken pipes, misfiring sprinkler heads and any other irrigation related issues that arise outside of normal business hours.
         </StyledInfoBodyMessage>
@@ -129,6 +130,12 @@ const StyledAbout = styled.div`
   padding-bottom: 90px;
   .about-header {
     font-size: 3em;
+    font-weight: 700;
+    color: ${({ theme }) => theme.colorPrimary};
+    margin: 20px var(--side-margin) 10px;
+  }
+  .about-header-2 {
+    font-size: 2.7em;
     font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
     margin: 20px var(--side-margin) 10px;
@@ -174,6 +181,10 @@ const StyledAbout = styled.div`
     .about-header {
       font-size: 2em;
       margin: 20px;
+    }
+    .about-header-2 {
+      font-size: 1.6em;
+      margin: 20px 20px 10px;
     }
     .about-info-images {
       grid-template-columns: 1fr;
