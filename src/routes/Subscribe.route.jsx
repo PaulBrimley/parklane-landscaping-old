@@ -20,7 +20,7 @@ import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 import SubscribeForm from '../components/Molecules/SubscribeForm';
 
 /** images **/
-const { imgGuyPlanting1, imgNewsLetter1, imgNewsLetter2 } = images;
+const { imgGuyPlanting1, imgNewsLetter1, imgNewsLetter2, imgNewsLetter3, imgNewsLetter4, imgNewsLetter5, imgNewsLetter6 } = images;
 
 function SubscribeRoute(props) {
   const { width } = useAppState();
@@ -102,6 +102,18 @@ function SubscribeRoute(props) {
           <div>
             <img src={imgNewsLetter2} alt="news letter 2" />
           </div>
+          <div>
+            <img src={imgNewsLetter3} alt="news letter 3" />
+          </div>
+          <div>
+            <img src={imgNewsLetter4} alt="news letter 4" />
+          </div>
+          <div>
+            <img src={imgNewsLetter5} alt="news letter 5" />
+          </div>
+          <div>
+            <img src={imgNewsLetter6} alt="news letter 6" />
+          </div>
         </div>
 
         <div className="subscribe-now-action">
@@ -121,11 +133,18 @@ const StyledSubscribe = styled.div`
     margin-bottom: 40px;
   }
   .news-letters {
+    //border: 1px solid blue;
     margin: 40px var(--side-margin);
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    //display: flex;
+    //justify-content: space-around;
+    //flex-wrap: wrap;
     div {
-      flex: 45% 0 0;
+      //border: 1px solid blue;
+      //flex: 32% 0 0;
+      //margin-bottom: 10px;
       img {
         width: 100%;
       }

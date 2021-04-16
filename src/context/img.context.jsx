@@ -32,9 +32,12 @@ import imgMonument5 from '../assets/img/img-monument-5.jpg';
 import imgMonument6 from '../assets/img/img-monument-6.jpg';
 import imgMonument7 from '../assets/img/img-monument-7.jpg';
 import imgMonument8 from '../assets/img/img-monument-8.jpg';
-import imgNewsLetter1 from '../assets/img/img-news-letter-1.jpg';
-import imgNewsLetter2 from '../assets/img/img-news-letter-2.jpg';
-import imgNewsLetter3 from '../assets/img/img-news-letter-3.jpg';
+import imgNewsLetter1 from '../assets/img/img-news-letter-1.jpeg';
+import imgNewsLetter2 from '../assets/img/img-news-letter-2.jpeg';
+import imgNewsLetter3 from '../assets/img/img-news-letter-3.jpeg';
+import imgNewsLetter4 from '../assets/img/img-news-letter-4.jpeg';
+import imgNewsLetter5 from '../assets/img/img-news-letter-5.jpeg';
+import imgNewsLetter6 from '../assets/img/img-news-letter-6.jpeg';
 import imgOverhead1 from '../assets/img/img-overhead-1.jpg';
 import imgOverhead2 from '../assets/img/img-overhead-2.jpg';
 import imgOverhead3 from '../assets/img/img-overhead-3.png';
@@ -88,6 +91,9 @@ const images = {
   imgNewsLetter1,
   imgNewsLetter2,
   imgNewsLetter3,
+  imgNewsLetter4,
+  imgNewsLetter5,
+  imgNewsLetter6,
   imgOverhead1,
   imgOverhead2,
   imgOverhead3,
