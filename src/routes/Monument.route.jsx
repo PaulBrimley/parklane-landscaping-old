@@ -20,7 +20,8 @@ import SVGIcon from '../components/Atoms/SVGIcon';
 const {
   imgMonument1,
   imgMonument4,
-  imgMonument5
+  imgMonument5,
+  imgMonument10
 } = images;
 
 function MonumentRoute(props) {
@@ -47,7 +48,7 @@ function MonumentRoute(props) {
       <StyledMonument className="body">
         <InfoBanner
           style={{
-            backgroundImage: `url(${imgMonument1})`,
+            backgroundImage: `url(${imgMonument10})`,
             backgroundPosition: `center calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: calcBackgroundSize()

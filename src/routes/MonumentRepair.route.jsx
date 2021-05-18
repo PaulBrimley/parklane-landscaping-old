@@ -21,7 +21,8 @@ const {
   imgMonument2,
   imgMonument3,
   imgMonument7,
-  imgMonument8
+  imgMonument8,
+  imgMonument9
 } = images;
 
 function MonumentRepairRoute(props) {
@@ -48,7 +49,7 @@ function MonumentRepairRoute(props) {
       <StyledMonumentRepair className="body">
         <InfoBanner
           style={{
-            backgroundImage: `url(${imgMonument7})`,
+            backgroundImage: `url(${imgMonument9})`,
             backgroundPosition: `center calc(${calcBackgroundPosition()}% + ${offset.y}px)`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: calcBackgroundSize()
