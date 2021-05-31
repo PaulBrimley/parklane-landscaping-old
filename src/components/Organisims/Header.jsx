@@ -112,7 +112,7 @@ const StyledHeader = styled.div`
     z-index: 1000;
     background-color: ${({ theme }) => theme.colorSecondary};
     height: 0;
-    overflow: hidden;
+    //overflow: hidden;
     opacity: 0;
     transition: all 0.2s;
     &.active {
@@ -166,12 +166,14 @@ const StyledHeader = styled.div`
           width: 46px;
           height: 46px;
           transform: scale(1);
+          transform-origin: 50% 10%;
+          //transform-origin: top;
           transition: all 0.2s;
           svg {
             fill: ${({theme}) => theme.colorWhite}
           }
           &:hover {
-            transform: scale(1.15);
+            transform: scale(1.4);
           }
         }
         .child-route-name {

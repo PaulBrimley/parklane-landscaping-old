@@ -6,6 +6,7 @@ export const StyledInfoCard = styled.div`
   cursor: pointer;
   transition: all 0.2s;
 	.info-card-body {
+		flex: 1 1 auto;
     border-bottom: 1px solid ${({theme}) => theme.colorSecondary};
     border-left: 1px solid ${({theme}) => theme.colorSecondary};
     border-right: 1px solid ${({theme}) => theme.colorSecondary};
@@ -32,7 +33,7 @@ export const StyledInfoCard = styled.div`
     }
 	}
   .info-card-header {
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 300;
     color: ${({theme}) => theme.colorWhite};
     text-transform: uppercase;
@@ -40,6 +41,9 @@ export const StyledInfoCard = styled.div`
     text-align: center;
     background-color: ${({theme}) => theme.colorSecondary};
     transition: opacity 0.2s;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
   }
   
   &:hover {

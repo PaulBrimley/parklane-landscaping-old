@@ -108,12 +108,18 @@ const StyledServiceGuide = styled.div`
   }
   .services {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
     grid-gap: 40px;
     padding-top: 40px;
-    .item {
-      border: 1px solid red;
-      
+  }
+  @media screen and (max-width: 600px) {
+    .services {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .services {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 `;

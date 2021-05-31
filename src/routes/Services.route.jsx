@@ -14,22 +14,14 @@ import { routes } from './Routes';
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
 import InfoBanner from '../components/Molecules/InfoBanner';
 import InfoBannerLeft from '../components/Molecules/InfoBannerLeft';
+import LogoStripe from '../components/Atoms/LogoStripe';
 import PageDivider1 from '../components/Atoms/PageDivider1';
-import ParallaxStripe from '../components/Atoms/ParallaxStripe';
+import ServiceGuide from '../components/Molecules/ServiceGuide';
 import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
-import StyledQuickListItem from '../components/Styled/StyledQuickListItem';
-import SVGIcon from '../components/Atoms/SVGIcon';
 
 /** images **/
-const {
-  imgGuyKneeling,
-  imgGuyPlanting2,
-  imgGuyTeaching,
-  imgHillsAtAlamoRanch,
-  imgHome,
-  logoMain
-} = images;
+const { imgGuyKneeling, imgGuyPlanting2, imgGuyTeaching, imgHillsAtAlamoRanch, imgHome, logoMain } = images;
 
 function ServicesRoute(props) {
   const { width } = useAppState();
@@ -97,91 +89,20 @@ function ServicesRoute(props) {
           As a full service firm, Parklane Landscaping professionals provide quality design, installation, and consultation services in addition to the expert maintenance of planting beds, turf, trees, planters, water features, fence lines, drainage areas and irrigation systems.
         </StyledInfoBodyMessage>
 
-        <div className="services-header-2">Quality Assurance</div>
-
-        <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
-          In order to protect the community’s landscape investment, Parklane Landscaping conducts monthly quality assurance visits, irrigation checks and proposes any necessary repairs. Our account executives submit monthly reports detailing our observations and concerns. These reports are vital in assisting property managers in helping us maintain the longevity and investment of the HOA landscape infrastructure. And in cases where individual homeowners have specific issues and concerns, we are delighted to meet with them in person to ensure a thorough understanding of an issue and promptly report back directly to the property manager.
-        </StyledInfoBodyMessage>
-
-        <br />
-        <br />
-        <br />
-
-        <div className="services-info-images">
-          <img src={imgGuyKneeling} alt="Guy kneeling" />
-          <img src={imgHillsAtAlamoRanch} alt="Hills at Alamo Ranch" />
-          <img src={imgGuyTeaching} alt="Guy teaching" />
-        </div>
-
-        <br />
         <br />
         <br />
         <br />
         <br />
 
-        <div className="services-header-2">Click on any icon in the quick-list of services in the box below to find out more</div>
-
-        <br />
-        <br />
-        <br />
-
-        <div className="services-quick-list-wrapper">
-          <div className="services-quick-list">
-            <StyledQuickListItem to={routes.MAINTENANCE}>
-              <div className="icon">
-                <SVGIcon height="70px" width="70px" type="lawnMower"/>
-              </div>
-              <div className="title">HOA Maintenance</div>
-            </StyledQuickListItem>
-
-            <StyledQuickListItem to={routes.IRRIGATION}>
-              <div className="icon">
-                <SVGIcon height="65px" width="65px" type="hose" style={{marginTop: '3px'}}/>
-              </div>
-              <div className="title">HOA Irrigation</div>
-            </StyledQuickListItem>
-
-            <StyledQuickListItem to={routes.LANDSCAPE}>
-              <div className="icon">
-                <SVGIcon height="73px" width="73px" type="landscape"/>
-              </div>
-              <div className="title">HOA Landscaping</div>
-            </StyledQuickListItem>
-
-            <StyledQuickListItem to={routes.MONUMENT}>
-              <div className="icon">
-                <SVGIcon height="80px" width="80px" type="monument"/>
-              </div>
-              <div className="title">Monument Installation</div>
-            </StyledQuickListItem>
-
-            <StyledQuickListItem to={routes.MONUMENT_REPAIR}>
-              <div className="icon">
-                <SVGIcon height="80px" width="80px" type="masonry"/>
-              </div>
-              <div className="title">Monument Repair</div>
-            </StyledQuickListItem>
-
-            <StyledQuickListItem to={routes.FENCE}>
-              <div className="icon">
-                <SVGIcon height="68px" width="68px" type="fence" style={{marginTop: '4px'}}/>
-              </div>
-              <div className="title">Fence Installation</div>
-            </StyledQuickListItem>
-
-            <StyledQuickListItem to={routes.LIGHTING}>
-              <div className="icon">
-                <SVGIcon height="53px" width="53px" type="lightBulb" style={{marginTop: '8px'}}/>
-              </div>
-              <div className="title">HOA Landscape Lighting</div>
-            </StyledQuickListItem>
-
-            <StyledQuickListItem to={routes.TRIMMING}>
-              <div className="icon">
-                <SVGIcon height="70px" width="70px" type="trees" style={{marginTop: '3px'}}/>
-              </div>
-              <div className="title">Tree Maintenance</div>
-            </StyledQuickListItem>
+        <div className="services-subsection">
+          <div className="subsection-images">
+            <img src={imgGuyTeaching} alt="Guy teaching" />
+          </div>
+          <div className="subsection-info">
+            <div className="services-header-2">Service Evaluation</div>
+            <StyledInfoBodyMessage fontSize="1.6em" margin="0 0 10px 0">
+              In order to protect the community’s landscape investment, Parklane Landscaping conducts monthly quality assurance visits, irrigation checks and proposes any necessary repairs. Our account executives submit monthly reports detailing our observations and concerns. These reports are vital in assisting property managers in helping us maintain the longevity and investment of the HOA landscape infrastructure. And in cases where individual homeowners have specific issues and concerns, we are delighted to meet with them in person to ensure a thorough understanding of an issue and promptly report back directly to the property manager.
+            </StyledInfoBodyMessage>
           </div>
         </div>
 
@@ -189,19 +110,23 @@ function ServicesRoute(props) {
         <br />
         <br />
         <br />
-
-        <ParallaxStripe backgroundUrl={imgHome} height="75px" offsetAdjust="-320" parallaxStart="400">
-          <div className="home-stripe">
-            <img className="logo" src={logoMain} alt="logo" />
-          </div>
-        </ParallaxStripe>
-
-        <br />
-        <br />
-        <br />
         <br />
 
-        <div className="services-header-3">Parklane HOA Services</div>
+        <div className="service-guide">
+          <ServiceGuide />
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <LogoStripe />
+
+        <br />
+        <br />
+
+        <div className="services-header-3">All HOA Services</div>
         <br />
         <div className="services-hoa-services-list">
           <div>Specialists in HOA Common Areas</div>
@@ -231,21 +156,13 @@ function ServicesRoute(props) {
 }
 const StyledServices = styled.div`
   padding-bottom: 90px;
-  .home-stripe {
-    flex: 1 1 auto;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    background-image: linear-gradient(120deg, transparent 0, transparent 30%, rgba(255, 0, 40, 0.85) 30%, rgba(255, 0, 40, 0.85) 70%, transparent 70%, transparent 100%);
-    .logo {
-      max-width: 150px;
-      margin: 10px 0 15px;
-    }
-  }
   .info-banner-left {
     flex: 1 1 auto;
     padding-top: 50px;
     margin-bottom: 40px;
+  }
+  .service-guide {
+    margin: 20px var(--side-margin) 10px;
   }
   .services-header {
     font-size: 3em;
@@ -257,19 +174,17 @@ const StyledServices = styled.div`
     font-size: 2.7em;
     font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
-    margin: 20px var(--side-margin) 10px;
   }
   .services-header-3 {
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-weight: 700;
     text-transform: uppercase;
     color: ${({ theme }) => theme.colorPrimary};
     text-align: center;
-    margin: 10px var(--side-margin);
+    margin: 10px var(--side-margin) 0;
   }
   .services-hoa-services-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    font-size: 1.2em;
     margin: 0 var(--side-margin);
     color: ${({ theme }) => theme.colorPrimary};
     text-align: center;
@@ -278,32 +193,22 @@ const StyledServices = styled.div`
       margin-bottom: 10px;
     }
   }
-  .services-info-images {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 15px;
-    margin: 5px var(--side-margin) 10px;
-    img {
-      flex: 0 1 auto;
-      width: 100%;
-      max-width: 300px;
-    }
-  }
-  .services-quick-list-wrapper {
-    margin: 5px var(--side-margin) 10px;
-    padding: 3px;
-    border: 2px solid ${({ theme }) => theme.colorPrimary};
-    .services-quick-list {
-      padding: 10px;
-      border: 2px solid ${({ theme }) => theme.colorPrimary};
+  .services-subsection {
+    display: flex;
+    margin: 10px var(--side-margin) 0;
+    .subsection-images {
+      position: relative;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+      flex-direction: column;
+      align-items: center;
+      flex: 49% 0 0;
+      img {
+        width: 100%;
+      }
     }
-  }
-  @media (max-width: 900px) {
-    .services-hoa-services-list {
-      grid-template-columns: 1fr;
+    .subsection-info {
+      flex: 49% 0 0;
+      padding-left: 20px;
     }
   }
   @media (max-width: ${({ theme }) => theme.mobileWidth}px) {
@@ -312,12 +217,21 @@ const StyledServices = styled.div`
       margin: 20px;
     }
     .services-header-2 {
-      font-size: 1.6em;
-      margin: 20px 20px 10px;
+      margin: 20px 0 10px;
     }
     .services-hoa-services-list {
       margin: 0 20px 50px;
       white-space: normal;
+    }
+    .services-subsection {
+      flex-direction: column;
+      .subsection-images {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+      .subsection-info {
+        padding-left: 0;
+      }
     }
   }
 `;

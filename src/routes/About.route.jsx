@@ -28,7 +28,7 @@ const {
 } = images;
 
 function AboutRoute(props) {
-  const { isMobile, width } = useAppState();
+  const { companyInfo, isMobile, width } = useAppState();
   const { offset } = useParallaxEffect({ strength: 0.2 });
 
   function calcBackgroundSize() {
@@ -87,24 +87,18 @@ function AboutRoute(props) {
         <div className="about-header uppercase">About</div>
 
         <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
-          A partnership with Parklane Landscaping begins the moment we begin caring for your HOA community landscape. As part of our growing relationship, Parklane works diligently with property managers to ensure proactivity in areas that would benefit from enhancement and those that can be money savers for the HOA. We also work with HOA landscape committees in developing ideas, concepts and plans to actively engage the future development of the community’s landscape. We make ourselves available to attend annual HOA board meetings and prepare short and informative presentations detailing our ongoing progress.
+          In 2011 founder, Eliseo Rios opened Parklane Landscaping after recognizing a rapid growth in the number of housing developments in and around San Antonio. As there were little to no specialized landscapers serving these HOA communities, Parklane became one of the first to pioneer this newly developed market and took on the challenge to become experts in the industry.
         </StyledInfoBodyMessage>
 
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <StyledInfoBodyMessage fontSize="1.6em" margin="15px var(--side-margin)">
+          We currently serve HOA communities in the greater San Antonio area through custom contracts that include general ground maintenance, irrigation repair & installation, landscape design, entryway revitalization, monument design and installation, tree pruning and much more. (See service page for more services.)
+        </StyledInfoBodyMessage>
 
-        <ParallaxStripe backgroundUrl={imgTrees2} height="75px" offsetAdjust="-220" parallaxStart="100" >
-          <div className="tree-stripe">
-            <img
-              className="logo"
-              src={logoMain}
-              alt="logo"
-            />
-          </div>
-        </ParallaxStripe>
+        <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
+          Now with over a decade of experience and learning the dynamic of how the infrastructure of the industry is maintained Parklane has built a reputation for being one of the highest quality landscapers serving such prestigious communities as Presidio, Canyon Springs and Fox Grove. Throughout the years we have built important relationships with property management companies to help set and maintain quality standards expected and helped nurture HOA landscape committees to raise curb appeal and property values within their communities. Parklane also participates in community organizations like SAWS, SAIA, and CAI to stay abreast of the latest industry standards, rules, regulations and laws relative to the HOA industry. Parklane shares this information via free seminars to HOA committees and property management companies. If you would like Parklane Landscaping to teach a free seminar to your HOA please call us at {companyInfo.phone} today.
+        </StyledInfoBodyMessage>
+
+
 
         <br />
         <br />
@@ -118,10 +112,8 @@ function AboutRoute(props) {
           <img src={imgCarnival} alt="Carnival" />
         </div>
 
-        <div className="about-header-2">Community Manager Partnership 24/7</div>
-        <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
-          Our account representatives keep in constant contact with the property’s HOA community manager. In case of emergency or urgent care notices, our teams are available 24/7 to address emergency needs that arise from time to time. Our irrigators are also on call to address broken pipes, misfiring sprinkler heads and any other irrigation related issues that arise outside of normal business hours.
-        </StyledInfoBodyMessage>
+        <div className="about-header-2">Keeping It In The Community</div>
+
       </StyledAbout>
     </AnimatedStyledRoute>
   );
@@ -139,6 +131,7 @@ const StyledAbout = styled.div`
     font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
     margin: 20px var(--side-margin) 10px;
+    text-align: center;
   }
   .about-info-images {
     display: grid;

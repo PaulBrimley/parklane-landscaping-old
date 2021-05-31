@@ -28,7 +28,7 @@ function SubscribeRoute(props) {
   const { offset } = useParallaxEffect({ strength: 0.2 });
 
   function handleOpenModal() {
-    toggleModal({content: <SubscribeForm />, open: true});
+    toggleModal({ content: <SubscribeForm />, open: true });
   }
 
   function calcBackgroundPosition() {
@@ -84,16 +84,24 @@ function SubscribeRoute(props) {
 
         <br />
 
-        <Textfit className="subscribe-now-header" mode="single">
-          Learn more!
-        </Textfit>
-        <div className="receive-emails">To receive e-mails with tips and information for your HOA</div>
+        <div className="subscribe-now-header">Learn more about HOA landscape infrastructures!</div>
 
         <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
           At Parklane Landscaping, our HOA clients are very important to us. Because of this we do our best to stay abreast of the latest information that effects our industry and most importantly the HOA communities we serve. When we come across these little gems or products that we feel are better and more cost-effective, we like to share the knowledge. Every month these tidbits of information are sent out by Parklane via our subscription email. As a result, we have been able to help some of our clients save money and add a little more value to their communities. Which at the end of the day is what we are here for. To subscribe, please click the button below.
         </StyledInfoBodyMessage>
 
+        <br />
+        <br />
+
+        <div className="receive-emails">To receive e-mails with tips and information for your HOA</div>
+
         <div className="separator" />
+
+        <div className="subscribe-now-action">
+          <Button classes="subscribe-now-button" height="30px" width="150px" fontSize="1.5em" onClick={handleOpenModal}>
+            Subscribe Now
+          </Button>
+        </div>
 
         <div className="news-letters">
           <div>
@@ -115,12 +123,6 @@ function SubscribeRoute(props) {
             <img src={imgNewsLetter6} alt="news letter 6" />
           </div>
         </div>
-
-        <div className="subscribe-now-action">
-          <Button classes="subscribe-now-button" height="30px" width="150px" fontSize="1.5em" onClick={handleOpenModal}>
-            Subscribe Now
-          </Button>
-        </div>
       </StyledSubscribe>
     </AnimatedStyledRoute>
   );
@@ -133,46 +135,40 @@ const StyledSubscribe = styled.div`
     margin-bottom: 40px;
   }
   .news-letters {
-    //border: 1px solid blue;
     margin: 40px var(--side-margin);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
-    //display: flex;
-    //justify-content: space-around;
-    //flex-wrap: wrap;
     div {
-      //border: 1px solid blue;
-      //flex: 32% 0 0;
-      //margin-bottom: 10px;
       img {
         width: 100%;
       }
     }
   }
   .receive-emails {
-    margin: -10px var(--side-margin) 15px;
-    font-size: 1.3em;
+    margin: 0 var(--side-margin);
+    font-size: 1.9em;
     font-weight: 600;
-    color: ${({ theme }) => theme.colorBlack};
+    color: ${({ theme }) => theme.colorPrimary};
     text-align: center;
     text-transform: uppercase;
   }
   .separator {
-    width: 80%;
     border-bottom: 4px solid red;
-    margin: 40px auto 50px;
+    margin: 10px var(--side-margin);
   }
   .subscribe-now-header {
-    margin: 50px var(--side-margin) 0;
+    font-size: 4em;
+    margin: 50px var(--side-margin) 10px;
     font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
     text-transform: uppercase;
+    text-align: center;
   }
   .subscribe-now-action {
     display: flex;
     justify-content: center;
-    margin: 0 var(--side-margin) 0;
+    margin: 20px var(--side-margin) 0;
     .subscribe-now-button {
       color: ${({ theme }) => theme.colorWhite};
       border: 1px solid ${({ theme }) => theme.colorSecondary};
@@ -184,41 +180,24 @@ const StyledSubscribe = styled.div`
     }
   }
   @media (max-width: 800px) {
-    .receive-emails {
-      text-align: left;
-      margin: -10px var(--side-margin) 5px;
-      font-size: 1.2em;
-    }
     .subscribe-now-header {
       font-size: 4.5em;
     }
   }
   @media (max-width: 700px) {
-    .receive-emails {
-      margin: -7px var(--side-margin) 5px;
-      font-size: 1.1em;
-    }
     .subscribe-now-header {
       font-size: 4em;
     }
   }
   @media (max-width: 600px) {
-    .receive-emails {
-      margin: -5px var(--side-margin) 5px;
-      font-size: 0.9em;
-    }
     .subscribe-now-header {
       font-size: 3em;
     }
   }
   @media (max-width: 500px) {
-    .receive-emails {
-      margin: -4px var(--side-margin) 5px;
-      text-align: left;
-      font-size: 0.8em;
-    }
     .subscribe-now-header {
-      font-size: 2.5em;
+      font-size: 2em;
+      text-align: left;
     }
   }
 `;

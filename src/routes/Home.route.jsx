@@ -17,13 +17,12 @@ import { LinkButton } from '../components/Atoms/Button';
 import InfoBanner from '../components/Molecules/InfoBanner';
 import InfoBannerLeft from '../components/Molecules/InfoBannerLeft';
 import InfoBannerRight from '../components/Molecules/InfoBannerRight';
+import LogoStripe from '../components/Atoms/LogoStripe';
 import PageDivider1 from '../components/Atoms/PageDivider1';
 import ServiceGuide from '../components/Molecules/ServiceGuide';
 import StyledInfoBannerAction from '../components/Styled/StyledInfoBannerAction';
 import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
-import { StyledInfoCardLink } from '../components/Styled/StyledInfoCard';
-import SVGIcon from '../components/Atoms/SVGIcon';
 import WeatherIcon from '../components/Atoms/Icons/WeatherIcon';
 
 /** images **/
@@ -117,17 +116,17 @@ function HomeRoute(props) {
         <br />
         <br />
 
-        <div className="logo-separator">
-          <img src={logoMain2} alt="logo" />
+        <LogoStripe />
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <div className="service-guide">
+          <ServiceGuide />
         </div>
-
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
-        <ServiceGuide />
 
       </StyledHome>
     </AnimatedStyledRoute>
@@ -195,14 +194,8 @@ const StyledHome = styled.div`
       border: 1px solid ${({ theme }) => theme.colorSecondary};
     }
   }
-  .logo-separator {
-    display: flex;
-    justify-content: center;
-    img {
-      height: 100px;
-      object-fit: contain;
-      object-position: center;
-    }
+  .service-guide {
+    margin: 20px var(--side-margin) 10px;
   }
   .weather-link {
     position: absolute;

@@ -138,10 +138,10 @@ export const routeArr = [
         active: true,
         Component: TrimmingRoute,
         displayInHeader: true,
-        headerLinkLines: ['Tree', 'Maintenance'],
+        headerLinkLines: ['HOA Tree', 'Pruning'],
         icon: 'trees',
         iconSize: '20px',
-        name: 'Tree Maintenance',
+        name: 'HOA Tree Pruning',
         path: routes.TRIMMING,
         prefetchImages: [imgLeaves, imgTrees1, imgTreeTrimming]
       }
