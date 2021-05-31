@@ -86,7 +86,7 @@ function MaintenanceRoute(props) {
 
         <div className="maintenance-header uppercase">HOA Maintenance</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
+        <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
           <p>
             When Parklane forges a maintenance contract with an HOA community, our goal is to deliver the highest quality service. Our team comes together to make sure we nurture not only a community’s landscape, but our relationship with the HOA board and the property management company. Communication between all three entities is vital to ensure efficient response times and quality control. In case of emergencies or urgent care notices, our teams are always available 24/7. Our licensed irrigators are on call to address broken pipes, misfiring sprinkler heads and any other irrigation related issues that occur outside of normal business hours.
           </p>

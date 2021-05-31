@@ -94,7 +94,7 @@ function LandscapeRoute(props) {
 
         <div className="landscape-header uppercase">Design & Long Range Planning</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
+        <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
           Parklane Landscaping provides pro-active and long-range planning ideas to enhance the landscape appeal of an HOA community. Our team of design and horticulture professionals work on the visual aesthetic and on the health of the environment in order to provide a verdant landscape. Our professionals provide expert guidance to propose beautiful landscape designs and to provide long-range planning to keep the landscape sustainable and vibrant.
         </StyledInfoBodyMessage>
 
@@ -104,7 +104,7 @@ function LandscapeRoute(props) {
 
         <div className="landscape-header-2">Landscape Design</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin) 20px">
+        <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin) 20px">
           Parklane Landscaping takes pride in ensuring that every one of our properties look their best. Consequently, our design approach is imperative when it comes to making landscape suggestions to our clients. We understand that well-designed communal landscapes should exude balance, beauty and order; all the while providing a welcoming environment for residents, guests and prospective home buyers.
         </StyledInfoBodyMessage>
 
@@ -115,10 +115,10 @@ function LandscapeRoute(props) {
             <img className="colored-pencils" src={imgColoredPencils} alt="colored pencils" />
           </div>
           <div className="subsection-info">
-            <StyledInfoBodyMessage fontSize="1.2em" margin="0 0 10px 0">
+            <StyledInfoBodyMessage fontSize="1.6em" margin="0 0 10px 0">
               As we start a new landscape project, we take into consideration three things, the aesthetic of the client, the survivability of plant materials, and the impact our choices make on the community. Flowers and trees are investments. It is our goal to make sure that the investment brings forth a good return to the community. Choice landscape adds value to a property and gives it a sense of warmth and welcome.
             </StyledInfoBodyMessage>
-            <StyledInfoBodyMessage fontSize="1.2em" margin="0">
+            <StyledInfoBodyMessage fontSize="1.6em" margin="0">
               Once Parklane understands the goals of the community, we create the vision. Photos are key in the development of every landscape design project. Using drone photography, we capture an overall view of the entire area being modified. This allows us to make renderings for clients using suggested plant materials. We then take those images and our design team creates digital landscape plans to present to our clients. Once approval is made on the final design, everything is scheduled for Parklane to turn the vision into a reality.
             </StyledInfoBodyMessage>
           </div>

@@ -86,7 +86,7 @@ function TrimmingRoute(props) {
 
         <div className="trimming-header uppercase">HOA Tree Maintenance</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
+        <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
           Nothing transforms an outdoor space like beautifully trimmed trees. Through proper pruning techniques your trees add value to your homes. Not only do they provide shade, but they make your community healthier, add to its safety and aesthetic. Parklane tree trimming professionals have the skills to help your community enjoy the benefits of beautifully maintained trees.
         </StyledInfoBodyMessage>
 
@@ -96,7 +96,7 @@ function TrimmingRoute(props) {
             <img src={imgTreeTrimming} alt="tree trimming" />
           </div>
           <div className="subsection-info">
-            <StyledInfoBodyMessage fontSize="1.2em" margin="0">
+            <StyledInfoBodyMessage fontSize="1.6em" margin="0">
               While the concept of tree pruning seems like a simple DIY project or something you can hand to any landscaper, improper pruning can destroy your landscape. When a tree’s health is at risk, they can face decay, instability, disease and a shorter life span. Most mature trees require trimming at least every 3 years. Some may need to be trimmed more often if they grow quicker or are located near power lines, homes and other obstructions. The best time to trim trees is in the late fall or early spring, just before the tree begins to leaf out again. For more information on tree trimming or if your community has trees that require attention, please contact us today! Parklane will provide you with a free estimate on your next project.
             </StyledInfoBodyMessage>
           </div>

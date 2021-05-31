@@ -149,10 +149,10 @@ function ContactRoute(props) {
           </form>
         </div>
 
-        <StyledInfoBodyMessage align="center" color="colorPrimary" fontSize="1.4em" lineHeight="1.3em" margin="0 var(--side-margin)">
+        <StyledInfoBodyMessage align="center" color="colorPrimary" fontSize="1.6em" lineHeight="1.3em" margin="0 var(--side-margin)">
           Parklane landscaping is a full service HOA landscape company. We service San Antonio and the surrounding areas. If you have any questions or would like a bid for your next HOA project, please Contact Parklane Landscaping.
         </StyledInfoBodyMessage>
-        <StyledInfoBodyMessage align="center" color="colorPrimary" fontSize="1.2em" fontWeight="400" lineHeight="1.2em" margin="10px var(--side-margin)">
+        <StyledInfoBodyMessage align="center" color="colorPrimary" fontSize="1.4em" fontWeight="400" lineHeight="1.2em" margin="10px var(--side-margin)">
           {companyInfo.phone} | {companyInfo.email}
         </StyledInfoBodyMessage>
 

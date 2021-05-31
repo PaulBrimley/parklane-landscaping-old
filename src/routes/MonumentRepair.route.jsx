@@ -88,7 +88,7 @@ function MonumentRepairRoute(props) {
 
         <div className="monument-header uppercase">HOA Monument Repair</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
+        <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
           Monuments are the first thing people see when they pass or enter an HOA community. It is important that they have long lasting appeal. However, sometimes things happen. Once in a while Parklane receives requests to rebuild an entryway monument due to erosion or a minor car accident. For this reason, Parklane has a very skilled in-house masonry team.
         </StyledInfoBodyMessage>
 
@@ -98,7 +98,7 @@ function MonumentRepairRoute(props) {
             <img src={imgMonument3} alt="monument 3" />
           </div>
           <div className="subsection-info">
-            <StyledInfoBodyMessage fontSize="1.2em" margin="0">
+            <StyledInfoBodyMessage fontSize="1.6em" margin="0">
               Our masonry team has over ten years of experience. They know that every detail matters. Whether you are replacing a column or building an entirely  new monument, Parklane goes the extra mile to make sure our work exceeds expectations. Every step of each project is closely overseen to guarantee success. Starting with the original design, until the last brick is placed, Parklane is there to make sure no detail is overlooked.
             </StyledInfoBodyMessage>
           </div>
@@ -113,7 +113,7 @@ function MonumentRepairRoute(props) {
             <img src={imgMonument8} alt="monument 8" />
           </div>
           <div className="subsection-info">
-            <StyledInfoBodyMessage fontSize="1.2em" fontStyle="italic" margin="0">
+            <StyledInfoBodyMessage fontSize="1.6em" fontStyle="italic" margin="0">
               This is an outside monument wall.. The overall structure had become old and eventually crumbled and fell apart. Parklane was asked to repair and match the structure with new more stable materials.  This can be a difficult task when only a part of a structure needs replacing. New stones or materials need to be used to match the old ones. When an  entire monument needs rebuilding materials used need to match the former style and architectural details. As you can see Parklane’s masonry team did a great job far exceeding the customer’s expectations.
             </StyledInfoBodyMessage>
           </div>

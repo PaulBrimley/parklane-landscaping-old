@@ -85,7 +85,7 @@ function IrrigationRoute(props) {
 
         <div className="irrigation-header uppercase">Irrigation Repairs & Installations</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
+        <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
           During our ten years in business, Parklane has recognized the need for licensed irrigators in the HOA industry. After being asked if we could do SAWS audits or repair an irrigation system we decided to invest in educating our own team members in irrigation. As a result, Parklane now has three licensed irrigators who regularly perform monthly audits on all of our HOA properties. When the need arises, our licensed irrigators can repair or even install an entire irrigation system.
         </StyledInfoBodyMessage>
 
@@ -98,7 +98,7 @@ function IrrigationRoute(props) {
 
         <div className="irrigation-info-seal">
           <img src={imgIrrigationSeal} alt="irrigation seal" />
-          <StyledInfoBodyMessage fontSize="1.2em" margin="0 0 0 15px">
+          <StyledInfoBodyMessage fontSize="1.6em" margin="0 0 0 15px">
             Does your irrigator have this seal? Parklane Landscaping does. In fact, we have a team of licensed irrigators that all carry their irrigation license with this official seal. It is a requirement in the state of Texas that all licensed irrigators doing audits or working on irrigation systems have their license with them. If you need a licensed irrigator call Parklane Landscaping. Our team has the Texas seal of approval!
           </StyledInfoBodyMessage>
         </div>

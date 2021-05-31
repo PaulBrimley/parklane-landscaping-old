@@ -86,7 +86,7 @@ function AboutRoute(props) {
 
         <div className="about-header uppercase">About</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
+        <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
           A partnership with Parklane Landscaping begins the moment we begin caring for your HOA community landscape. As part of our growing relationship, Parklane works diligently with property managers to ensure proactivity in areas that would benefit from enhancement and those that can be money savers for the HOA. We also work with HOA landscape committees in developing ideas, concepts and plans to actively engage the future development of the community’s landscape. We make ourselves available to attend annual HOA board meetings and prepare short and informative presentations detailing our ongoing progress.
         </StyledInfoBodyMessage>
 
@@ -119,7 +119,7 @@ function AboutRoute(props) {
         </div>
 
         <div className="about-header-2">Community Manager Partnership 24/7</div>
-        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
+        <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
           Our account representatives keep in constant contact with the property’s HOA community manager. In case of emergency or urgent care notices, our teams are available 24/7 to address emergency needs that arise from time to time. Our irrigators are also on call to address broken pipes, misfiring sprinkler heads and any other irrigation related issues that arise outside of normal business hours.
         </StyledInfoBodyMessage>
       </StyledAbout>

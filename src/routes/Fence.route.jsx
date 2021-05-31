@@ -87,7 +87,7 @@ function FenceRoute(props) {
 
         <div className="fence-header uppercase">HOA Fence Installation</div>
 
-        <StyledInfoBodyMessage fontSize="1.2em" margin="0 var(--side-margin)">
+        <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
           If you live in an HOA community, you understand the value of fences. Especially since HOA communities are usually surrounded by them. When one is torn down due to storm or a fallen tree or even an accidental car mishap, rebuilding the fence becomes priority one. Matching the exact materials, colors and quick reparation is our specialty. These small details all play a part in making sure the community stays looking its best. That is why Parklane has in-house masons and fence repair teams. We know how important it is to you. So it is important to us.
         </StyledInfoBodyMessage>
 
@@ -97,16 +97,16 @@ function FenceRoute(props) {
             <img src={imgFence2} alt="fence" />
           </div>
           <div className="subsection-info">
-            <StyledInfoBodyMessage fontSize="1.2em" margin="0">
+            <StyledInfoBodyMessage fontSize="1.6em" margin="0">
               If you ever have an emergency need to rebuild a fence do not hesitate to call Parklane. We have our staff on call 24/7 for our HOA communities. Whether a tree has fallen or irrigation pipes have burst, Parklane is there to help maintain our HOA communities looking their best.
             </StyledInfoBodyMessage>
-            <StyledInfoBodyMessage fontSize="1.2em" margin="0 0 10px 0">
+            <StyledInfoBodyMessage fontSize="1.6em" margin="0 0 10px 0">
               Do you have an emergency that requires immediate attention? Don’t worry call Parklane Landscaping. Even if you are not a current client of ours, we will be happy to help your community.
             </StyledInfoBodyMessage>
-            <StyledInfoBodyMessage fontSize="1.2em" margin="0">
+            <StyledInfoBodyMessage fontSize="1.6em" margin="0">
               For emergency fence repairs & irrigation repairs contact Parklane Landscaping and we can be there within 24 hours to assess the damage.
             </StyledInfoBodyMessage>
-            <StyledInfoBodyMessage fontSize="1.2em" margin="0">
+            <StyledInfoBodyMessage fontSize="1.6em" margin="0">
               <div>{companyInfo.website}</div>
               <div>{companyInfo.email}</div>
               <div>{companyInfo.phone.split('-').join('.')}</div>
