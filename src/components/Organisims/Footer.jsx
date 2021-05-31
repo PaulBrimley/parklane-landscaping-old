@@ -32,9 +32,9 @@ function Footer(props) {
           <div className="info-place-holder" />
           <div className="info-place-holder" />
           <div className="social-media-links">
-            <Link to={routes.HOME}><img className="link-logo" src={twitterLogo} alt="twitter logo"/></Link>
-            <Link to={routes.HOME}><img className="link-logo" src={facebookLogo} alt="facebook logo"/></Link>
-            <Link to={routes.HOME}><img className="link-logo" src={instagramLogo} alt="instagram logo"/></Link>
+            {/*<Link to={routes.HOME}><img className="link-logo" src={twitterLogo} alt="twitter logo"/></Link>*/}
+            {/*<Link to={routes.HOME}><img className="link-logo" src={facebookLogo} alt="facebook logo"/></Link>*/}
+            {/*<Link to={routes.HOME}><img className="link-logo" src={instagramLogo} alt="instagram logo"/></Link>*/}
             {/*
             we will bring these back when we get the actual links
             <a href="https://www.google.com" target="_blank">

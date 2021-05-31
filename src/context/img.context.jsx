@@ -52,6 +52,7 @@ import imgTrees2 from '../assets/img/img-trees-2.jpg';
 import imgTreeTrimming from '../assets/img/img-tree-trimming.jpg';
 import logoAnniversary from '../assets/img/logo-anniversary.png';
 import logoMain from '../assets/img/logo-main.png';
+import logoMain2 from '../assets/img/logo-main-2.png';
 import facebookLogo from '../assets/img/icon-facebook.png';
 import grassDark from '../assets/img/grass-dark.png';
 import instagramLogo from '../assets/img/icon-instagram.png';
@@ -114,7 +115,8 @@ const images = {
   logoCard,
   twitterLogo,
   logoAnniversary,
-  logoMain
+  logoMain,
+  logoMain2
 };
 
 const ImageContext = createContext();

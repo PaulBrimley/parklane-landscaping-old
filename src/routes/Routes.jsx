@@ -155,7 +155,7 @@ export const routeArr = [
     active: true,
     children: [],
     Component: SubscribeRoute,
-    name: 'Learn More',
+    name: 'Get Informed',
     path: routes.SUBSCRIBE,
     prefetchImages: [imgGuyPlanting1, imgNewsLetter1, imgNewsLetter2, imgNewsLetter3]
   },

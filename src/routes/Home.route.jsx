@@ -18,7 +18,7 @@ import InfoBanner from '../components/Molecules/InfoBanner';
 import InfoBannerLeft from '../components/Molecules/InfoBannerLeft';
 import InfoBannerRight from '../components/Molecules/InfoBannerRight';
 import PageDivider1 from '../components/Atoms/PageDivider1';
-import ParallaxStripe from '../components/Atoms/ParallaxStripe';
+import ServiceGuide from '../components/Molecules/ServiceGuide';
 import StyledInfoBannerAction from '../components/Styled/StyledInfoBannerAction';
 import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
@@ -27,12 +27,7 @@ import SVGIcon from '../components/Atoms/SVGIcon';
 import WeatherIcon from '../components/Atoms/Icons/WeatherIcon';
 
 /** images **/
-const {
-  imgGrass,
-  imgHome,
-  logoAnniversary,
-  logoMain
-} = images;
+const { imgGrass, imgHome, logoAnniversary, logoMain2 } = images;
 
 function HomeRoute(props) {
   const { width } = useAppState();
@@ -86,7 +81,7 @@ function HomeRoute(props) {
             />
           }
           slotRight={
-            <InfoBannerRight className="info-banner-right" config={{friction: 70}}>
+            <InfoBannerRight className="info-banner-right" config={{ friction: 70 }}>
               <img className="anniversary-logo" src={logoAnniversary} alt="anniversary logo" />
             </InfoBannerRight>
           }
@@ -117,125 +112,29 @@ function HomeRoute(props) {
           For over 10 years, Parklane Landscaping has served the special needs of HOA communities as a full service landscape firm and remains the only landscaping company to specialize in the preservation and enhancement of an HOA communities’ landscape infrastructure and investment.
         </StyledInfoBodyMessage>
 
-        <div className="home-header-2">Our Professional Partners</div>
+        <br />
+        <br />
+        <br />
+        <br />
 
-        <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
-          Affiliations with our industry partners ensure that we stay at the forefront of policy and technological developments. CAI membership also keeps Parklane associates abreast of emerging trends in HOA management. Our industry associations empower Parklane associates to provide unparalleled service to our community managers and HOA board members.
-        </StyledInfoBodyMessage>
-
-        <div className="home-action">
-          <LinkButton classes="learn-more-button-2" fontSize="1.3em" margin="25px 0 0" padding="8px 20px 5px" to={routes.SERVICES}>
-            LEARN MORE
-          </LinkButton>
+        <div className="logo-separator">
+          <img src={logoMain2} alt="logo" />
         </div>
 
         <br />
         <br />
         <br />
         <br />
+        <br />
 
-        <ParallaxStripe backgroundSize="120%" backgroundUrl={imgGrass} height="75px" offsetAdjust="-220" parallaxStart="100">
-          <div className="grass-stripe">
-            <img className="logo" src={logoMain} alt="logo" />
-          </div>
-        </ParallaxStripe>
+        <ServiceGuide />
 
-        <div className="home-info-section">
-          <StyledInfoCardLink as={Link} to={routes.MAINTENANCE}>
-            <div className="header">Maintenance</div>
-            <div className="icon">
-              <SVGIcon height="70px" width="70px" type="lawnMower"/>
-            </div>
-            <div className="message">Learn More</div>
-          </StyledInfoCardLink>
-
-          <StyledInfoCardLink as={Link} to={routes.IRRIGATION}>
-            <div className="header">Irrigation</div>
-            <div className="body">
-              <div className="icon">
-                <SVGIcon height="70px" width="70px" type="hose"/>
-              </div>
-              <div className="message">Learn More</div>
-            </div>
-          </StyledInfoCardLink>
-
-          <StyledInfoCardLink as={Link} to={routes.LANDSCAPE}>
-            <div className="header">HOA Landscaping</div>
-            <div className="body">
-              <div className="icon">
-                <SVGIcon height="75px" width="75px" type="landscape"/>
-              </div>
-              <div className="message">Learn More</div>
-            </div>
-          </StyledInfoCardLink>
-
-          <StyledInfoCardLink as={Link} to={routes.MONUMENT}>
-            <div className="header">Monument Installation</div>
-            <div className="body">
-              <div className="icon">
-                <SVGIcon height="80px" width="80px" type="monument"/>
-              </div>
-              <div className="message">Learn More</div>
-            </div>
-          </StyledInfoCardLink>
-
-          <StyledInfoCardLink as={Link} to={routes.MONUMENT_REPAIR}>
-            <div className="header">Monument Repair</div>
-            <div className="body">
-              <div className="icon">
-                <SVGIcon height="70px" width="70px" type="masonry"/>
-              </div>
-              <div className="message">Learn More</div>
-            </div>
-          </StyledInfoCardLink>
-
-          <StyledInfoCardLink as={Link} to={routes.FENCE}>
-            <div className="header">Fence Installation</div>
-            <div className="body">
-              <div className="icon">
-                <SVGIcon height="70px" width="70px" type="fence"/>
-              </div>
-              <div className="message">Learn More</div>
-            </div>
-          </StyledInfoCardLink>
-
-          <StyledInfoCardLink as={Link} to={routes.LIGHTING}>
-            <div className="header">HOA Landscape Lighting</div>
-            <div className="body">
-              <div className="icon">
-                <SVGIcon height="60px" width="60px" type="lightBulb" style={{marginTop: '7px'}}/>
-              </div>
-              <div className="message">Learn More</div>
-            </div>
-          </StyledInfoCardLink>
-
-          <StyledInfoCardLink as={Link} to={routes.TRIMMING}>
-            <div className="header">Tree Maintenance</div>
-            <div className="body">
-              <div className="icon">
-                <SVGIcon height="80px" width="80px" type="trees"/>
-              </div>
-              <div className="message">Learn More</div>
-            </div>
-          </StyledInfoCardLink>
-        </div>
       </StyledHome>
     </AnimatedStyledRoute>
   );
 }
 const StyledHome = styled.div`
   padding-bottom: 100px;
-  .grass-stripe {
-    flex: 1 1 auto;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    background-image: linear-gradient(120deg, transparent 0, transparent 30%, rgba(255, 0, 40, 0.85) 30%, rgba(255, 0, 40, 0.85) 70%, transparent 70%, transparent 100%);
-    .logo {
-      max-width: 150px;
-      margin: 10px 0 15px;
-    }
-  }
   .home-action {
     display: flex;
     justify-content: center;
@@ -296,15 +195,24 @@ const StyledHome = styled.div`
       border: 1px solid ${({ theme }) => theme.colorSecondary};
     }
   }
+  .logo-separator {
+    display: flex;
+    justify-content: center;
+    img {
+      height: 100px;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
   .weather-link {
     position: absolute;
     svg {
-      fill: ${({theme}) => theme.colorSecondary};
+      fill: ${({ theme }) => theme.colorSecondary};
       transition: all 0.2s;
     }
     &:hover {
       svg {
-        fill: ${({theme}) => theme.colorQuaternary};
+        fill: ${({ theme }) => theme.colorQuaternary};
       }
     }
   }
@@ -334,6 +242,5 @@ const StyledHome = styled.div`
       display: none;
     }
   }
-  
 `;
 export default HomeRoute;

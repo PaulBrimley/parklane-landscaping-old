@@ -1,99 +1,66 @@
 import styled from 'styled-components';
 
 export const StyledInfoCard = styled.div`
-  border: 1px solid ${({theme}) => theme.colorSecondary};
-  box-shadow: 0 0 10px ${({theme}) => theme.colorTransparent};
-  background-color: ${({theme}) => theme.colorTransparent};
-  display: flex;
+	display: flex;
   flex-direction: column;
   cursor: pointer;
   transition: all 0.2s;
-  .header {
-    //border: 1px solid blue;
-    font-size: 1em;
-    font-weight: 300;
-    color: ${({theme}) => theme.colorWhite};
-    text-transform: uppercase;
-    padding: 10px 10px 9px;
-    text-align: center;
-    background-color: ${({theme}) => theme.colorPrimary};
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-  .icon {
-    //border: 1px solid blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70px;
-    padding: 20px 0 10px;
-    svg {
-      fill: ${({theme}) => theme.colorSecondary};
-      transition: all 0.2s;
-    }
-  }
-  .message {
-    //border: 1px solid blue;
-    text-align: center;
-    padding: 10px 20px 15px;
-    color: ${({theme}) => theme.colorSecondary};
-    opacity: 0;
+	.info-card-body {
+    border-bottom: 1px solid ${({theme}) => theme.colorSecondary};
+    border-left: 1px solid ${({theme}) => theme.colorSecondary};
+    border-right: 1px solid ${({theme}) => theme.colorSecondary};
     transition: all 0.2s;
-  }
-  /*.body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid blue;
-    .icon {
-      border: 1px solid blue;
+    .info-card-icon {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 70px;
+      padding: 25px 0 5px;
       svg {
         fill: ${({theme}) => theme.colorSecondary};
         transition: all 0.2s;
       }
     }
-    .message {
+    .info-card-message {
+			font-weight: bold;
+			color: ${({theme}) => theme.colorPrimary};
       text-align: center;
-      padding: 10px 20px 30px;
-      color: ${({theme}) => theme.colorSecondary};
+			text-transform: uppercase;
+      padding: 10px 20px 15px;
       opacity: 0;
       transition: all 0.2s;
     }
-  }*/
+	}
+  .info-card-header {
+    font-size: 1em;
+    font-weight: 300;
+    color: ${({theme}) => theme.colorWhite};
+    text-transform: uppercase;
+    padding: 10px 10px 7px;
+    text-align: center;
+    background-color: ${({theme}) => theme.colorSecondary};
+    transition: opacity 0.2s;
+  }
   
   &:hover {
-    border: 1px solid ${({theme}) => theme.colorPrimary};
-    box-shadow: 0 0 10px ${({theme}) => theme.colorSecondary};
+    box-shadow: 0 0 20px ${({theme}) => theme.colorSecondary};
     background-color: ${({theme}) => theme.colorWhite};
-    /*.body {
-      .icon {
+    .info-card-header {
+      background-color: ${({theme}) => theme.colorPrimary};
+    }
+		.info-card-body {
+      border-bottom: 1px solid ${({theme}) => theme.colorPrimary};
+      border-left: 1px solid ${({theme}) => theme.colorPrimary};
+      border-right: 1px solid ${({theme}) => theme.colorPrimary};
+      .info-card-icon {
         svg {
           fill: ${({theme}) => theme.colorPrimary};
         }
       }
-      .message {
-        color: ${({theme}) => theme.colorBlack};
+      .info-card-message {
         opacity: 1;
       }
-    }*/
-    .header {
-      opacity: 1;
-    }
-    .icon {
-      svg {
-        fill: ${({theme}) => theme.colorPrimary};
-      }
-    }
-    .message {
-      color: ${({theme}) => theme.colorBlack};
-      opacity: 1;
-    }
+		}
   }
 `;
 export const StyledInfoCardLink = styled(StyledInfoCard)`
