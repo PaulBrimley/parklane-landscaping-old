@@ -262,6 +262,7 @@ const StyledContact = styled.div`
     justify-content: center;
     img {
       width: 80%;
+      object-fit: contain;
     }
   }
   .info-banner-left {
