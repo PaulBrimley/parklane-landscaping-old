@@ -156,6 +156,12 @@ const StyledHeader = styled.div`
         color: inherit;
         text-decoration: none;
         text-transform: uppercase;
+        transform: scale(1);
+        transform-origin: 50% 10%;
+        transition: all 0.2s;
+        &:hover {
+          transform: scale(1.4);
+        }
         .child-route-icon {
           display: flex;
           justify-content: center;
@@ -165,15 +171,9 @@ const StyledHeader = styled.div`
           margin: 2px 5px;
           width: 46px;
           height: 46px;
-          transform: scale(1);
-          transform-origin: 50% 10%;
-          //transform-origin: top;
           transition: all 0.2s;
           svg {
             fill: ${({theme}) => theme.colorWhite}
-          }
-          &:hover {
-            transform: scale(1.4);
           }
         }
         .child-route-name {
