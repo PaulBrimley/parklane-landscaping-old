@@ -161,9 +161,7 @@ function ContactRoute(props) {
         <br />
         <br />
 
-        <div className="contact-overhead-image">
-          <img src={imgOverhead1} alt="overhead hoa layout"/>
-        </div>
+        <div className="contact-overhead-image" />
 
         <br />
         <br />
@@ -258,12 +256,8 @@ const StyledContact = styled.div`
     margin: 10px var(--side-margin);
   }
   .contact-overhead-image {
-    display: flex;
-    justify-content: center;
-    img {
-      width: 80%;
-      object-fit: contain;
-    }
+    height: 350px;
+    background: url(${imgOverhead1}) no-repeat center / contain;
   }
   .info-banner-left {
     flex: 1 1 auto;
