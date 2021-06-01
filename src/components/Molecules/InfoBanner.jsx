@@ -104,7 +104,7 @@ const StyledInfoBanner = styled.div`
     left: 0;
     height: 40%;
     width: 5%;
-    background: url(${grassWhite}) no-repeat 50% 100%/contain;
+    background: url(${grassWhite}) no-repeat 50% 100% / contain;
   }
   .right-cover {
     background-image: ${({rightGradientCover}) => rightGradientCover || ''};

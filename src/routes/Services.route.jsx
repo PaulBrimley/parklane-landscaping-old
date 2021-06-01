@@ -94,12 +94,10 @@ function ServicesRoute(props) {
         <br />
 
         <div className="services-subsection">
-          <div className="subsection-images">
-            <img src={imgGuyTeaching2} alt="Guy teaching" />
-          </div>
+          <div className="subsection-image" />
           <div className="subsection-info">
             <div className="services-header-2">Service Evaluation</div>
-            <StyledInfoBodyMessage fontSize="1.6em" margin="0 0 10px 0">
+            <StyledInfoBodyMessage fontSize="1.6em" margin="0">
               In order to protect the community’s landscape investment, Parklane Landscaping conducts monthly quality assurance visits, irrigation checks and proposes any necessary repairs. Our account executives submit monthly reports detailing our observations and concerns. These reports are vital in assisting property managers in helping us maintain the longevity and investment of the HOA landscape infrastructure. And in cases where individual homeowners have specific issues and concerns, we are delighted to meet with them in person to ensure a thorough understanding of an issue and promptly report back directly to the property manager.
             </StyledInfoBodyMessage>
           </div>
@@ -154,15 +152,10 @@ const StyledServices = styled.div`
   .services-subsection {
     display: flex;
     margin: 10px var(--side-margin) 0;
-    .subsection-images {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .subsection-image {
       flex: 1 1 40%;
-      img {
-        width: 100%;
-      }
+      background: url(${imgGuyTeaching2}) no-repeat center / cover;
+      margin-bottom: 0.7em;
     }
     .subsection-info {
       flex: 1 1 60%;
@@ -179,7 +172,10 @@ const StyledServices = styled.div`
     }
     .services-subsection {
       flex-direction: column;
-      .subsection-images {
+      .subsection-image {
+        flex: unset;
+        display: block;
+        height: 300px;
         margin-right: 0;
         margin-bottom: 10px;
       }
