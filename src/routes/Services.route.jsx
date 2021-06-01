@@ -21,7 +21,7 @@ import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessag
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
 /** images **/
-const { imgGuyKneeling, imgGuyPlanting2, imgGuyTeaching, imgHillsAtAlamoRanch, imgHome, logoMain } = images;
+const { imgGuyPlanting2, imgGuyTeaching2 } = images;
 
 function ServicesRoute(props) {
   const { width } = useAppState();
@@ -96,7 +96,7 @@ function ServicesRoute(props) {
 
         <div className="services-subsection">
           <div className="subsection-images">
-            <img src={imgGuyTeaching} alt="Guy teaching" />
+            <img src={imgGuyTeaching2} alt="Guy teaching" />
           </div>
           <div className="subsection-info">
             <div className="services-header-2">Service Evaluation</div>
@@ -201,13 +201,13 @@ const StyledServices = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
-      flex: 49% 0 0;
+      flex: 1 1 40%;
       img {
         width: 100%;
       }
     }
     .subsection-info {
-      flex: 49% 0 0;
+      flex: 1 1 60%;
       padding-left: 20px;
     }
   }

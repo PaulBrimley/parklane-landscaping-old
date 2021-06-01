@@ -14,6 +14,7 @@ import imgGuyKneeling from '../assets/img/img-guy-kneeling.jpg';
 import imgGuyPlanting1 from '../assets/img/img-guy-planting-1.png';
 import imgGuyPlanting2 from '../assets/img/img-guy-planting-2.jpg';
 import imgGuyTeaching from '../assets/img/img-guy-teaching.jpg';
+import imgGuyTeaching2 from '../assets/img/img-guy-teaching-2.jpeg';
 import imgHillsAtAlamoRanch from '../assets/img/img-hills-at-alamo-ranch.jpg';
 import imgHome from '../assets/img/img-home.jpg';
 import imgIrrigationSeal from '../assets/img/img-irrigation-seal.png';
@@ -73,6 +74,7 @@ const images = {
   imgGuyPlanting1,
   imgGuyPlanting2,
   imgGuyTeaching,
+  imgGuyTeaching2,
   imgHillsAtAlamoRanch,
   imgHome,
   imgIrrigationSeal,

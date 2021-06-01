@@ -20,7 +20,7 @@ import SubscribeRoute from './Subscribe.route';
 import TrimmingRoute from './Trimming.route';
 
 /** images **/
-const { imgCarnival, imgColoredPencils, imgFence, imgFenceBroken, imgFenceRepair, imgFlowers1, imgGrass, imgGuyKneeling, imgGuyPlanting1, imgGuyPlanting2, imgGuyTeaching, imgHillsAtAlamoRanch, imgHome, imgLandscapeRendering, imgLawnMower1, imgLawnMower2, imgLeaves, imgLighting1, imgLighting2, imgLighting3, imgMonument1, imgMonument2, imgMonument3, imgMonument4, imgMonument5, imgMonument6, imgMonument7, imgMonument8, imgNewsLetter1, imgNewsLetter2, imgNewsLetter3, imgOverhead1, imgOverhead2, imgOverhead3, imgParklaneFamily, imgPictureFrame, imgSprinklers1, imgSprinklers2, imgTrees1, imgTrees2, imgTreeTrimming, logoAnniversary, logoMain } = images;
+const { imgCarnival, imgColoredPencils, imgFence, imgFenceBroken, imgFenceRepair, imgFlowers1, imgGrass, imgGuyPlanting1, imgGuyPlanting2, imgGuyTeaching2, imgHome, imgLandscapeRendering, imgLawnMower1, imgLawnMower2, imgLeaves, imgLighting1, imgLighting2, imgLighting3, imgMonument1, imgMonument2, imgMonument3, imgMonument4, imgMonument5, imgMonument6, imgMonument7, imgMonument8, imgNewsLetter1, imgNewsLetter2, imgNewsLetter3, imgOverhead1, imgOverhead2, imgOverhead3, imgParklaneFamily, imgPictureFrame, imgSprinklers1, imgSprinklers2, imgTrees1, imgTrees2, imgTreeTrimming, logoAnniversary, logoMain } = images;
 
 export const routes = {
   ABOUT: '/about',
@@ -149,7 +149,7 @@ export const routeArr = [
     Component: ServicesRoute,
     name: 'Services',
     path: routes.SERVICES,
-    prefetchImages: [imgGuyKneeling, imgGuyPlanting2, imgGuyTeaching, imgHillsAtAlamoRanch]
+    prefetchImages: [imgGuyPlanting2, imgGuyTeaching2]
   },
   {
     active: true,
