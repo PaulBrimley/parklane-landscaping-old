@@ -7,16 +7,15 @@ import { images } from '../context/img.context';
 /** hooks **/
 import useParallaxEffect from '../hooks/useParallaxEffect.hook';
 
-/** routes **/
-import { routes } from './Routes';
-
 /** components **/
 import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
 import InfoBanner from '../components/Molecules/InfoBanner';
 import InfoBannerLeft from '../components/Molecules/InfoBannerLeft';
 import LogoStripe from '../components/Atoms/LogoStripe';
 import PageDivider1 from '../components/Atoms/PageDivider1';
+import PageDivider2 from '../components/Atoms/PageDivider2';
 import ServiceGuide from '../components/Molecules/ServiceGuide';
+import ServiceList from '../components/Atoms/ServiceList';
 import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
@@ -123,33 +122,10 @@ function ServicesRoute(props) {
 
         <LogoStripe />
 
-        <br />
-        <br />
+        <PageDivider2 width="50%" />
 
-        <div className="services-header-3">All HOA Services</div>
-        <br />
-        <div className="services-hoa-services-list">
-          <div>Specialists in HOA Common Areas</div>
-          <div>General Ground Maintenance</div>
-          <div>TCEQ Licensed Irrigation Auditing, Maintenance & Repair</div>
-          <div>Annual SAWS Reporting</div>
-          <div>Backflow Assembly Testing & Reporting</div>
-          <div>Winter Rye Seeding</div>
-          <div>Landscape Design & Renovation</div>
-          <div>Tree Pruning, Shaping & Installation</div>
-          <div>Turf Grass Installation & Maintenance</div>
-          <div>Mulch Installation</div>
-          <div>Annuals & Perennials Installation</div>
-          <div>Landscape & Entry Monument Lighting, Auditing & Repair</div>
-          <div>Certified Kiddie Cushion Installation</div>
-          <div>Monthly Reporting</div>
-          <div>Organic Fertilization</div>
-          <div>Stone Masonry Installation & Repair</div>
-          <div>Wood Fence Installation & Repair</div>
-          <div>Weed Control & Herbicide Management Programs</div>
-          <div>Drainage, Easement, Field & Fence Line Shredding</div>
-          <div>HOA Annual & Board Meeting Participation</div>
-        </div>
+        <ServiceList />
+
       </StyledServices>
     </AnimatedStyledRoute>
   );
@@ -174,24 +150,6 @@ const StyledServices = styled.div`
     font-size: 2.7em;
     font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
-  }
-  .services-header-3 {
-    font-size: 1.5em;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: ${({ theme }) => theme.colorPrimary};
-    text-align: center;
-    margin: 10px var(--side-margin) 0;
-  }
-  .services-hoa-services-list {
-    font-size: 1.2em;
-    margin: 0 var(--side-margin);
-    color: ${({ theme }) => theme.colorPrimary};
-    text-align: center;
-    white-space: nowrap;
-    div {
-      margin-bottom: 10px;
-    }
   }
   .services-subsection {
     display: flex;
@@ -218,10 +176,6 @@ const StyledServices = styled.div`
     }
     .services-header-2 {
       margin: 20px 0 10px;
-    }
-    .services-hoa-services-list {
-      margin: 0 20px 50px;
-      white-space: normal;
     }
     .services-subsection {
       flex-direction: column;

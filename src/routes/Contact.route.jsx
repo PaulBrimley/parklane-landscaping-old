@@ -16,8 +16,10 @@ import AnimatedStyledRoute from '../components/Atoms/AnimatedStyledRoute';
 import Button from '../components/Atoms/Button';
 import InfoBanner from '../components/Molecules/InfoBanner';
 import InfoBannerLeft from '../components/Molecules/InfoBannerLeft';
+import LogoStripe from '../components/Atoms/LogoStripe';
 import PageDivider1 from '../components/Atoms/PageDivider1';
-import ParallaxStripe from '../components/Atoms/ParallaxStripe';
+import PageDivider2 from '../components/Atoms/PageDivider2';
+import ServiceList from '../components/Atoms/ServiceList';
 import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
@@ -158,44 +160,20 @@ function ContactRoute(props) {
 
         <br />
         <br />
-        <br />
-        <br />
 
-        <ParallaxStripe backgroundSize="150%" backgroundUrl={imgOverhead1} height="75px" parallaxStart="100" >
-          <div className="overhead-stripe">
-            <img className="logo" src={logoMain} alt="logo" />
-          </div>
-        </ParallaxStripe>
-
-        <br />
-        <br />
-        <br />
-        <br />
-
-        <div className="contact-header">Parklane HOA Services</div>
-        <br />
-        <div className="contact-hoa-services-list">
-          <div>Specialists in HOA Common Areas</div>
-          <div>General Ground Maintenance</div>
-          <div>TCEQ Licensed Irrigation Auditing, Maintenance & Repair</div>
-          <div>Annual SAWS Reporting</div>
-          <div>Backflow Assembly Testing & Reporting</div>
-          <div>Winter Rye Seeding</div>
-          <div>Landscape Design & Renovation</div>
-          <div>Tree Pruning, Shaping & Installation</div>
-          <div>Turf Grass Installation & Maintenance</div>
-          <div>Mulch Installation</div>
-          <div>Annuals & Perennials Installation</div>
-          <div>Landscape & Entry Monument Lighting, Auditing & Repair</div>
-          <div>Certified Kiddie Cushion Installation</div>
-          <div>Monthly Reporting</div>
-          <div>Organic Fertilization</div>
-          <div>Stone Masonry Installation & Repair</div>
-          <div>Wood Fence Installation & Repair</div>
-          <div>Weed Control & Herbicide Management Programs</div>
-          <div>Drainage, Easement, Field & Fence Line Shredding</div>
-          <div>HOA Annual & Board Meeting Participation</div>
+        <div className="contact-overhead-image">
+          <img src={imgOverhead1} alt="overhead hoa layout"/>
         </div>
+
+        <br />
+        <br />
+
+        <LogoStripe />
+
+        <PageDivider2 width="50%" />
+
+        <ServiceList />
+
       </StyledContact>
     </AnimatedStyledRoute>
   );
@@ -279,26 +257,11 @@ const StyledContact = styled.div`
     text-align: center;
     margin: 10px var(--side-margin);
   }
-  .contact-hoa-services-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0 var(--side-margin);
-    color: ${({ theme }) => theme.colorPrimary};
-    text-align: center;
-    white-space: nowrap;
-    div {
-      margin-bottom: 10px;
-    }
-  }
-  .contact-info-images {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 1fr;
-    grid-gap: 10px;
-    margin: 0 var(--side-margin);
+  .contact-overhead-image {
+    display: flex;
+    justify-content: center;
     img {
-      flex: 0 1 auto;
-      width: 100%;
+      width: 80%;
     }
   }
   .info-banner-left {
@@ -306,27 +269,7 @@ const StyledContact = styled.div`
     padding-top: 50px;
     margin-bottom: 40px;
   }
-  .overhead-stripe {
-    flex: 1 1 auto;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    background-image: linear-gradient(120deg, transparent 0, transparent 30%, rgba(255, 0, 40, 0.85) 30%, rgba(255, 0, 40, 0.85) 70%, transparent 70%, transparent 100%);
-    .logo {
-      max-width: 150px;
-      margin: 10px 0 15px;
-    }
-  }
-  @media (max-width: 900px) {
-    .contact-hoa-services-list {
-      grid-template-columns: 1fr;
-    }
-  }
   @media (max-width: ${({ theme }) => theme.mobileWidth}px) {
-    .contact-hoa-services-list {
-      margin: 0 20px 50px;
-      white-space: normal;
-    }
     .contact-info {
       margin: 0 20px;
       .contact-info-phone-email {

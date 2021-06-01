@@ -98,8 +98,6 @@ function AboutRoute(props) {
           Now with over a decade of experience and learning the dynamic of how the infrastructure of the industry is maintained Parklane has built a reputation for being one of the highest quality landscapers serving such prestigious communities as Presidio, Canyon Springs and Fox Grove. Throughout the years we have built important relationships with property management companies to help set and maintain quality standards expected and helped nurture HOA landscape committees to raise curb appeal and property values within their communities. Parklane also participates in community organizations like SAWS, SAIA, and CAI to stay abreast of the latest industry standards, rules, regulations and laws relative to the HOA industry. Parklane shares this information via free seminars to HOA committees and property management companies. If you would like Parklane Landscaping to teach a free seminar to your HOA please call us at {companyInfo.phone} today.
         </StyledInfoBodyMessage>
 
-
-
         <br />
         <br />
         <br />
@@ -111,8 +109,6 @@ function AboutRoute(props) {
           <img src={imgParklaneFamily} alt="Parklane family" />
           <img src={imgCarnival} alt="Carnival" />
         </div>
-
-        <div className="about-header-2">Keeping It In The Community</div>
 
       </StyledAbout>
     </AnimatedStyledRoute>

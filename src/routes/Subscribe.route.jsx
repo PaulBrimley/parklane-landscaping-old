@@ -15,6 +15,7 @@ import Button from '../components/Atoms/Button';
 import InfoBanner from '../components/Molecules/InfoBanner';
 import InfoBannerLeft from '../components/Molecules/InfoBannerLeft';
 import PageDivider1 from '../components/Atoms/PageDivider1';
+import PageDivider2 from '../components/Atoms/PageDivider2';
 import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessage';
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 import SubscribeForm from '../components/Molecules/SubscribeForm';
@@ -95,7 +96,7 @@ function SubscribeRoute(props) {
 
         <div className="receive-emails">To receive e-mails with tips and information for your HOA</div>
 
-        <div className="separator" />
+        <PageDivider2 />
 
         <div className="subscribe-now-action">
           <Button classes="subscribe-now-button" height="30px" width="150px" fontSize="1.5em" onClick={handleOpenModal}>
@@ -152,10 +153,6 @@ const StyledSubscribe = styled.div`
     color: ${({ theme }) => theme.colorPrimary};
     text-align: center;
     text-transform: uppercase;
-  }
-  .separator {
-    border-bottom: 4px solid red;
-    margin: 10px var(--side-margin);
   }
   .subscribe-now-header {
     font-size: 4em;

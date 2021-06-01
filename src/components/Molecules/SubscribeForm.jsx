@@ -11,6 +11,7 @@ import { images } from '../../context/img.context';
 
 /** components **/
 import Button from '../Atoms/Button';
+import PageDivider2 from '../Atoms/PageDivider2';
 
 /** images **/
 const { imgNewsLetter1, imgNewsLetter2, imgNewsLetter3 } = images;
@@ -74,7 +75,7 @@ function SubscribeForm(props) {
       </Textfit>
       <div className="receive-emails">To receive Parklane e-mail blasts!</div>
 
-      <div className="separator" />
+      <PageDivider2 />
 
       <div className="news-letters">
         <div>
@@ -88,7 +89,7 @@ function SubscribeForm(props) {
         </div>
       </div>
 
-      <div className="separator" />
+      <PageDivider2 margin="20px auto"/>
 
       <form className="contact-form">
         <input className="contact-form-input" placeholder="NAME" name="name" value={form.name} onChange={handleChange} />
