@@ -138,14 +138,12 @@ const StyledMonumentRepair = styled.div`
     padding-top: 50px;
     margin-bottom: 40px;
   }
-  .monument-header, .monument-header-2 {
+  .monument-header {
     font-size: 3em;
     font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
     margin: 20px var(--side-margin) 10px;
-  }
-  .monument-header-2 {
-    font-size: 2em;
+    text-align: center;
   }
   .monument-info-images {
     display: grid;

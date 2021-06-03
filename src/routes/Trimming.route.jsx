@@ -117,6 +117,7 @@ const StyledTrimming = styled.div`
     font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
     margin: 20px var(--side-margin) 10px;
+    text-align: center;
   }
   .trimming-info-subsection {
     display: flex;

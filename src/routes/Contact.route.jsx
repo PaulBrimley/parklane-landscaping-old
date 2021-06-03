@@ -24,7 +24,7 @@ import StyledInfoBannerMessage from '../components/Styled/StyledInfoBannerMessag
 import StyledInfoBodyMessage from '../components/Styled/StyledInfoBodyMessage';
 
 /** images **/
-const { imgFlowers2, logoMain, imgOverhead1 } = images;
+const { imgFlowers2, logoAnniversary, imgOverhead1 } = images;
 
 function ContactRoute(props) {
   const { companyInfo, width } = useAppState();
@@ -160,15 +160,17 @@ function ContactRoute(props) {
 
         <br />
         <br />
-
-        <div className="contact-overhead-image" />
-
+        <br />
+        <br />
+        <br />
+        <br />
         <br />
         <br />
 
-        <LogoStripe />
+        <div className="contact-logo-image" />
 
-        <PageDivider2 width="50%" />
+        <br />
+        <br />
 
         <ServiceList />
 
@@ -255,9 +257,9 @@ const StyledContact = styled.div`
     text-align: center;
     margin: 10px var(--side-margin);
   }
-  .contact-overhead-image {
-    height: 350px;
-    background: url(${imgOverhead1}) no-repeat center / contain;
+  .contact-logo-image {
+    height: 300px;
+    background: url(${logoAnniversary}) no-repeat center / contain;
   }
   .info-banner-left {
     flex: 1 1 auto;

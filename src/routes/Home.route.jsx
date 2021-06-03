@@ -104,11 +104,11 @@ function HomeRoute(props) {
         </StyledInfoBodyMessage>
 
         <StyledInfoBodyMessage fontSize="1.6em" margin="15px var(--side-margin)">
-          With a reputation for excellent client service and professional attention to the landscape care of its properties, Parklane Landscaping works with HOA boards, property management companies and housing developers in the care and enhancement of HOA communities and their landscaped common areas (entry monuments, parkways, amenity centers, parks, green belts, fence lines, drainage easement, etc.).
+          With a reputation for excellent client service and professional attention to the landscape care of its properties, Parklane Landscaping works with HOA boards, property management companies and housing developers in the care and enhancement of HOA communities and their landscaped common areas (entry monuments, parkways, amenity centers, parks, green belts, fence lines, drainage easements, etc.).
         </StyledInfoBodyMessage>
 
         <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
-          For over 10 years, Parklane Landscaping has served the special needs of HOA communities as a full service landscape firm and remains the only landscaping company to specialize in the preservation and enhancement of an HOA communities’ landscape infrastructure and investment.
+          For over 10 years, Parklane Landscaping has served the botanical and horticultural needs of HOA communities as a full service landscape firm and remains the only landscaping company to specialize in the preservation and enhancement of HOA communities’ landscape infrastructure and investment.
         </StyledInfoBodyMessage>
 
         <br />
@@ -158,6 +158,7 @@ const StyledHome = styled.div`
     font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
     margin: 20px var(--side-margin) 10px;
+    text-align: center;
   }
   .home-header-2 {
     font-size: 2.7em;

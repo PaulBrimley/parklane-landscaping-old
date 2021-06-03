@@ -120,7 +120,7 @@ function ServicesRoute(props) {
 
         <LogoStripe />
 
-        <PageDivider2 width="50%" />
+        {/*<PageDivider2 width="50%" />*/}
 
         <ServiceList />
 
@@ -143,6 +143,7 @@ const StyledServices = styled.div`
     font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
     margin: 20px var(--side-margin) 10px;
+    text-align: center;
   }
   .services-header-2 {
     font-size: 2.7em;

@@ -119,6 +119,7 @@ const StyledLighting = styled.div`
     font-weight: 700;
     color: ${({ theme }) => theme.colorPrimary};
     margin: 20px var(--side-margin) 10px;
+    text-align: center;
   }
   .lighting-info-subsection {
     display: flex;

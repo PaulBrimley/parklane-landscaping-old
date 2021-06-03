@@ -11,7 +11,7 @@ function ServiceGuide({ className, style }) {
   return (
     <StyledServiceGuide className={className} style={style}>
       <div className="service-header uppercase">
-        Quick Service Guide
+        Service Guide
       </div>
       <div className="services">
         <StyledInfoCardLink as={Link} to={routes.MAINTENANCE}>
@@ -65,7 +65,7 @@ function ServiceGuide({ className, style }) {
         </StyledInfoCardLink>
 
         <StyledInfoCardLink as={Link} to={routes.FENCE}>
-          <div className="info-card-header">Fence Installation</div>
+          <div className="info-card-header">HOA Fence Installation</div>
           <div className="info-card-body">
             <div className="info-card-icon">
               <SVGIcon height="70px" width="70px" type="fence" />
