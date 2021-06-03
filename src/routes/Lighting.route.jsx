@@ -89,6 +89,9 @@ function LightingRoute(props) {
           Your community is your pride and joy. Once Parklane has built your new monument, planted flower beds, trees and added beautiful landscape features, you’ll want to highlight them. Adding landscape and garden lighting is a great way to accentuate your community’s best features and make your HOA a safer place. A great lighting scheme helps raise the value of a community. Consider adding outdoor lighting for your next landscaping project to make your HOA warm and inviting.
         </StyledInfoBodyMessage>
 
+        <br/>
+        <br/>
+
         <div className="lighting-info-subsection">
           <div className="subsection-images">
             <img src={imgLighting2} alt="lighting 2" />

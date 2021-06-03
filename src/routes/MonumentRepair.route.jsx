@@ -67,8 +67,7 @@ function MonumentRepairRoute(props) {
                       <SVGIcon height="100%" width="63px" type="masonry" style={{fill: 'white', marginRight: '7px'}}/>
                       <span className="isBold">HOA</span>
                     </div>
-                    <div>MONUMENT</div>
-                    <div>REPAIR</div>
+                    <div>MASONRY</div>
                   </div>
                   <div className="hr" />
                   <div className="message">
@@ -86,11 +85,14 @@ function MonumentRepairRoute(props) {
         <br />
         <br />
 
-        <div className="monument-header uppercase">HOA Monument Repair</div>
+        <div className="monument-header uppercase">HOA Masonry and Monument Repair</div>
 
         <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
           Monuments are the first thing people see when they pass or enter an HOA community. It is important that they have long lasting appeal. However, sometimes things happen. Once in a while Parklane receives requests to rebuild an entryway monument due to erosion or a minor car accident. For this reason, Parklane has a very skilled in-house masonry team.
         </StyledInfoBodyMessage>
+
+        <br/>
+        <br/>
 
         <div className="monument-info-subsection">
           <div className="subsection-images">

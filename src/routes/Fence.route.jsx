@@ -91,6 +91,9 @@ function FenceRoute(props) {
           If you live in an HOA community, you understand the value of fences. Especially since HOA communities are usually surrounded by them. When one is torn down due to storm or a fallen tree or even an accidental car mishap, rebuilding the fence becomes priority one. Matching the exact materials, colors and quick reparation is our specialty. These small details all play a part in making sure the community stays looking its best. That is why Parklane has in-house masons and fence repair teams. We know how important it is to you. So it is important to us.
         </StyledInfoBodyMessage>
 
+        <br/>
+        <br/>
+
         <div className="fence-info-subsection">
           <div className="subsection-images">
             <img src={imgFenceRepair} alt="fence repair" />

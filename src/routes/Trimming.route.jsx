@@ -90,6 +90,9 @@ function TrimmingRoute(props) {
           Nothing transforms an outdoor space like beautifully trimmed trees. Through proper pruning techniques your trees add value to your homes. Not only do they provide shade, but they make your community healthier, add to its safety and aesthetic. Parklane tree trimming professionals have the skills to help your community enjoy the benefits of beautifully maintained trees.
         </StyledInfoBodyMessage>
 
+        <br/>
+        <br/>
+
         <div className="trimming-info-subsection">
           <div className="subsection-images">
             <img src={imgTrees1} alt="trees 1" />

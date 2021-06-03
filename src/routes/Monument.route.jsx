@@ -67,7 +67,6 @@ function MonumentRoute(props) {
                       <span className="isBold">HOA</span>
                     </div>
                     <div>MONUMENT</div>
-                    <div>INSTALLATION</div>
                   </div>
                   <div className="hr" />
                   <div className="message">
@@ -86,7 +85,7 @@ function MonumentRoute(props) {
         <br />
 
 
-        <div className="monument-header uppercase">HOA Monument Installation</div>
+        <div className="monument-header uppercase">HOA Monument</div>
 
         <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin) 20px">
           From logo design, to architectural rendering, to brick and mortar, Parklane has the capability to create the monument of your HOA’s dreams. We know how important entryways are to every HOA community. A monument sets the stage for the rest of the property. They can be various architectural styles and designs. Landscape of course plays a huge part in the final monument project. Parklane has had the privilege of creating and revitalizing many in and around the San Antonio area. Whether it is designing from scratch or refurbishing portions of them, our end goal is to add to their overall appeal and value.
