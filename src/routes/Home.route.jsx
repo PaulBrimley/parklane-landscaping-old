@@ -112,15 +112,9 @@ function HomeRoute(props) {
         </StyledInfoBodyMessage>
 
         <br />
-        <br />
-        <br />
-        <br />
 
         <LogoStripe />
 
-        <br />
-        <br />
-        <br />
         <br />
         <br />
 
