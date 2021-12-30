@@ -35,11 +35,12 @@ module.exports = {
     'no-prototype-builtins': 0,
     'operator-linebreak': 0
   },
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaVersion: 9,
+    requireConfigFile: false,
     sourceType: 'module',
-    parser: 'babel-eslint'
+    parser: '@babel/eslint-parser'
   },
   plugins: ['react']
 };

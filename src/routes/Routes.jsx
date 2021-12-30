@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
+import {Navigate, Route, Routes as RRoutes, useLocation} from 'react-router-dom';
 
 /** context **/
 import { images, useImageState } from '../context/img.context';
@@ -41,7 +41,7 @@ export const routeArr = [
   {
     active: true,
     children: [],
-    Component: HomeRoute,
+    Component: <HomeRoute />,
     name: 'Home',
     path: routes.HOME,
     prefetchImages: [imgGrass, imgHome, logoAnniversary]
@@ -49,7 +49,7 @@ export const routeArr = [
   {
     active: true,
     children: [],
-    Component: AboutRoute,
+    Component: <AboutRoute />,
     name: 'About',
     path: routes.ABOUT,
     prefetchImages: [imgCarnival, imgMonument6, imgParklaneFamily, imgPictureFrame, imgTrees2, logoMain]
@@ -59,7 +59,7 @@ export const routeArr = [
     children: [
       {
         active: true,
-        Component: MaintenanceRoute,
+        Component: <MaintenanceRoute />,
         displayInHeader: true,
         headerLinkLines: ['HOA', 'Maintenance'],
         icon: 'lawnMower',
@@ -70,7 +70,7 @@ export const routeArr = [
       },
       {
         active: true,
-        Component: IrrigationRoute,
+        Component: <IrrigationRoute />,
         displayInHeader: true,
         headerLinkLines: ['HOA Licensed', 'Irrigation'],
         icon: 'hose',
@@ -81,7 +81,7 @@ export const routeArr = [
       },
       {
         active: true,
-        Component: LandscapeRoute,
+        Component: <LandscapeRoute />,
         displayInHeader: true,
         headerLinkLines: ['HOA', 'Landscaping'],
         icon: 'landscape',
@@ -92,7 +92,7 @@ export const routeArr = [
       },
       {
         active: true,
-        Component: MonumentRoute,
+        Component: <MonumentRoute />,
         displayInHeader: true,
         headerLinkLines: ['HOA', 'Monuments'],
         icon: 'monument',
@@ -103,7 +103,7 @@ export const routeArr = [
       },
       {
         active: true,
-        Component: MonumentRepairRoute,
+        Component: <MonumentRepairRoute />,
         displayInHeader: true,
         headerLinkLines: ['HOA', 'Masonry'],
         icon: 'masonry',
@@ -114,7 +114,7 @@ export const routeArr = [
       },
       {
         active: true,
-        Component: FenceRoute,
+        Component: <FenceRoute />,
         displayInHeader: true,
         headerLinkLines: ['HOA Fence', 'Installation'],
         icon: 'fence',
@@ -125,7 +125,7 @@ export const routeArr = [
       },
       {
         active: true,
-        Component: LightingRoute,
+        Component: <LightingRoute />,
         displayInHeader: true,
         headerLinkLines: ['HOA Landscape', 'Lighting'],
         icon: 'lightBulb',
@@ -136,7 +136,7 @@ export const routeArr = [
       },
       {
         active: true,
-        Component: TrimmingRoute,
+        Component: <TrimmingRoute />,
         displayInHeader: true,
         headerLinkLines: ['HOA Tree', 'Pruning'],
         icon: 'trees',
@@ -146,7 +146,7 @@ export const routeArr = [
         prefetchImages: [imgLeaves, imgTrees1, imgTreeTrimming]
       }
     ],
-    Component: ServicesRoute,
+    Component: <ServicesRoute />,
     name: 'Services',
     path: routes.SERVICES,
     prefetchImages: [imgGuyPlanting2, imgGuyTeaching2]
@@ -154,7 +154,7 @@ export const routeArr = [
   {
     active: true,
     children: [],
-    Component: SubscribeRoute,
+    Component: <SubscribeRoute />,
     name: 'Get Informed',
     path: routes.SUBSCRIBE,
     prefetchImages: [imgGuyPlanting1, imgNewsLetter1, imgNewsLetter2, imgNewsLetter3]
@@ -162,7 +162,7 @@ export const routeArr = [
   {
     active: true,
     children: [],
-    Component: ContactRoute,
+    Component: <ContactRoute />,
     name: 'Contact',
     path: routes.CONTACT,
     prefetchImages: [imgLeaves, imgOverhead1]
@@ -196,14 +196,12 @@ function Routes(props) {
   return (
     <>
       {flattenedRoutes.length ? (
-        <Switch>
+        <RRoutes>
           {flattenedRoutes.map(({ Component, path }) => (
-            <Route key={path} exact path={path} component={Component} />
+            <Route key={path} exact path={path} element={Component} />
           ))}
-          <Route path="*" exact={true}>
-            <Redirect to={routes.HOME} />
-          </Route>
-        </Switch>
+          <Route path="*" exact={true} element={<Navigate to ="/" />}/>
+        </RRoutes>
       ) : (
         <div>Loading</div>
       )}
