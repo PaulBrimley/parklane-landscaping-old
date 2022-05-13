@@ -2,10 +2,10 @@
   "name": "parklane-landscaping",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://dev.parklanelandscaping.com",
   "dependencies": {
     "axios": "^0.21.1",
     "classnames": "^2.3.1",
-    "gh-pages": "^4.0.0",
     "google-spreadsheet": "^3.1.15",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -31,6 +31,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-standard": "^5.0.0",
+    "gh-pages": "^4.0.0",
     "node-sass": "^7.0.0",
     "prettier": "^2.5.1",
     "web-vitals": "^2.1.2"
@@ -38,7 +39,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "gh-pages -d build",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -b dev -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
