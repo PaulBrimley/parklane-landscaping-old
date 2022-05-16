@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/parklane-landscaping/static/css/main.21146827.css",
-    "main.js": "/parklane-landscaping/static/js/main.f449db70.js",
+    "main.js": "/parklane-landscaping/static/js/main.ffb8166a.js",
     "static/js/787.16ecdce0.chunk.js": "/parklane-landscaping/static/js/787.16ecdce0.chunk.js",
     "static/media/img-picture-frame.png": "/parklane-landscaping/static/media/img-picture-frame.1dc1378d6178be471a3f.png",
     "static/media/img-guy-teaching-2.jpeg": "/parklane-landscaping/static/media/img-guy-teaching-2.8a971fa45653bdc9a61c.jpeg",
@@ -61,11 +61,11 @@
     "static/media/grass-white.png": "/parklane-landscaping/static/media/grass-white.a4bfa44656cdf50c8804.png",
     "index.html": "/parklane-landscaping/index.html",
     "main.21146827.css.map": "/parklane-landscaping/static/css/main.21146827.css.map",
-    "main.f449db70.js.map": "/parklane-landscaping/static/js/main.f449db70.js.map",
+    "main.ffb8166a.js.map": "/parklane-landscaping/static/js/main.ffb8166a.js.map",
     "787.16ecdce0.chunk.js.map": "/parklane-landscaping/static/js/787.16ecdce0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.21146827.css",
-    "static/js/main.f449db70.js"
+    "static/js/main.ffb8166a.js"
   ]
 }
