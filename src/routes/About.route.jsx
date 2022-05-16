@@ -87,15 +87,19 @@ function AboutRoute(props) {
         <div className="about-header uppercase">About</div>
 
         <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
-          In 2011 founder, Eliseo Rios opened Parklane Landscaping after recognizing a rapid growth in the number of housing developments in and around San Antonio. As there were little to no specialized landscapers serving these HOA communities, Parklane became one of the first to pioneer this newly developed market and took on the challenge to become experts in the industry.
+          Parklane Landscaping Corporation, founded in 2011, was developed to serve the burgeoning HOA consumer market segment in San Antonio. As there were no specialized landscapers serving these HOA communities, Parklane became one of the first to understand the challenges facing new and older HOA properties.
         </StyledInfoBodyMessage>
 
         <StyledInfoBodyMessage fontSize="1.6em" margin="15px var(--side-margin)">
-          We currently serve HOA communities in the greater San Antonio area through custom contracts that include general ground maintenance, irrigation repair & installation, landscape design, entryway revitalization, monument design and installation, tree pruning and much more. (See service page for more services.)
+          Parklane Landscaping currently serves HOA communities in the greater San Antonio area through custom contracts that include general grounds maintenance, irrigation repair & installation, landscape design, entryway and parkway revitalization, monument design and installation, tree pruning, herbicide and fertilization management, drainage mitigation, easement and fence line shredding, monument and landscape lighting repair, and much more. Check out our service page for more services.
+        </StyledInfoBodyMessage>
+
+        <StyledInfoBodyMessage fontSize="1.6em" margin="15px var(--side-margin)">
+          Now with over a decade of experience maintaining and enhancing HOA common area landscape infrastructure, Parklane works directly with HOA boards, property management companies and developers in delivering best practices care; nurturing HOA landscapes that bring homeowners peace of mind as they drive in and out of their communities; landscapes that sustain curb appeal and impress those who visit the community; landscapes that provide the best marketability and drive sales for developing communities; and in the end, landscapes that maintain or improve property values over time. Parklane Landscaping understands that its role transcends that of general landscape care, it understands that it serves as a marketing partner in enhancing the value of an HOA in many ways.
         </StyledInfoBodyMessage>
 
         <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
-          Now with over a decade of experience and learning the dynamic of how the infrastructure of the industry is maintained Parklane has built a reputation for being one of the highest quality landscapers serving such prestigious communities as Presidio, Canyon Springs and Fox Grove. Throughout the years we have built important relationships with property management companies to help set and maintain quality standards expected and helped nurture HOA landscape committees to raise curb appeal and property values within their communities.  Parklane also participates in community organizations like SAWS, SAIA, and CAI to stay abreast of the latest industry standards, rules, regulations and laws relative to the HOA industry. Parklane shares this information via free seminars to HOA committees and property management companies. If you would like Parklane Landscaping to teach a free seminar to your HOA please call us at {companyInfo.phone} today.
+          Parklane Landscaping also participates in community organizations that enhance its understanding of local ordinances, changing trends and innovative solutions as they relate to HOA communities. Parklane landscaping is a participating member of the Community Association Institute San Antonio (CAISA), the San Antonio Irrigation Association (SAIA), the International Society of Arborists San Antonio Chapter (ISASA), Texas Nursery and Landscape Association (TNLA), and is a verified vendor in VendorSmart, an online platform connecting community managers with certified vendors. Parklane shares information garnered from its affiliation with these organizations via free seminars to HOA committees and property management companies. If you would like tap into these free seminars feel free to email us at info@parklanelandscaping.com.
         </StyledInfoBodyMessage>
 
         <br />
@@ -104,28 +108,33 @@ function AboutRoute(props) {
         <br />
         <br />
 
-        <div className="about-header uppercase">Parklane Works With You</div>
-
-        <div className="about-header-2 uppercase">Property Managers</div>
-        <ul className="about-list">
-          <li>Parklane is a full service firm so all you need is one service call for any property needs.</li>
-          <li>Parklane attends HOA Board meetings, Landscape Committee meetings and annual meetings.</li>
-          <li>Parklane assigns a dedicated account manager to each property for direct communications and rapid response times.</li>
-        </ul>
+        <div className="about-header uppercase">Parklane Works With You, You and You!</div>
 
         <div className="about-header-2 uppercase">Board Members</div>
         <ul className="about-list">
-          <li>Parklane understands the different facets of an HOA landscape infrastructure that needs
-            to be maintained.</li>
-          <li>Parklane recognizes the value of maintaining HOA landscape investments and how to care for them in ways that make the community appealing when home owners wish to sale.</li>
-          <li>Parklane is responsive to the needs of the immediacy of HOA communities. Whether it be an irrigation problem, a fallen tree or a project to enhance the beauty of the community, our consistent maintenance schedules allows a sense of peace of mind.</li>
+          <li>Parklane understands the different facets of an HOA’s landscape infrastructure and helps HOA boards understand the complexity and scale of the HOA’s landscape footprint.</li>
+          <li>Parklane recognizes the value of maintaining an HOA’s landscape investment and cares for it in ways that sustain a community’s appeal over time.</li>
+          <li>Parklane is responsive to the immediacy of HOA emergencies, whether it be an irrigation problem, a fallen tree or other urgent matter needing quick attention.</li>
           <li>Parklane is easy to work with, on time and on budget.</li>
+          <li>Parklane is easy to work with, budget-conscious and timely.</li>
         </ul>
 
         <div className="about-header-2 uppercase">Property Developers</div>
         <ul className="about-list">
-          <li>Parklane is a developer’s marketing partner while an HOA is being developed by helping assure quality landscaping and curb appeal.</li>
+          <li>Parklane Landscaping serves as a developer’s marketing partner while an HOA is developing by assuring quality landscaping and impressive curb appeal.</li>
+          <li>Parklane is responsive to the immediacy of homeowner issues and resolves them quickly.</li>
+          <li>Parklane Landscaping has the ability to scale its services as communities build out.</li>
+          <li>Parklane Landscaping is design-oriented but maintenance driven and can quickly edit landscaping to reduce landscaping costs over the short-term and long term.</li>
           <li>Parklane is consistent, on budget and timely.</li>
+        </ul>
+
+        <div className="about-header-2 uppercase">Property Managers</div>
+        <ul className="about-list">
+          <li>Parklane Landscaping is a full service firm; so all you need is one service call for any your HOA common area property needs.</li>
+          <li>Parklane attends HOA Board meetings, Landscape Committee meetings and annual meetings to support its unique understanding of an HOA’s landscape infrastructure and helps explain this complexity to board members and homeowners.</li>
+          <li>Parklane assigns a dedicated account manager to each property for direct communications and rapid response times.</li>
+          <li>Parklane Landscaping is happy to present key HOA educational presentations.</li>
+          <li>Parklane is easy to work with, facilitating transparent communication between the board and property manager, is highly-skilled in project management, budget- conscious and timely.</li>
         </ul>
 
 

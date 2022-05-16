@@ -100,15 +100,15 @@ function HomeRoute(props) {
         <div className="home-header uppercase">The HOA Landscape Specialists</div>
 
         <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
-          Parklane Landscaping is a professional landscape company specializing in the landscape maintenance and irrigation management for HOA communities in San Antonio, Boerne, New Braunfels and surrounding municipalities.
+          Parklane Landscaping is a professional landscape company specializing in landscape maintenance, landscape design and enhancement, and irrigation system management serving HOA communities in the greater San Antonio area and its surrounding municipalities.
         </StyledInfoBodyMessage>
 
         <StyledInfoBodyMessage fontSize="1.6em" margin="15px var(--side-margin)">
-          With a reputation for excellent client service and professional attention to the landscape care of its properties, Parklane Landscaping works with HOA boards, property management companies and housing developers in the care and enhancement of HOA communities and their landscaped common areas (entry monuments, parkways, amenity centers, parks, green belts, fence lines, drainage easements, etc.).
+          With a reputation for excellent client service and professional attention to the landscape care of its HOA clients, Parklane Landscaping works with HOA boards, property management companies and housing developers in the care and enhancement of HOA communities and their landscaped common areas such as entry monuments, parkways, amenity centers, parks, green belts, fence lines, drainage easements, and more.
         </StyledInfoBodyMessage>
 
         <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
-          For over 10 years, Parklane Landscaping has served the botanical and horticultural needs of HOA communities as a full service landscape firm and remains the only landscaping company to specialize in the preservation and enhancement of HOA communities’ landscape infrastructure and investment.
+          For over 10 years, Parklane Landscaping has served the botanical needs of HOA communities as a full service landscape firm and remains the only landscaping company to specialize in the beautification of HOA properties.
         </StyledInfoBodyMessage>
 
         <br />

@@ -155,7 +155,7 @@ export const routeArr = [
     active: true,
     children: [],
     Component: <SubscribeRoute />,
-    name: 'Get Informed',
+    name: 'Stay Informed',
     path: routes.SUBSCRIBE,
     prefetchImages: [imgGuyPlanting1, imgNewsLetter1, imgNewsLetter2, imgNewsLetter3]
   },
@@ -163,7 +163,7 @@ export const routeArr = [
     active: true,
     children: [],
     Component: <ContactRoute />,
-    name: 'Contact',
+    name: 'Contact Us',
     path: routes.CONTACT,
     prefetchImages: [imgLeaves, imgOverhead1]
   }

@@ -88,7 +88,7 @@ function SubscribeRoute(props) {
         <div className="subscribe-now-header">Learn more about HOA landscape infrastructures!</div>
 
         <StyledInfoBodyMessage fontSize="1.6em" margin="0 var(--side-margin)">
-          At Parklane Landscaping, our HOA clients are very important to us. Because of this we do our best to stay abreast of the latest information that effects our industry and most importantly the HOA communities we serve. When we come across these little gems or products that we feel are better and more cost-effective, we like to share the knowledge. Every month these tidbits of information are sent out by Parklane via our subscription email. As a result, we have been able to help some of our clients save money and add a little more value to their communities. Which at the end of the day is what we are here for. To subscribe, please click the button below.
+          Parklane Landscaping stays abreast of the latest information that effects our industry and most importantly the HOA communities we serve. When we come across pertinent information, we like to share it via our free subscription email. Stay informed by subscribing today! Click the button below.
         </StyledInfoBodyMessage>
 
         <br />
