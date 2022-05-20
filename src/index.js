@@ -7,7 +7,7 @@ import { EmailProvider } from './context/email.context';
 import { ImageProvider } from './context/img.context';
 import { ModalProvider } from './context/modal.context';
 import reportWebVitals from './reportWebVitals';
-
+//change here
 ReactDOM.render(
   <React.StrictMode>
     <AppProvider>
