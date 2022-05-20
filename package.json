@@ -2,7 +2,7 @@
   "name": "parklane-landscaping",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://paulbrimley.github.io/parklane-landscaping/",
+  "homepage": "https://paulbrimley.github.io/parklane-landscaping-old/",
   "dependencies": {
     "axios": "^0.21.1",
     "classnames": "^2.3.1",
